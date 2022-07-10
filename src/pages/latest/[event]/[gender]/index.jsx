@@ -45,7 +45,7 @@ export async function getStaticProps(context) {
   const { event, gender } = context.params;
 
   const res = await fetch(
-    `https://bumps-results-da3sr2u5o-johnwalley.vercel.app/api/latest?event=${event}&gender=${gender}`
+    `https://api.cambridgebumps.com/api/latest?event=${event}&gender=${gender}`
   );
 
   const data = await res.json();
