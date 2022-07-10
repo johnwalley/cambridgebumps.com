@@ -24,7 +24,7 @@ export default function Latest({ data }) {
         </p>
         <pre>{JSON.stringify(data)}</pre>
 
-        <BumpsChart data={data} />
+        {/* <BumpsChart data={data} /> */}
       </main>
     </>
   );
