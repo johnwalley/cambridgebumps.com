@@ -1,8 +1,8 @@
-import { Head, Html, Main, NextScript } from 'next/document'
-import clsx from 'clsx'
+import { Head, Html, Main, NextScript } from "next/document";
+import clsx from "clsx";
 
 export default function Document(props) {
-  let pageProps = props.__NEXT_DATA__?.props?.pageProps
+  let pageProps = props.__NEXT_DATA__?.props?.pageProps;
 
   return (
     <Html
@@ -20,11 +20,15 @@ export default function Document(props) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@400;500&display=swap"
         />
+        <script
+          async
+          src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+        />
       </Head>
       <body className="flex h-full flex-col">
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

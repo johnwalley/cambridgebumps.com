@@ -110,14 +110,14 @@ export function Header() {
               </Link>
             </li>
             <li className="ml-12 hidden md:block">
-              <Link href="#features">
+              <Link href="/latest">
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
                   Latest
                 </a>
               </Link>
             </li>
             <li className="ml-6 hidden md:block">
-              <Link href="#testimonials">
+              <Link href="/history">
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
                   History
                 </a>

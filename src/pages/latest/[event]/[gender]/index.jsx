@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { Header } from "@/components/Header";
 
 import BumpsChart from "react-bumps-chart";
-import data from "../../../../data/results.json";
 
 export default function Latest({ data }) {
   const router = useRouter();
