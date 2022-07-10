@@ -53,7 +53,7 @@ export default function Results({ events }) {
 
       console.log(chart.current.numYearsToView());
 
-      select(ref.current).datum(events).call(chart.current);
+      select(ref.current).call(chart.current);
     }
 
     window.addEventListener("resize", handleResize);
