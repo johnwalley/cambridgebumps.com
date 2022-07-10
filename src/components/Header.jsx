@@ -1,11 +1,11 @@
-import { Fragment } from 'react'
-import Link from 'next/link'
-import { Popover, Transition } from '@headlessui/react'
-import clsx from 'clsx'
+import { Fragment } from "react";
+import Link from "next/link";
+import { Popover, Transition } from "@headlessui/react";
+import clsx from "clsx";
 
-import { ButtonLink } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
+import { ButtonLink } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { Logo } from "@/components/Logo";
 
 function MobileNavigation() {
   return (
@@ -14,7 +14,7 @@ function MobileNavigation() {
         <>
           <Popover.Button className="relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none">
             <span className="sr-only">Toggle Navigation</span>
-            
+
             <svg
               aria-hidden="true"
               className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
@@ -24,14 +24,14 @@ function MobileNavigation() {
             >
               <path
                 d="M0 1H14M0 7H14M0 13H14"
-                className={clsx('origin-center transition', {
-                  'scale-90 opacity-0': open,
+                className={clsx("origin-center transition", {
+                  "scale-90 opacity-0": open,
                 })}
               />
               <path
                 d="M2 2L12 12M12 2L2 12"
-                className={clsx('origin-center transition', {
-                  'scale-90 opacity-0': !open,
+                className={clsx("origin-center transition", {
+                  "scale-90 opacity-0": !open,
                 })}
               />
             </svg>
@@ -62,23 +62,23 @@ function MobileNavigation() {
                 className="absolute inset-x-0 top-full mt-4 origin-top space-y-4 rounded-2xl bg-white p-6 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
               >
                 <li>
-                  <Link href="#features">
+                  <Link href="/latest">
                     <a className="block w-full" onClick={() => close()}>
-                      Features
+                      Latest
                     </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#testimonials">
+                  <Link href="/history">
                     <a className="block w-full" onClick={() => close()}>
-                      Testimonials
+                      History
                     </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#pricing">
+                  <Link href="/about">
                     <a className="block w-full" onClick={() => close()}>
-                      Pricing
+                      About
                     </a>
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ function MobileNavigation() {
         </>
       )}
     </Popover>
-  )
+  );
 }
 
 export function Header() {
@@ -152,5 +152,5 @@ export function Header() {
         </nav>
       </Container>
     </header>
-  )
+  );
 }
