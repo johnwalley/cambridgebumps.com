@@ -3,8 +3,6 @@ import Link from "next/link";
 
 import { AuthLayout } from "@/components/AuthLayout";
 import { Header } from "@/components/Header";
-import { Input } from "@/components/Input";
-import { Logo } from "@/components/Logo";
 
 export default function About() {
   return (
