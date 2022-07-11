@@ -16,7 +16,9 @@ import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
 
 const longNames = {
+  lents: "Lent Bumps",
   mays: "May Bumps",
+  eights: "Summer Eights",
   town: "Town Bumps",
 };
 
@@ -60,12 +62,12 @@ export default function Latest({ data }) {
   return (
     <>
       <Head>
-        <title>Latest - Cambridge Bumps</title>
+        <title>Latest results - Cambridge Bumps</title>
       </Head>
       <Header />
 
       <main>
-        <Container>
+        <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
           <nav className="flex" aria-label="Breadcrumb">
             <ol role="list" className="flex items-center space-x-4">
               <li>
@@ -104,8 +106,18 @@ export default function Latest({ data }) {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <MyLink
+                                href={`/latest/lents/${gender}`}
+                                active={active}
+                              >
+                                Lent Bumps
+                              </MyLink>
+                            )}
+                          </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
                               <MyLink
@@ -113,6 +125,16 @@ export default function Latest({ data }) {
                                 active={active}
                               >
                                 May Bumps
+                              </MyLink>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <MyLink
+                                href={`/latest/eights/${gender}`}
+                                active={active}
+                              >
+                                Summer Eights
                               </MyLink>
                             )}
                           </Menu.Item>
@@ -187,14 +209,15 @@ export default function Latest({ data }) {
               </li>
             </ol>
           </nav>
-          <p>
-            {event} - {gender} - {data.startYear}
-          </p>
-
-          <div>
-            <BumpsChart data={data} />
+          <div className="flex flex-col items-center">
+            <span className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
+              {data.startYear}
+            </span>
+            <div className="sm:w-[520px]">
+              <BumpsChart data={data} />
+            </div>
           </div>
-        </Container>
+        </div>
       </main>
     </>
   );

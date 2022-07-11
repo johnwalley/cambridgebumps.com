@@ -64,21 +64,28 @@ function MobileNavigation() {
                 <li>
                   <Link href="/latest">
                     <a className="block w-full" onClick={() => close()}>
-                      Latest
+                      Latest results
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/history">
                     <a className="block w-full" onClick={() => close()}>
-                      History
+                      Historical charts
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cheat-sheets">
+                    <a className="block w-full" onClick={() => close()}>
+                      Cheat sheets
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
                     <a className="block w-full" onClick={() => close()}>
-                      About
+                      How do Bumps work?
                     </a>
                   </Link>
                 </li>
@@ -98,7 +105,7 @@ function MobileNavigation() {
 
 export function Header() {
   return (
-    <header className="py-10">
+    <header className="py-4">
       <Container>
         <nav className="relative z-50 text-sm">
           <ul className="flex items-center">
@@ -110,42 +117,36 @@ export function Header() {
                 </a>
               </Link>
             </li>
-            <li className="ml-12 hidden md:block">
+            <li className="ml-12 hidden lg:block">
               <Link href="/latest">
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  Latest
+                  Latest results
                 </a>
               </Link>
             </li>
-            <li className="ml-6 hidden md:block">
+            <li className="ml-6 hidden lg:block">
               <Link href="/history">
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  History
+                  Historical charts
                 </a>
               </Link>
             </li>
-            <li className="ml-6 hidden md:block">
+            <li className="ml-6 hidden lg:block">
+              <Link href="/cheat-sheets">
+                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                  Cheat sheets
+                </a>
+              </Link>
+            </li>
+            <li className="ml-6 hidden lg:block">
               <Link href="/about">
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  About
+                  How do Bumps work?
                 </a>
               </Link>
             </li>
-            <li className="ml-auto hidden md:block">
-              <Link href="/login">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                  Sign in
-                </a>
-              </Link>
-            </li>
-            <li className="ml-auto md:ml-8">
-              <ButtonLink href="/register" color="blue">
-                <span>
-                  Get started<span className="hidden lg:inline"> today</span>
-                </span>
-              </ButtonLink>
-            </li>
-            <li className="ml-5 -mr-1 md:hidden">
+
+            <li className="ml-auto -mr-1 lg:hidden">
               <MobileNavigation />
             </li>
           </ul>
