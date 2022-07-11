@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 
 export default function Latest({ data }) {
@@ -16,13 +17,15 @@ export default function Latest({ data }) {
       <Header />
 
       <main>
-        <p>{event}</p>
-        <Link href={`${event}/men`}>
-          <a>Men</a>
-        </Link>
-        <Link href={`${event}/women`}>
-          <a>Women</a>
-        </Link>
+        <Container>
+          <p>{event}</p>
+          <Link href={`${event}/men`}>
+            <a>Men</a>
+          </Link>
+          <Link href={`${event}/women`}>
+            <a>Women</a>
+          </Link>
+        </Container>
       </main>
     </>
   );

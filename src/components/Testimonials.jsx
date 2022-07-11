@@ -11,9 +11,9 @@ const testimonials = [
   [
     {
       content:
-        'TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.',
+        'This chart is amazing.',
       author: {
-        name: 'Sheryl Berge',
+        name: 'Peter Rodgers',
         role: 'CEO at Lynch LLC',
         image: avatarImage1,
       },
