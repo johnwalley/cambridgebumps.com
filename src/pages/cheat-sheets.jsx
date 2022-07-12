@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { AuthLayout } from "@/components/AuthLayout";
 import { Header } from "@/components/Header";
-import townBumpsCheatSheetImage from "@/images/town-bumps-2022-cheat-sheet.jpg";
+import townBumpsCheatSheetImage from "@/images/town-bumps-2022-cheat-sheet.png";
 
 const products = [
   {
@@ -58,15 +58,15 @@ export default function CheatSheets() {
                           {product.name}
                         </a>
                       </h3>
-                      <p className="mt-1 text-sm text-gray-500">
-                        <a href={product.href} download>
+                      <a href={product.href} download>
+                        <button
+                          type="button"
+                          className="inline-flex items-center rounded-md border border-transparent bg-cambridge px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cambridge focus:outline-none focus:ring-2 focus:ring-cambridge focus:ring-offset-2"
+                        >
                           Download
-                        </a>
-                      </p>
+                        </button>
+                      </a>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">
-                      {product.price}
-                    </p>
                   </div>
                 </div>
               ))}

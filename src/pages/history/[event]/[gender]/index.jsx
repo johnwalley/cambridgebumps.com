@@ -3,6 +3,7 @@ import Script from "next/script";
 import { useRouter } from "next/router";
 
 import { Header } from "@/components/Header";
+import { Navigation } from "@/components/Navigation";
 
 import { select } from "d3-selection";
 import "d3-transition";
@@ -11,11 +12,25 @@ import { useEffect, useRef } from "react";
 
 const widthOfOneYear = 110;
 
+const longNames = {
+  lents: "Lent Bumps",
+  mays: "May Bumps",
+  eights: "Summer Eights",
+  town: "Town Bumps",
+};
+
+const longGenders = {
+  men: "Men",
+  women: "Women",
+};
+
 export default function Results({ events }) {
+  console.log(events);
+
   const ref = useRef();
   const chart = useRef();
   const router = useRouter();
-  const { event = "mays", gender = "women" } = router.query;
+  const { event, gender } = router.query;
 
   useEffect(() => {
     chart.current = bumpsChart().on("selectYear", (start, end) => {
@@ -72,11 +87,11 @@ export default function Results({ events }) {
 
       <Header />
       <main>
-        <p>
-          {event} - {gender}
-        </p>
-        <div className="bumpsChart" ref={ref}>
-          <svg width="100%" preserveAspectRatio="xMidYMin" />
+        <div className="flex flex-col items-center">
+          <Navigation page="history" event={event} gender={gender} />
+          <div className="bumpsChart" ref={ref}>
+            <svg width="100%" preserveAspectRatio="xMidYMin" />
+          </div>
         </div>
       </main>
     </>
@@ -86,8 +101,14 @@ export default function Results({ events }) {
 export async function getStaticPaths() {
   return {
     paths: [
+      { params: { event: "eights", gender: "men" } },
+      { params: { event: "eights", gender: "women" } },
+      { params: { event: "lents", gender: "men" } },
+      { params: { event: "lents", gender: "women" } },
       { params: { event: "mays", gender: "men" } },
       { params: { event: "mays", gender: "women" } },
+      { params: { event: "torpids", gender: "men" } },
+      { params: { event: "torpids", gender: "women" } },
       { params: { event: "town", gender: "men" } },
       { params: { event: "town", gender: "women" } },
     ],

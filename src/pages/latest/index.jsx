@@ -4,37 +4,38 @@ import { useRouter } from "next/router";
 
 import { Header } from "@/components/Header";
 
+import eightsImage from "@/images/eights.png";
+import lentsImage from "@/images/lents.png";
 import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
 
-const events = ["lents", "mays", "eights", "town"];
+const events = ["lents", "mays", "eights", "torpids", "town"];
 const genders = ["men", "women"];
 
 const people = [
   {
     id: "lents",
     name: "Lent Bumps",
-    role: "2022",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    imageUrl: lentsImage.src,
   },
   {
     id: "mays",
     name: "May Bumps",
-    role: "2022",
     imageUrl: maysImage.src,
   },
   {
     id: "eights",
     name: "Summer Eights",
-    role: "2022",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    imageUrl: eightsImage.src,
+  },
+  {
+    id: "torpids",
+    name: "Torpids",
+    imageUrl: lentsImage.src,
   },
   {
     id: "town",
     name: "Town Bumps",
-    role: "2021",
     imageUrl: townImage.src,
   },
 ];

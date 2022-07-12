@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { Container } from "@/components/Container";
-
 import { Header } from "@/components/Header";
+import { Navigation } from "@/components/Navigation";
 
 import BumpsChart from "react-bumps-chart";
 import {
@@ -31,29 +30,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const MyLink = forwardRef((props, ref) => {
-  let { href, active, children, ...rest } = props;
-  return (
-    <Link href={href}>
-      <a
-        ref={ref}
-        {...rest}
-        className={classNames(
-          active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-          "block px-4 py-2 text-sm"
-        )}
-      >
-        {children}
-      </a>
-    </Link>
-  );
-});
-
-MyLink.displayName = "MyLink";
-
 export default function Latest({ data }) {
   const router = useRouter();
-  const { event = "mays", gender = "women" } = router.query;
+  const { event, gender } = router.query;
 
   if (!data) {
     return <p>Loading</p>;
@@ -69,29 +48,77 @@ export default function Latest({ data }) {
       <main>
         <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
           <div className="flex flex-col items-center">
-            <nav className="flex" aria-label="Breadcrumb">
-              <ol role="list" className="flex items-center space-x-4">
+            <Navigation page="latest" event={event} gender={gender} />
+            {/*             <nav className="flex" aria-label="Breadcrumb">
+              <ol role="list" className="flex items-center">
                 <li>
-                  <div>
-                    <a href="#" className="text-gray-400 hover:text-gray-500">
-                      <HomeIcon
-                        className="h-5 w-5 flex-shrink-0"
-                        aria-hidden="true"
-                      />
-                      <span className="sr-only">Home</span>
-                    </a>
+                  <div className="flex items-center">
+                    <Menu as="div" className="relative inline-block text-left">
+                      <div>
+                        <Menu.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400">
+                          <span className="font-medium text-gray-900">
+                            Latest
+                          </span>
+                          <ChevronDownIcon
+                            className="-mr-1 ml-2 h-5 w-5"
+                            aria-hidden="true"
+                          />
+                        </Menu.Button>
+                      </div>
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <div className="py-1">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <MyLink
+                                  href={`/latest/${event}/${gender}`}
+                                  active={active}
+                                >
+                                  Latest
+                                </MyLink>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <MyLink
+                                  href={`/history/${event}/${gender}`}
+                                  active={active}
+                                >
+                                  Historical
+                                </MyLink>
+                              )}
+                            </Menu.Item>
+                          </div>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
                   </div>
                 </li>
                 <li>
                   <div className="flex items-center">
-                    <ChevronRightIcon
-                      className="h-5 w-5 flex-shrink-0 text-gray-400"
+                    <svg
+                      className="h-5 w-5 flex-shrink-0 text-gray-300"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                       aria-hidden="true"
-                    />
+                    >
+                      <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                    </svg>
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
-                        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cambridge focus:ring-offset-2 focus:ring-offset-gray-100">
-                          {longNames[event]}
+                        <Menu.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400">
+                          <span className="font-medium text-gray-900">
+                            {longNames[event]}
+                          </span>
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
                             aria-hidden="true"
@@ -157,14 +184,21 @@ export default function Latest({ data }) {
                 </li>
                 <li>
                   <div className="flex items-center">
-                    <ChevronRightIcon
-                      className="h-5 w-5 flex-shrink-0 text-gray-400"
+                    <svg
+                      className="h-5 w-5 flex-shrink-0 text-gray-300"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                       aria-hidden="true"
-                    />
+                    >
+                      <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                    </svg>
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
-                        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cambridge focus:ring-offset-2 focus:ring-offset-gray-100">
-                          {longGenders[gender]}
+                        <Menu.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400">
+                          <span className="font-medium text-gray-900">
+                            {longGenders[gender]}
+                          </span>
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
                             aria-hidden="true"
@@ -209,7 +243,7 @@ export default function Latest({ data }) {
                   </div>
                 </li>
               </ol>
-            </nav>
+            </nav> */}
             <span className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
               {data.startYear}
             </span>
