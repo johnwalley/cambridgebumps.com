@@ -10,8 +10,6 @@ import townImage from "@/images/town.png";
 const events = ["lents", "mays", "eights", "town"];
 const genders = ["men", "women"];
 
-console.log(maysImage);
-
 const people = [
   {
     id: "lents",

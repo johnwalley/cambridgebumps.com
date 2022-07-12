@@ -25,7 +25,7 @@ const people = [
   },
 ];
 
-export default function Latest({ years }) {
+export default function Latest({ years = { men: 2022, women: 2022 } }) {
   const router = useRouter();
   const { event } = router.query;
 
@@ -99,21 +99,21 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { event } = context.params;
 
-  const years = {};
+  return Promise.all(
+    genders.map(async (gender) => {
+      const res = await fetch(
+        `https://api.cambridgebumps.com/api/latest?event=${event}&gender=${gender}`
+      );
 
-  for (const gender of genders) {
-    const res = await fetch(
-      `https://api.cambridgebumps.com/api/latest?event=${event}&gender=${gender}`
-    );
-
-    const data = await res.json();
-
-    years[gender] = data.endYear;
-  }
-
-  return {
-    props: {
-      years,
-    },
-  };
+      return await res.json();
+    })
+  ).then((values) => {
+    return {
+      props: {
+        years: Object.fromEntries(
+          genders.map((gender, i) => [gender, values[i].endYear])
+        ),
+      },
+    };
+  });
 }
