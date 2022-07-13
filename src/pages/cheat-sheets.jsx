@@ -22,7 +22,7 @@ export default function CheatSheets() {
   return (
     <>
       <Head>
-        <title>How do bumps work? - Cambridge Bumps</title>
+        <title>Cheat sheets - Cambridge Bumps</title>
       </Head>
       <Header />
       <main>
