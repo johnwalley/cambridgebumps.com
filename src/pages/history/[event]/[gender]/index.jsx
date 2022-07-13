@@ -25,17 +25,17 @@ const longGenders = {
 };
 
 export default function Results({ events }) {
-  console.log(events);
-
   const ref = useRef();
   const chart = useRef();
   const router = useRouter();
   const { event, gender } = router.query;
 
   useEffect(() => {
-    chart.current = bumpsChart().on("selectYear", (start, end) => {
-      console.log(start, end);
-    });
+    if (!chart.current) {
+      chart.current = bumpsChart().on("selectYear", (start, end) => {
+        console.log(start, end);
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -46,9 +46,7 @@ export default function Results({ events }) {
 
     const year = events.endYear - numYearsToView + 1;
 
-    chart.current.year(year).on("selectYear", (start, end) => {
-      console.log(start, end);
-    });
+    chart.current.year(year);
 
     select(ref.current).datum(events).call(chart.current);
   }, [events]);
@@ -60,13 +58,9 @@ export default function Results({ events }) {
         Math.ceil((window.document.body.clientWidth - 310) / widthOfOneYear)
       );
 
-      console.log("resize", window.document.body.clientWidth, numYearsToView);
-
       chart.current
         .numYearsToView(numYearsToView)
         .windowWidth(window.document.body.clientWidth);
-
-      console.log(chart.current.numYearsToView());
 
       select(ref.current).call(chart.current);
     }
@@ -81,7 +75,7 @@ export default function Results({ events }) {
   return (
     <>
       <Head>
-        <title>History - Cambridge Bumps</title>
+        <title>Historical charts - Cambridge Bumps</title>
         <meta name="description" content="Historical results." />
       </Head>
 
