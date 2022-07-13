@@ -5,6 +5,11 @@ import { useRouter } from "next/router";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 
+import eightsImage from "@/images/eights.png";
+import lentsImage from "@/images/lents.png";
+import maysImage from "@/images/mays.png";
+import townImage from "@/images/town.png";
+
 const events = ["lents", "mays", "eights", "town"];
 const genders = ["men", "women"];
 
@@ -12,16 +17,12 @@ const people = [
   {
     id: "men",
     name: "Men",
-    role: "2022",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    imageUrl: eightsImage.src,
   },
   {
     id: "women",
     name: "Women",
-    role: "2022",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    imageUrl: townImage.src,
   },
 ];
 

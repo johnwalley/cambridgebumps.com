@@ -26,9 +26,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/cheat-sheets">
+                  <a className="rounded-lg px-2 py-1 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                    Cheat sheets
+                  </a>
+                </Link>
+              </li>
+              <li>
                 <Link href="/about">
                   <a className="rounded-lg px-2 py-1 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
-                    How do bumps work?
+                    How do Bumps work?
                   </a>
                 </Link>
               </li>

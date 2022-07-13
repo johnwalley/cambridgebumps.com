@@ -25,45 +25,19 @@ export function Hero() {
           </svg>
           <span className="relative">ridiculous</span>
         </span>{" "}
-        rowing race you&apos;ll ever see
+        rowing race
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
         Latest results, historical charts and more.
       </p>
       <div className="mt-10 flex justify-center space-x-6">
-        <ButtonLink href="/register">Get 6 months free</ButtonLink>
+        <ButtonLink href="/latest">Latest results</ButtonLink>
         <ButtonLink
           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           variant="outline"
         >
-          <svg
-            aria-hidden="true"
-            className="h-3 w-3 flex-none fill-blue-600 group-active:fill-current"
-          >
-            <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
-          </svg>
-          <span className="ml-3">Watch video</span>
+          Cheat sheets
         </ButtonLink>
-      </div>
-      <div className="mt-36 lg:mt-44">
-        <p className="font-display text-base text-slate-900">
-          Events from Cambridge and Oxford
-        </p>
-        <ul className="mt-8 flex items-center justify-center space-x-8 sm:flex-col sm:space-x-0 sm:space-y-10 xl:flex-row xl:space-y-0 xl:space-x-12">
-          <li>
-            <ul className="flex flex-col items-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-12">
-              <li className="flex">Lent Bumps</li>
-              <li className="flex">May Bumps</li>
-              <li className="flex">Summer Eights</li>
-            </ul>
-          </li>
-          <li>
-            <ul className="flex flex-col items-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-12">
-              <li className="flex">Torpids</li>
-              <li className="flex">Town Bumps</li>
-            </ul>
-          </li>
-        </ul>
       </div>
     </Container>
   );
