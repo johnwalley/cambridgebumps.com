@@ -1,5 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import clsx from "clsx";
+import Script from "next/script";
 
 export default function Document(props) {
   let pageProps = props.__NEXT_DATA__?.props?.pageProps;
@@ -10,6 +11,19 @@ export default function Document(props) {
       lang="en"
     >
       <Head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=UA-78521065-2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-78521065-2', { page_path: window.location.pathname });
+  
+        `}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
