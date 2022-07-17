@@ -10,7 +10,6 @@ import lentsImage from "@/images/lents.png";
 import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
 
-const events = ["lents", "mays", "eights", "town"];
 const genders = ["men", "women"];
 
 const longNames = {
