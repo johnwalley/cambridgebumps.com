@@ -1,25 +1,9 @@
-import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Fragment, forwardRef } from "react";
 import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
 
-const longPages = {
-  latest: "Latest",
-  history: "Historical",
-};
-
-const longNames = {
-  lents: "Lent Bumps",
-  mays: "May Bumps",
-  eights: "Summer Eights",
-  torpids: "Torpids",
-  town: "Town Bumps",
-};
-
-const longGenders = {
-  men: "Men",
-  women: "Women",
-};
+import { longGenders, longNames, longPages } from "../constants";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

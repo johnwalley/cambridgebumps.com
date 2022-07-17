@@ -4,13 +4,12 @@ import { useRouter } from "next/router";
 
 import { Header } from "@/components/Header";
 
+import { events } from "../../constants";
+
 import eightsImage from "@/images/eights.png";
 import lentsImage from "@/images/lents.png";
 import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
-
-const events = ["lents", "mays", "eights", "torpids", "town"];
-const genders = ["men", "women"];
 
 const people = [
   {

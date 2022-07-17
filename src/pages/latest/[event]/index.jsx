@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 
 import eightsImage from "@/images/eights.png";
@@ -10,14 +9,7 @@ import lentsImage from "@/images/lents.png";
 import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
 
-const genders = ["men", "women"];
-
-const longNames = {
-  lents: "Lent Bumps",
-  mays: "May Bumps",
-  eights: "Summer Eights",
-  town: "Town Bumps",
-};
+import { genders, longNames } from "../../../constants";
 
 const people = [
   {

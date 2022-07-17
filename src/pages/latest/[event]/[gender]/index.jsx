@@ -5,30 +5,6 @@ import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
 
 import BumpsChart from "react-bumps-chart";
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  HomeIcon,
-} from "@heroicons/react/solid";
-import { Fragment, forwardRef } from "react";
-import Link from "next/link";
-import { Menu, Transition } from "@headlessui/react";
-
-const longNames = {
-  lents: "Lent Bumps",
-  mays: "May Bumps",
-  eights: "Summer Eights",
-  town: "Town Bumps",
-};
-
-const longGenders = {
-  men: "Men",
-  women: "Women",
-};
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Latest({ data }) {
   const router = useRouter();

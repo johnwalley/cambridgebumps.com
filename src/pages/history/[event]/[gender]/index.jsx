@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import { useRouter } from "next/router";
 
 import { Header } from "@/components/Header";
@@ -11,18 +10,6 @@ import { bumpsChart } from "d3-bumps-chart";
 import { useEffect, useRef } from "react";
 
 const widthOfOneYear = 110;
-
-const longNames = {
-  lents: "Lent Bumps",
-  mays: "May Bumps",
-  eights: "Summer Eights",
-  town: "Town Bumps",
-};
-
-const longGenders = {
-  men: "Men",
-  women: "Women",
-};
 
 export default function Results({ events }) {
   const ref = useRef();

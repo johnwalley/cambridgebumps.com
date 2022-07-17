@@ -4,17 +4,10 @@ import { useRouter } from "next/router";
 
 import { Header } from "@/components/Header";
 
+import { genders, longNames } from "../../../constants";
+
 import eightsImage from "@/images/eights.png";
 import townImage from "@/images/town.png";
-
-const genders = ["men", "women"];
-
-const longNames = {
-  lents: "Lent Bumps",
-  mays: "May Bumps",
-  eights: "Summer Eights",
-  town: "Town Bumps",
-};
 
 const people = [
   {
