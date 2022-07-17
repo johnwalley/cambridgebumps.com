@@ -13,6 +13,13 @@ import townImage from "@/images/town.png";
 const events = ["lents", "mays", "eights", "town"];
 const genders = ["men", "women"];
 
+const longNames = {
+  lents: "Lent Bumps",
+  mays: "May Bumps",
+  eights: "Summer Eights",
+  town: "Town Bumps",
+};
+
 const people = [
   {
     id: "men",
@@ -45,6 +52,9 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
                 <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                   Latest results
                 </h2>
+                <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+                  {longNames[event]}
+                </h3>
                 <p className="text-xl text-gray-500">
                   Racing is split into men&apos;s and women&apos;s divisions.
                 </p>
@@ -88,9 +98,10 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
 export async function getStaticPaths() {
   return {
     paths: [
+      { params: { event: "eights" } },
       { params: { event: "lents" } },
       { params: { event: "mays" } },
-      { params: { event: "eights" } },
+      { params: { event: "torpids" } },
       { params: { event: "town" } },
     ],
     fallback: true,
