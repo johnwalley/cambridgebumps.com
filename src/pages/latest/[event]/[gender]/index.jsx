@@ -6,6 +6,8 @@ import { Navigation } from "@/components/Navigation";
 
 import BumpsChart from "react-bumps-chart";
 
+import { longGenders, longNames } from "../../../../constants";
+
 export default function Latest({ data }) {
   const router = useRouter();
   const { event, gender } = router.query;
@@ -17,7 +19,7 @@ export default function Latest({ data }) {
   return (
     <>
       <Head>
-        <title>Latest results - Cambridge Bumps</title>
+        <title>{`Latest results - ${longNames[event]} - ${longGenders[gender]} - Cambridge Bumps`}</title>
       </Head>
       <Header />
 
@@ -41,8 +43,14 @@ export default function Latest({ data }) {
 export async function getStaticPaths() {
   return {
     paths: [
+      { params: { event: "eights", gender: "men" } },
+      { params: { event: "eights", gender: "women" } },
+      { params: { event: "lents", gender: "men" } },
+      { params: { event: "lents", gender: "women" } },
       { params: { event: "mays", gender: "men" } },
       { params: { event: "mays", gender: "women" } },
+      { params: { event: "torpids", gender: "men" } },
+      { params: { event: "torpids", gender: "women" } },
       { params: { event: "town", gender: "men" } },
       { params: { event: "town", gender: "women" } },
     ],

@@ -5,8 +5,6 @@ import { useRouter } from "next/router";
 import { Header } from "@/components/Header";
 
 import eightsImage from "@/images/eights.png";
-import lentsImage from "@/images/lents.png";
-import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
 
 import { genders, longNames } from "../../../constants";
@@ -31,7 +29,7 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
   return (
     <>
       <Head>
-        <title>Latest results - Cambridge Bumps</title>
+        <title>{`Latest results - ${longNames[event]} - Cambridge Bumps`}</title>
       </Head>
       <Header />
 

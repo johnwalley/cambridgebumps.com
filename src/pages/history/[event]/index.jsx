@@ -29,7 +29,7 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
   return (
     <>
       <Head>
-        <title>Historical charts - Cambridge Bumps</title>
+        <title>{`Historical charts - ${longNames[event]} - Cambridge Bumps`}</title>
       </Head>
       <Header />
 

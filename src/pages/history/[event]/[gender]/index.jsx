@@ -9,6 +9,8 @@ import "d3-transition";
 import { bumpsChart } from "d3-bumps-chart";
 import { useEffect, useRef } from "react";
 
+import { longGenders, longNames } from "../../../../constants";
+
 const widthOfOneYear = 110;
 
 export default function Results({ events }) {
@@ -62,8 +64,8 @@ export default function Results({ events }) {
   return (
     <>
       <Head>
-        <title>Historical charts - Cambridge Bumps</title>
-        <meta name="description" content="Historical results." />
+        <title>{`Historical charts - ${longNames[event]} - ${longGenders[gender]} - Cambridge Bumps`}</title>
+        <meta name="description" content="Historical charts." />
       </Head>
 
       <Header />
