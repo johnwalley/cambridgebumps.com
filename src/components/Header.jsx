@@ -89,11 +89,6 @@ function MobileNavigation() {
                     </a>
                   </Link>
                 </li>
-                <li className="border-t border-slate-300/40 pt-4">
-                  <Link href="/login">
-                    <a className="block w-full">Sign in</a>
-                  </Link>
-                </li>
               </Popover.Panel>
             </Transition.Child>
           </Transition.Root>
