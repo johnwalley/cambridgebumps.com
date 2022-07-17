@@ -100,21 +100,24 @@ export default function Latest({ years }) {
 }
 
 export async function getStaticProps(context) {
-  const years = {};
+  return Promise.all(
+    events.map(async (event) => {
+      const res = await fetch(
+        `https://api.cambridgebumps.com/api/history?event=${event}&gender=men`
+      );
 
-  for (const event of events) {
-    const res = await fetch(
-      `https://api.cambridgebumps.com/api/history?event=${event}&gender=men`
-    );
-
-    const data = await res.json();
-
-    years[event] = { startYear: data.startYear, endYear: data.endYear };
-  }
-
-  return {
-    props: {
-      years,
-    },
-  };
+      return await res.json();
+    })
+  ).then((values) => {
+    return {
+      props: {
+        years: Object.fromEntries(
+          events.map((event, i) => [
+            event,
+            { startYear: values[i].startYear, endYear: values[i].endYear },
+          ])
+        ),
+      },
+    };
+  });
 }
