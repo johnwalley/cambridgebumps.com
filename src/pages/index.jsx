@@ -14,7 +14,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { SpeakerphoneIcon, XIcon } from "@heroicons/react/outline";
 
 export default function Home() {
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
 
   return (
     <>
