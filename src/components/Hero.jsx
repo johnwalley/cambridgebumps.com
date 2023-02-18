@@ -33,7 +33,7 @@ export function Hero() {
       <div className="mt-10 flex justify-center space-x-6">
         <ButtonLink href="/latest">Latest results</ButtonLink>
         <ButtonLink
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          href="/cheat-sheets"
           variant="outline"
         >
           Cheat sheets
