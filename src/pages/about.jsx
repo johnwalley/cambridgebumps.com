@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
+import Image from "next/image";
+import image from "@/images/about.jpeg";
 
 import { AuthLayout } from "@/components/AuthLayout";
 import { Header } from "@/components/Header";
@@ -14,9 +15,9 @@ export default function About() {
       <div className="relative bg-white">
         <div className="lg:absolute lg:inset-0">
           <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-            <img
+            <Image
               className="h-56 w-full object-cover lg:absolute lg:h-full"
-              src="https://scontent.fltn3-1.fna.fbcdn.net/v/t31.18172-8/19143930_1310638175723830_6173606070786208712_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=EuuWLojntVcAX8hm-qV&_nc_ht=scontent.fltn3-1.fna&oh=00_AT9IfwuXXdz1PCpLBfGeGm1_Qxd6JdV_7285sngdJluGAg&oe=62F432DE"
+              src={image}
               alt=""
             />
           </div>
