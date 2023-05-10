@@ -12,17 +12,16 @@ export default function Document(props) {
     >
       <Head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=UA-78521065-2"
+          src="https://www.googletagmanager.com/gtag/js?id=G-D36QPGEJ6T"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
-          {`
-  window.dataLayer = window.dataLayer || [];
+          {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-78521065-2', { page_path: window.location.pathname });
-  
-        `}
+
+  gtag('config', 'G-D36QPGEJ6T', { page_path: window.location.pathname });
+`}
         </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
