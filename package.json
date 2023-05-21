@@ -4,8 +4,8 @@
     "dev:cambridge": "npx ncp ./tailwind.cambridge.config.js ./tailwind.config.js && npx ncp ./src/i18n.cambridge.js ./src/i18n.js && npm run dev",
     "dev:oxford": "npx ncp ./tailwind.oxford.config.js ./tailwind.config.js && npx ncp ./src/i18n.oxford.js ./src/i18n.js && npm run dev",
     "dev": "next dev",
-    "build:cambridge": "npx ncp ./tailwind.cambridge.config.js ./tailwind.config.js && npx ncp ./src/i18n.cambridge.js ./src/i18n.js  && npm run build",
-    "build:oxford": "npx ncp ./tailwind.oxford.config.js ./tailwind.config.js && npx ncp ./src/i18n.oxford.js ./src/i18n.js && npm run build",
+    "build:cambridge": "npx ncp ./tailwind.cambridge.config.js ./tailwind.config.js && npx ncp ./src/i18n.cambridge.js ./src/i18n.js && npx npc ./public/favicon.cambridge.ico ./public/favicon.ico && npm run build",
+    "build:oxford": "npx ncp ./tailwind.oxford.config.js ./tailwind.config.js && npx ncp ./src/i18n.oxford.js ./src/i18n.js && npx npc ./public/favicon.oxford.ico ./public/favicon.ico && npm run build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
