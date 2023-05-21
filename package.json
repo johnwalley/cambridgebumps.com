@@ -1,7 +1,11 @@
 {
   "private": true,
   "scripts": {
+    "dev:cambridge": "npx ncp ./tailwind.cambridge.config.js ./tailwind.config.js && npx ncp ./src/i18n.cambridge.js ./src/i18n.js && npm run dev",
+    "dev:oxford": "npx ncp ./tailwind.oxford.config.js ./tailwind.config.js && npx ncp ./src/i18n.oxford.js ./src/i18n.js && npm run dev",
     "dev": "next dev",
+    "build:cambridge": "npx ncp ./tailwind.cambridge.config.js ./tailwind.config.js && npx ncp ./src/i18n.cambridge.js ./src/i18n.js  && npm run build",
+    "build:oxford": "npx ncp ./tailwind.oxford.config.js ./tailwind.config.js && npx ncp ./src/i18n.oxford.js ./src/i18n.js && npm run build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -18,6 +22,7 @@
     "clsx": "^1.2.1",
     "d3-bumps-chart": "^1.1.0",
     "focus-visible": "^5.2.0",
+    "ncp": "^2.0.0",
     "next": "12.2.2",
     "postcss-focus-visible": "^6.0.4",
     "react": "18.2.0",

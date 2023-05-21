@@ -12,7 +12,7 @@ const products = [
     href: "/town-bumps-2022-cheat-sheet.pdf",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
+    imageAlt: "Town Bumps 2022 cheat sheet",
     price: "$35",
     color: "Black",
   },

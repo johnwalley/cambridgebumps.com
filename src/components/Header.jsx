@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { ButtonLink } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
+import { i18n } from "../i18n";
 
 function MobileNavigation() {
   return (
@@ -106,9 +107,13 @@ export function Header() {
           <ul className="flex items-center">
             <li>
               <Link href="/">
-                <a>
+                <a className="flex items-center justify-start">
                   <span className="sr-only">Home</span>
-                  <Logo className="h-10 w-auto" />
+                  <Logo className="h-10 w-auto fill-primary" />
+                  <span className="pl-2 text-lg">
+                    {i18n.name}
+                    <span className="font-bold text-primary">Bumps</span>
+                  </span>
                 </a>
               </Link>
             </li>
