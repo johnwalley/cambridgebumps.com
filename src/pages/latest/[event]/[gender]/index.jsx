@@ -27,7 +27,7 @@ export default function Latest({ data }) {
         <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
           <div className="flex flex-col items-center">
             <Navigation page="latest" event={event} gender={gender} />
-            <span className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <span className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl pb-1">
               {data.startYear}
             </span>
             <div className="sm:w-[520px]">

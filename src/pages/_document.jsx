@@ -12,7 +12,7 @@ export default function Document(props) {
     >
       <Head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-D36QPGEJ6T"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -20,7 +20,7 @@ export default function Document(props) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-D36QPGEJ6T', { page_path: window.location.pathname });
+  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG}', { page_path: window.location.pathname });
 `}
         </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
