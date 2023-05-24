@@ -7,6 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import BumpsChart from "react-bumps-chart";
 
 import { longGenders, longNames } from "../../../../constants";
+import { i18n } from "../../../../i18n";
 
 export default function Latest({ data }) {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Latest({ data }) {
   return (
     <>
       <Head>
-        <title>{`Latest results - ${longNames[event]} - ${longGenders[gender]} - Cambridge Bumps`}</title>
+        <title>{`Latest results - ${longNames[event]} - ${longGenders[gender]} - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
 
@@ -27,7 +28,7 @@ export default function Latest({ data }) {
         <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
           <div className="flex flex-col items-center">
             <Navigation page="latest" event={event} gender={gender} />
-            <span className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl pb-1">
+            <span className="pb-1 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
               {data.startYear}
             </span>
             <div className="sm:w-[520px]">

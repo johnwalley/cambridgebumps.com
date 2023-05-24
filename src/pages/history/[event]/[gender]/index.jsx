@@ -10,6 +10,7 @@ import { bumpsChart } from "d3-bumps-chart";
 import { useEffect, useRef } from "react";
 
 import { longGenders, longNames } from "../../../../constants";
+import { i18n } from "../../../../i18n";
 
 const widthOfOneYear = 110;
 
@@ -64,7 +65,7 @@ export default function Results({ events }) {
   return (
     <>
       <Head>
-        <title>{`Historical charts - ${longNames[event]} - ${longGenders[gender]} - Cambridge Bumps`}</title>
+        <title>{`Historical charts - ${longNames[event]} - ${longGenders[gender]} - ${i18n.name} Bumps`}</title>
         <meta name="description" content="Historical charts." />
       </Head>
 

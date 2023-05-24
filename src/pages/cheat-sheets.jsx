@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AuthLayout } from "@/components/AuthLayout";
 import { Header } from "@/components/Header";
 import townBumpsCheatSheetImage from "@/images/town-bumps-2022-cheat-sheet.png";
+import { i18n } from "../i18n";
 
 const products = [
   {
@@ -22,7 +23,7 @@ export default function CheatSheets() {
   return (
     <>
       <Head>
-        <title>Cheat sheets - Cambridge Bumps</title>
+        <title>{`Cheat sheets - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
       <main>
@@ -31,7 +32,10 @@ export default function CheatSheets() {
             <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
               Guides to the crews taking part.
             </h2>
-            <p>Identify crew colours and look up statistics, division times and more.</p>
+            <p>
+              Identify crew colours and look up statistics, division times and
+              more.
+            </p>
 
             <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {products.map((product) => (
@@ -61,7 +65,7 @@ export default function CheatSheets() {
                       <a href={product.href} download>
                         <button
                           type="button"
-                          className="inline-flex items-center rounded-md border border-transparent bg-cambridge px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cambridge focus:outline-none focus:ring-2 focus:ring-cambridge focus:ring-offset-2"
+                          className="bg-cambridge hover:bg-cambridge focus:ring-cambridge inline-flex items-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                           Download
                         </button>

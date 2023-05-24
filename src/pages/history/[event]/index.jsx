@@ -8,6 +8,7 @@ import { genders, longNames } from "../../../constants";
 
 import eightsImage from "@/images/eights.png";
 import townImage from "@/images/town.png";
+import { i18n } from "../../../i18n";
 
 const people = [
   {
@@ -29,7 +30,7 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
   return (
     <>
       <Head>
-        <title>{`Historical charts - ${longNames[event]} - Cambridge Bumps`}</title>
+        <title>{`Historical charts - ${longNames[event]} - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
 

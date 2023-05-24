@@ -10,6 +10,7 @@ import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
 
 import { events } from "../../constants";
+import { i18n } from "../../i18n";
 
 const people = [
   {
@@ -45,7 +46,7 @@ export default function Latest({ years }) {
   return (
     <>
       <Head>
-        <title>Latest results - Cambridge Bumps</title>
+        <title>{`Latest results - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
 

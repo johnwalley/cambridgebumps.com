@@ -10,6 +10,7 @@ import eightsImage from "@/images/eights.png";
 import lentsImage from "@/images/lents.png";
 import maysImage from "@/images/mays.png";
 import townImage from "@/images/town.png";
+import { i18n } from "../../i18n";
 
 const people = [
   {
@@ -45,7 +46,7 @@ export default function Latest({ years }) {
   return (
     <>
       <Head>
-        <title>Historical charts - Cambridge Bumps</title>
+        <title>{`Historical charts - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
 

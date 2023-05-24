@@ -4,12 +4,13 @@ import image from "@/images/about.jpeg";
 
 import { AuthLayout } from "@/components/AuthLayout";
 import { Header } from "@/components/Header";
+import { i18n } from "../i18n";
 
 export default function About() {
   return (
     <>
       <Head>
-        <title>How do bumps work? - Cambridge Bumps</title>
+        <title>{`How do bumps work? - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
       <div className="relative bg-white">
@@ -25,7 +26,7 @@ export default function About() {
         <div className="relative px-4 pt-4 pb-16 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:pt-0">
           <div className="lg:col-start-2 lg:pl-8">
             <div className="mx-auto max-w-prose text-base lg:ml-auto lg:mr-0 lg:max-w-lg">
-              <h2 className="font-semibold uppercase leading-6 tracking-wide text-cambridge">
+              <h2 className="text-cambridge font-semibold uppercase leading-6 tracking-wide">
                 Information
               </h2>
               <h3 className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl">
