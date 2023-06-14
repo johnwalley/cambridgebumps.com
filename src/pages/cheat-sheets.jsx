@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Footer } from "@/components/Footer";
 
-import { AuthLayout } from "@/components/AuthLayout";
 import { Header } from "@/components/Header";
 import townBumpsCheatSheetImage from "@/images/town-bumps-2022-cheat-sheet.png";
 import { i18n } from "../i18n";
@@ -78,6 +78,7 @@ export default function CheatSheets() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

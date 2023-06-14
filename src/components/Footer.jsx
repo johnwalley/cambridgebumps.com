@@ -39,6 +39,13 @@ export function Footer() {
                   </a>
                 </Link>
               </li>
+              <li>
+                <Link href="/vocabulary">
+                  <a className="rounded-lg px-2 py-1 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                    Vocabulary
+                  </a>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

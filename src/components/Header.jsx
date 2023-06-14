@@ -90,6 +90,13 @@ function MobileNavigation() {
                     </a>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/vocabulary">
+                    <a className="block w-full" onClick={() => close()}>
+                      Vocabulary
+                    </a>
+                  </Link>
+                </li>
               </Popover.Panel>
             </Transition.Child>
           </Transition.Root>
@@ -145,7 +152,13 @@ export function Header() {
                 </a>
               </Link>
             </li>
-
+            <li className="ml-6 hidden lg:block">
+              <Link href="/vocabulary">
+                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                  Vocabulary
+                </a>
+              </Link>
+            </li>
             <li className="ml-auto -mr-1 lg:hidden">
               <MobileNavigation />
             </li>
