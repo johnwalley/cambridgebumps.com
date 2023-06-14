@@ -8,6 +8,7 @@ const navigation = {
     { name: "Cheat sheets", href: "/cheat-sheets" },
     { name: "How do Bumps work?", href: "/about" },
     { name: "Vocabulary", href: "/vocabulary" },
+    { name: "Bumps mayhem", href: "/videos" },
   ],
   social: [
     {
