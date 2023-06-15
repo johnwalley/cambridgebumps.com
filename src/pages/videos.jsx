@@ -47,7 +47,7 @@ export default function Videos() {
   return (
     <>
       <Head>
-        <title>{`Rowing Mayhem: Crashes and Bumps Caught on Camera! - ${i18n.name} Bumps`}</title>
+        <title>{`Rowing mayhem: Crashes and Bumps Caught on Camera! - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
       <main>
@@ -55,7 +55,7 @@ export default function Videos() {
           <div className="mx-auto max-w-7xl px-6 py-2 sm:py-2 lg:px-8 lg:py-4">
             <div className="mx-auto">
               <h2 className="pb-4 text-2xl font-bold leading-10 tracking-tight text-gray-900">
-                Rowing Mayhem: Crashes and bumps caught on camera!
+                Rowing mayhem: Crashes and bumps caught on camera!
               </h2>
               <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
                 {recordings.map((recording) => (
