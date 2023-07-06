@@ -1,5 +1,6 @@
 import "focus-visible";
 import "@/styles/tailwind.css";
+import "@/styles/main.css";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
