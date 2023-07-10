@@ -15,6 +15,8 @@ export default function Statistics({ data }) {
     return <p>Loading</p>;
   }
 
+  const currentYear = data.sort((a, b) => b.year - a.year)[0].year;
+
   return (
     <>
       <Head>
@@ -25,10 +27,9 @@ export default function Statistics({ data }) {
       <main>
         <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
           <div className="flex flex-col items-center align-middle">
-            <h1>Number of headships</h1>
+            <h1>Number of boats</h1>
             <div>
-              Number of times finished Head of the River (NHd) in{" "}
-              {longNames[event]}, and year of last Headship
+              Colleges/clubs in order of number of boats racing this week.
             </div>
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
@@ -43,39 +44,33 @@ export default function Statistics({ data }) {
                     scope="col"
                     className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                   >
-                    NHd
+                    No.
                   </th>
                   <th
                     scope="col"
                     className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                   >
-                    Year
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                  >
-                    Crews
+                    College/club
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {data.map((d, i) => (
-                  <tr key={i}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-500 sm:pl-0">
-                      {i + 1}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm">
-                      {d.count}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm">
-                      {d.year}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm">
-                      {d.crew}
-                    </td>
-                  </tr>
-                ))}
+                {data
+                  .filter((d) => d.year === currentYear)
+                  .sort((a, b) => b.count - a.count)
+                  .map((d, i) => (
+                    <tr key={i}>
+                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-500 sm:pl-0">
+                        {i + 1}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm">
+                        {d.count}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm">
+                        {d.club}
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
@@ -107,7 +102,7 @@ export async function getStaticProps(context) {
   const { event, gender } = context.params;
 
   const res = await fetch(
-    `https://api.cambridgebumps.com/api/stats/nhead?event=${event}&gender=${gender}`
+    `https://api.cambridgebumps.com/api/stats/ncrews?event=${event}&gender=${gender}`
   );
 
   const data = await res.json();

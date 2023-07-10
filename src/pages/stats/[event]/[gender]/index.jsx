@@ -20,6 +20,10 @@ const stats = [
     id: "nhead",
     name: "Number of headships",
   },
+  {
+    id: "ncrew",
+    name: "Number of boats",
+  },
 ];
 
 export default function Statistics() {
