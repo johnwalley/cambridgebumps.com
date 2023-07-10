@@ -21,7 +21,7 @@ const stats = [
     name: "Number of headships",
   },
   {
-    id: "ncrew",
+    id: "ncrews",
     name: "Number of boats",
   },
 ];
