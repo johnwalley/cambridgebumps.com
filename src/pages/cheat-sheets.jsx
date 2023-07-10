@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Footer } from "@/components/Footer";
 
 import { Header } from "@/components/Header";
-import townBumpsCheatSheetImage from "@/images/town-bumps-2022-cheat-sheet.png";
+import townBumpsCheatSheet2022Image from "@/images/town-bumps-2022-cheat-sheet.png";
+import townBumpsCheatSheet2023Image from "@/images/town-bumps-2023-cheat-sheet.png";
 import { i18n } from "../i18n";
 
 const products = [
@@ -11,11 +12,15 @@ const products = [
     id: 1,
     name: "Town Bumps 2022",
     href: "/town-bumps-2022-cheat-sheet.pdf",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageSrc: townBumpsCheatSheet2022Image,
     imageAlt: "Town Bumps 2022 cheat sheet",
-    price: "$35",
-    color: "Black",
+  },
+  {
+    id: 2,
+    name: "Town Bumps 2023",
+    href: "/town-bumps-2023-cheat-sheet.pdf",
+    imageSrc: townBumpsCheatSheet2023Image,
+    imageAlt: "Town Bumps 2023 cheat sheet",
   },
 ];
 
@@ -42,7 +47,7 @@ export default function CheatSheets() {
                 <div key={product.id} className="group relative">
                   <div className="min-h-80 lg:aspect-none aspect-[210/297] w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 ">
                     <Image
-                      src={townBumpsCheatSheetImage}
+                      src={product.imageSrc}
                       alt=""
                       //width={1558}
                       //height={946}
