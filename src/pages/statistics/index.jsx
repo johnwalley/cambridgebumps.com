@@ -70,7 +70,7 @@ export default function Latest({ years }) {
                 >
                   {people.map((person) => (
                     <li key={person.name}>
-                      <Link href={`stats/${person.id}`}>
+                      <Link href={`statistics/${person.id}`}>
                         <a>
                           <div className="flex items-center space-x-4 lg:space-x-6">
                             <img

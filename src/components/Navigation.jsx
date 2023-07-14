@@ -78,6 +78,16 @@ export function Navigation({ page, event, gender }) {
                         </MyLink>
                       )}
                     </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <MyLink
+                          href={`/statistics/${event}/${gender}`}
+                          active={active}
+                        >
+                          {longPages["statistics"]}
+                        </MyLink>
+                      )}
+                    </Menu.Item>
                   </div>
                 </Menu.Items>
               </Transition>

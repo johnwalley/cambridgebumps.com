@@ -28,7 +28,7 @@ export function Hero() {
         rowing race
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Latest results, historical charts and more.
+        Latest results, historical charts, statistics, and more.
       </p>
       <div className="mt-10 flex justify-center space-x-6">
         <ButtonLink href="/latest">Latest results</ButtonLink>

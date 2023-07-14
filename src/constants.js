@@ -14,6 +14,7 @@ export const longNames = {
 export const longPages = {
   latest: "Latest",
   history: "Historical",
+  statistics: "Statistics",
 };
 
 export const events = ["lents", "mays", "eights", "torpids", "town"];

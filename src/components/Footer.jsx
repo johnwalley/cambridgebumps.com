@@ -5,6 +5,7 @@ const navigation = {
   main: [
     { name: "Latest results", href: "/latest" },
     { name: "Historical charts", href: "/history" },
+    { name: "Statistics", href: "/statistics" },
     { name: "Cheat sheets", href: "/cheat-sheets" },
     { name: "How do Bumps work?", href: "/about" },
     { name: "Vocabulary", href: "/vocabulary" },

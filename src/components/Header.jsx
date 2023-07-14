@@ -77,6 +77,13 @@ function MobileNavigation() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/statistics">
+                    <a className="block w-full" onClick={() => close()}>
+                      Statistics
+                    </a>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/cheat-sheets">
                     <a className="block w-full" onClick={() => close()}>
                       Cheat sheets
@@ -142,6 +149,13 @@ export function Header() {
               <Link href="/history">
                 <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
                   Historical charts
+                </a>
+              </Link>
+            </li>
+            <li className="ml-6 hidden lg:block">
+              <Link href="/statistics">
+                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                  Statistics
                 </a>
               </Link>
             </li>
