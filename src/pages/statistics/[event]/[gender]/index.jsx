@@ -37,7 +37,7 @@ export default function Statistics({ data }) {
   const router = useRouter();
   const { event, gender } = router.query;
 
-  console.log(data);
+  console.log(event, gender, data);
 
   return (
     <>
@@ -114,10 +114,10 @@ export default function Statistics({ data }) {
                           </Link>
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm">
-                          {data.crew_stats?.[d.id]?.[d.field]}
+                          {data?.crew_stats?.[d.id]?.[d.field]}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm">
-                          {data.crew_stats?.[d.id]?.["crew"]}
+                          {data?.crew_stats?.[d.id]?.["crew"]}
                         </td>
                       </tr>
                     ))}
@@ -175,10 +175,10 @@ export default function Statistics({ data }) {
                           </Link>
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm">
-                          {data.college_stats?.[d.id]?.[d.field]}
+                          {data?.college_stats?.[d.id]?.[d.field]}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm">
-                          {data.college_stats?.[d.id]?.["club"]}
+                          {data?.college_stats?.[d.id]?.["club"]}
                         </td>
                       </tr>
                     ))}
