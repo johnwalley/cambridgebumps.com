@@ -46,7 +46,7 @@ export default function Latest({ years }) {
   return (
     <>
       <Head>
-        <title>{`Statisitcs - ${i18n.name} Bumps`}</title>
+        <title>{`Statistics - ${i18n.name} Bumps`}</title>
       </Head>
       <Header />
 
