@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 const faqs = [
   {
     question: "Blades",
-    answer: `If a crew bumps every day then they are awarded blades.`,
+    answer: `If a crew bumps, or are head of the river every day then they are awarded blades.`,
   },
   {
     question: "Bank party",
