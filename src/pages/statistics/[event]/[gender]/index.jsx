@@ -37,8 +37,6 @@ export default function Statistics({ data }) {
   const router = useRouter();
   const { event, gender } = router.query;
 
-  console.log(event, gender, data);
-
   return (
     <>
       <Head>
