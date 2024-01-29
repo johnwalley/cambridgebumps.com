@@ -34,11 +34,7 @@ export default function About() {
                   How do Bumps work?
                 </h3>
                 <p className="mt-8 text-lg text-gray-800">
-                  The River Cam is an awful place to hold a rowing event. Narrow
-                  and winding, it&apos;s simply not possible to stage a
-                  conventional side-by-side regatta; so Bumps racing evolved in
-                  the 1820s to let large numbers of boats to compete against one
-                  another.
+                  {i18n.about}
                 </p>
                 <p className="mt-8 text-lg text-gray-800">
                   Men and women race separately. Boats are split into multiple
