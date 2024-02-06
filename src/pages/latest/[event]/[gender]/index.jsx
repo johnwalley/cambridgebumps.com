@@ -30,13 +30,9 @@ export default function Latest({ data }) {
       "@context": "https://schema.org/",
       "@type": "SportsEvent",
       "sport": "Rowing",
-      "name": "${longNames[event]}",
+      "name": "${longNames[event]} - ${longGenders[gender]}",
       "location": "${{lents: "Cambridge", mays: "Cambridge", eights: "Oxford", torpids: "Oxford", town: "Cambridge"}[event]}",
-      "startDate": "${data.startYear}",
-      "subEvent": {
-        "@type": "SportsEvent",
-        "name": "${longGenders[gender]}"
-      }
+      "startDate": "${data.startYear}"
     }
   `,
     };
