@@ -22,8 +22,6 @@ export default function Latest({ data }) {
     return <p>Loading</p>;
   }
 
-  console.log(data)
-
   function addEventJsonLd() {
     return {
       __html: `{
@@ -42,6 +40,10 @@ export default function Latest({ data }) {
     <>
       <Head>
         <title>{`Latest results - ${longNames[event]} - ${longGenders[gender]} - ${i18n.name} Bumps`}</title>
+        <meta
+          name="description"
+          content={`Latest ${longNames[event]} - ${longGenders[gender]} results.`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={addEventJsonLd()}

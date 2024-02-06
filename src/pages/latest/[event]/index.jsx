@@ -31,12 +31,16 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
     <>
       <Head>
         <title>{`Latest results - ${longNames[event]} - ${i18n.name} Bumps`}</title>
+        <meta
+          name="description"
+          content={`Latest ${longNames[event]} results.`}
+        />
       </Head>
       <Header />
 
       <main>
         <div className="bg-white">
-          <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
+          <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8 lg:py-4">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
               <div className="space-y-5 sm:space-y-4">
                 <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -104,16 +108,16 @@ export async function getStaticProps(context) {
   return Promise.all(
     genders.map(async (gender) => {
       const res = await fetch(
-        `https://api.cambridgebumps.com/api/latest?event=${event}&gender=${gender}`
+        `https://api.cambridgebumps.com/api/latest?event=${event}&gender=${gender}`,
       );
 
       return await res.json();
-    })
+    }),
   ).then((values) => {
     return {
       props: {
         years: Object.fromEntries(
-          genders.map((gender, i) => [gender, values[i].endYear])
+          genders.map((gender, i) => [gender, values[i].endYear]),
         ),
       },
     };
