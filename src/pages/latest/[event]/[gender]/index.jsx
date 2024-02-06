@@ -22,10 +22,31 @@ export default function Latest({ data }) {
     return <p>Loading</p>;
   }
 
+  function addEventJsonLd() {
+    return {
+      __html: `{
+      "@context": "https://schema.org/",
+      "@type": "SportsEvent",
+      "sport": "Rowing",
+      "name": "${longNames[event]}",
+      "subEvent": {
+        "@type": "SportsEvent",
+        "name": "${longGenders[gender]}"
+      }
+    }
+  `,
+    };
+  }
+
   return (
     <>
       <Head>
         <title>{`Latest results - ${longNames[event]} - ${longGenders[gender]} - ${i18n.name} Bumps`}</title>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addEventJsonLd()}
+          key="event-jsonld"
+        />
       </Head>
       <Header />
 
