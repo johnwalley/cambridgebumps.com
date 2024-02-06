@@ -22,6 +22,8 @@ export default function Latest({ data }) {
     return <p>Loading</p>;
   }
 
+  console.log(data)
+
   function addEventJsonLd() {
     return {
       __html: `{
@@ -29,6 +31,8 @@ export default function Latest({ data }) {
       "@type": "SportsEvent",
       "sport": "Rowing",
       "name": "${longNames[event]}",
+      "location": "${{lents: "Cambridge", mays: "Cambridge", eights: "Oxford", torpids: "Oxford", town: "Cambridge"}[event]}",
+      "startDate": "${data.startYear}",
       "subEvent": {
         "@type": "SportsEvent",
         "name": "${longGenders[gender]}"
