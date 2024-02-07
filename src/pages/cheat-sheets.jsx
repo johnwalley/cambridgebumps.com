@@ -70,7 +70,7 @@ export default function CheatSheets() {
                       <a href={product.href} download>
                         <button
                           type="button"
-                          className="bg-cambridge hover:bg-cambridge focus:ring-cambridge inline-flex items-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+                          className="bg-primary hover:bg-primary focus:ring-primary inline-flex items-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                           Download
                         </button>

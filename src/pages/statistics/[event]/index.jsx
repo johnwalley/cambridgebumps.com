@@ -66,7 +66,7 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
                             />
                             <div className="space-y-1 text-lg font-medium leading-6">
                               <h3>{person.name}</h3>
-                              <p className="text-cambridge">
+                              <p className="text-primary">
                                 {years[person.id]}
                               </p>
                             </div>
