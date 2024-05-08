@@ -50,7 +50,7 @@ export function Footer() {
               <Link
                 href={item.href}
                 className="text-sm leading-6 text-gray-600 hover:text-gray-900"
-              >
+                legacyBehavior>
                 {item.name}
               </Link>
             </div>

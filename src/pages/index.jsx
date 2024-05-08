@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{i18n.name} Bumps</title>
+        <title>{`${i18n.name} Bumps`}</title>
         <meta
           name="description"
           content="Cambridge and Oxford Bumps results and charts."
@@ -35,10 +35,10 @@ export default function Home() {
       {showBanner && (
         <div className="fixed inset-x-0 bottom-0 pb-2 sm:pb-5">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="bg-primary rounded-lg p-2 shadow-lg sm:p-3">
+            <div className="rounded-lg bg-primary p-2 shadow-lg sm:p-3">
               <div className="flex flex-wrap items-center justify-between">
                 <div className="flex w-0 flex-1 items-center">
-                  <span className="bg-primary flex rounded-lg p-2">
+                  <span className="flex rounded-lg bg-primary p-2">
                     <SpeakerphoneIcon
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
@@ -53,16 +53,17 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
-                  <Link href="/latest/town">
-                    <a className="text-primary flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium shadow-sm">
-                      Latest results
-                    </a>
+                  <Link
+                    href="/latest/town"
+                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-primary shadow-sm"
+                  >
+                    Latest results
                   </Link>
                 </div>
                 <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
                   <button
                     type="button"
-                    className="hover:bg-primary -mr-1 flex rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-white"
+                    className="-mr-1 flex rounded-md p-2 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-white"
                     onClick={() => {
                       setShowBanner(false);
                     }}

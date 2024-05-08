@@ -12,18 +12,18 @@ function classNames(...classes) {
 const MyLink = forwardRef((props, ref) => {
   let { href, active, children, ...rest } = props;
   return (
-    <Link href={href}>
-      <a
-        ref={ref}
-        {...rest}
-        className={classNames(
-          active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-          "block px-4 py-2 text-sm"
-        )}
-      >
-        {children}
-      </a>
-    </Link>
+    (<Link
+      href={href}
+      ref={ref}
+      {...rest}
+      className={classNames(
+        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+        "block px-4 py-2 text-sm"
+      )}>
+
+      {children}
+
+    </Link>)
   );
 });
 

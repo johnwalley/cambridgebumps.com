@@ -63,52 +63,52 @@ function MobileNavigation() {
                 className="absolute inset-x-0 top-full mt-4 origin-top space-y-4 rounded-2xl bg-white p-6 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
               >
                 <li>
-                  <Link href="/latest">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/latest" className="block w-full" onClick={() => close()}>
+                    
                       Latest results
-                    </a>
+                    
                   </Link>
                 </li>
                 <li>
-                  <Link href="/history">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/history" className="block w-full" onClick={() => close()}>
+                    
                       Historical charts
-                    </a>
+                    
                   </Link>
                 </li>
                 <li>
-                  <Link href="/statistics">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/statistics" className="block w-full" onClick={() => close()}>
+                    
                       Statistics
-                    </a>
+                    
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cheat-sheets">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/cheat-sheets" className="block w-full" onClick={() => close()}>
+                    
                       Cheat sheets
-                    </a>
+                    
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/about" className="block w-full" onClick={() => close()}>
+                    
                       How do Bumps work?
-                    </a>
+                    
                   </Link>
                 </li>
                 <li>
-                  <Link href="/vocabulary">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/vocabulary" className="block w-full" onClick={() => close()}>
+                    
                       Vocabulary
-                    </a>
+                    
                   </Link>
                 </li>
                 <li>
-                  <Link href="/videos">
-                    <a className="block w-full" onClick={() => close()}>
+                  <Link href="/videos" className="block w-full" onClick={() => close()}>
+                    
                       Bumps mayhem
-                    </a>
+                    
                   </Link>
                 </li>
               </Popover.Panel>
@@ -127,64 +127,78 @@ export function Header() {
         <nav className="relative z-50 text-sm">
           <ul className="flex items-center">
             <li>
-              <Link href="/">
-                <a className="flex items-center justify-start">
-                  <span className="sr-only">Home</span>
-                  <Logo className="h-10 w-auto fill-primary" />
-                  <span className="pl-2 text-lg">
-                    {i18n.name}
-                    <span className="font-bold text-primary">Bumps</span>
-                  </span>
-                </a>
+              <Link href="/" className="flex items-center justify-start">
+
+                <span className="sr-only">Home</span>
+                <Logo className="h-10 w-auto fill-primary" />
+                <span className="pl-2 text-lg">
+                  {i18n.name}
+                  <span className="font-bold text-primary">Bumps</span>
+                </span>
+
               </Link>
             </li>
             <li className="ml-12 hidden lg:block">
-              <Link href="/latest">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/latest"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   Latest results
-                </a>
+                
               </Link>
             </li>
             <li className="ml-6 hidden lg:block">
-              <Link href="/history">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/history"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   Historical charts
-                </a>
+                
               </Link>
             </li>
             <li className="ml-6 hidden lg:block">
-              <Link href="/statistics">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/statistics"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   Statistics
-                </a>
+                
               </Link>
             </li>
             <li className="ml-6 hidden lg:block">
-              <Link href="/cheat-sheets">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/cheat-sheets"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   Cheat sheets
-                </a>
+                
               </Link>
             </li>
             <li className="ml-6 hidden lg:block">
-              <Link href="/about">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/about"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   How do Bumps work?
-                </a>
+                
               </Link>
             </li>
             <li className="ml-6 hidden lg:block">
-              <Link href="/vocabulary">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/vocabulary"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   Vocabulary
-                </a>
+                
               </Link>
             </li>
             <li className="ml-6 hidden lg:block">
-              <Link href="/videos">
-                <a className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+              <Link
+                href="/videos"
+                className="rounded-lg py-1 px-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+                
                   Bumps mayhem
-                </a>
+                
               </Link>
             </li>
             <li className="ml-auto -mr-1 lg:hidden">

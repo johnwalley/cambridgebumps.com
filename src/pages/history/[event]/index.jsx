@@ -27,63 +27,61 @@ export default function Latest({ years = { men: 2022, women: 2022 } }) {
   const router = useRouter();
   const { event } = router.query;
 
-  return (
-    <>
-      <Head>
-        <title>{`Historical charts - ${longNames[event]} - ${i18n.name} Bumps`}</title>
-      </Head>
-      <Header />
+  return <>
+    <Head>
+      <title>{`Historical charts - ${longNames[event]} - ${i18n.name} Bumps`}</title>
+    </Head>
+    <Header />
 
-      <main>
-        <div className="bg-white">
-          <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
-              <div className="space-y-5 sm:space-y-4">
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  Historical charts
-                </h2>
-                <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-                  {longNames[event]}
-                </h3>
-                <p className="text-xl text-gray-500">
-                  Racing is split into men&apos;s and women&apos;s divisions.
-                </p>
-              </div>
-              <div className="lg:col-span-2">
-                <ul
-                  role="list"
-                  className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8"
-                >
-                  {people.map((person) => (
-                    <li key={person.name}>
-                      <Link href={`${event}/${person.id}`}>
-                        <a>
-                          <div className="flex items-center space-x-4 lg:space-x-6">
-                            <img
-                              className="h-16 w-16 rounded-full lg:h-20 lg:w-20"
-                              src={person.imageUrl}
-                              alt=""
-                            />
-                            <div className="space-y-1 text-lg font-medium leading-6">
-                              <h3>{person.name}</h3>
-                              <p className="text-primary">
-                                {years[person.id].startYear} -{" "}
-                                {years[person.id].endYear}
-                              </p>
-                            </div>
-                          </div>
-                        </a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+    <main>
+      <div className="bg-white">
+        <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
+            <div className="space-y-5 sm:space-y-4">
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Historical charts
+              </h2>
+              <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+                {longNames[event]}
+              </h3>
+              <p className="text-xl text-gray-500">
+                Racing is split into men&apos;s and women&apos;s divisions.
+              </p>
+            </div>
+            <div className="lg:col-span-2">
+              <ul
+                role="list"
+                className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8"
+              >
+                {people.map((person) => (
+                  <li key={person.name}>
+                    <Link href={`${event}/${person.id}`}>
+
+                      <div className="flex items-center space-x-4 lg:space-x-6">
+                        <img
+                          className="h-16 w-16 rounded-full lg:h-20 lg:w-20"
+                          src={person.imageUrl}
+                          alt=""
+                        />
+                        <div className="space-y-1 text-lg font-medium leading-6">
+                          <h3>{person.name}</h3>
+                          <p className="text-primary">
+                            {years[person.id].startYear} -{" "}
+                            {years[person.id].endYear}
+                          </p>
+                        </div>
+                      </div>
+
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-      </main>
-    </>
-  );
+      </div>
+    </main>
+  </>;
 }
 
 export async function getStaticPaths() {
