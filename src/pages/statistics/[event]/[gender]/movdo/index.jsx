@@ -25,7 +25,7 @@ export default function Statistics({ data }) {
       <main>
         <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 lg:py-4">
           <div className="flex flex-col items-center align-middle">
-            <h1>Biggest fall</h1>
+            <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Biggest fall</h1>
             <div>
               Crews in order of biggest fall during {longNames[event]},
               and (most recent) year
