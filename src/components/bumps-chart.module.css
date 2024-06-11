@@ -1,0 +1,5 @@
+.chart {
+  --react-bumps-chart-unselected-opacity: 0.3;
+  --react-bumps-chart-stroke-width: 1px;
+  --react-bumps-chart-stroke-width-active: 1px;
+}
