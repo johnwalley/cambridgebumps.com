@@ -82166,10 +82166,10 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
         [0, -1, 1, 0, 0, -1, 1, 0, 0, -1, 1, 0, -1, 1, -1, 1, -1],
         [1, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, -1, 1],
         [0, -1, 1, -1, 1, 0, -1, 1, 0, -1, 1, 0, 0, 0, -1, 1, -1],
@@ -82200,22 +82200,22 @@
     "finish": [
       [
         "Jesus",
-        "Caius",
         "LMBC",
-        "Newnham",
+        "Caius",
         "Emmanuel",
+        "Newnham",
         "Churchill",
         "Pembroke",
         "Trinity Hall",
-        "Downing",
         "St Catharine's",
-        "Fitzwilliam",
+        "Downing",
         "Queens'",
-        "Christ's",
+        "Fitzwilliam",
         "1st and 3rd",
+        "Christ's",
         "Clare",
-        "King's",
-        "Magdalene"
+        "Magdalene",
+        "King's"
       ],
       [
         "Peterhouse",
@@ -82288,9 +82288,9 @@
     ],
     "completed": [
       [true, true, true, true, true],
-      [true, true, true, true, true],
-      [true, true, true, true, true],
-      [true, true, true, true, true]
+      [false, false, false, false, false],
+      [false, false, false, false, false],
+      [false, false, false, false, false]
     ]
   },
   {
