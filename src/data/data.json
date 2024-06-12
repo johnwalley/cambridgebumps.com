@@ -81943,12 +81943,12 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rururururrrur rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rururururrrur uuururuurur rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, -1, 1],
+        [0, -1, 1, 0, -1, 1, -1, 1, 0, -1, 1, 0, -1, 1, -1, 1, -1],
+        [1, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, -1, 1],
         [0, -1, 1, -1, 1, 0, 0, -1, 1, -3, -1, 1, 3, 0, -1, 1, -1],
         [-1, 2, 0, 0, 0, -1, 1, 0, 0]
       ],
@@ -81996,25 +81996,25 @@
       ],
       [
         "Hughes Hall",
-        "Trinity Hall",
         "Fitzwilliam",
+        "Trinity Hall",
         "Christ's",
-        "Corpus Christi",
         "Wolfson",
-        "Girton",
+        "Corpus Christi",
         "Churchill",
+        "Girton",
         "Emmanuel 2",
-        "Downing 2",
         "Homerton",
+        "Downing 2",
         "Pembroke 2",
-        "1st and 3rd 2",
         "Jesus 2",
-        "St Edmund's",
+        "1st and 3rd 2",
         "St Catharine's 2",
-        "Clare 2"
+        "St Edmund's",
+        "Sidney Sussex"
       ],
       [
-        "Sidney Sussex",
+        "Clare 2",
         "Magdalene 2",
         "Darwin",
         "Queens' 2",
@@ -82064,7 +82064,7 @@
       ]
     ],
     "completed": [
-      [false, false, true, true, true],
+      [false, true, true, true, true],
       [false, false, false, false, false],
       [false, false, false, false, false],
       [false, false, false, false, false]
@@ -82166,12 +82166,12 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, -1, 1],
+        [0, -1, 1, 0, 0, -1, 1, 0, 0, -1, 1, 0, -1, 1, -1, 1, -1],
+        [1, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, -1, 1],
         [0, -1, 1, -1, 1, 0, -1, 1, 0, -1, 1, 0, 0, 0, -1, 1, -1],
         [-1, 2, 0, -1, 1, -1, 1, 0, 0]
       ],
@@ -82219,25 +82219,25 @@
       ],
       [
         "Peterhouse",
-        "Girton",
         "Sidney Sussex",
+        "Girton",
         "Homerton",
         "Jesus 2",
-        "Newnham 2",
         "Selwyn",
+        "Newnham 2",
         "Lucy Cavendish",
         "Wolfson",
-        "Darwin",
         "Emmanuel 2",
+        "Darwin",
         "Murray Edwards",
-        "Pembroke 2",
         "Corpus Christi",
-        "Robinson",
+        "Pembroke 2",
         "Caius 2",
-        "LMBC 2"
+        "Robinson",
+        "Trinity Hall 2"
       ],
       [
-        "Trinity Hall 2",
+        "LMBC 2",
         "Hughes Hall",
         "Downing 2",
         "Clare 2",
@@ -82287,7 +82287,7 @@
       ]
     ],
     "completed": [
-      [false, false, true, true, true],
+      [false, true, true, true, true],
       [false, false, false, false, false],
       [false, false, false, false, false],
       [false, false, false, false, false]
