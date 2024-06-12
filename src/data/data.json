@@ -81943,11 +81943,11 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rururururrrur uuururuurur rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rururururrrur uuururuurur uuuurrrurrru\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, -1, 1, 0, -1, 1, -1, 1, 0, -1, 1, 0, -1, 1, -1, 1, -1],
+        [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1],
+        [1, -1, 1, 0, -1, 1, -1, 1, 0, -1, 1, 0, -1, 1, -1, 1, -1],
         [1, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, -1, 1],
         [0, -1, 1, -1, 1, 0, 0, -1, 1, -3, -1, 1, 3, 0, -1, 1, -1],
         [-1, 2, 0, 0, 0, -1, 1, 0, 0]
@@ -81976,26 +81976,26 @@
     ],
     "finish": [
       [
-        "Caius",
         "LMBC",
+        "Caius",
         "Magdalene",
         "King's",
         "Emmanuel",
-        "Pembroke",
         "Jesus",
+        "Pembroke",
         "Peterhouse",
         "Downing",
         "Clare",
-        "Queens'",
         "St Catharine's",
-        "LMBC 2",
+        "Queens'",
         "Selwyn",
-        "1st and 3rd",
+        "LMBC 2",
         "Robinson",
-        "Caius 2"
+        "1st and 3rd",
+        "Hughes Hall"
       ],
       [
-        "Hughes Hall",
+        "Caius 2",
         "Fitzwilliam",
         "Trinity Hall",
         "Christ's",
@@ -82064,7 +82064,7 @@
       ]
     ],
     "completed": [
-      [false, true, true, true, true],
+      [true, true, true, true, true],
       [false, false, false, false, false],
       [false, false, false, false, false],
       [false, false, false, false, false]
@@ -82287,10 +82287,10 @@
       ]
     ],
     "completed": [
-      [false, true, true, true, true],
-      [false, false, false, false, false],
-      [false, false, false, false, false],
-      [false, false, false, false, false]
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
     ]
   },
   {
