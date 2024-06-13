@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82179,8 +82179,8 @@
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [-3, -1, 1, 3, 0, 0, -1, 1, 0]
+        [-1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, 0, -3, -1, 1],
+        [-3, -1, 1, 6, 0, 0, -1, 1, 0]
       ],
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -82256,26 +82256,26 @@
         "Clare 3"
       ],
       [
-        "Jesus 3",
         "Magdalene 2",
-        "Christ's 2",
+        "Jesus 3",
         "Clare Hall",
-        "Darwin 2",
+        "Christ's 2",
         "Churchill 2",
+        "Darwin 2",
         "LMBC 3",
         "Emmanuel 4",
-        "Fitzwilliam 2",
         "1st and 3rd 2",
-        "King's 2",
+        "Fitzwilliam 2",
         "St Catharine's 3",
+        "King's 2",
         "Vet School",
         "Caius 4",
-        "Peterhouse 2",
-        "Clare 4",
-        "Girton 2"
+        "Homerton 3",
+        "Girton 2",
+        "Clare 4"
       ],
       [
-        "Homerton 3",
+        "Peterhouse 2",
         "Churchill 3",
         "Jesus 4",
         "Corpus Christi 2",
@@ -82288,7 +82288,7 @@
     ],
     "completed": [
       [true, true, true, true, true],
-      [false, false, false, false, true],
+      [false, false, false, true, true],
       [false, false, false, false, false],
       [false, false, false, false, false]
     ]
