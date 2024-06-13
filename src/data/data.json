@@ -81943,7 +81943,7 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuuuuuuu rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuuuuuuu rurrrurrruurrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1],
@@ -81954,7 +81954,7 @@
       ],
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, -1, 1, -1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1],
         [-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1],
         [-1, 2, -1, 1, 0, -1, 1, 0, -1, 1, 0, -3, -1, 1, 3, -1, 1],
         [0, -1, 1, 0, -1, 1, -1, 1, 0]
@@ -81998,20 +81998,20 @@
         "Caius 2",
         "Fitzwilliam",
         "Trinity Hall",
-        "Christ's",
         "Wolfson",
-        "Corpus Christi",
+        "Christ's",
         "Churchill",
+        "Corpus Christi",
         "Girton",
         "Emmanuel 2",
         "Homerton",
-        "Downing 2",
         "Pembroke 2",
+        "Downing 2",
         "Jesus 2",
         "1st and 3rd 2",
         "St Catharine's 2",
-        "St Edmund's",
-        "Sidney Sussex"
+        "Sidney Sussex",
+        "St Edmund's"
       ],
       [
         "Magdalene 2",
@@ -82065,7 +82065,7 @@
     ],
     "completed": [
       [true, true, true, true, true],
-      [false, false, true, true, true],
+      [false, true, true, true, true],
       [false, false, false, false, false],
       [false, false, false, false, false]
     ]
