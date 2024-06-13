@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurrrrrrrurrru rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82178,7 +82178,7 @@
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, 0, -1, 1, -1],
+        [-1, 1, 0, 0, 0, -1, 1, -1, 1, 0, -1, 1, 0, 0, -1, 1, -1],
         [-1, 2, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, 0, -3, -1, 1],
         [-3, -1, 1, 6, 0, 0, -1, 1, 0]
       ],
@@ -82244,11 +82244,11 @@
         "Queens' 2",
         "St Edmund's",
         "Emmanuel 3",
-        "Newnham 3",
         "St Catharine's 2",
+        "Newnham 3",
         "Homerton 2",
-        "Queens' 3",
         "Caius 3",
+        "Queens' 3",
         "Murray Edwards 2",
         "Pembroke 3",
         "Sidney Sussex 2",
