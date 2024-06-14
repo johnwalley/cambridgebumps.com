@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82184,7 +82184,7 @@
       ],
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1],
         [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1, 1],
         [-1, 1, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1],
         [-1, 2, 0, -1, 1, -1, 1, -1, 1]
@@ -82219,22 +82219,22 @@
       ],
       [
         "King's",
-        "Peterhouse",
         "Homerton",
-        "Girton",
+        "Peterhouse",
         "Jesus 2",
+        "Girton",
         "Selwyn",
         "Lucy Cavendish",
-        "Newnham 2",
         "Wolfson",
-        "Emmanuel 2",
+        "Newnham 2",
         "Murray Edwards",
-        "Darwin",
+        "Emmanuel 2",
         "Corpus Christi",
+        "Darwin",
         "Caius 2",
         "Pembroke 2",
-        "Robinson",
-        "Hughes Hall"
+        "Hughes Hall",
+        "Robinson"
       ],
       [
         "Trinity Hall 2",
@@ -82289,7 +82289,7 @@
     "completed": [
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, false, true, true, true],
+      [false, true, true, true, true],
       [false, false, false, false, false]
     ]
   },
