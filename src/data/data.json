@@ -81943,7 +81943,7 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuuuuuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuuuuuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1],
@@ -81960,8 +81960,8 @@
         [0, -1, 1, 0, -1, 1, -1, 1, 0]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, -1, 1, -1, 1, 0, 0, 0, 0, 0, -1, 1, 0, -1, 1, 0],
+        [0, 0, 0, -1, 1, 0, 0, -1, 1, 0, -1, 1, -1, 1, -1, 1, -1],
+        [1, 0, -1, 1, -1, 1, 0, 0, 0, 0, 0, -1, 1, 0, -1, 1, 0],
         [0, 0, 0, -1, 1, -1, 1, -3, -1, 1, 3, -1, 1, 0, 0, -1, 1],
         [-1, 1, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0, 0, -1, 1, -1],
         [-1, 2, -1, 1, 0, 0, 0, -1, 1]
@@ -81979,23 +81979,23 @@
         "LMBC",
         "Caius",
         "Magdalene",
-        "King's",
         "Jesus",
+        "King's",
         "Emmanuel",
         "Pembroke",
-        "Peterhouse",
         "Downing",
+        "Peterhouse",
         "St Catharine's",
-        "Clare",
         "Selwyn",
-        "Queens'",
+        "Clare",
         "LMBC 2",
-        "Robinson",
+        "Queens'",
         "Hughes Hall",
-        "1st and 3rd"
+        "Robinson",
+        "Fitzwilliam"
       ],
       [
-        "Fitzwilliam",
+        "1st and 3rd",
         "Caius 2",
         "Wolfson",
         "Trinity Hall",
@@ -82066,7 +82066,7 @@
     "completed": [
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, true, true, true, true],
+      [true, true, true, true, true],
       [false, false, false, false, false]
     ]
   },
@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rrrrrrrrrrrrrrrrrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82183,7 +82183,7 @@
         [-3, -1, 1, 6, 0, 0, -1, 1, 0]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1, 1, 0],
         [0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1],
         [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1, 1],
         [-1, 1, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1],
@@ -82200,21 +82200,21 @@
     "finish": [
       [
         "Jesus",
-        "LMBC",
         "Caius",
+        "LMBC",
         "Emmanuel",
         "Churchill",
-        "Newnham",
         "Trinity Hall",
-        "Pembroke",
+        "Newnham",
         "St Catharine's",
+        "Pembroke",
         "Downing",
-        "Queens'",
         "1st and 3rd",
-        "Fitzwilliam",
+        "Queens'",
         "Clare",
-        "Christ's",
+        "Fitzwilliam",
         "Magdalene",
+        "Christ's",
         "Sidney Sussex"
       ],
       [
@@ -82289,7 +82289,7 @@
     "completed": [
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, true, true, true, true],
+      [true, true, true, true, true],
       [false, false, false, false, false]
     ]
   },
