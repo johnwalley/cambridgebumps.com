@@ -19,6 +19,36 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/latest",
+        destination: "/charts",
+        permanent: false,
+      },
+      {
+        source: "/latest/:event",
+        destination: "/charts/:event",
+        permanent: false,
+      },
+      {
+        source: "/latest/:event/:gender",
+        destination: "/charts/:event/:gender",
+        permanent: false,
+      },
+      {
+        source: "/history",
+        destination: "/charts",
+        permanent: false,
+      },
+      {
+        source: "/history/:event",
+        destination: "/charts/:event",
+        permanent: false,
+      },
+      {
+        source: "/history/:event/:gender",
+        destination: "/charts/:event/:gender",
+        permanent: false,
+      },
+      {
         source: "/eights/men",
         destination: "/charts/eights/men",
         permanent: true,
