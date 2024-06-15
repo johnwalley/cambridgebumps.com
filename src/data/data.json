@@ -81943,7 +81943,7 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuurruuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuurruuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nurruru ruurrrrrrurrur rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1],
@@ -81970,8 +81970,8 @@
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, -1, 1, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, -1, 1, -1, 1],
+        [-1, 1, 0, -1, 1, 0, 0, -1, 1]
       ]
     ],
     "finish": [
@@ -82034,40 +82034,40 @@
       ],
       [
         "Corpus Christi 2",
-        "King's 2",
         "Wolfson 2",
+        "King's 2",
         "Hughes Hall 2",
         "Girton 2",
-        "1st and 3rd 3",
         "Pembroke 3",
+        "1st and 3rd 3",
         "Jesus 4",
         "Sidney Sussex 2",
         "Magdalene 3",
         "St Catharine's 3",
         "Churchill 3",
         "Emmanuel 4",
-        "Clare 3",
         "Lucy Cavendish 2",
-        "Darwin 2",
-        "LMBC 5"
+        "Clare 3",
+        "LMBC 5",
+        "Darwin 2"
       ],
       [
-        "LMBC 4",
         "Fitzwilliam 3",
+        "LMBC 4",
         "Downing 3",
-        "Magdalene 4",
         "Selwyn 3",
+        "Magdalene 4",
         "Peterhouse 3",
         "Jesus 5",
-        "Sidney Sussex 3",
-        "LMBC 6"
+        "LMBC 6",
+        "Sidney Sussex 3"
       ]
     ],
     "completed": [
       [true, true, true, true, true],
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, false, false, false, false]
+      [false, false, false, false, true]
     ]
   },
   {
@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82194,7 +82194,7 @@
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [-1, 1, -1, 1, -1, 1, 0, 0, 0]
       ]
     ],
     "finish": [
@@ -82275,12 +82275,12 @@
         "Churchill 3"
       ],
       [
-        "Clare 4",
         "Peterhouse 2",
-        "Jesus 4",
+        "Clare 4",
         "Wolfson 2",
-        "Corpus Christi 2",
+        "Jesus 4",
         "Clare Hall 2",
+        "Corpus Christi 2",
         "Selwyn 2",
         "Newnham 4",
         "Magdalene 3"
@@ -82290,7 +82290,7 @@
       [true, true, true, true, true],
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, false, false, false, false]
+      [false, false, false, false, true]
     ]
   },
   {
