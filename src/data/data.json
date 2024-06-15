@@ -81943,7 +81943,7 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuurruuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nurruru ruurrrrrrurrur rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuurruuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nurruru ruuuurruuur rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1],
@@ -81970,7 +81970,7 @@
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, -1, 1, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, -1, 1, -1, 1],
+        [0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1],
         [-1, 1, 0, -1, 1, 0, 0, -1, 1]
       ]
     ],
@@ -82036,16 +82036,16 @@
         "Corpus Christi 2",
         "Wolfson 2",
         "King's 2",
-        "Hughes Hall 2",
         "Girton 2",
+        "Hughes Hall 2",
         "Pembroke 3",
         "1st and 3rd 3",
         "Jesus 4",
         "Sidney Sussex 2",
-        "Magdalene 3",
         "St Catharine's 3",
-        "Churchill 3",
+        "Magdalene 3",
         "Emmanuel 4",
+        "Churchill 3",
         "Lucy Cavendish 2",
         "Clare 3",
         "LMBC 5",
