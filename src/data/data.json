@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rruurruurrrur o3uuruurrurrr rruuuurruuu ruuuuruurrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rruurruurrrur o3uuruurrurrr rruuuurruuu ruuuuruurru",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82190,7 +82190,7 @@
         [-1, 2, 0, -1, 1, -1, 1, -1, 1]
       ],
       [
-        [0, 0, 0, 0, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1, 1, -1, 1],
+        [-1, 1, 0, 0, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1, 1, -1, 1],
         [-1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1, 0],
         [0, 0, 0, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1, 1, -3, -1, 1],
         [3, -1, 1, 0, 0, 0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0],
@@ -82199,8 +82199,8 @@
     ],
     "finish": [
       [
-        "Jesus",
         "Caius",
+        "Jesus",
         "LMBC",
         "Emmanuel",
         "Trinity Hall",
