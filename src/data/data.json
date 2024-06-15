@@ -81943,7 +81943,7 @@
         "Sidney Sussex 3"
       ]
     ],
-    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuurruuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nurruru ruuuurruuur rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rrurrru uuro3uurruur rurruuuuuur uuururuurur uuuurrrurrru\nruurur ruo3urururuu uuuurruuuu rurrrurrruuru rurruurrrurrrr\nurrruu uurrurururru rurruo3uuurrr rrururrrrruurr uuuururrurrr\nurruru ruuuurruuur rruuurruuurr rrrruuurrruru ruuuruurrrur",
     "move": [
       [
         [-1, 1, 0, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1],
@@ -81967,9 +81967,9 @@
         [-1, 2, -1, 1, 0, 0, 0, -1, 1]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, -1, 1, 0, 0, 0, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1, 1],
+        [-1, 1, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, 0, 0],
+        [0, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, 0],
         [0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1],
         [-1, 1, 0, -1, 1, 0, 0, -1, 1]
       ]
@@ -81977,38 +81977,38 @@
     "finish": [
       [
         "LMBC",
-        "Caius",
         "Magdalene",
+        "Caius",
         "Jesus",
         "King's",
         "Emmanuel",
-        "Pembroke",
         "Downing",
-        "Peterhouse",
+        "Pembroke",
         "St Catharine's",
+        "Peterhouse",
         "Selwyn",
-        "Clare",
         "LMBC 2",
-        "Queens'",
+        "Clare",
         "Hughes Hall",
-        "Robinson",
-        "Fitzwilliam"
+        "Queens'",
+        "Fitzwilliam",
+        "Robinson"
       ],
       [
-        "1st and 3rd",
         "Caius 2",
+        "1st and 3rd",
         "Wolfson",
-        "Trinity Hall",
         "Churchill",
+        "Trinity Hall",
         "Christ's",
         "Corpus Christi",
         "Girton",
-        "Emmanuel 2",
         "Homerton",
-        "Pembroke 2",
+        "Emmanuel 2",
         "Jesus 2",
-        "Downing 2",
+        "Pembroke 2",
         "1st and 3rd 2",
+        "Downing 2",
         "Sidney Sussex",
         "St Catharine's 2",
         "St Edmund's"
@@ -82016,20 +82016,20 @@
       [
         "Magdalene 2",
         "Clare 2",
-        "Emmanuel 3",
         "Clare Hall",
-        "Darwin",
+        "Emmanuel 3",
         "Peterhouse 2",
-        "Queens' 2",
+        "Darwin",
         "Fitzwilliam 2",
+        "Queens' 2",
         "Selwyn 2",
         "Churchill 2",
-        "Trinity Hall 2",
         "Jesus 3",
-        "Robinson 2",
+        "Trinity Hall 2",
         "Christ's 2",
-        "Caius 3",
+        "Robinson 2",
         "Lucy Cavendish",
+        "Caius 3",
         "LMBC 3"
       ],
       [
@@ -82067,7 +82067,7 @@
       [true, true, true, true, true],
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, false, false, true, true]
+      [true, true, true, true, true]
     ]
   },
   {
@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rruurruurrrur o3uuruurrurrr rruuuurruuu rrrrrrrrrrrrrrrrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82191,9 +82191,9 @@
       ],
       [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [-1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1, 0],
+        [0, 0, 0, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1, 1, -3, -1, 1],
+        [3, -1, 1, 0, 0, 0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0],
         [-1, 1, -1, 1, -1, 1, 0, 0, 0]
       ]
     ],
@@ -82218,60 +82218,60 @@
         "Sidney Sussex"
       ],
       [
-        "King's",
         "Homerton",
-        "Peterhouse",
+        "King's",
         "Jesus 2",
-        "Girton",
+        "Peterhouse",
         "Selwyn",
+        "Girton",
         "Lucy Cavendish",
         "Wolfson",
-        "Newnham 2",
         "Murray Edwards",
-        "Emmanuel 2",
+        "Newnham 2",
         "Corpus Christi",
-        "Darwin",
+        "Emmanuel 2",
         "Caius 2",
-        "Pembroke 2",
+        "Darwin",
         "Hughes Hall",
+        "Pembroke 2",
         "Robinson"
       ],
       [
         "Trinity Hall 2",
         "LMBC 2",
         "Downing 2",
-        "Clare 2",
         "St Edmund's",
+        "Clare 2",
         "Queens' 2",
         "St Catharine's 2",
-        "Emmanuel 3",
         "Homerton 2",
-        "Newnham 3",
+        "Emmanuel 3",
         "Caius 3",
+        "Newnham 3",
         "Murray Edwards 2",
-        "Queens' 3",
         "Sidney Sussex 2",
-        "Pembroke 3",
-        "Magdalene 2",
-        "Lucy Cavendish 2"
+        "Queens' 3",
+        "Jesus 3",
+        "Lucy Cavendish 2",
+        "Magdalene 2"
       ],
       [
-        "Jesus 3",
-        "Clare 3",
+        "Pembroke 3",
         "Clare Hall",
+        "Clare 3",
         "Churchill 2",
         "Christ's 2",
         "LMBC 3",
-        "Darwin 2",
         "1st and 3rd 2",
-        "Emmanuel 4",
+        "Darwin 2",
         "Fitzwilliam 2",
+        "Emmanuel 4",
         "St Catharine's 3",
         "Vet School",
-        "King's 2",
         "Homerton 3",
-        "Caius 4",
+        "King's 2",
         "Girton 2",
+        "Caius 4",
         "Churchill 3"
       ],
       [
@@ -82290,7 +82290,7 @@
       [true, true, true, true, true],
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, false, false, false, true]
+      [false, true, true, true, true]
     ]
   },
   {
