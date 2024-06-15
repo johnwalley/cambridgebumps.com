@@ -82166,7 +82166,7 @@
         "Newnham 4"
       ]
     ],
-    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rruurruurrrur o3uuruurrurrr rruuuurruuu rrrrrrrrrrrrrrrrrr",
+    "results": "rruuru uurrrururuur rururururrrur uuururrurrur ruruuurrruur\nrurro3u o3urruurruuu uurruruurrru urururrurruu uruurrruurrrr\nuuuru uruurruuuru ruuuruuurrrr rurruuurruur rruuuruurrur\nrrruuu rruurruurrrur o3uuruurrurrr rruuuurruuu rrrrrurrruurrrr",
     "move": [
       [
         [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1, 1],
@@ -82190,7 +82190,7 @@
         [-1, 2, 0, -1, 1, -1, 1, -1, 1]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, -1, 1, -1, 1, 0, 0, 0, -1, 1, 0, 0, 0, 0],
         [-1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1, 0],
         [0, 0, 0, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1, 1, -3, -1, 1],
         [3, -1, 1, 0, 0, 0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0],
@@ -82203,15 +82203,15 @@
         "Caius",
         "LMBC",
         "Emmanuel",
-        "Churchill",
         "Trinity Hall",
-        "Newnham",
+        "Churchill",
         "St Catharine's",
+        "Newnham",
         "Pembroke",
         "Downing",
         "1st and 3rd",
-        "Queens'",
         "Clare",
+        "Queens'",
         "Fitzwilliam",
         "Magdalene",
         "Christ's",
@@ -82290,7 +82290,7 @@
       [true, true, true, true, true],
       [true, true, true, true, true],
       [true, true, true, true, true],
-      [false, true, true, true, true]
+      [true, true, true, true, true]
     ]
   },
   {
