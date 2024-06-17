@@ -1,0 +1,6422 @@
+[
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1978,
+    "days": 4,
+    "divisions": [
+      [
+        "L.M.H.",
+        "Somerville",
+        "Jesus",
+        "Brasenose",
+        "St Catherine's",
+        "Hertford",
+        "L.M.H. 2",
+        "Somerville 2",
+        "Wadham",
+        "St Anne's"
+      ]
+    ],
+    "results": "e2e2e-1e-3e1e1e-2e1e-1r\nrrre3e-1e2e-2e-2rr\ne1e-1e2e-1e-1rre1e1e-2\nrre3e-1re-2e1e-1e1e-1",
+    "move": [
+      [[0, -1, 1, -2, 1, 1, -3, -1, 2, 2]],
+      [[0, 0, -2, -2, 2, -1, 3, 0, 0, 0]],
+      [[-2, 1, 1, 0, 0, -1, -1, 2, -1, 1]],
+      [[-1, 1, -1, 1, -2, 0, -1, 3, 0, 0]]
+    ],
+    "finish": [
+      [
+        "Hertford",
+        "Jesus",
+        "Wadham",
+        "L.M.H.",
+        "Brasenose",
+        "St Anne's",
+        "Somerville",
+        "St Catherine's",
+        "L.M.H. 2",
+        "Somerville 2"
+      ]
+    ],
+    "completed": [[true], [true], [true], [true]]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1979,
+    "days": 4,
+    "divisions": [
+      [
+        "Hertford",
+        "Jesus",
+        "Wadham",
+        "L.M.H.",
+        "Brasenose",
+        "St Anne's",
+        "Somerville"
+      ],
+      [
+        "St Catherine's",
+        "Wolfson",
+        "St Hugh's",
+        "Linacre",
+        "St Catherine's 2",
+        "L.M.H. 2",
+        "Linacre 2",
+        "St Hilda's",
+        "Hertford 2",
+        "L.M.H. 3"
+      ]
+    ],
+    "results": "rre1e2e-2e-1re1e3e-2 re2e-2e1e-3e2e-1e-1\nrre3rre-3rre1r e1e-2e1e1e-2e1e-1r\nrrrre2re3e-3e3r e1e-2e-4e1e-1rrr\nrre1e-1e3e-1e-1e1e-2r re1e2e-2e-1rrr",
+    "move": [
+      [
+        [-1, -1, 2, -3, 1, -2, 2],
+        [-2, 3, 1, 0, -1, -2, 2, 1, 0, 0]
+      ],
+      [
+        [0, -1, 1, -2, 1, 1, -2],
+        [1, 1, 0, 0, -3, 0, 0, 3, 0, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, -4, -2],
+        [1, 3, -3, 3, 0, 2, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, -1, -2, 2, 1],
+        [0, -2, 1, -1, -1, 3, -1, 1, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Wadham",
+        "Jesus",
+        "Hertford",
+        "L.M.H.",
+        "Wolfson",
+        "St Hugh's",
+        "Somerville"
+      ],
+      [
+        "Linacre",
+        "Brasenose",
+        "St Catherine's",
+        "St Anne's",
+        "St Catherine's 2",
+        "L.M.H. 2",
+        "Linacre 2",
+        "St Hilda's",
+        "Hertford 2",
+        "L.M.H. 3"
+      ]
+    ],
+    "completed": [
+      [true, true],
+      [true, true],
+      [true, true],
+      [true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1980,
+    "days": 4,
+    "divisions": [
+      [
+        "Wadham",
+        "Jesus",
+        "Hertford",
+        "L.M.H.",
+        "Wolfson",
+        "St Hugh's",
+        "Somerville",
+        "Linacre",
+        "Brasenose",
+        "St Catherine's",
+        "St Anne's",
+        "St Catherine's 2"
+      ],
+      [
+        "L.M.H. 2",
+        "Linacre 2",
+        "St Hilda's",
+        "Hertford 2",
+        "L.M.H. 3",
+        "Somerville 2",
+        "Exeter",
+        "Worcester",
+        "Osler House",
+        "Jesus 2",
+        "Corpus Christi",
+        "Pembroke"
+      ],
+      [
+        "Queen's",
+        "Keble",
+        "Lincoln",
+        "St Peter's",
+        "St Hugh's 2",
+        "Balliol",
+        "Somerville 3",
+        "St Hilda's 2",
+        "S.E.H.",
+        "Brasenose 2"
+      ]
+    ],
+    "results": "re1e-1rrre1e-1e2e-1 re-1e1e-1e2re1e1e-4re1e1e-2 rrrre2re1e-3rrre1e-1\ne1e1e-2e1e-1e1e-1rrr e1e1e1e1e-4e1e1e-2e2e2e-1e2e-4 re-1e1e1e-2rre1e-1re1e-1r\ne1e-1e1e1e-2e2re1e1e-4 rrre1e-1e1e1e1e-3e1e1e-2r re1e-1re1e-1rre2re-2rr\nre3e1e-1e1e-4e2re-2r re1e1e1e1e-4e1e1e1e-3e1e2e-2 re-1re1e-1e1e1e-2rre1e-1r",
+    "move": [
+      [
+        [-1, 1, 0, 0, 0, -3, 1, 0, 2, 0, 0, 0],
+        [-2, 1, 1, 0, -4, 1, 1, 0, 2, -1, 1, -1],
+        [-1, 2, -1, 1, 0, 0, 0, -1, 1, 0]
+      ],
+      [
+        [0, -1, 1, 0, -1, 1, 0, 0, -2, 1, 1, -1],
+        [-4, 2, -1, 2, 2, -2, 1, 1, -4, 1, 1, 1],
+        [1, 0, 0, -1, 1, -1, 1, -2, 1, 1]
+      ],
+      [
+        [0, 0, -2, 0, 2, 0, 0, -1, 1, 0, -1, 1],
+        [0, -2, 1, 1, -3, 1, 1, 1, -1, 1, 0, 0],
+        [-4, 1, 1, 0, 2, -2, 1, 1, -1, 1]
+      ],
+      [
+        [0, -1, 1, 0, 0, -2, 1, 1, -1, 1, 0, -1],
+        [-2, 2, 1, -3, 1, 1, 1, -4, 1, 1, 1, 1],
+        [0, -2, 0, 2, -4, 1, -1, 1, 3, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Jesus",
+        "Somerville",
+        "Hertford",
+        "L.M.H.",
+        "Wadham",
+        "Brasenose",
+        "St Catherine's",
+        "Wolfson",
+        "St Anne's",
+        "Linacre",
+        "St Hilda's",
+        "Somerville 2"
+      ],
+      [
+        "St Hugh's",
+        "L.M.H. 2",
+        "St Catherine's 2",
+        "Osler House",
+        "Worcester",
+        "Exeter",
+        "Hertford 2",
+        "Jesus 2",
+        "Corpus Christi",
+        "Keble",
+        "Pembroke",
+        "Linacre 2"
+      ],
+      [
+        "Queen's",
+        "St Hugh's 2",
+        "Lincoln",
+        "St Peter's",
+        "Balliol",
+        "S.E.H.",
+        "Somerville 3",
+        "St Hilda's 2",
+        "L.M.H. 3",
+        "Brasenose 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1981,
+    "days": 4,
+    "divisions": [
+      [
+        "Jesus",
+        "Somerville",
+        "Hertford",
+        "L.M.H.",
+        "Wadham",
+        "Brasenose",
+        "St Catherine's",
+        "Wolfson",
+        "St Anne's",
+        "Linacre",
+        "St Hilda's",
+        "Somerville 2"
+      ],
+      [
+        "St Hugh's",
+        "L.M.H. 2",
+        "St Catherine's 2",
+        "Osler House",
+        "Worcester",
+        "Exeter",
+        "Hertford 2",
+        "Jesus 2",
+        "Corpus Christi",
+        "Keble",
+        "Pembroke",
+        "Linacre 2"
+      ],
+      [
+        "Trinity",
+        "Queen's",
+        "St Hugh's 2",
+        "Balliol",
+        "St John's",
+        "New College",
+        "Balliol 2",
+        "Magdalen",
+        "University",
+        "St Anne's 2",
+        "L.M.H. 3",
+        "St Peter's"
+      ]
+    ],
+    "results": "e1e-1re1e-1rre1e-1rrr e1e-1e1e2re-3rre1e1e-2rr e1e-1e1e-1rre1e1e-2e1e-1rr\ne1e-1rre1e-1re1e1e1e2e-4 re1e-2re1e1e-2e1e-1e1e2re-3 re1e-1e2re-2re1e-1rrrr\ne1e-1rre1e1e1e-3e1e1e1e-3 re1e1e1e-3re1e-1e1e-1e1e-1r e1e-1e1e-1e1e1e-2re1e-1rrr\ne1e1e1e1e1e1e-6e1e-1rrr e1e-1re1e2re-3e1e-1rre1e-1 rre1e1e-2e1e1e-2rrrrr",
+    "move": [
+      [
+        [0, 0, -1, 1, -2, 1, 1, 0, 0, -1, 1, -1],
+        [1, 0, -2, 1, 1, 0, 0, -3, 0, 2, 1, -1],
+        [1, 0, 0, -1, 1, 0, 0, -1, 1, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, 0, -2, 0, 2, -1, 1],
+        [-3, 0, 2, 1, -1, 1, -2, 1, 1, 0, -2, 1],
+        [-4, 2, 1, 1, 1, 0, -1, 1, 0, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, -2, 1, 1, -1, 1, -1],
+        [1, -1, 1, -1, 1, -1, 1, 0, -3, 1, 1, 1],
+        [-3, 1, 1, 1, -3, 1, 1, 1, 0, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, -2, 1, 1, -2, 1, 1, 0],
+        [-1, 1, 0, 0, -1, 1, -3, 0, 2, 1, 0, -1],
+        [1, 0, 0, -1, 1, -6, 1, 1, 1, 1, 1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Jesus",
+        "Somerville",
+        "L.M.H.",
+        "St Catherine's",
+        "Hertford",
+        "St Hilda's",
+        "St Anne's",
+        "Brasenose",
+        "St Hugh's",
+        "Wolfson",
+        "Wadham",
+        "Osler House"
+      ],
+      [
+        "Worcester",
+        "Linacre",
+        "L.M.H. 2",
+        "Exeter",
+        "Keble",
+        "Somerville 2",
+        "Pembroke",
+        "Corpus Christi",
+        "Trinity",
+        "St Catherine's 2",
+        "Queen's",
+        "St Hugh's 2"
+      ],
+      [
+        "Hertford 2",
+        "St John's",
+        "Balliol",
+        "New College",
+        "Jesus 2",
+        "Balliol 2",
+        "Linacre 2",
+        "Magdalen",
+        "St Anne's 2",
+        "St Peter's",
+        "L.M.H. 3",
+        "University"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1982,
+    "days": 4,
+    "divisions": [
+      [
+        "Jesus",
+        "Somerville",
+        "L.M.H.",
+        "St Catherine's",
+        "Hertford",
+        "St Hilda's",
+        "St Anne's",
+        "Brasenose",
+        "St Hugh's",
+        "Wolfson",
+        "Wadham",
+        "Osler House"
+      ],
+      [
+        "Worcester",
+        "Linacre",
+        "L.M.H. 2",
+        "Exeter",
+        "Keble",
+        "Somerville 2",
+        "Pembroke",
+        "Corpus Christi",
+        "Trinity",
+        "St Catherine's 2",
+        "Queen's",
+        "St Hugh's 2"
+      ],
+      [
+        "University",
+        "St John's",
+        "Balliol",
+        "St Hugh's 3",
+        "Mansfield",
+        "St John's 2",
+        "St Hugh's 4",
+        "Lincoln",
+        "Christ Church",
+        "St Anne's 2",
+        "New College",
+        "Balliol 2",
+        "Lincoln 2"
+      ]
+    ],
+    "results": "e1e-1e1e-1rrre1e-1re1e-1r e1e-1e1e-1e1e-1e1e-1e1e1e-2rr e1e1e-2re1e-1e1e-1e1e-1rrr\nre1e-1e1e-1rrre1e-1rrr e1e1e-2e1e-1e1e-1e2re-2e1e-1r rre2e2e-1e-3rre1e-1rrr\ne1e-1rrrre1e-1e2re1e1e-4 re1e1e1e-3e1e1e1e-3e2re2e-3 re1e-2re1e2re1e-4rrrr\ne1e-1e1e1e1e1e2e-5e-1re1e-1r e2e-1e-1e2re-2re2re1e-3rr rrre1e-1e1e-1e1e-1rrrr",
+    "move": [
+      [
+        [0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -2, 1],
+        [1, 0, -2, 1, 1, -1, 1, -1, 1, -1, 1, -1],
+        [1, -1, 1, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, -3, -1, 2, 2, 0],
+        [0, -1, 1, -2, 0, 2, -1, 1, -1, 1, -2, 1],
+        [1, 0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, -4, 1, 0, 2, 1, 0, -2, 1],
+        [-3, 2, 0, 2, -3, 1, 1, 1, -3, 1, 1, 1],
+        [-4, 1, 1, 0, 2, -1, 1, 0, 0, 0, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, 0],
+        [0, 0, -3, 1, 0, 2, 0, -2, 0, 2, -1, -1],
+        [2, -1, 1, 0, -1, -5, 2, 1, 1, 1, 1, -1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Jesus",
+        "Somerville",
+        "L.M.H.",
+        "St Catherine's",
+        "Wolfson",
+        "St Anne's",
+        "Osler House",
+        "St Hilda's",
+        "Brasenose",
+        "Hertford",
+        "Worcester",
+        "Exeter"
+      ],
+      [
+        "St Hugh's",
+        "Pembroke",
+        "Wadham",
+        "Trinity",
+        "Keble",
+        "Linacre",
+        "Somerville 2",
+        "University",
+        "Corpus Christi",
+        "L.M.H. 2",
+        "Balliol",
+        "St Hugh's 2"
+      ],
+      [
+        "Queen's",
+        "St Hugh's 3",
+        "St John's",
+        "St John's 2",
+        "Mansfield",
+        "St Catherine's 2",
+        "Lincoln",
+        "New College",
+        "Christ Church",
+        "Lincoln 2",
+        "St Hugh's 4",
+        "St Anne's 2",
+        "Balliol 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1983,
+    "days": 4,
+    "divisions": [
+      [
+        "Jesus",
+        "Somerville",
+        "L.M.H.",
+        "St Catherine's",
+        "Wolfson",
+        "St Anne's",
+        "Osler House",
+        "St Hilda's",
+        "Brasenose",
+        "Hertford",
+        "Worcester",
+        "Exeter"
+      ],
+      [
+        "St Hugh's",
+        "Pembroke",
+        "Wadham",
+        "Trinity",
+        "Keble",
+        "Linacre",
+        "Somerville 2",
+        "University",
+        "Corpus Christi",
+        "L.M.H. 2",
+        "Balliol",
+        "St Hugh's 2"
+      ],
+      [
+        "Lincoln",
+        "Magdalen",
+        "Lincoln 2",
+        "Queen's",
+        "Mansfield",
+        "St John's",
+        "Corpus Christi 2",
+        "S.E.H.",
+        "Merton",
+        "Jesus 2",
+        "Christ Church",
+        "St Anne's 2",
+        "St Hilda's 2"
+      ]
+    ],
+    "results": "e1e-1rrre1e-1e1e-1e1e-1rr e1e-1rre1e1e-2re1e1e-2rr e1e-1e1e-1re1e1e1e-3e1e1e-2r\nre1e-1re1e-1re1e-1rrrr re2e2e-1e-3e1e1e-2e2re-2e2e-1 re1e-2e1e1e-2e1e1e-2rrrr\nrrrrrre1e-1rrrrr e1e-1e1e1e1e-3e1e1e-2re1e2e-2 re1e1e-3e1e-1rre1e-1rrr\nre1e1e-2rrre2re-2re2e-1 re1e-2re1e2re-3e2re-2e2e-1 re-1e1e1e-2e1e-1e1e-1e1e-1rr",
+    "move": [
+      [
+        [0, -2, 1, 1, -3, 1, 1, 1, 0, -1, 1, -1],
+        [1, 0, -2, 1, 1, 0, -2, 1, 1, 0, 0, -1],
+        [1, 0, -1, 1, -1, 1, -1, 1, 0, 0, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, -2, 1, 1, -2, 1, 1, -2, 1],
+        [-1, 2, -2, 0, 2, -2, 1, 1, -3, -1, 2, 2],
+        [0, 0, 0, 0, -1, 1, 0, -1, 1, 0, -1, 1, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, -1, 1, -3, 1, 1],
+        [-2, 2, 1, 0, -2, 1, 1, -3, 1, 1, 1, -1],
+        [1, 0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, -1, 1, -1, 1, -1, 1, -2, 1, 1, -1],
+        [-1, 2, -2, 0, 2, -3, 0, 2, 1, 0, -2, 1],
+        [-1, 2, 0, -2, 0, 2, 0, 0, 0, -2, 1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Jesus",
+        "L.M.H.",
+        "Osler House",
+        "St Catherine's",
+        "St Hilda's",
+        "Somerville",
+        "Worcester",
+        "St Anne's",
+        "St Hugh's",
+        "Pembroke",
+        "Brasenose",
+        "Wadham"
+      ],
+      [
+        "Exeter",
+        "Wolfson",
+        "University",
+        "Keble",
+        "Hertford",
+        "Balliol",
+        "Trinity",
+        "Lincoln",
+        "Corpus Christi",
+        "L.M.H. 2",
+        "St Hugh's 2",
+        "Magdalen"
+      ],
+      [
+        "Linacre",
+        "Somerville 2",
+        "Queen's",
+        "S.E.H.",
+        "Mansfield",
+        "Lincoln 2",
+        "St John's",
+        "Merton",
+        "Corpus Christi 2",
+        "St Hilda's 2",
+        "Christ Church",
+        "Jesus 2",
+        "St Anne's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1984,
+    "days": 4,
+    "divisions": [
+      [
+        "Jesus",
+        "L.M.H.",
+        "Osler House",
+        "St Catherine's",
+        "St Hilda's",
+        "Somerville",
+        "Worcester",
+        "St Anne's",
+        "St Hugh's",
+        "Pembroke",
+        "Brasenose",
+        "Wadham"
+      ],
+      [
+        "Exeter",
+        "Wolfson",
+        "University",
+        "Keble",
+        "Hertford",
+        "Balliol",
+        "Trinity",
+        "Lincoln",
+        "Corpus Christi",
+        "L.M.H. 2",
+        "St Hugh's 2",
+        "Magdalen"
+      ],
+      [
+        "St Hilda's 2",
+        "New College 2",
+        "Queen's",
+        "Christ Church",
+        "Brasenose 2",
+        "St Hugh's 3",
+        "S.E.H.",
+        "St Hugh's 4",
+        "Mansfield",
+        "St Hilda's 3",
+        "St Catherine's 2",
+        "Somerville 2",
+        "Merton"
+      ]
+    ],
+    "results": "rre1e-1re1e-1rrrrrr e1e-1e1e-1re2re1e-3re1e-1r rrre1e1e-2rrrre1e1e-2\ne1e1e-2rrre1e-1e1e1e1e2e-4 re1e-2e1e-1rre1e1e-2re1e-1 rre1e-1re1e-1rre1e-1e1e-1\ne1e-1rrrre1e1e-2e1e-1e1e-1 rre1e-1e1e-1e1e-1e1e1e-2rr e1e1e-2rrre1e-1e1e-1e1e-1r\nrrre1e1e1e-3rrre1e-1r re1e1e1e-3rre1e-1e1e1e-2r e1e1e-2rre1e-1e1e-1rrrr",
+    "move": [
+      [
+        [-2, 1, 1, 0, 0, 0, 0, -2, 1, 1, 0, 0],
+        [0, -1, 1, 0, -3, 1, 0, 2, 0, -1, 1, -1],
+        [1, 0, 0, 0, 0, 0, -1, 1, 0, -1, 1, 0, 0]
+      ],
+      [
+        [-1, 1, -1, 1, 0, 0, -1, 1, 0, -1, 1, 0],
+        [-1, 1, 0, -2, 1, 1, 0, 0, -1, 1, -2, 1],
+        [-4, 2, 1, 1, 1, -1, 1, 0, 0, 0, -2, 1, 1]
+      ],
+      [
+        [0, -1, 1, -1, 1, -1, 1, 0, 0, 0, -2, 1],
+        [1, 0, -2, 1, 1, -1, 1, -1, 1, -1, 1, 0],
+        [-1, 1, -1, 1, -2, 1, 1, 0, 0, 0, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, 0, 0, -2, 1],
+        [1, -2, 1, 1, -1, 1, 0, 0, -3, 1, 1, 1],
+        [0, -1, 1, 0, 0, 0, -3, 1, 1, 1, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler House",
+        "St Catherine's",
+        "L.M.H.",
+        "St Hilda's",
+        "St Hugh's",
+        "Jesus",
+        "Worcester",
+        "Somerville",
+        "Pembroke",
+        "Brasenose",
+        "University",
+        "St Anne's"
+      ],
+      [
+        "Wadham",
+        "Balliol",
+        "Lincoln",
+        "Exeter",
+        "Trinity",
+        "Wolfson",
+        "Keble",
+        "St Hugh's 2",
+        "St Hilda's 2",
+        "Corpus Christi",
+        "New College 2",
+        "Hertford"
+      ],
+      [
+        "Queen's",
+        "Brasenose 2",
+        "L.M.H. 2",
+        "Christ Church",
+        "St Hugh's 4",
+        "St Hugh's 3",
+        "S.E.H.",
+        "Mansfield",
+        "St Catherine's 2",
+        "Magdalen",
+        "Somerville 2",
+        "St Hilda's 3",
+        "Merton"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1985,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler House",
+        "St Catherine's",
+        "L.M.H.",
+        "St Hilda's",
+        "St Hugh's",
+        "Jesus",
+        "Worcester",
+        "Somerville",
+        "Pembroke",
+        "Brasenose",
+        "University",
+        "St Anne's"
+      ],
+      [
+        "Wadham",
+        "Balliol",
+        "Lincoln",
+        "Exeter",
+        "Trinity",
+        "Wolfson",
+        "St Hugh's 2",
+        "Keble",
+        "St Hilda's 2",
+        "Corpus Christi",
+        "New College",
+        "Hertford"
+      ],
+      [
+        "Queen's",
+        "Brasenose 2",
+        "L.M.H. 2",
+        "Christ Church",
+        "St Hugh's 3",
+        "S.E.H.",
+        "Magdalen",
+        "Somerville 2",
+        "Merton",
+        "St Peter's",
+        "Balliol 2",
+        "St John's",
+        "Balliol 3"
+      ]
+    ],
+    "results": "re1e1e1e-3e1e1e1e1e-4rrr re1e-1e1e-1re1e-1e1e-1re3e-1 rre1e-3re1e1e-2e1e-1re1e-1\ne1e-1rre1e-1rre1e-1re1e-1 rre1e-1re1e-1e1e-1e1e-1e2e-1 re1e1e1e1e-5e1e-1re1e-1rr\ne1e1e1e1e1e-5rrre1e-1rr re1e-1re1e-1e1e-1e1e-1e1e-1r re1e-1e1e1e-2rrrre1e-1r\nre1e-1re1e-1e2re1e-3rrr rre1e-1re1e-1e1e-1e1e-1e1e-1 re1e1e-2re1e-1rre1e-1e1e-1",
+    "move": [
+      [
+        [-1, 1, 0, -1, 1, -2, 1, 1, 0, -3, 1, 0],
+        [-1, 3, 0, -1, 1, -1, 1, 0, -1, 1, -1, 1],
+        [0, 0, 0, -4, 1, 1, 1, 1, -3, 1, 1, 1, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, -1, 1, -5, 1, 1, 1, 1],
+        [-1, 2, -1, 1, -1, 1, -1, 1, 0, -1, 1, 0],
+        [-1, 1, 0, -1, 1, 0, 0, -1, 1, 0, 0, -1, 1]
+      ],
+      [
+        [0, -1, 1, 0, 0, 0, 0, -2, 1, 1, -1, 1],
+        [0, -1, 1, -1, 1, -1, 1, -1, 1, 0, -1, 1],
+        [0, 0, -1, 1, 0, 0, 0, -5, 1, 1, 1, 1, 1]
+      ],
+      [
+        [-1, 1, -1, 1, 0, 0, -1, 1, 0, -2, 1, 1],
+        [-1, 1, -1, 1, -1, 1, -1, 1, 0, -1, 1, 0],
+        [0, 0, 0, -3, 1, 0, 2, -1, 1, 0, -1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "St Hugh's",
+        "St Catherine's",
+        "L.M.H.",
+        "Osler House",
+        "St Hilda's",
+        "Somerville",
+        "University",
+        "Worcester",
+        "Balliol",
+        "Wadham",
+        "St Anne's",
+        "Pembroke"
+      ],
+      [
+        "Trinity",
+        "Jesus",
+        "St Hugh's 2",
+        "Brasenose",
+        "Keble",
+        "Lincoln",
+        "Corpus Christi",
+        "Exeter",
+        "Wolfson",
+        "New College",
+        "Hertford",
+        "St Hilda's 2"
+      ],
+      [
+        "Brasenose 2",
+        "Queen's",
+        "S.E.H.",
+        "St Hugh's 3",
+        "Somerville 2",
+        "Magdalen",
+        "L.M.H. 2",
+        "Balliol 2",
+        "Christ Church",
+        "St John's",
+        "Merton",
+        "Balliol 3",
+        "St Peter's"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1986,
+    "days": 4,
+    "divisions": [
+      [
+        "St Hugh's",
+        "St Catherine's",
+        "L.M.H.",
+        "Osler House",
+        "St Hilda's",
+        "Somerville",
+        "University",
+        "Worcester",
+        "Balliol",
+        "Wadham",
+        "St Anne's",
+        "Pembroke"
+      ],
+      [
+        "Trinity",
+        "Jesus",
+        "St Hugh's 2",
+        "Brasenose",
+        "Keble",
+        "Lincoln",
+        "Corpus Christi",
+        "Exeter",
+        "Wolfson",
+        "New College",
+        "Hertford",
+        "St Hilda's 2"
+      ],
+      [
+        "Queen's",
+        "S.E.H.",
+        "St Hugh's 3",
+        "Somerville 2",
+        "Magdalen",
+        "Christ Church",
+        "St John's",
+        "Merton",
+        "St Peter's",
+        "Trinity 2",
+        "Pembroke 2",
+        "St John's 2"
+      ],
+      [
+        "S.E.H. 2",
+        "Worcester 2",
+        "St Hugh's 4",
+        "St Hugh's 5",
+        "University 2",
+        "St Hugh's 6",
+        "New College 2",
+        "Keble 2",
+        "Jesus 2",
+        "Jesus 3",
+        "Trinity 3",
+        "St Catherine's 2",
+        "Hertford 2"
+      ]
+    ],
+    "results": "re1e-1e1e2re1e-4e2re1e-3r e1e1e-2re1e-1re1e-1rrrr e1e-1re1e1e-2rrre1e-1e2e-1 re-1re1e-1rre1e-1e1e-1rr\ne2re1e1e-4rre1e1e-2e1e-1r e1e1e1e-3re1e-1re1e1e-2e2e-1 re1e-2re1e1e-2rre1e1e-2r re1e-1re1e-1rre1e-1e1e-1r\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\ne1e-1e1e1e-2rrrre1e1e1e-3 rrre1e1e-2e1e-1re1e1e-2r e1e-1e1e-1re1e1e-2rrre2e-1 re-1rrre1e-1rrrre1e-1",
+    "move": [
+      [
+        [0, 0, -1, 1, -1, 1, 0, 0, -1, 1, 0, -1],
+        [-1, 2, -1, 1, 0, 0, 0, -2, 1, 1, 0, -1],
+        [1, 0, 0, 0, -1, 1, 0, -1, 1, 0, -2, 1],
+        [1, -3, 1, 0, 2, -4, 1, 0, 2, 1, -1, 1, 0]
+      ],
+      [
+        [0, -1, 1, -1, 1, 0, 0, -1, 1, 0, -1, 1],
+        [0, -2, 1, 1, 0, 0, -2, 1, 1, 0, -2, 1],
+        [-1, 2, -2, 1, 1, 0, -1, 1, 0, -3, 1, 1],
+        [1, -1, 1, -2, 1, 1, 0, 0, -4, 1, 1, 0, 2]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [-1, 1, 0, 0, 0, 0, -1, 1, 0, 0, 0, -1],
+        [-1, 2, 0, 0, 0, -2, 1, 1, 0, -1, 1, -1],
+        [1, -2, 1, 1, 0, -1, 1, -2, 1, 1, 0, 0],
+        [-3, 1, 1, 1, 0, 0, 0, 0, -2, 1, 1, -1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler House",
+        "St Hugh's",
+        "St Catherine's",
+        "Somerville",
+        "L.M.H.",
+        "St Hilda's",
+        "Wadham",
+        "University",
+        "Worcester",
+        "Balliol",
+        "Jesus",
+        "Brasenose"
+      ],
+      [
+        "St Anne's",
+        "Pembroke",
+        "St Hugh's 2",
+        "Trinity",
+        "Keble",
+        "Wolfson",
+        "New College",
+        "Lincoln",
+        "Corpus Christi",
+        "Queen's",
+        "Exeter",
+        "Hertford"
+      ],
+      [
+        "S.E.H.",
+        "Somerville 2",
+        "Christ Church",
+        "St Hilda's 2",
+        "St Hugh's 3",
+        "St Peter's",
+        "Magdalen",
+        "Merton",
+        "St John's 2",
+        "St John's",
+        "S.E.H. 2",
+        "Pembroke 2"
+      ],
+      [
+        "University 2",
+        "St Hugh's 4",
+        "Worcester 2",
+        "Trinity 2",
+        "New College 2",
+        "St Hugh's 5",
+        "Jesus 2",
+        "Keble 2",
+        "St Catherine's 2",
+        "Hertford 2",
+        "St Hugh's 6",
+        "Jesus 3",
+        "Trinity 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1987,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler House",
+        "St Hugh's",
+        "St Catherine's",
+        "Somerville",
+        "L.M.H.",
+        "St Hilda's",
+        "Wadham",
+        "University",
+        "Worcester",
+        "Balliol",
+        "Jesus",
+        "Brasenose"
+      ],
+      [
+        "St Anne's",
+        "Pembroke",
+        "St Hugh's 2",
+        "Trinity",
+        "Keble",
+        "Wolfson",
+        "New College",
+        "Lincoln",
+        "Corpus Christi",
+        "Queen's",
+        "Exeter",
+        "Hertford"
+      ],
+      [
+        "S.E.H.",
+        "Somerville 2",
+        "Christ Church",
+        "St Hilda's 2",
+        "St Hugh's 3",
+        "St Peter's",
+        "Magdalen",
+        "Merton",
+        "St John's",
+        "St John's 2",
+        "S.E.H. 2",
+        "Pembroke 2"
+      ],
+      [
+        "St Hugh's 4",
+        "New College 2",
+        "St Hugh's 5",
+        "Keble 2",
+        "Hertford 2",
+        "Wadham 2",
+        "Oriel",
+        "Brasenose 2",
+        "L.M.H. 2",
+        "Osler House 2",
+        "Christ Church 2",
+        "Lincoln 2",
+        "Queen's 2"
+      ]
+    ],
+    "results": "e1e1e1e1e-4e1e1e1e1e-4rrr e1e1e-2re1e-1e1e1e1e-3e1e-1r re1e-1re1e-1e1e-1e1e-1e1e-1r e1e1e-2e1e1e1e1e-4e1e1e-2rr\ne1e1e1e1e2re-6rrrrrr re2re1e-3e1e-1re1e-1re1e-1 re1e1e-2rrre1e-1rre2e-1 re1e1e-3rre1e1e-2rrrr\ne1e-1re1e-1e1e1e1e1e1e1e2e-7 re-1e1e1e1e-3re1e1e-2rrr e1e1e1e1e-4e1e-1re2re1e1e-4 re1e-1e1e-1rre1e-1re1e-1r\ne1e1e1e1e1e-5rre1e2re2e-4 re1e-2e1e1e-2re1e-1rrrr re1e-1re2re1e1e-4re1e-1r re1e1e-2e1e-1re1e-1rre1e-1",
+    "move": [
+      [
+        [0, 0, -2, 1, 1, -4, 1, 1, 1, 1, -2, 1],
+        [1, -1, 1, -1, 1, -1, 1, -1, 1, 0, -1, 1],
+        [0, -1, 1, -3, 1, 1, 1, -1, 1, 0, -2, 1],
+        [1, 0, 0, -4, 1, 1, 1, 1, -4, 1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, -2, 1, 1, 0, 0, -3, 1, 1],
+        [-1, 2, 0, 0, -1, 1, 0, 0, 0, -2, 1, 1],
+        [-1, 1, 0, -1, 1, 0, -1, 1, -3, 1, 0, 2],
+        [0, 0, 0, 0, 0, 0, -6, 0, 2, 1, 1, 1, 1]
+      ],
+      [
+        [0, -1, 1, 0, -1, 1, 0, 0, -1, 1, -1, 1],
+        [-4, 1, 1, 0, 2, 0, -1, 1, -4, 1, 1, 1],
+        [1, 0, 0, -2, 1, 1, 0, -3, 1, 1, 1, -1],
+        [-7, 2, 1, 1, 1, 1, 1, 1, -1, 1, 0, -1, 1]
+      ],
+      [
+        [-1, 1, 0, 0, -1, 1, 0, -1, 1, -2, 1, 1],
+        [0, -1, 1, 0, -4, 1, 1, 0, 2, 0, -1, 1],
+        [0, 0, 0, 0, -1, 1, 0, -2, 1, 1, -2, 1],
+        [-4, 2, 0, 2, 1, 0, 0, -5, 1, 1, 1, 1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Somerville",
+        "Osler House",
+        "St Hugh's",
+        "L.M.H.",
+        "Wadham",
+        "University",
+        "St Catherine's",
+        "Brasenose",
+        "Worcester",
+        "St Hugh's 2",
+        "St Anne's",
+        "Balliol"
+      ],
+      [
+        "Jesus",
+        "New College",
+        "Pembroke",
+        "Keble",
+        "Trinity",
+        "Corpus Christi",
+        "Hertford",
+        "Wolfson",
+        "St Hilda's",
+        "Exeter",
+        "Christ Church",
+        "Queen's"
+      ],
+      [
+        "Lincoln",
+        "S.E.H.",
+        "Somerville 2",
+        "St Hugh's 3",
+        "St Peter's",
+        "Magdalen",
+        "St John's",
+        "St Hugh's 4",
+        "Pembroke 2",
+        "St John's 2",
+        "New College 2",
+        "St Hugh's 5"
+      ],
+      [
+        "St Hilda's 2",
+        "Wadham 2",
+        "Hertford 2",
+        "Oriel",
+        "Merton",
+        "Osler House 2",
+        "Keble 2",
+        "Lincoln 2",
+        "Christ Church 2",
+        "Queen's 2",
+        "Brasenose 2",
+        "L.M.H. 2",
+        "S.E.H. 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1988,
+    "days": 4,
+    "divisions": [
+      [
+        "Somerville",
+        "Osler House",
+        "St Hugh's",
+        "L.M.H.",
+        "Wadham",
+        "University",
+        "St Catherine's",
+        "Brasenose",
+        "Worcester",
+        "St Hugh's 2",
+        "St Anne's",
+        "Balliol"
+      ],
+      [
+        "Jesus",
+        "New College",
+        "Pembroke",
+        "Keble",
+        "Trinity",
+        "Corpus Christi",
+        "Hertford",
+        "Wolfson",
+        "St Hilda's",
+        "Exeter",
+        "Christ Church",
+        "Queen's"
+      ],
+      [
+        "Lincoln",
+        "S.E.H.",
+        "Somerville 2",
+        "St Hugh's 3",
+        "St Peter's",
+        "Magdalen",
+        "St John's",
+        "St Hugh's 4",
+        "Pembroke 2",
+        "St John's 2",
+        "New College 2",
+        "St Hilda's 2"
+      ],
+      [
+        "Wadham 2",
+        "Hertford 2",
+        "Oriel",
+        "Merton",
+        "Osler House 2",
+        "L.M.H. 2",
+        "Mansfield",
+        "Linacre",
+        "Trinity 2",
+        "University 2",
+        "Somerville 3",
+        "Somerville 4",
+        "Wolfson 2"
+      ]
+    ],
+    "results": "e1e2e2e-1e1e1e1e-7e1e-1e1e-1r e1e1e2re-4re1e-1e1e-1rrr e1e1e1e-3e1e1e-2rrre1e2e-2 re-1e1e1e-2rrrre1e-1rr\ne2re-2e1e1e1e1e1e-5e1e1e2e-3 re1e1e-3e1e-1e1e1e-2re1e-1r re1e-1e1e-1e2re-2re1e1e2e-3 re1e-2rrrrrrrre1e-1\ne1e-1e1e1e1e-3e1e2re-3e1e2e-2 re1e1e1e-4e1e-1re1e-1re2e-1 re1e1e-3e1e-1e1e1e-2re1e1e-2 re1e1e-2e1e-1rrrrrrr\ne1e2re1e1e1e-6e1e1e1e-3e3e-1 rre1e-3rre1e-1re1e-1rr e1e1e-2e1e-1e1e-1e1e1e-2re2e-1 re-1re1e-1rrrrrrrr",
+    "move": [
+      [
+        [0, 0, -1, 1, 0, 0, 0, 0, -2, 1, 1, -1],
+        [-2, 2, 1, 0, 0, 0, -2, 1, 1, -3, 1, 1],
+        [1, 0, 0, -1, 1, -1, 1, 0, -4, 0, 2, 1],
+        [1, -1, 1, -1, 1, -7, 1, 1, 1, -1, 2, 2, 1]
+      ],
+      [
+        [-1, 1, 0, 0, 0, 0, 0, 0, 0, 0, -2, 1],
+        [-3, 2, 1, 1, 0, -2, 0, 2, -1, 1, -1, 1],
+        [0, -1, 1, 0, -2, 1, 1, -1, 1, -3, 1, 1],
+        [-3, 2, 1, 1, -5, 1, 1, 1, 1, 1, -2, 0, 2]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, -1, 1, -2, 1, 1],
+        [-2, 1, 1, 0, -2, 1, 1, -1, 1, -3, 1, 1],
+        [-1, 2, 0, -1, 1, 0, -1, 1, -4, 1, 1, 1],
+        [-2, 2, 1, -3, 0, 2, 1, -3, 1, 1, 1, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, -1, 1, 0, -1],
+        [-1, 2, 0, -2, 1, 1, -1, 1, -1, 1, -2, 1],
+        [1, 0, -1, 1, 0, -1, 1, 0, 0, -3, 1, 0],
+        [-1, 3, -3, 1, 1, 1, -6, 1, 1, 1, 0, 2, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler House",
+        "Somerville",
+        "L.M.H.",
+        "St Hugh's",
+        "Wadham",
+        "University",
+        "St Catherine's",
+        "St Hugh's 2",
+        "New College",
+        "Brasenose",
+        "Pembroke",
+        "Keble"
+      ],
+      [
+        "St Anne's",
+        "Jesus",
+        "Worcester",
+        "St Hilda's",
+        "Wolfson",
+        "Balliol",
+        "Christ Church",
+        "Trinity",
+        "Lincoln",
+        "Corpus Christi",
+        "Somerville 2",
+        "Hertford"
+      ],
+      [
+        "Queen's",
+        "Exeter",
+        "St John's",
+        "S.E.H.",
+        "St Peter's",
+        "New College 2",
+        "Magdalen",
+        "St Hugh's 3",
+        "St Hilda's 2",
+        "Oriel",
+        "Osler House 2",
+        "Hertford 2"
+      ],
+      [
+        "Wadham 2",
+        "St Hugh's 4",
+        "Linacre",
+        "Mansfield",
+        "Trinity 2",
+        "St John's 2",
+        "Somerville 4",
+        "Merton",
+        "L.M.H. 2",
+        "University 2",
+        "Somerville 3",
+        "Wolfson 2",
+        "Pembroke 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1989,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler House",
+        "Somerville",
+        "L.M.H.",
+        "St Hugh's",
+        "Wadham",
+        "University",
+        "St Catherine's",
+        "St Hugh's 2",
+        "New College",
+        "Brasenose",
+        "Pembroke",
+        "Keble"
+      ],
+      [
+        "St Anne's",
+        "Jesus",
+        "Worcester",
+        "St Hilda's",
+        "Wolfson",
+        "Balliol",
+        "Christ Church",
+        "Trinity",
+        "Lincoln",
+        "Corpus Christi",
+        "Somerville 2",
+        "Hertford"
+      ],
+      [
+        "Queen's",
+        "Exeter",
+        "St John's",
+        "S.E.H.",
+        "St Peter's",
+        "New College 2",
+        "Magdalen",
+        "St Hugh's 3",
+        "St Hilda's 2",
+        "Oriel",
+        "Osler House 2",
+        "Hertford 2"
+      ],
+      [
+        "Wadham 2",
+        "Linacre",
+        "Mansfield",
+        "Trinity 2",
+        "Somerville 3",
+        "Merton",
+        "L.M.H. 2",
+        "Wolfson 2",
+        "Exeter 2",
+        "Magdalen 2",
+        "Worcester 2",
+        "St Anne's 2"
+      ],
+      [
+        "Oriel 2",
+        "St Anne's 3",
+        "St Hilda's 3",
+        "St Catherine's 2",
+        "Keble 2",
+        "Jesus 2",
+        "Christ Church 2",
+        "L.M.H. 3",
+        "Queen's 2",
+        "Wadham 3",
+        "Balliol 2",
+        "L.M.H. 4",
+        "Exeter 3"
+      ]
+    ],
+    "results": "re1e1e-2e1e-1e2re-2re1e-1r e2e2e-1e1e-4e1e-1re1e-1rrr e1e1e1e2re1e-6e1e-1re1e-1r re1e1e-2e1e1e2re2re1e-7r e1e1e1e1e1e-5rre1e-1rrr\ne1e1e-2e1e-1re1e-1e1e-1e1e2e-2 re-1e1e-1e1e-1re1e-1e1e-1rr e1e1e1e1e-4e1e-1e1e-1e1e-1e2e-1 re-1e1e1e-2e1e2re1e1e1e1e-7 rre1e-1rrrrre1e-1rr\nre1e1e1e2re-5re1e-1e1e-1r re1e-1rrrrre1e-1rrr re1e1e-2e1e-1re1e1e-2e3re-2 re1e-2e1e1e-2e1e-1rrre3e-1 rre1e-3e1e-1e1e-1rrrrr\nre1e-1rrre1e-1re1e-1e3e-1 rre1e-3rre1e-1e1e1e1e2e-4 re1e1e1e-4e1e1e1e1e2re-6r re1e1e-2e1e1e-2rrrrrr rre1e-1e1e-1re1e-1rrrr",
+    "move": [
+      [
+        [0, 0, 0, -1, 1, 0, 0, -5, 1, 1, 1, 1],
+        [1, -7, 1, 0, 2, 0, 2, 1, 1, -2, 1, 1],
+        [0, -1, 1, 0, -1, 1, -6, 1, 0, 2, 1, 1],
+        [1, 0, 0, -1, 1, 0, -1, 1, -4, 1, -1, 2],
+        [2, -1, 1, 0, -2, 0, 2, -1, 1, -2, 1, 1, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, 0, 0, 0, 0, -1, 1, 0],
+        [-7, 1, 1, 1, 1, 0, 2, 1, -2, 1, 1, -1],
+        [-1, 2, -1, 1, -1, 1, -1, 1, -4, 1, 1, 1],
+        [1, 0, -1, 1, -1, 1, 0, -1, 1, -1, 1, -1],
+        [-2, 2, 1, -1, 1, -1, 1, 0, -1, 1, -2, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, -1, 1, -1, 1, -3, 1, 0],
+        [-1, 3, 0, 0, 0, -1, 1, -2, 1, 1, -2, 1],
+        [-2, 0, 3, -2, 1, 1, 0, -1, 1, -2, 1, 1],
+        [0, 0, 0, -1, 1, 0, 0, 0, 0, 0, -1, 1],
+        [0, -1, 1, -1, 1, 0, -5, 0, 2, 1, 1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, 0, -1, 1, -1, 1, 0],
+        [0, 0, 0, 0, 0, 0, -2, 1, 1, -2, 1, 1],
+        [0, -6, 0, 2, 1, 1, 1, 1, -4, 1, 1, 1],
+        [-4, 2, 1, 1, 1, -1, 1, 0, 0, -3, 1, 0],
+        [-1, 3, -1, 1, 0, -1, 1, 0, 0, 0, -1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler House",
+        "Somerville",
+        "Wadham",
+        "L.M.H.",
+        "St Catherine's",
+        "St Hugh's",
+        "University",
+        "New College",
+        "Brasenose",
+        "Wolfson",
+        "Pembroke",
+        "St Anne's"
+      ],
+      [
+        "Keble",
+        "Worcester",
+        "St Hilda's",
+        "Christ Church",
+        "Trinity",
+        "Lincoln",
+        "Somerville 2",
+        "Hertford",
+        "Balliol",
+        "St John's",
+        "S.E.H.",
+        "St Hugh's 2"
+      ],
+      [
+        "Jesus",
+        "St Peter's",
+        "Corpus Christi",
+        "New College 2",
+        "Exeter",
+        "Oriel",
+        "Osler House 2",
+        "Queen's",
+        "Wadham 2",
+        "Magdalen",
+        "Hertford 2",
+        "Linacre"
+      ],
+      [
+        "St Hugh's 3",
+        "Somerville 3",
+        "Merton",
+        "Mansfield",
+        "St Hilda's 2",
+        "Wolfson 2",
+        "Trinity 2",
+        "Magdalen 2",
+        "L.M.H. 2",
+        "St Hilda's 3",
+        "Exeter 2",
+        "St Anne's 2"
+      ],
+      [
+        "Oriel 2",
+        "Worcester 2",
+        "St Catherine's 2",
+        "St Anne's 3",
+        "Christ Church 2",
+        "Balliol 2",
+        "Keble 2",
+        "Queen's 2",
+        "L.M.H. 3",
+        "Wadham 3",
+        "Jesus 2",
+        "Exeter 3",
+        "L.M.H. 4"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1991,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler House",
+        "Somerville",
+        "L.M.H.",
+        "St Catherine's",
+        "St Hugh's",
+        "University",
+        "Wadham",
+        "New College",
+        "Brasenose",
+        "Wolfson",
+        "Pembroke",
+        "St Anne's"
+      ],
+      [
+        "Keble",
+        "Worcester",
+        "St Hilda's",
+        "Christ Church",
+        "Trinity",
+        "Lincoln",
+        "Somerville 2",
+        "Hertford",
+        "Balliol",
+        "St John's",
+        "S.E.H.",
+        "St Hugh's 2"
+      ],
+      [
+        "Jesus",
+        "St Peter's",
+        "Corpus Christi",
+        "New College 2",
+        "Exeter",
+        "Oriel",
+        "Osler House 2",
+        "Queen's",
+        "Wadham 2",
+        "Magdalen",
+        "Hertford 2",
+        "Linacre"
+      ],
+      [
+        "St Hugh's 3",
+        "Merton",
+        "Mansfield",
+        "St Hilda's 2",
+        "Magdalen 2",
+        "L.M.H. 2",
+        "St Hilda's 3",
+        "Exeter 2",
+        "St Anne's 2",
+        "Oriel 2",
+        "St Catherine's 2",
+        "Christ Church 2"
+      ],
+      [
+        "L.M.H. 3",
+        "Jesus 2",
+        "St John's 2",
+        "Pembroke 2",
+        "Regent's Park",
+        "Brasenose 2",
+        "S.E.H. 2",
+        "Christ Church 3",
+        "Oriel 3",
+        "St Peter's 2",
+        "Pembroke 3",
+        "Oriel 4",
+        "University 2"
+      ]
+    ],
+    "results": "e1e1e-2e1e1e1e1e1e1e1e1e-8r e2re-2e1e2re1e2re1e-7e2e-1 re1e-2e1e2re-3e2re1e-3rr e1e1e1e1e1e1e-6e1e1e-2rrr e1e-1rre1e1e1e-3rrre1e-1\ne2re1e-3e1e1e-2re1e-1e1e2e-2 re-1e1e-1e1e-1e1e1e-2e2re-2r re1e1e-2e1e-1e1e-1re1e-1rr e1e1e-2e1e-1re1e-1re2re-2r re1e-1e1e-1e1e1e1e-3e1e-1rr\ne1e1e1e-3re1e2re1e-4re2e-1 re1e-2rre1e-1e1e1e-2re2e-1 re-1e2e2e-1e1e-4e1e1e1e2re-5 re1e-1rrrre1e-1rre2e-1 re-1e1e-1e1e-1rre1e-1rrr\ne1e1e1e1e1e-5e1e-1rrre2e-1 re1e1e1e1e-5e1e-1e1e1e1e-3r e1e2re1e1e1e2re1e1e-10rr e1e-1e1e-1re1e-1re1e-1e1e-1r e1e-1e1e1e-2e1e-1e1e-1rrrr",
+    "move": [
+      [
+        [-1, 1, 0, 0, 0, -3, 1, 1, 1, 0, 0, -1],
+        [1, 0, 0, -2, 1, 1, -6, 1, 1, 1, 1, 1],
+        [1, 0, -3, 1, 0, 2, -3, 0, 2, 1, -2, 1],
+        [-1, 2, -7, 1, 0, 2, 1, 0, 2, 1, -2, 0],
+        [2, -8, 1, 1, 1, 1, 1, 1, 1, 1, -2, 1, 1]
+      ],
+      [
+        [0, 0, -1, 1, -3, 1, 1, 1, -1, 1, -1, 1],
+        [0, -2, 0, 2, 0, -1, 1, 0, -1, 1, -2, 1],
+        [1, 0, -1, 1, 0, -1, 1, -1, 1, -2, 1, 1],
+        [0, -2, 0, 2, -2, 1, 1, -1, 1, -1, 1, -1],
+        [-2, 2, 1, -1, 1, 0, -2, 1, 1, -3, 1, 0, 2]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, -1, 1, -1, 1, -1],
+        [-1, 2, 0, 0, -1, 1, 0, 0, 0, 0, -1, 1],
+        [-5, 0, 2, 1, 1, 1, -4, 1, -1, 2, 2, -1],
+        [-1, 2, 0, -2, 1, 1, -1, 1, 0, 0, -2, 1],
+        [-1, 2, 0, -4, 1, 0, 2, 1, 0, -3, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -2, 1, 1, -1],
+        [1, -1, 1, -1, 1, 0, -1, 1, 0, -1, 1, -1],
+        [1, 0, -10, 1, 1, 0, 2, 1, 1, 1, 0, 2],
+        [1, -3, 1, 1, 1, -1, 1, -5, 1, 1, 1, 1],
+        [-1, 2, 0, 0, 0, -1, 1, -5, 1, 1, 1, 1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Somerville",
+        "Osler House",
+        "St Catherine's",
+        "Wadham",
+        "New College",
+        "L.M.H.",
+        "Wolfson",
+        "Brasenose",
+        "Keble",
+        "University",
+        "St Hugh's",
+        "Pembroke"
+      ],
+      [
+        "Trinity",
+        "St Hilda's",
+        "St Anne's",
+        "Hertford",
+        "Worcester",
+        "Lincoln",
+        "Balliol",
+        "Christ Church",
+        "S.E.H.",
+        "Somerville 2",
+        "St John's",
+        "Oriel"
+      ],
+      [
+        "Jesus",
+        "St Peter's",
+        "Exeter",
+        "Wadham 2",
+        "Magdalen",
+        "St Hugh's 2",
+        "Linacre",
+        "Merton",
+        "Queen's",
+        "L.M.H. 2",
+        "Corpus Christi",
+        "Osler House 2"
+      ],
+      [
+        "New College 2",
+        "St Hilda's 2",
+        "St Hilda's 3",
+        "St Anne's 2",
+        "Hertford 2",
+        "Oriel 2",
+        "St Hugh's 3",
+        "Exeter 2",
+        "L.M.H. 3",
+        "St John's 2",
+        "Pembroke 2",
+        "Christ Church 2"
+      ],
+      [
+        "Magdalen 2",
+        "Mansfield",
+        "St Catherine's 2",
+        "Regent's Park",
+        "Oriel 3",
+        "St Peter's 2",
+        "S.E.H. 2",
+        "Christ Church 3",
+        "Pembroke 3",
+        "University 2",
+        "Jesus 2",
+        "Oriel 4",
+        "Brasenose 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1992,
+    "days": 4,
+    "divisions": [
+      [
+        "Somerville",
+        "Osler House",
+        "St Catherine's",
+        "Wadham",
+        "New College",
+        "L.M.H.",
+        "Wolfson",
+        "Brasenose",
+        "Keble",
+        "University",
+        "St Hugh's",
+        "Pembroke"
+      ],
+      [
+        "Trinity",
+        "St Hilda's",
+        "St Anne's",
+        "Hertford",
+        "Worcester",
+        "Lincoln",
+        "Balliol",
+        "Christ Church",
+        "S.E.H.",
+        "Somerville 2",
+        "St John's",
+        "Oriel"
+      ],
+      [
+        "Jesus",
+        "St Peter's",
+        "Exeter",
+        "Wadham 2",
+        "Magdalen",
+        "St Hugh's 2",
+        "Linacre",
+        "Merton",
+        "Queen's",
+        "L.M.H. 2",
+        "Corpus Christi",
+        "Osler House 2"
+      ],
+      [
+        "New College 2",
+        "Oriel 2",
+        "Exeter 2",
+        "Pembroke 2",
+        "Christ Church 2",
+        "Magdalen 2",
+        "Mansfield",
+        "St Catherine's 2",
+        "University 2",
+        "New College 3",
+        "Keble 2",
+        "Queen's 2",
+        "University 3"
+      ]
+    ],
+    "results": "re1e1e2re1e-5rre1e-1rr e1e1e-2e1e1e1e1e-4e1e-1e1e-1r e1e4e2re-2e1e1e-7e1e-1re2e-1 re1e-2e1e-1re1e-1e2re-2rr\nre1e-1e1e-1e2re1e1e1e1e2e-7 re1e1e-3re1e1e1e-3e1e-1e2e-1 re-1rre1e1e1e-3re2re1e-3 re1e1e-2e1e-1re1e-1e1e1e-2r\ne1e-1e1e1e-2rre1e-1re1e2e-2 re1e2re-4re1e1e1e-3rrr e1e1e-2rre1e1e2re-4e1e2e-2 re-1e1e1e-2e1e-1rrrrrr\ne1e1e1e1e-4e1e1e1e-3e1e-1e1e-1 re1e2re1e-4re1e1e1e-3rr re1e1e-2e1e-1e1e1e-2e2re1e-3 rrre1e1e-2e1e-1rrrrr",
+    "move": [
+      [
+        [0, 0, -2, 0, 2, -1, 1, 0, -1, 1, -2, 1],
+        [-1, 2, 0, -1, 1, -7, 1, 1, -2, 0, 2, 4],
+        [1, -1, 1, -1, 1, -4, 1, 1, 1, 1, -2, 1],
+        [1, 0, -1, 1, 0, 0, -5, 1, 0, 2, 1, 1, 0]
+      ],
+      [
+        [0, -2, 1, 1, -1, 1, 0, -1, 1, -2, 1, 1],
+        [-3, 1, 0, 2, 0, -3, 1, 1, 1, 0, 0, -1],
+        [-1, 2, -1, 1, -3, 1, 1, 1, 0, -3, 1, 1],
+        [-7, 2, 1, 1, 1, 1, 0, 2, -1, 1, -1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, -1, 1, -2, 1, 1, -1],
+        [-2, 2, 1, -4, 0, 2, 1, 1, 0, 0, -2, 1],
+        [1, 0, 0, -3, 1, 1, 1, 0, -4, 0, 2, 1],
+        [-2, 2, 1, 0, -1, 1, 0, 0, -2, 1, 1, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, -1, 1, -2, 1, 1, 0, 0],
+        [-3, 1, 0, 2, -2, 1, 1, -1, 1, -2, 1, 1],
+        [0, 0, -3, 1, 1, 1, 0, -4, 1, 0, 2, 1],
+        [-1, 1, -1, 1, -3, 1, 1, 1, -4, 1, 1, 1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Somerville",
+        "New College",
+        "Wadham",
+        "Osler House",
+        "Wolfson",
+        "University",
+        "St Catherine's",
+        "Pembroke",
+        "St Hilda's",
+        "L.M.H.",
+        "Brasenose",
+        "Worcester"
+      ],
+      [
+        "St Anne's",
+        "Christ Church",
+        "Trinity",
+        "Keble",
+        "Oriel",
+        "St John's",
+        "Hertford",
+        "Balliol",
+        "St Hugh's",
+        "Exeter",
+        "Jesus",
+        "Somerville 2"
+      ],
+      [
+        "S.E.H.",
+        "Lincoln",
+        "Linacre",
+        "Merton",
+        "Queen's",
+        "Magdalen",
+        "St Peter's",
+        "New College 2",
+        "Oriel 2",
+        "Osler House 2",
+        "Pembroke 2",
+        "Wadham 2"
+      ],
+      [
+        "Exeter 2",
+        "L.M.H. 2",
+        "Christ Church 2",
+        "St Hugh's 2",
+        "Magdalen 2",
+        "St Catherine's 2",
+        "Corpus Christi",
+        "New College 3",
+        "Mansfield",
+        "Keble 2",
+        "University 3",
+        "Queen's 2",
+        "University 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1993,
+    "days": 4,
+    "divisions": [
+      [
+        "Somerville",
+        "New College",
+        "Wadham",
+        "Osler House",
+        "Wolfson",
+        "University",
+        "St Catherine's",
+        "Pembroke",
+        "St Hilda's",
+        "L.M.H.",
+        "Brasenose",
+        "Worcester"
+      ],
+      [
+        "St Anne's",
+        "Christ Church",
+        "Trinity",
+        "Keble",
+        "Oriel",
+        "St John's",
+        "Hertford",
+        "Balliol",
+        "St Hugh's",
+        "Exeter",
+        "Jesus",
+        "Somerville 2"
+      ],
+      [
+        "S.E.H.",
+        "Lincoln",
+        "Linacre",
+        "Merton",
+        "Queen's",
+        "Magdalen",
+        "St Peter's",
+        "New College 2",
+        "Oriel 2",
+        "Osler House 2",
+        "Pembroke 2",
+        "Wadham 2",
+        "Mansfield"
+      ]
+    ],
+    "results": "re1e-1e1e-1rrre1e1e-2e3e-1 rre2re-4rrre1e-1re3e-1 rre-2rre1e1e1e-3e1e-1rr\nrre2re1e-3re1e-1e1e1e3e-3 rre1e-3e1e-1rrre2re-2r rre2re-2rrre1e-1rrr\nre1e1e-2rre1e1e1e-3e1e1e-2 rre1e1e-2e1e-1e1e-1re1e2e-2 re-1e1e-1e1e-1re1e-1rrrr\nrre2re1e1e-4rre1e-1e2e-1 re1e-2re1e-1e1e-1re1e-1e2e-1 re2re1e-4rrre1e-1rrr",
+    "move": [
+      [
+        [0, 0, -1, 1, -3, 1, 1, 1, 0, 0, -2, 0],
+        [-1, 3, 0, -1, 1, 0, 0, 0, -4, 0, 2, 0],
+        [-1, 3, -2, 1, 1, 0, 0, 0, -1, 1, -1, 1, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, 0, -2, 0, 2, 0],
+        [0, -2, 0, 2, 0, 0, 0, -1, 1, -3, 1, 0],
+        [-3, 3, 1, 1, -1, 1, 0, -3, 1, 0, 2, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, 0, -1, 1, -1, 1, -1],
+        [-2, 2, 1, 0, -1, 1, -1, 1, -2, 1, 1, 0],
+        [-2, 1, 1, -3, 1, 1, 1, 0, 0, -2, 1, 1, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, 0, -4, 1, 0, 2],
+        [-1, 2, -1, 1, 0, -1, 1, -1, 1, 0, -2, 1],
+        [-1, 2, -1, 1, 0, 0, -4, 1, 1, 0, 2, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Somerville",
+        "New College",
+        "Osler House",
+        "St Catherine's",
+        "University",
+        "Wadham",
+        "Pembroke",
+        "Christ Church",
+        "St Hilda's",
+        "Oriel",
+        "L.M.H.",
+        "Trinity"
+      ],
+      [
+        "Wolfson",
+        "Worcester",
+        "St Anne's",
+        "Brasenose",
+        "St John's",
+        "Jesus",
+        "Keble",
+        "Lincoln",
+        "Hertford",
+        "S.E.H.",
+        "Somerville 2",
+        "Queen's"
+      ],
+      [
+        "Balliol",
+        "Merton",
+        "Magdalen",
+        "Exeter",
+        "Linacre",
+        "St Peter's",
+        "Osler House 2",
+        "Wadham 2",
+        "Pembroke 2",
+        "New College 2",
+        "St Hugh's",
+        "Oriel 2",
+        "Mansfield"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1994,
+    "days": 4,
+    "divisions": [
+      [
+        "Somerville",
+        "New College",
+        "Osler House",
+        "St Catherine's",
+        "University",
+        "Wadham",
+        "Pembroke",
+        "Christ Church",
+        "St Hilda's",
+        "Oriel",
+        "L.M.H.",
+        "Trinity"
+      ],
+      [
+        "Wolfson",
+        "Worcester",
+        "St Anne's",
+        "Brasenose",
+        "St John's",
+        "Jesus",
+        "Keble",
+        "Lincoln",
+        "Hertford",
+        "S.E.H.",
+        "Somerville 2",
+        "Queen's"
+      ],
+      [
+        "Balliol",
+        "Merton",
+        "Magdalen",
+        "Exeter",
+        "Linacre",
+        "St Peter's",
+        "Osler House 2",
+        "Wadham 2",
+        "Pembroke 2",
+        "New College 2",
+        "St Hugh's",
+        "Oriel 2"
+      ],
+      [
+        "L.M.H. 2",
+        "Christ Church 2",
+        "Corpus Christi",
+        "Mansfield",
+        "University 2",
+        "St John's 3",
+        "L.M.H. 3",
+        "Osler House 3",
+        "Jesus 2",
+        "Mansfield 2",
+        "St Hilda's 2",
+        "Hertford 2",
+        "St Anne's 2"
+      ]
+    ],
+    "results": "rre1e-1e1e-1e1e1e-2e2re-2r e1e-1e1e1e-2re1e-1e1e-1e1e2e-2 re1e1e1e1e1e-6e1e1e1e1e1e-5 rrre1e-1e1e-1e1e-1re1e-1r\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr",
+    "move": [
+      [
+        [0, -1, 1, 0, -1, 1, -1, 1, -1, 1, 0, 0],
+        [-5, 1, 1, 1, 1, 1, -6, 1, 1, 1, 1, 1],
+        [-2, 2, 1, -1, 1, -1, 1, 0, -2, 1, 1, -1],
+        [1, -2, 0, 2, -2, 1, 1, -1, 1, -1, 1, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Somerville",
+        "Osler House",
+        "New College",
+        "St Catherine's",
+        "Wadham",
+        "University",
+        "Christ Church",
+        "Pembroke",
+        "Oriel",
+        "St Hilda's",
+        "L.M.H.",
+        "Trinity"
+      ],
+      [
+        "Worcester",
+        "St Anne's",
+        "Brasenose",
+        "St John's",
+        "Jesus",
+        "Wolfson",
+        "Lincoln",
+        "Hertford",
+        "S.E.H.",
+        "Somerville 2",
+        "Queen's",
+        "Merton"
+      ],
+      [
+        "Keble",
+        "Magdalen",
+        "Balliol",
+        "Linacre",
+        "Exeter",
+        "Osler House 2",
+        "St Peter's",
+        "Wadham 2",
+        "New College 2",
+        "St Hugh's",
+        "Pembroke 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Oriel 2",
+        "Mansfield",
+        "Corpus Christi",
+        "Christ Church 2",
+        "St John's 3",
+        "L.M.H. 3",
+        "University 2",
+        "Jesus 2",
+        "Osler House 3",
+        "St Hilda's 2",
+        "Mansfield 2",
+        "Hertford 2",
+        "St Anne's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1995,
+    "days": 4,
+    "divisions": [
+      [
+        "Somerville",
+        "Osler House",
+        "New College",
+        "St Catherine's",
+        "Wadham",
+        "University",
+        "Christ Church",
+        "Pembroke",
+        "Oriel",
+        "St Hilda's",
+        "L.M.H.",
+        "Trinity"
+      ],
+      [
+        "Worcester",
+        "St Anne's",
+        "Brasenose",
+        "St John's",
+        "Jesus",
+        "Wolfson",
+        "Lincoln",
+        "Hertford",
+        "S.E.H.",
+        "Somerville 2",
+        "Queen's",
+        "Merton"
+      ],
+      [
+        "Keble",
+        "Magdalen",
+        "Balliol",
+        "Linacre",
+        "Exeter",
+        "Osler House 2",
+        "St Peter's",
+        "Wadham 2",
+        "New College 2",
+        "St Hugh's",
+        "Pembroke 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Oriel 2",
+        "Mansfield",
+        "Corpus Christi",
+        "Christ Church 2",
+        "St John's 3",
+        "L.M.H. 3",
+        "University 2",
+        "Jesus 2",
+        "Osler House 3",
+        "St Hilda's 2",
+        "Mansfield 2",
+        "Hertford 2",
+        "St Anne's 2"
+      ]
+    ],
+    "results": "rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrre1e-1e1e-1re1e-1\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr e1e-1e1e-1e1e1e-2rrre1e-1r",
+    "move": [
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [-1, 1, 0, -1, 1, -1, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, -1, 1, 0, 0, 0, -2, 1, 1, -1, 1, -1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler House",
+        "New College",
+        "Somerville",
+        "Wadham",
+        "St Catherine's",
+        "Christ Church",
+        "Pembroke",
+        "Oriel",
+        "University",
+        "L.M.H.",
+        "St Hilda's",
+        "Worcester"
+      ],
+      [
+        "Trinity",
+        "St Anne's",
+        "Brasenose",
+        "St John's",
+        "Jesus",
+        "Wolfson",
+        "Lincoln",
+        "Hertford",
+        "S.E.H.",
+        "Somerville 2",
+        "Queen's",
+        "Merton"
+      ],
+      [
+        "Keble",
+        "Magdalen",
+        "Balliol",
+        "Linacre",
+        "Exeter",
+        "Osler House 2",
+        "St Peter's",
+        "Wadham 2",
+        "New College 2",
+        "St Hugh's",
+        "Pembroke 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Oriel 2",
+        "Mansfield",
+        "Corpus Christi",
+        "Christ Church 2",
+        "St John's 3",
+        "L.M.H. 3",
+        "University 2",
+        "Jesus 2",
+        "Osler House 3",
+        "St Hilda's 2",
+        "Mansfield 2",
+        "Hertford 2",
+        "St Anne's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1996,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler-Green",
+        "New College",
+        "Somerville",
+        "Wadham",
+        "St Catherine's",
+        "Christ Church",
+        "Pembroke",
+        "Oriel",
+        "University",
+        "L.M.H.",
+        "St Hilda's",
+        "Worcester"
+      ],
+      [
+        "Trinity",
+        "St Anne's",
+        "Brasenose",
+        "St John's",
+        "Jesus",
+        "Wolfson",
+        "Lincoln",
+        "Hertford",
+        "S.E.H.",
+        "Somerville 2",
+        "Queen's",
+        "Merton"
+      ],
+      [
+        "Magdalen",
+        "Balliol",
+        "Linacre",
+        "Exeter",
+        "Osler-Green 2",
+        "St Peter's",
+        "Wadham 2",
+        "New College 2",
+        "St Hugh's",
+        "Pembroke 2",
+        "L.M.H. 2",
+        "Mansfield"
+      ],
+      [
+        "Corpus Christi",
+        "Christ Church 2",
+        "Hertford 2",
+        "Magdalen 2",
+        "St Catherine's 2",
+        "Regent's Park",
+        "Wolfson 2",
+        "Merton 2",
+        "S.E.H. 2",
+        "Balliol 2",
+        "Lincoln 2",
+        "St Catherine's 3",
+        "Oriel 2"
+      ]
+    ],
+    "results": "e1e1e1e-3e1e1e1e2re1e-6rr e1e2re1e1e-5re1e1e2re2e-5 re1e1e-3rre1e-1e1e1e1e-3r rre1e1e-2re1e-1e1e1e-2rr\ne1e-1re1e-1re1e2re1e1e-5r rrre1e-1e1e-1rre1e-1e1e-1 re1e1e1e-3e2re1e-3re1e-1r e1e-1rrrrrrrrrrr\ne1e1e-2e1e1e1e-3rre1e1e2e-3 re-1re1e1e-2e1e-1e1e-1e1e-1r re1e1e1e1e-4e1e1e1e-3re2e-1 re-1re1e-1e1e-1rre1e-1rr\ne1e1e1e-3rrrre1e-1e1e-1r re2re-2re1e-1re1e1e-2rr e1e-1e1e1e1e1e-4re1e1e1e-3r re2re-2e1e-1rrrre1e-1r",
+    "move": [
+      [
+        [0, 0, -2, 1, 1, -1, 1, 0, -2, 1, 1, 0],
+        [0, -3, 1, 1, 1, -1, 1, 0, 0, -3, 1, 1],
+        [-5, 2, 0, 2, 1, 1, 0, -5, 1, 1, 0, 2],
+        [1, 0, -6, 1, 0, 2, 1, 1, 1, -3, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1],
+        [1, -1, 1, 0, -3, 1, 0, 2, -3, 1, 1, 1],
+        [-1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, 0],
+        [0, -5, 1, 1, 0, 2, 1, 0, -1, 1, 0, -1, 1]
+      ],
+      [
+        [0, 0, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1],
+        [-1, 2, 0, -3, 1, 1, 1, -4, 1, 1, 1, 1],
+        [0, -1, 1, -1, 1, -1, 1, -2, 1, 1, 0, -1],
+        [-3, 2, 1, 1, 0, 0, -3, 1, 1, 1, -2, 1, 1]
+      ],
+      [
+        [0, -1, 1, 0, 0, 0, 0, -1, 1, -2, 0, 2],
+        [0, -3, 1, 1, 1, 0, -4, 1, 1, 1, 1, -1],
+        [1, 0, -2, 1, 1, 0, -1, 1, 0, -2, 0, 2],
+        [0, -1, 1, -1, 1, 0, 0, 0, 0, -3, 1, 1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler-Green",
+        "St Catherine's",
+        "New College",
+        "Wadham",
+        "Somerville",
+        "Pembroke",
+        "Oriel",
+        "St Hilda's",
+        "Christ Church",
+        "St John's",
+        "University",
+        "L.M.H."
+      ],
+      [
+        "Trinity",
+        "Brasenose",
+        "Lincoln",
+        "Hertford",
+        "Worcester",
+        "Wolfson",
+        "Queen's",
+        "Merton",
+        "Balliol",
+        "S.E.H.",
+        "Jesus",
+        "Exeter"
+      ],
+      [
+        "St Anne's",
+        "Osler-Green 2",
+        "St Peter's",
+        "Linacre",
+        "Somerville 2",
+        "St Hugh's",
+        "Mansfield",
+        "Magdalen",
+        "Pembroke 2",
+        "Magdalen 2",
+        "L.M.H. 2",
+        "Wadham 2"
+      ],
+      [
+        "Corpus Christi",
+        "Wolfson 2",
+        "Regent's Park",
+        "St Catherine's 2",
+        "New College 2",
+        "Merton 2",
+        "S.E.H. 2",
+        "Lincoln 2",
+        "Hertford 2",
+        "Balliol 2",
+        "Oriel 2",
+        "St Catherine's 3",
+        "Christ Church 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1997,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler-Green",
+        "St Catherine's",
+        "New College",
+        "Wadham",
+        "Somerville",
+        "Pembroke",
+        "Oriel",
+        "St Hilda's",
+        "Christ Church",
+        "University",
+        "L.M.H.",
+        "Trinity"
+      ],
+      [
+        "Brasenose",
+        "Lincoln",
+        "Hertford",
+        "Worcester",
+        "Wolfson",
+        "Queen's",
+        "Merton",
+        "Balliol",
+        "S.E.H.",
+        "Jesus",
+        "Exeter",
+        "St Anne's"
+      ],
+      [
+        "Keble",
+        "Osler-Green 2",
+        "St Peter's",
+        "Linacre",
+        "Somerville 2",
+        "St Hugh's",
+        "Mansfield",
+        "Magdalen",
+        "Pembroke 2",
+        "Magdalen 2",
+        "L.M.H. 2",
+        "Wadham 2"
+      ],
+      [
+        "Corpus Christi",
+        "Wolfson 2",
+        "Regent's Park",
+        "St Catherine's 2",
+        "Merton 2",
+        "S.E.H. 2",
+        "Lincoln 2",
+        "Hertford 2",
+        "Christ Church 2",
+        "St Antony's",
+        "Wolfson 3",
+        "Brasenose 2",
+        "St Hugh's 2"
+      ]
+    ],
+    "results": "rre1e1e-2e1e-1e1e-1rrrr e2e2e-1e1e-4e1e1e-2rrrrr e1e-1rre1e-1e1e-1e1e-1rrr rre1e1e-2e1e1e-2rrrrr\ne1e-1re2e2e-1e1e1e-5e2re3e-3 rre1e1e-4e1e1e1e-3rrrr re1e-1rre1e-1e1e-1e1e-1e1e-1 re1e-1e1e1e-2re1e-1rrrr\nrrre1e-1e1e1e1e1e-4e1e2e-2 re-1e1e1e1e-3re1e-1rrrr rre1e-1rre1e-1e1e-1e1e-1r e1e-1e1e-1e1e2re-3rrrrr\nre1e1e-2e1e-1re2re1e-3e2e-1 re1e-2rre1e-1e1e1e-2rrr rrre1e-1rre1e-1rre1e-1 rrre1e-1e1e-1e1e-1rrrr",
+    "move": [
+      [
+        [0, 0, 0, 0, 0, -2, 1, 1, -2, 1, 1, 0],
+        [0, 0, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1],
+        [1, 0, 0, 0, 0, -2, 1, 1, -4, 1, -1, 2],
+        [2, 0, 0, 0, -1, 1, -1, 1, -2, 1, 1, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, 0, -2, 1, 1, -1, 1],
+        [-1, 1, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1],
+        [0, 0, 0, 0, -3, 1, 1, 1, -4, 1, 1, 0],
+        [-3, 3, 0, 2, -5, 1, 1, -1, 2, 2, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, -3, 0, 2, 1, -1, 1, -1],
+        [1, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1, 0],
+        [0, 0, 0, 0, -1, 1, 0, -3, 1, 1, 1, -1],
+        [-2, 2, 1, -4, 1, 1, 1, 1, -1, 1, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, 0],
+        [-1, 1, 0, 0, -1, 1, 0, 0, -1, 1, 0, 0],
+        [0, 0, 0, -2, 1, 1, -1, 1, 0, 0, -2, 1],
+        [-1, 2, -3, 1, 0, 2, 0, -1, 1, -2, 1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler-Green",
+        "St Catherine's",
+        "New College",
+        "Wadham",
+        "University",
+        "Oriel",
+        "L.M.H.",
+        "St Hilda's",
+        "Trinity",
+        "Somerville",
+        "Pembroke",
+        "Lincoln"
+      ],
+      [
+        "Wolfson",
+        "Christ Church",
+        "Brasenose",
+        "Merton",
+        "S.E.H.",
+        "Hertford",
+        "Worcester",
+        "Queen's",
+        "Keble",
+        "Balliol",
+        "Jesus",
+        "Exeter"
+      ],
+      [
+        "St Anne's",
+        "Osler-Green 2",
+        "St Peter's",
+        "Magdalen",
+        "Mansfield",
+        "Linacre",
+        "Wadham 2",
+        "St Hugh's",
+        "Corpus Christi",
+        "Wolfson 2",
+        "St Catherine's 2",
+        "Regent's Park"
+      ],
+      [
+        "Somerville 2",
+        "L.M.H. 2",
+        "Merton 2",
+        "St Antony's",
+        "Hertford 2",
+        "Magdalen 2",
+        "Wolfson 3",
+        "S.E.H. 2",
+        "Pembroke 2",
+        "Christ Church 2",
+        "St Hugh's 2",
+        "Lincoln 2",
+        "Brasenose 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1998,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler-Green",
+        "St Catherine's",
+        "New College",
+        "Wadham",
+        "University",
+        "Oriel",
+        "L.M.H.",
+        "St Hilda's",
+        "Trinity",
+        "Somerville",
+        "Pembroke",
+        "Lincoln"
+      ],
+      [
+        "Wolfson",
+        "Christ Church",
+        "Brasenose",
+        "St John's",
+        "Merton",
+        "S.E.H.",
+        "Hertford",
+        "Worcester",
+        "Queen's",
+        "Keble",
+        "Balliol",
+        "Jesus"
+      ],
+      [
+        "Exeter",
+        "St Anne's",
+        "Osler-Green 2",
+        "St Peter's",
+        "Magdalen",
+        "Mansfield",
+        "Linacre",
+        "Wadham 2",
+        "St Hugh's",
+        "Corpus Christi",
+        "Wolfson 2",
+        "St Catherine's 2"
+      ],
+      [
+        "Regent's Park",
+        "Somerville 2",
+        "L.M.H. 2",
+        "Merton 2",
+        "St Antony's",
+        "Hertford 2",
+        "Magdalen 2",
+        "Wolfson 3",
+        "S.E.H. 2",
+        "Pembroke 2",
+        "Christ Church 2",
+        "St Hugh's 2"
+      ],
+      [
+        "Lincoln 2",
+        "Linacre 2",
+        "Oriel 2",
+        "Jesus 2",
+        "St Peter's 2",
+        "St Peter's 3",
+        "New College 2",
+        "St Hilda's 2",
+        "St Anne's 2",
+        "Mansfield 2",
+        "St John's 2",
+        "Magdalen 3",
+        "Worcester 2"
+      ]
+    ],
+    "results": "rre1e-1rre2re1e-3e3re-2 re2re1e-4e1e1e1e1e1e1e-6r re2re1e1e-4rre2e-1e1e-2r re1e1e-2e2re-2rre1e-1e2e-1 re1e2re1e-5e1e-1e1e-1rrr\ne1e-1re2e3e1e-2e1e1e1e-7rr rrre1e1e1e-3re1e1e-2e1e-1 rrrrre1e-1re1e-1e1e2e-2 re-1e1e-1e1e-1rre1e-1e1e1e-2 rre1e-1re1e-1e1e-1rrrr\nre1e1e-2re1e-1rre1e1e-2r e1e1e-2e1e1e1e1e-4e1e-1rrr e1e-1rrre1e1e-2re1e-1e2e-1 re1e-2e1e-1rre1e-1e1e-1e1e-1 re1e-1e1e-1re1e-1rrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr",
+    "move": [
+      [
+        [0, 0, 0, -1, 1, -1, 1, -5, 1, 0, 2, 1],
+        [-1, 2, -1, 1, 0, 0, -2, 0, 2, -2, 1, 1],
+        [0, -2, 1, -1, 2, 0, 0, -4, 1, 1, 0, 2],
+        [0, -6, 1, 1, 1, 1, 1, 1, -4, 1, 0, 2],
+        [-2, 0, 3, -3, 1, 0, 2, 0, 0, -1, 1, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, 0, -1, 1, 0],
+        [-2, 1, 1, -1, 1, 0, 0, -1, 1, -1, 1, -1],
+        [-2, 2, 1, -1, 1, 0, -1, 1, 0, 0, 0, 0],
+        [-1, 1, -2, 1, 1, 0, -3, 1, 1, 1, 0, 0],
+        [0, 0, -7, 1, 1, 1, -2, 1, 3, 2, 0, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, -1, 1, 0, -1, 1, -1, 1],
+        [-1, 1, -1, 1, -1, 1, 0, 0, -1, 1, -2, 1],
+        [-1, 2, -1, 1, 0, -2, 1, 1, 0, 0, 0, -1],
+        [1, 0, 0, -1, 1, -4, 1, 1, 1, 1, -2, 1],
+        [1, -2, 1, 1, 0, 0, -1, 1, 0, -2, 1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler-Green",
+        "St Catherine's",
+        "New College",
+        "University",
+        "L.M.H.",
+        "Trinity",
+        "Wadham",
+        "Oriel",
+        "Lincoln",
+        "Pembroke",
+        "Christ Church",
+        "Somerville"
+      ],
+      [
+        "St John's",
+        "Wolfson",
+        "Merton",
+        "St Hilda's",
+        "S.E.H.",
+        "Brasenose",
+        "Queen's",
+        "Hertford",
+        "Jesus",
+        "Worcester",
+        "Osler-Green 2",
+        "Magdalen"
+      ],
+      [
+        "Balliol",
+        "Keble",
+        "St Peter's",
+        "Exeter",
+        "St Anne's",
+        "St Hugh's",
+        "Linacre",
+        "Mansfield",
+        "Corpus Christi",
+        "St Catherine's 2",
+        "Wolfson 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Wadham 2",
+        "Regent's Park",
+        "St Antony's",
+        "Merton 2",
+        "Hertford 2",
+        "Somerville 2",
+        "Pembroke 2",
+        "St Hugh's 2",
+        "Wolfson 3",
+        "Magdalen 2",
+        "Oriel 2",
+        "S.E.H. 2"
+      ],
+      [
+        "Christ Church 2",
+        "St Peter's 2",
+        "New College 2",
+        "Linacre 2",
+        "St Peter's 3",
+        "St Anne's 2",
+        "St John's 2",
+        "St Hilda's 2",
+        "Jesus 2",
+        "Mansfield 2",
+        "Worcester 2",
+        "Lincoln 2",
+        "Magdalen 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 1999,
+    "days": 4,
+    "divisions": [
+      [
+        "Osler-Green",
+        "St Catherine's",
+        "New College",
+        "University",
+        "L.M.H.",
+        "Trinity",
+        "Wadham",
+        "Oriel",
+        "Lincoln",
+        "Pembroke",
+        "Christ Church",
+        "Somerville"
+      ],
+      [
+        "St John's",
+        "Wolfson",
+        "Merton",
+        "St Hilda's",
+        "S.E.H.",
+        "Queen's",
+        "Hertford",
+        "Jesus",
+        "Worcester",
+        "Magdalen",
+        "Balliol",
+        "Keble"
+      ],
+      [
+        "St Peter's",
+        "Exeter",
+        "St Anne's",
+        "St Hugh's",
+        "Linacre",
+        "Mansfield",
+        "Corpus Christi",
+        "St Catherine's 2",
+        "Wolfson 2",
+        "L.M.H. 2",
+        "Wadham 2",
+        "St Antony's"
+      ],
+      [
+        "Merton 2",
+        "Somerville 2",
+        "Pembroke 2",
+        "St Hugh's 2",
+        "Magdalen 2",
+        "Oriel 2",
+        "S.E.H. 2",
+        "Christ Church 2",
+        "New College 2",
+        "St Anne's 2",
+        "St John's 2",
+        "St Hilda's 2"
+      ],
+      [
+        "Mansfield 2",
+        "Lincoln 2",
+        "Magdalen 3",
+        "Christ Church 3",
+        "Mansfield 3",
+        "St Hilda's 3",
+        "University 2",
+        "L.M.H. 3",
+        "Keble 2",
+        "Balliol 2",
+        "Queen's 2",
+        "Exeter 2",
+        "University 3"
+      ]
+    ],
+    "results": "rrrrrrrrrrrrr rrrrrrrrrrrrr e1e-1e1e1e-2rre2re1e1e-4r re1e2re1e1e-5rrre1e-1r e1e1e1e2re1e1e-7rrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr e1e2re-3rrre1e-1e1e-1rr e2re-2e1e1e-2rre2re1e2e-4 re-1e2re1e1e-4e1e-1re1e-1r\nrrrrrrrrrrrrr rrrrrrrrrrrrr re1e-1rrrrre1e1e-2e1e-1 rre1e-1re1e-1e1e-1e1e-1e2e-1 re1e-2re1e-1e1e-1rrrrr\ne3e4e-2e1e-3e2re1e-6re1e2e-2 re-1e1e1e2e2e-1e1e2re-8e1e-1 rre1e-1rrrre1e1e1e-3r e2re-2rre1e1e1e1e1e-5e1e-1 rre1e-1re1e-1e1e-1rrrr",
+    "move": [
+      [
+        [0, 0, 0, 0, 0, -7, 1, 1, 0, 2, 1, 1],
+        [1, -1, 1, 0, 0, 0, -5, 1, 1, 0, 2, 1],
+        [0, -4, 1, 1, 0, 2, 0, 0, -2, 1, 1, -1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, -1, 1, 0, -1, 1, -4, 1, 1, 0, 2, -1],
+        [-4, 2, 1, 0, 2, 0, 0, -2, 1, 1, -2, 0],
+        [2, 0, -1, 1, -1, 1, 0, 0, 0, -3, 0, 2],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, -1, 1, -1, 1, 0, -2, 1],
+        [-1, 2, -1, 1, -1, 1, -1, 1, 0, -1, 1, 0],
+        [-1, 1, -2, 1, 1, 0, 0, 0, 0, 0, -1, 1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, 0, -1, 1, 0],
+        [-1, 1, -5, 1, 1, 1, 1, 1, 0, 0, -2, 0],
+        [2, -3, 1, 1, 1, 0, 0, 0, 0, -1, 1, 0],
+        [-1, 1, -8, 0, 2, 1, -1, 2, 2, 1, 1, -1],
+        [-2, 2, 1, 0, -6, 1, 0, 2, -3, 1, -2, 4, 3]
+      ]
+    ],
+    "finish": [
+      [
+        "Osler-Green",
+        "New College",
+        "St Catherine's",
+        "University",
+        "Pembroke",
+        "Wadham",
+        "Somerville",
+        "L.M.H.",
+        "Lincoln",
+        "Merton",
+        "Christ Church",
+        "Wolfson"
+      ],
+      [
+        "St John's",
+        "Oriel",
+        "S.E.H.",
+        "Queen's",
+        "Trinity",
+        "Balliol",
+        "Jesus",
+        "St Hilda's",
+        "Magdalen",
+        "St Peter's",
+        "St Anne's",
+        "Hertford"
+      ],
+      [
+        "Worcester",
+        "St Hugh's",
+        "Exeter",
+        "Mansfield",
+        "Keble",
+        "Linacre",
+        "Corpus Christi",
+        "St Catherine's 2",
+        "L.M.H. 2",
+        "St Antony's",
+        "Merton 2",
+        "Wolfson 2"
+      ],
+      [
+        "Somerville 2",
+        "Wadham 2",
+        "Magdalen 2",
+        "St Hugh's 2",
+        "Oriel 2",
+        "Christ Church 2",
+        "New College 2",
+        "S.E.H. 2",
+        "St Anne's 2",
+        "St John's 2",
+        "Pembroke 2",
+        "Lincoln 2"
+      ],
+      [
+        "St Hilda's 2",
+        "Magdalen 3",
+        "Mansfield 2",
+        "Christ Church 3",
+        "St Hilda's 3",
+        "L.M.H. 3",
+        "University 2",
+        "Exeter 2",
+        "Balliol 2",
+        "University 3",
+        "Mansfield 3",
+        "Keble 2",
+        "Queen's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2001,
+    "days": 4,
+    "divisions": [
+      [
+        "New College",
+        "St Catherine's",
+        "University",
+        "Pembroke",
+        "Somerville",
+        "L.M.H.",
+        "Lincoln",
+        "Merton",
+        "Christ Church",
+        "Wolfson",
+        "St John's",
+        "Oriel"
+      ],
+      [
+        "S.E.H.",
+        "Queen's",
+        "Trinity",
+        "Balliol",
+        "Jesus",
+        "St Hilda's",
+        "Magdalen",
+        "St Peter's",
+        "St Anne's",
+        "Brasenose",
+        "Hertford",
+        "Worcester"
+      ],
+      [
+        "Exeter",
+        "Linacre",
+        "St Antony's",
+        "Merton 2",
+        "Wolfson 2",
+        "Somerville 2"
+      ]
+    ],
+    "results": "rrrrrr re2e-1e-1e1e-1e1e1e-2e1e-1e2e-1 re1e-2re1e2e-2e-1e2re-2e1e-1\nrre1e-1e2e-1 re1e1e1e-4e1e-1e2re-2e1e-1r re1e2re-3re1e1e-2rrrr\nrrre1e-1r re2re1e1e-4e1e-1re1e-1e2e-1 re-1e1e-1e1e1e-2e1e1e-2rrr\nrrre1e3e-2 rre1e1e1e1e-6re1e-1e1e-1r re1e-1rre1e-1rre1e-1rr",
+    "move": [
+      [
+        [-1, 1, -2, 0, 2, -1, -2, 2, 1, 0, -2, 1],
+        [-1, 2, -1, 1, -2, 1, 1, -1, 1, -1, -1, 2],
+        [0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -2, 1, 1, 0, -3, 0, 2, 1],
+        [0, -1, 1, -2, 0, 2, -1, 1, -4, 1, 1, 1],
+        [-1, 2, -1, 1, 0, 0]
+      ],
+      [
+        [0, 0, 0, -2, 1, 1, -2, 1, 1, -1, 1, -1],
+        [-1, 2, -1, 1, 0, -1, 1, -4, 1, 1, 0, 2],
+        [0, -1, 1, 0, 0, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, 0, -1, 1, 0, 0, -1, 1],
+        [0, -1, 1, -1, 1, 0, -6, 1, 1, 1, 1, 0],
+        [-2, 3, 1, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "St Catherine's",
+        "New College",
+        "Merton",
+        "Somerville",
+        "L.M.H.",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "University",
+        "Queen's",
+        "Balliol",
+        "Wolfson"
+      ],
+      [
+        "Lincoln",
+        "Magdalen",
+        "St John's",
+        "St Hilda's",
+        "S.E.H.",
+        "St Anne's",
+        "Worcester",
+        "Brasenose",
+        "Linacre",
+        "Hertford",
+        "Merton 2",
+        "Jesus"
+      ],
+      [
+        "Trinity",
+        "Exeter",
+        "St Peter's",
+        "St Antony's",
+        "Wolfson 2",
+        "Somerville 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2003,
+    "days": 4,
+    "divisions": [
+      [
+        "St Catherine's",
+        "New College",
+        "Merton",
+        "Somerville",
+        "L.M.H.",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "University",
+        "Queen's",
+        "Wadham",
+        "Balliol"
+      ],
+      [
+        "Wolfson",
+        "Lincoln",
+        "Magdalen",
+        "St John's",
+        "St Hilda's",
+        "S.E.H.",
+        "St Anne's",
+        "Worcester",
+        "Brasenose",
+        "Linacre",
+        "Hertford",
+        "Merton 2"
+      ],
+      [
+        "Jesus",
+        "St Hugh's",
+        "Trinity",
+        "Exeter",
+        "Mansfield",
+        "Keble",
+        "St Peter's",
+        "Corpus Christi",
+        "St Catherine's 2",
+        "Wolfson 2",
+        "Somerville 2",
+        "Wadham 2"
+      ],
+      [
+        "Magdalen 2",
+        "L.M.H. 2",
+        "Oriel 2",
+        "New College 2",
+        "St John's 2",
+        "Lincoln 2",
+        "St Hilda's 2",
+        "St Hilda's 3",
+        "Keble 2",
+        "Queen's 2",
+        "Hertford 2",
+        "Oriel 3"
+      ],
+      [
+        "Pembroke 2",
+        "Lincoln 3",
+        "Jesus 2",
+        "Merton 3",
+        "Worcester 2",
+        "Christ Church 2",
+        "Corpus Christi 2",
+        "Brasenose 2",
+        "Wadham 3",
+        "S.E.H. 2",
+        "Worcester 3",
+        "Somerville 3",
+        "Exeter 2"
+      ]
+    ],
+    "results": "e1e1e-2e1e-1e1e-1e2e2e-1e1e-4r e1e1e1e1e1e1e1e1e-8e1e1e-2r e2re1e-3re1e-1e1e-1e2re3e-3 rre2re1e1e-6e1e1e-2re2e-1 re1e-2rrrre1e-1e1e1e-2r\ne1e-1e1e-1e1e-1e2re1e1e1e2e-6 re2re1e-4re1e1e1e-3e1e2e-2 re1e1e-3e1e-1e2re1e1e-4e2e-1 re1e1e-3e2re1e1e-4e1e-1e2e-1 re1e-2e1e-1e1e1e-2rrre1e-1\ne2re-2re1e1e-2re1e-1e1e2e-2 re-1rre1e2re-3e1e1e-2e2e-1 re1e-2e2re-2rre1e1e1e-3r re2re-2e1e-1re1e-1re1e-1r rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr",
+    "move": [
+      [
+        [0, -2, 1, 1, -1, 1, 0, 0, 0, 0, -2, 1],
+        [-1, 2, 0, -2, 1, 1, -6, 1, 1, 0, 2, 0],
+        [-3, 3, 0, 2, -1, 1, -1, 1, 0, -3, 1, 0],
+        [2, -2, 1, 1, -8, 1, 1, 1, 1, 1, 1, 1],
+        [1, -4, 1, -1, 2, 2, -1, 1, -1, 1, -2, 1, 1]
+      ],
+      [
+        [-1, 1, 0, 0, 0, -2, 1, 1, -1, 1, -2, 1],
+        [-1, 2, -1, 1, -4, 1, 1, 0, 2, -3, 1, 1],
+        [-1, 2, -4, 1, 1, 0, 2, -1, 1, -3, 1, 1],
+        [-2, 2, 1, -3, 1, 1, 1, 0, -4, 1, 0, 2],
+        [-6, 2, 1, 1, 1, 0, 2, -1, 1, -1, 1, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, -1, 1, 0, -1, 1, 0, -1, 1, -2, 0, 2],
+        [0, -3, 1, 1, 1, 0, 0, -2, 0, 2, -2, 1],
+        [-1, 2, -2, 1, 1, -3, 0, 2, 1, 0, 0, -1],
+        [-2, 2, 1, -1, 1, 0, -2, 1, 1, 0, -2, 0, 2]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Merton",
+        "St Catherine's",
+        "Somerville",
+        "New College",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "L.M.H.",
+        "Queen's",
+        "University",
+        "Lincoln",
+        "Wolfson"
+      ],
+      [
+        "Balliol",
+        "St Hilda's",
+        "Wadham",
+        "Magdalen",
+        "Worcester",
+        "St John's",
+        "Hertford",
+        "S.E.H.",
+        "Brasenose",
+        "Exeter",
+        "Merton 2",
+        "St Hugh's"
+      ],
+      [
+        "Linacre",
+        "Jesus",
+        "Keble",
+        "Corpus Christi",
+        "St Anne's",
+        "Mansfield",
+        "Trinity",
+        "Magdalen 2",
+        "St Peter's",
+        "St Catherine's 2",
+        "Oriel 2",
+        "New College 2"
+      ],
+      [
+        "Wadham 2",
+        "Somerville 2",
+        "Lincoln 2",
+        "St Hilda's 2",
+        "Wolfson 2",
+        "Keble 2",
+        "L.M.H. 2",
+        "Hertford 2",
+        "St Hilda's 3",
+        "Pembroke 2",
+        "Oriel 3",
+        "Worcester 2"
+      ],
+      [
+        "Jesus 2",
+        "Christ Church 2",
+        "Queen's 2",
+        "Brasenose 2",
+        "Merton 3",
+        "Lincoln 3",
+        "S.E.H. 2",
+        "Corpus Christi 2",
+        "St John's 2",
+        "Somerville 3",
+        "Exeter 2",
+        "Worcester 3",
+        "Wadham 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2004,
+    "days": 4,
+    "divisions": [
+      [
+        "Merton",
+        "St Catherine's",
+        "Somerville",
+        "New College",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "L.M.H.",
+        "Queen's",
+        "University",
+        "Lincoln",
+        "Wolfson"
+      ],
+      [
+        "Osler-Green",
+        "Balliol",
+        "St Hilda's",
+        "Wadham",
+        "Magdalen",
+        "Worcester",
+        "St John's",
+        "Hertford",
+        "S.E.H.",
+        "Brasenose",
+        "Exeter",
+        "Merton 2"
+      ],
+      [
+        "St Hugh's",
+        "Linacre",
+        "Jesus",
+        "Keble",
+        "Corpus Christi",
+        "St Anne's",
+        "Mansfield",
+        "Trinity",
+        "St Peter's",
+        "St Catherine's 2",
+        "Oriel 2",
+        "New College 2"
+      ],
+      [
+        "Wadham 2",
+        "Lincoln 2",
+        "St Antony's",
+        "St Hilda's 2",
+        "Wolfson 2",
+        "Keble 2",
+        "L.M.H. 2",
+        "Hertford 2",
+        "St Hilda's 3",
+        "Pembroke 2",
+        "Worcester 2",
+        "Christ Church 2"
+      ],
+      [
+        "Queen's 2",
+        "Brasenose 2",
+        "Lincoln 3",
+        "S.E.H. 2",
+        "Corpus Christi 2",
+        "St John's 2",
+        "Exeter 2",
+        "Hertford 3",
+        "St Peter's 2",
+        "Exeter 3",
+        "Balliol 2",
+        "Linacre 2",
+        "Mansfield 2"
+      ]
+    ],
+    "results": "e1e1e2e-3e1e1e2re1e1e1e-8r e1e1e1e1e-4rrre1e-1e1e2e-2 re1e-2re1e-1e1e-1re1e-1e2e-1 re-1e1e1e1e1e1e1e1e1e1e-9r e1e2re-3e1e-1e1e1e-2e1e1e-2r\ne1e1e1e-3rre1e-1e2re1e-3r re1e-1e1e1e-2e1e2re1e-4e2e-1 re1e1e-3e2e2e-1e1e-4re1e1e-2 re1e-1rre1e-1rre1e-1e1e-1 re2re1e-3rre1e1e-2e1e-1r\ne1e1e-2e1e-1e2re1e-3re1e-1r re1e-1re1e-1e1e1e1e-3e1e1e-2 rrrrrre1e1e1e1e-4e2e-1 re-1rre1e1e2re1e1e1e-7r rrrrre1e1e-2e1e1e-2rr\nrre1e1e1e-3e1e-1e2re-2e2e-1 re1e1e1e1e-5rrre1e-1rr re1e2re1e-4rrre1e-1e1e-1 re2re1e-3e1e-1re1e1e-2e2e-1 re-1re1e1e-2rrrrrrr",
+    "move": [
+      [
+        [0, -2, 1, 1, -2, 1, 1, -1, 1, -3, 0, 2],
+        [1, -9, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1],
+        [-1, 2, -1, 1, 0, -1, 1, -1, 1, 0, -2, 1],
+        [-2, 2, 1, -1, 1, 0, 0, 0, -4, 1, 1, 1],
+        [1, -8, 1, 1, 1, 0, 2, 1, 1, -3, 2, 1, 1]
+      ],
+      [
+        [0, -1, 1, -2, 1, 1, 0, 0, -3, 1, 0, 2],
+        [-1, 1, -1, 1, 0, 0, -1, 1, 0, 0, -1, 1],
+        [-2, 1, 1, 0, -4, 1, -1, 2, 2, -3, 1, 1],
+        [-1, 2, -4, 1, 0, 2, 1, -2, 1, 1, -1, 1],
+        [0, -3, 1, 0, 2, -1, 1, 0, 0, -3, 1, 1, 1]
+      ],
+      [
+        [0, 0, -2, 1, 1, -2, 1, 1, 0, 0, 0, 0],
+        [0, -7, 1, 1, 1, 0, 2, 1, 1, 0, 0, -1],
+        [-1, 2, -4, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+        [-2, 1, 1, -3, 1, 1, 1, -1, 1, 0, -1, 1],
+        [0, -1, 1, 0, -3, 1, 0, 2, -1, 1, -2, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, -2, 1, 1, 0, -1],
+        [-1, 2, -2, 1, 1, 0, -1, 1, -3, 1, 0, 2],
+        [-1, 1, -1, 1, 0, 0, 0, -4, 1, 0, 2, 1],
+        [0, 0, -1, 1, 0, 0, 0, -5, 1, 1, 1, 1],
+        [-1, 2, -2, 0, 2, -1, 1, -3, 1, 1, 1, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Merton",
+        "New College",
+        "Oriel",
+        "Christ Church",
+        "Somerville",
+        "Pembroke",
+        "Queen's",
+        "Wolfson",
+        "Osler-Green",
+        "St Catherine's",
+        "Lincoln",
+        "Magdalen"
+      ],
+      [
+        "L.M.H.",
+        "St Hilda's",
+        "Worcester",
+        "S.E.H.",
+        "Wadham",
+        "St John's",
+        "Brasenose",
+        "Hertford",
+        "Exeter",
+        "Keble",
+        "Linacre",
+        "University"
+      ],
+      [
+        "St Hugh's",
+        "Balliol",
+        "Mansfield",
+        "Jesus",
+        "St Peter's",
+        "Trinity",
+        "Merton 2",
+        "Corpus Christi",
+        "Lincoln 2",
+        "New College 2",
+        "St Antony's",
+        "St Anne's"
+      ],
+      [
+        "Oriel 2",
+        "Wolfson 2",
+        "St Hilda's 2",
+        "St Catherine's 2",
+        "L.M.H. 2",
+        "Wadham 2",
+        "Keble 2",
+        "Pembroke 2",
+        "Hertford 2",
+        "Christ Church 2",
+        "Queen's 2",
+        "Exeter 2"
+      ],
+      [
+        "Worcester 2",
+        "St Hilda's 3",
+        "Hertford 3",
+        "Corpus Christi 2",
+        "S.E.H. 2",
+        "St John's 2",
+        "St Peter's 2",
+        "Linacre 2",
+        "Balliol 2",
+        "Exeter 3",
+        "Lincoln 3",
+        "Brasenose 2",
+        "Mansfield 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2005,
+    "days": 4,
+    "divisions": [
+      [
+        "Merton",
+        "New College",
+        "Oriel",
+        "Christ Church",
+        "Somerville",
+        "Pembroke",
+        "Queen's",
+        "Wolfson",
+        "Osler-Green",
+        "St Catherine's",
+        "Lincoln",
+        "Magdalen"
+      ],
+      [
+        "L.M.H.",
+        "St Hilda's",
+        "Worcester",
+        "S.E.H.",
+        "Wadham",
+        "St John's",
+        "Brasenose",
+        "Hertford",
+        "Exeter",
+        "Keble",
+        "Linacre",
+        "University"
+      ],
+      [
+        "St Hugh's",
+        "Balliol",
+        "Mansfield",
+        "Jesus",
+        "St Peter's",
+        "Trinity",
+        "Corpus Christi",
+        "Lincoln 2",
+        "New College 2",
+        "St Antony's",
+        "St Anne's",
+        "Oriel 2"
+      ],
+      [
+        "Wolfson 2",
+        "Magdalen 2",
+        "St Hilda's 2",
+        "L.M.H. 2",
+        "Wadham 2",
+        "Keble 2",
+        "Pembroke 2",
+        "Hertford 2",
+        "Christ Church 2",
+        "Queen's 2",
+        "Worcester 2",
+        "St Hilda's 3"
+      ],
+      [
+        "Hertford 3",
+        "S.E.H. 2",
+        "St John's 2",
+        "St Peter's 2",
+        "Linacre 2",
+        "Mansfield 2",
+        "Queen's 3",
+        "Jesus 2",
+        "St Anne's 2",
+        "Worcester 3",
+        "University 2",
+        "Pembroke 3",
+        "University 3"
+      ]
+    ],
+    "results": "re1e-1e1e-1e1e1e1e1e1e1e1e-7 rre1e1e-2e1e-1re1e-1e1e-1r e1e-1e2re-2e1e1e1e-3rrrr e1e-1re1e-1e1e-1rre1e-1e2e-1 re1e-2re2re1e-3rrre1e-1\nrrrre2re1e1e1e1e-6e2e-1 re-1re1e1e-2e1e1e-2e1e-1e1e-1 re1e-1re1e-1rre1e-1re1e-1 re1e-1re1e-1e1e-1rre1e-1r re1e1e1e1e-4e1e1e-2re1e-1r\nrrre1e-1e1e1e1e-3rre2e-1 re1e1e-3e1e1e1e1e2re1e-7r e1e-1e1e-1re1e-1rre1e1e-2r rre1e1e1e1e1e1e1e1e1e1e-10 rrrre1e-1e1e-1re1e-1rr\nre2re1e1e-4re2re-2e1e-1r e1e1e1e1e-4e1e-1e1e1e-2e1e1e-2 rrre1e-1re1e-1rre1e-1r e1e-1re1e1e-2e1e-1e1e-1e1e-1r e1e-1e1e1e-2re1e-1e1e-1rrr",
+    "move": [
+      [
+        [-1, 1, 0, 0, 0, -3, 1, 0, 2, 0, -2, 1],
+        [-1, 2, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1],
+        [1, 0, 0, 0, -3, 1, 1, 1, -2, 0, 2, -1],
+        [1, -1, 1, -1, 1, 0, -1, 1, -2, 1, 1, 0],
+        [-7, 1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 0]
+      ],
+      [
+        [0, -1, 1, 0, -2, 1, 1, -4, 1, 1, 1, 1],
+        [0, -1, 1, 0, 0, -1, 1, -1, 1, 0, -1, 1],
+        [-1, 1, 0, -1, 1, 0, 0, -1, 1, 0, -1, 1],
+        [-1, 1, -1, 1, -2, 1, 1, -2, 1, 1, 0, -1],
+        [-1, 2, -6, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, -1, 1, -1, 1, 0, 0, 0],
+        [-10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, -2, 1, 1, 0, 0, -1, 1, 0, -1, 1, -1],
+        [1, -7, 1, 0, 2, 1, 1, 1, 1, -3, 1, 1],
+        [-1, 2, 0, 0, -3, 1, 1, 1, -1, 1, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, -1, 1, 0, -2, 1, 1, -1],
+        [1, -1, 1, -1, 1, -1, 1, -2, 1, 1, 0, -1],
+        [1, -1, 1, 0, 0, -1, 1, 0, -1, 1, 0, 0],
+        [-2, 1, 1, -2, 1, 1, -1, 1, -4, 1, 1, 1],
+        [1, -1, 1, -2, 0, 2, 0, -4, 1, 1, 0, 2, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "New College",
+        "Oriel",
+        "Christ Church",
+        "Queen's",
+        "Merton",
+        "Osler-Green",
+        "Somerville",
+        "St Catherine's",
+        "Magdalen",
+        "St Hilda's",
+        "Pembroke",
+        "S.E.H."
+      ],
+      [
+        "Wolfson",
+        "Worcester",
+        "L.M.H.",
+        "Hertford",
+        "Wadham",
+        "Keble",
+        "St John's",
+        "Exeter",
+        "St Hugh's",
+        "Brasenose",
+        "Lincoln",
+        "Balliol"
+      ],
+      [
+        "Linacre",
+        "Trinity",
+        "Mansfield",
+        "University",
+        "Jesus",
+        "St Anne's",
+        "Corpus Christi",
+        "Lincoln 2",
+        "Wolfson 2",
+        "St Peter's",
+        "St Antony's",
+        "St Hilda's 2"
+      ],
+      [
+        "Wadham 2",
+        "Keble 2",
+        "New College 2",
+        "Hertford 2",
+        "L.M.H. 2",
+        "Magdalen 2",
+        "Worcester 2",
+        "Queen's 2",
+        "Christ Church 2",
+        "St John's 2",
+        "S.E.H. 2",
+        "Pembroke 2"
+      ],
+      [
+        "Oriel 2",
+        "Linacre 2",
+        "St Hilda's 3",
+        "Worcester 3",
+        "Jesus 2",
+        "Mansfield 2",
+        "Hertford 3",
+        "St Anne's 2",
+        "St Peter's 2",
+        "University 2",
+        "Pembroke 3",
+        "Queen's 3",
+        "University 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2006,
+    "days": 4,
+    "divisions": [
+      [
+        "New College",
+        "Oriel",
+        "Christ Church",
+        "Queen's",
+        "Merton",
+        "Osler-Green",
+        "Somerville",
+        "St Catherine's",
+        "Magdalen",
+        "St Hilda's",
+        "Pembroke",
+        "S.E.H."
+      ],
+      [
+        "Wolfson",
+        "Worcester",
+        "L.M.H.",
+        "Hertford",
+        "Wadham",
+        "Keble",
+        "St John's",
+        "Exeter",
+        "St Hugh's",
+        "Brasenose",
+        "Lincoln",
+        "Balliol"
+      ],
+      [
+        "Linacre",
+        "Trinity",
+        "Mansfield",
+        "University",
+        "Jesus",
+        "St Anne's",
+        "Corpus Christi",
+        "Lincoln 2",
+        "Wolfson 2",
+        "St Peter's",
+        "St Antony's",
+        "St Hilda's 2"
+      ],
+      [
+        "Merton 2",
+        "Wadham 2",
+        "Keble 2",
+        "New College 2",
+        "Hertford 2",
+        "Worcester 2",
+        "Queen's 2",
+        "St John's 2",
+        "S.E.H. 2",
+        "Pembroke 2",
+        "Oriel 2",
+        "Linacre 2"
+      ],
+      [
+        "Worcester 3",
+        "Jesus 2",
+        "Mansfield 2",
+        "St Anne's 2",
+        "Pembroke 3",
+        "Queen's 3",
+        "Regent's Park",
+        "Balliol 2",
+        "Exeter 2",
+        "St Hugh's 2",
+        "Osler-Green 2",
+        "Exeter 3",
+        "Balliol 3"
+      ]
+    ],
+    "results": "re1e2re2re-5e1e-1e1e-1rr e1e1e-2e1e1e-2rre1e1e-2e2e-1 re1e1e2re-5re1e-1e1e-1rr e1e1e-2re1e1e-2re1e1e-2e2e-1 re1e-2e2re1e-3e1e-1e1e-1e1e-1\nrre2re1e1e-4re1e-1e1e2e-2 re-1rre1e-1e1e-1e1e1e1e1e-4 rre1e1e-2e1e-1re1e-1e4re-2 rre1e-3re1e1e-2re1e1e-2r e1e2e2e-1e1e1e2re1e1e1e-11r\nrre1e-1re1e1e-2rrrrr re1e-1re1e1e1e1e-4re1e2e-2 re1e-2e1e1e-2rre1e1e-2e1e-1 rre1e2re1e1e1e-6rre2e-1 re1e-2re1e-1e1e-1e2re-2rr\nrrrre1e-1e1e1e-2e1e-1rr e2re1e1e-4rre2re1e-3e2e-1 re1e-2rre1e1e1e-3e1e1e-2r re1e-1e1e-1e1e-1e1e1e-2e1e1e-2 re1e-1e1e-1e1e-1e1e-1rrrr",
+    "move": [
+      [
+        [-1, 1, -1, 1, -1, 1, -3, 1, 0, 2, -2, 1],
+        [-1, 2, -2, 1, 1, 0, -2, 1, 1, 0, -2, 1],
+        [1, 0, -1, 1, -1, 1, 0, -5, 0, 2, 1, 1],
+        [-1, 2, -2, 1, 1, 0, 0, -2, 1, 1, -2, 1],
+        [1, 0, -1, 1, -1, 1, -5, 0, 2, 0, 2, 1, 0]
+      ],
+      [
+        [0, -11, 1, 1, 1, 0, 2, 1, 1, -1, 2, 2],
+        [1, -2, 1, 1, 0, -2, 1, 1, 0, -3, 1, 0],
+        [-2, 0, 4, -1, 1, 0, -1, 1, -2, 1, 1, 0],
+        [-4, 1, 1, 1, 1, -1, 1, -1, 1, 0, 0, -1],
+        [-2, 2, 1, -1, 1, 0, -4, 1, 1, 0, 2, 0, 0]
+      ],
+      [
+        [0, 0, -2, 0, 2, -1, 1, -1, 1, 0, -2, 1],
+        [-1, 2, 0, 0, -6, 1, 1, 1, 0, 2, 1, 0],
+        [-1, 1, -2, 1, 1, 0, 0, -2, 1, 1, -2, 1],
+        [-2, 2, 1, 0, -4, 1, 1, 1, 1, 0, -1, 1],
+        [0, 0, 0, 0, 0, -2, 1, 1, 0, -1, 1, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1],
+        [-2, 1, 1, -2, 1, 1, -1, 1, -1, 1, -1, 1],
+        [0, -2, 1, 1, -3, 1, 1, 1, 0, 0, -2, 1],
+        [-1, 2, -3, 1, 0, 2, 0, 0, -4, 1, 1, 0],
+        [2, 0, -1, 1, -2, 1, 1, -1, 1, 0, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Oriel",
+        "Queen's",
+        "St Catherine's",
+        "Osler-Green",
+        "St Hilda's",
+        "Christ Church",
+        "S.E.H.",
+        "Merton",
+        "Worcester",
+        "Magdalen",
+        "Hertford",
+        "Pembroke"
+      ],
+      [
+        "New College",
+        "Wadham",
+        "Somerville",
+        "Exeter",
+        "St Hugh's",
+        "Wolfson",
+        "Balliol",
+        "Keble",
+        "University",
+        "St John's",
+        "Linacre",
+        "L.M.H."
+      ],
+      [
+        "Trinity",
+        "St Anne's",
+        "Mansfield",
+        "Brasenose",
+        "Jesus",
+        "St Peter's",
+        "St Antony's",
+        "Lincoln",
+        "St Hilda's 2",
+        "Corpus Christi",
+        "New College 2",
+        "Hertford 2"
+      ],
+      [
+        "Wadham 2",
+        "Wolfson 2",
+        "Keble 2",
+        "Worcester 2",
+        "Queen's 2",
+        "Merton 2",
+        "Pembroke 2",
+        "S.E.H. 2",
+        "St John's 2",
+        "Jesus 2",
+        "Worcester 3",
+        "Linacre 2"
+      ],
+      [
+        "Lincoln 2",
+        "St Anne's 2",
+        "Queen's 3",
+        "Oriel 2",
+        "Balliol 2",
+        "Osler-Green 2",
+        "Mansfield 2",
+        "Exeter 3",
+        "Pembroke 3",
+        "Exeter 2",
+        "St Hugh's 2",
+        "Regent's Park",
+        "Balliol 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2008,
+    "days": 4,
+    "divisions": [
+      [
+        "Oriel",
+        "Queen's",
+        "St Catherine's",
+        "Osler-Green",
+        "St Hilda's",
+        "Christ Church",
+        "S.E.H.",
+        "Merton",
+        "Worcester",
+        "Magdalen",
+        "Hertford",
+        "Pembroke"
+      ],
+      [
+        "New College",
+        "Wadham",
+        "Somerville",
+        "Exeter",
+        "St Hugh's",
+        "Wolfson",
+        "Balliol",
+        "Keble",
+        "University",
+        "St John's",
+        "Linacre",
+        "Trinity"
+      ],
+      [
+        "St Anne's",
+        "Mansfield",
+        "Brasenose",
+        "Jesus",
+        "St Peter's",
+        "St Antony's",
+        "Lincoln",
+        "Corpus Christi",
+        "New College 2",
+        "Hertford 2",
+        "Wadham 2",
+        "Worcester 2"
+      ],
+      [
+        "Queen's 2",
+        "Pembroke 2",
+        "St John's 2",
+        "Linacre 2",
+        "St Anne's 2",
+        "Balliol 2",
+        "Jesus 2",
+        "Exeter 2",
+        "Pembroke 3",
+        "Trinity 2",
+        "St Catherine's 2",
+        "University 2"
+      ],
+      [
+        "Brasenose 2",
+        "Balliol 3",
+        "Hertford 3",
+        "St John's 3",
+        "Brasenose 3",
+        "Brasenose 4",
+        "Magdalen 2"
+      ]
+    ],
+    "results": "e1e2re-3re2e-1 re1e2re1e1e1e1e1e-9e1e-1r e1e1e1e1e1e2re1e-8e1e-1rr rre1e-1e1e-1e1e-1rre1e-1r e1e1e-2e1e-1re1e-1e1e-1e1e-1r\ne1e1e-2e1e-1rr e1e2e3e1e3e1e2e-5e2re1e2e-12 re-1e1e-1e1e2re-3rrrrr e1e-1e1e-1e1e1e-2e1e-1rre2e-1 re1e1e-3e1e-1e1e1e-2e1e-1rr\ne1e2e2e-1e4re-6 re2e-1e2re1e1e-7re1e1e2e-3 re1e-2re1e-1re1e1e-2rrr re1e-1e1e-1re1e-1e2re1e1e-4 re1e1e1e-3e1e-1e2re1e-3e1e-1\ne1e-1e1e1e1e-3r e1e-1e1e-1re1e1e1e-3rre2e-1 re-1rre1e1e-2rre1e-1e1e-1 rre1e-1re1e-1e1e-1re1e2e-2 re-1e1e1e1e-3e1e-1re1e-1rr",
+    "move": [
+      [
+        [0, -1, 1, -1, 1, -1, 1, 0, -1, 1, -2, 1],
+        [1, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1, 0],
+        [0, 0, -1, 1, -8, 1, 0, 2, 1, 1, 1, 1],
+        [1, -1, 1, -9, 1, 1, 1, 1, 1, 0, 2, 1],
+        [-1, 2, 0, -3, 0, 2, 1]
+      ],
+      [
+        [0, 0, -1, 1, -2, 1, 1, -1, 1, -3, 1, 1],
+        [-1, 2, 0, 0, -1, 1, -2, 1, 1, -1, 1, -1],
+        [1, 0, 0, 0, 0, -3, 0, 2, 1, -1, 1, -1],
+        [-12, 2, 1, 0, 2, -5, 2, 1, 3, 1, 3, 2],
+        [1, 0, -1, 1, -2, 1, 1]
+      ],
+      [
+        [-1, 1, -3, 1, 0, 2, -1, 1, -3, 1, 1, 1],
+        [-4, 1, 1, 0, 2, -1, 1, 0, -1, 1, -1, 1],
+        [0, 0, 0, -2, 1, 1, 0, -1, 1, 0, -2, 1],
+        [-3, 2, 1, 1, 0, -7, 1, 1, 0, 2, -1, 2],
+        [-6, 0, 4, -1, 2, 2, 1]
+      ],
+      [
+        [0, 0, -1, 1, 0, -1, 1, -3, 1, 1, 1, -1],
+        [-2, 2, 1, 0, -1, 1, -1, 1, 0, -1, 1, 0],
+        [-1, 1, -1, 1, 0, 0, -2, 1, 1, 0, 0, -1],
+        [-1, 2, 0, 0, -3, 1, 1, 1, 0, -1, 1, -1],
+        [1, -3, 1, 1, 1, -1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "St Catherine's",
+        "Oriel",
+        "Christ Church",
+        "Queen's",
+        "S.E.H.",
+        "Magdalen",
+        "St Hilda's",
+        "Pembroke",
+        "New College",
+        "Somerville",
+        "Osler-Green",
+        "Wadham"
+      ],
+      [
+        "Merton",
+        "Balliol",
+        "Hertford",
+        "Exeter",
+        "University",
+        "Worcester",
+        "Keble",
+        "St Hugh's",
+        "St John's",
+        "St Anne's",
+        "Wolfson",
+        "Linacre"
+      ],
+      [
+        "Mansfield",
+        "Trinity",
+        "St Antony's",
+        "Jesus",
+        "New College 2",
+        "Brasenose",
+        "Corpus Christi",
+        "Hertford 2",
+        "Lincoln",
+        "Worcester 2",
+        "St John's 2",
+        "Balliol 2"
+      ],
+      [
+        "Pembroke 2",
+        "Wadham 2",
+        "St Anne's 2",
+        "Queen's 2",
+        "Pembroke 3",
+        "University 2",
+        "Balliol 3",
+        "Exeter 2",
+        "Trinity 2",
+        "Brasenose 4",
+        "Linacre 2",
+        "St Catherine's 2"
+      ],
+      [
+        "Jesus 2",
+        "Magdalen 2",
+        "St John's 3",
+        "Hertford 3",
+        "Brasenose 2",
+        "St Peter's",
+        "Brasenose 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2009,
+    "days": 4,
+    "divisions": [
+      [
+        "St Catherine's",
+        "Oriel",
+        "Christ Church",
+        "Queen's",
+        "S.E.H.",
+        "Magdalen",
+        "St Hilda's",
+        "Pembroke",
+        "New College",
+        "Osler House",
+        "Wadham",
+        "Merton"
+      ],
+      [
+        "Balliol",
+        "Hertford",
+        "Exeter",
+        "University",
+        "Worcester",
+        "Keble",
+        "St Hugh's",
+        "St John's",
+        "St Anne's",
+        "Wolfson",
+        "Linacre",
+        "Mansfield"
+      ],
+      [
+        "Trinity",
+        "St Antony's",
+        "Jesus",
+        "New College 2",
+        "L.M.H.",
+        "Brasenose",
+        "Corpus Christi",
+        "Hertford 2",
+        "Lincoln",
+        "Worcester 2",
+        "St John's 2",
+        "Balliol 2"
+      ],
+      [
+        "Pembroke 2",
+        "St Hilda's 2",
+        "Wadham 2",
+        "St Anne's 2",
+        "Queen's 2",
+        "Wolfson 2",
+        "University 2",
+        "Balliol 3",
+        "Exeter 2",
+        "S.E.H. 2",
+        "Trinity 2",
+        "Brasenose 2"
+      ],
+      [
+        "St Catherine's 2",
+        "Magdalen 2",
+        "St Peter's",
+        "Regent's Park",
+        "St Peter's 2",
+        "Magdalen 3",
+        "St Catherine's 3",
+        "St Antony's 2",
+        "St Hugh's 2",
+        "Trinity 3",
+        "Wolfson 3",
+        "Christ Church 2",
+        "Wadham 3"
+      ]
+    ],
+    "results": "re1e-1e2re-2e1e1e-2re1e2e-2 re1e1e-3e2re-2e1e-1re1e-1r e1e1e1e-3e1e-1e1e1e-2rrrr rre1e1e-2e1e-1re1e-1e1e-1r rrrrrrrre1e-1rrr\ne1e1e2re2e2e-1e2e2e-1e1e2e-12 re-1rrre1e1e-2e1e-1re2e-1 re-1rrre1e-1re1e-1rrr re1e-1re1e-1e1e1e-2rre2e-1 re1e-2re1e1e-2e1e-1rrrr\nre1e1e-2e1e-1e1e2re1e1e-5r e1e-1re1e-1e2re1e-3e1e-1rr re1e-1rre1e-1e1e-1e1e-1rr rrre1e-1e1e-1e1e1e-2rrr e1e1e-2e1e1e1e-3e1e1e-2e1e-1r\nre1e-1re1e1e-2e1e-1re1e-1r e2re-2e1e1e-2e1e-1e1e-1e1e-1r re1e1e-2rre1e-1e1e-1e1e-1r e1e-1e1e-1rre1e-1e1e1e1e1e-4 re1e1e-2e1e-1re1e-1e1e-1rr",
+    "move": [
+      [
+        [0, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, -1, 1, -1, 1, 0, -1, 1, -2, 1, 1, 0],
+        [0, 0, 0, 0, -2, 1, 1, -1, 1, -3, 1, 1],
+        [1, -1, 1, 0, -1, 1, -2, 0, 2, -3, 1, 1],
+        [-2, 2, 1, 0, -2, 1, 1, -2, 0, 2, -1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -2, 1, 1, 0, -2, 1],
+        [-1, 2, 0, 0, -2, 1, 1, -1, 1, 0, -1, 1],
+        [0, 0, 0, -1, 1, 0, -1, 1, 0, 0, 0, -1],
+        [-1, 2, 0, -1, 1, -2, 1, 1, 0, 0, 0, -1],
+        [-12, 2, 1, -1, 2, 2, -1, 2, 2, 0, 2, 1, 1]
+      ],
+      [
+        [0, -1, 1, -2, 1, 1, -3, 1, 1, 1, -2, 1],
+        [1, 0, 0, -2, 1, 1, -1, 1, -1, 1, 0, 0],
+        [0, 0, -1, 1, -1, 1, -1, 1, 0, 0, -1, 1],
+        [0, 0, -1, 1, -3, 1, 0, 2, -1, 1, 0, -1],
+        [1, -5, 1, 1, 0, 2, 1, -1, 1, -2, 1, 1, 0]
+      ],
+      [
+        [0, 0, -1, 1, -1, 1, 0, -1, 1, -2, 1, 1],
+        [-4, 1, 1, 1, 1, -1, 1, 0, 0, -1, 1, -1],
+        [1, -1, 1, -1, 1, -1, 1, 0, 0, -2, 1, 1],
+        [0, -1, 1, -1, 1, -1, 1, -2, 1, 1, -2, 0],
+        [2, -1, 1, 0, -1, 1, -2, 1, 1, 0, -1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "St Catherine's",
+        "Christ Church",
+        "Magdalen",
+        "Oriel",
+        "S.E.H.",
+        "Queen's",
+        "New College",
+        "Osler House",
+        "St Hilda's",
+        "Exeter",
+        "Wadham",
+        "Pembroke"
+      ],
+      [
+        "Balliol",
+        "Hertford",
+        "Keble",
+        "St John's",
+        "Merton",
+        "Wolfson",
+        "Worcester",
+        "University",
+        "Linacre",
+        "Mansfield",
+        "St Hugh's",
+        "Trinity"
+      ],
+      [
+        "St Anne's",
+        "Brasenose",
+        "St Antony's",
+        "Corpus Christi",
+        "Jesus",
+        "L.M.H.",
+        "New College 2",
+        "Lincoln",
+        "Hertford 2",
+        "Wadham 2",
+        "Balliol 2",
+        "St John's 2"
+      ],
+      [
+        "Pembroke 2",
+        "Wolfson 2",
+        "Worcester 2",
+        "Exeter 2",
+        "St Hilda's 2",
+        "Balliol 3",
+        "Queen's 2",
+        "Trinity 2",
+        "University 2",
+        "St Anne's 2",
+        "St Peter's",
+        "Magdalen 2"
+      ],
+      [
+        "Brasenose 2",
+        "St Catherine's 3",
+        "Magdalen 3",
+        "Trinity 3",
+        "St Hugh's 2",
+        "Regent's Park",
+        "Christ Church 2",
+        "St Peter's 2",
+        "St Catherine's 2",
+        "Wolfson 3",
+        "St Antony's 2",
+        "Wadham 3",
+        "S.E.H. 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2010,
+    "days": 4,
+    "divisions": [
+      [
+        "St Catherine's",
+        "Christ Church",
+        "Magdalen",
+        "Oriel",
+        "S.E.H.",
+        "Queen's",
+        "New College",
+        "Osler House",
+        "St Hilda's",
+        "Exeter",
+        "Wadham",
+        "Pembroke"
+      ],
+      [
+        "Balliol",
+        "Hertford",
+        "Keble",
+        "Somerville",
+        "St John's",
+        "Merton",
+        "Wolfson",
+        "Worcester",
+        "University",
+        "Linacre",
+        "Mansfield",
+        "St Hugh's"
+      ],
+      [
+        "Trinity",
+        "St Anne's",
+        "Brasenose",
+        "St Antony's",
+        "Corpus Christi",
+        "Jesus",
+        "L.M.H.",
+        "New College 2",
+        "Lincoln",
+        "Hertford 2",
+        "Wadham 2",
+        "Balliol 2"
+      ],
+      [
+        "St John's 2",
+        "Pembroke 2",
+        "Wolfson 2",
+        "Worcester 2",
+        "Exeter 2",
+        "St Hilda's 2",
+        "Balliol 3",
+        "Queen's 2",
+        "Trinity 2",
+        "University 2",
+        "St Anne's 2",
+        "St Peter's"
+      ],
+      [
+        "Brasenose 2",
+        "St Catherine's 2",
+        "Trinity 3",
+        "St Hugh's 2",
+        "Christ Church 2",
+        "St Peter's 2",
+        "Wolfson 3",
+        "S.E.H. 2",
+        "Merton 2",
+        "New College 3",
+        "Green Templeton",
+        "L.M.H. 2",
+        "Linacre 2"
+      ]
+    ],
+    "results": "rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrre1e-1rrrr rre1e-1e1e2e-2e-1rre1e-1r e1e-1e1e1e-2e1e-1e1e-1re1e-1r\nrrrrrrrrrrrrr re2re1e1e-4e1e-1e1e1e1e-3r rre1e-1rre2re1e-3rrr re1e-1e1e1e1e-3e1e-1rrrr re1e-1e1e-1e1e-1e1e-1rrrr\nre2re1e1e-4e1e1e1e-3e3re-2 re-1e1e2re1e-4e1e-1re1e2e-2 re-1rrrre1e1e1e1e-4rr rre1e-1e1e-1e1e-1e1e-1rrr e1e-1e1e-1rrrre1e-1re1e-1\ne1e-1re1e1e-2rre2re2re-4 re1e-1e1e-1e2re-2e1e-1re1e-1 re1e-1re1e-1re1e1e-2e1e-1r e1e-1rrre1e-1e1e-1e1e-1e2e-1 re1e-2e1e1e-2e1e-1re1e-1rr",
+    "move": [
+      [
+        [0, -1, 1, 0, -1, 1, -1, 1, -2, 1, 1, -1],
+        [1, -1, 1, 0, 0, -1, -2, 2, 1, -1, 1, 0],
+        [0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1],
+        [0, 0, 0, 0, -1, 1, -3, 1, 1, 1, -1, 1],
+        [0, 0, 0, -3, 1, 0, 2, 0, 0, -1, 1, 0],
+        [0, -3, 1, 1, 1, -1, 1, -4, 1, 1, 0, 2],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [-1, 1, 0, -1, 1, 0, 0, 0, 0, -1, 1, -1],
+        [1, 0, 0, -1, 1, -1, 1, -1, 1, -1, 1, 0],
+        [0, 0, -4, 1, 1, 1, 1, 0, 0, 0, 0, -1],
+        [-2, 2, 1, 0, -1, 1, -4, 1, 0, 2, 1, -1],
+        [-2, 0, 3, -3, 1, 1, 1, -4, 1, 1, 0, 2, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, -1, 1, -2, 1, 1, -2, 1],
+        [-1, 2, -1, 1, -1, 1, -1, 1, 0, 0, 0, -1],
+        [1, -1, 1, -2, 1, 1, 0, -1, 1, 0, -1, 1],
+        [-1, 1, 0, -1, 1, -2, 0, 2, -1, 1, -1, 1],
+        [-4, 0, 2, 0, 2, 0, 0, -2, 1, 1, 0, -1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Magdalen",
+        "St Catherine's",
+        "S.E.H.",
+        "Christ Church",
+        "Oriel",
+        "New College",
+        "Queen's",
+        "Wadham",
+        "Balliol",
+        "Osler House",
+        "Pembroke",
+        "Keble"
+      ],
+      [
+        "Exeter",
+        "St Hilda's",
+        "Worcester",
+        "Hertford",
+        "University",
+        "Somerville",
+        "Mansfield",
+        "St John's",
+        "Wolfson",
+        "St Hugh's",
+        "Merton",
+        "Trinity"
+      ],
+      [
+        "Linacre",
+        "Jesus",
+        "St Anne's",
+        "Corpus Christi",
+        "St Antony's",
+        "L.M.H.",
+        "Brasenose",
+        "Lincoln",
+        "New College 2",
+        "Wadham 2",
+        "Wolfson 2",
+        "Hertford 2"
+      ],
+      [
+        "Worcester 2",
+        "Balliol 2",
+        "St John's 2",
+        "Balliol 3",
+        "Exeter 2",
+        "St Peter's",
+        "Trinity 2",
+        "Pembroke 2",
+        "St Anne's 2",
+        "University 2",
+        "Trinity 3",
+        "St Hilda's 2"
+      ],
+      [
+        "Brasenose 2",
+        "St Catherine's 2",
+        "St Peter's 2",
+        "Christ Church 2",
+        "Queen's 2",
+        "Wolfson 3",
+        "St Hugh's 2",
+        "New College 3",
+        "L.M.H. 2",
+        "Merton 2",
+        "Green Templeton",
+        "Linacre 2",
+        "S.E.H. 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2011,
+    "days": 4,
+    "divisions": [
+      [
+        "Magdalen",
+        "St Catherine's",
+        "S.E.H.",
+        "Christ Church",
+        "Oriel",
+        "New College",
+        "Queen's",
+        "Wadham",
+        "Balliol",
+        "Osler House",
+        "Pembroke",
+        "Keble"
+      ],
+      [
+        "Exeter",
+        "St Hilda's",
+        "Worcester",
+        "Hertford",
+        "University",
+        "Somerville",
+        "Mansfield",
+        "St John's",
+        "Wolfson",
+        "St Hugh's",
+        "Merton",
+        "Trinity"
+      ],
+      [
+        "Linacre",
+        "Jesus",
+        "St Anne's",
+        "Corpus Christi",
+        "St Antony's",
+        "L.M.H.",
+        "Brasenose",
+        "Lincoln",
+        "New College 2",
+        "Wadham 2",
+        "Wolfson 2",
+        "Hertford 2"
+      ],
+      [
+        "Worcester 2",
+        "Balliol 2",
+        "St John's 2",
+        "Exeter 2",
+        "St Peter's",
+        "Trinity 2",
+        "Pembroke 2",
+        "St Anne's 2",
+        "University 2",
+        "Trinity 3",
+        "St Catherine's 2",
+        "St Peter's 2"
+      ],
+      [
+        "Christ Church 2",
+        "L.M.H. 2",
+        "Merton 2",
+        "Green Templeton",
+        "Linacre 2",
+        "S.E.H. 2",
+        "Lincoln 2",
+        "L.M.H. 3",
+        "Green Templeton 2",
+        "St Peter's 3",
+        "Magdalen 2",
+        "Jesus 2",
+        "Lincoln 3"
+      ]
+    ],
+    "results": "e3e1e-1e1e1e-5e1e1e-2e2re-2r e1e-1re2e2e-1e1e-4re1e1e-2r e1e1e-2e1e1e1e-3e1e-1e1e-1e1e-1 rre2re-2e1e1e-2e1e-1e1e-1r e1e-1e1e-1e1e1e-2rrre1e-1r\nrrrrre1e-1re1e1e1e3e-4 re2e-1e-3e1e1e1e1e1e-5e1e1e-2 re1e-1re1e1e1e-3e1e-1e1e-1r e2re2re2re1e1e1e1e-10e2e-1 re1e-2e1e-1re2re1e-3rrr\nrre1e-1e2re1e1e-4rrrr e1e-1e2e2e-1e1e1e1e-6e1e-1rr e1e1e1e-3re1e-1e2re1e-3rr e1e-1re1e1e-2re1e-1e1e1e-2r re1e1e-2e1e-1rre1e-1rrr\nrre1e1e-2e1e2re1e-4re2e-1 re1e-2re1e1e-2e1e1e-2e1e-1r rre1e1e-2re1e-1re1e1e-2r re1e1e-2re1e-1e1e1e-2e1e3e-2 re-1e1e1e-3e1e-1rre1e-1rr",
+    "move": [
+      [
+        [0, -1, 1, 0, 0, 0, -2, 1, 1, -1, 1, -1],
+        [1, -1, 1, -1, 1, -2, 1, 1, -2, 0, 2, 0],
+        [-1, 1, -1, 1, -1, 1, -3, 1, 1, 1, -2, 1],
+        [1, -2, 1, 1, 0, -4, 1, -1, 2, 2, 0, -1],
+        [1, -2, 0, 2, -2, 1, 1, -5, 1, 1, -1, 1, 3]
+      ],
+      [
+        [0, 0, 0, -3, 1, 0, 2, 0, -1, 1, -2, 1],
+        [-1, 2, -10, 1, 1, 1, 1, 0, 2, 0, 2, 0],
+        [2, -1, 1, -1, 1, -3, 1, 1, 1, 0, -1, 1],
+        [-2, 1, 1, -5, 1, 1, 1, 1, 1, -3, -1, 2],
+        [-4, 3, 1, 1, 1, 0, -1, 1, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, -1, 1, -2, 1, 1],
+        [0, -2, 1, 1, -1, 1, 0, -2, 1, 1, 0, -1],
+        [1, 0, -3, 1, 0, 2, -1, 1, 0, -3, 1, 1],
+        [1, 0, -1, 1, -6, 1, 1, 1, -1, 2, 2, -1],
+        [1, 0, 0, 0, -4, 1, 1, 0, 2, -1, 1, 0, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, 0, -1, 1, -3, 1, 1, -1],
+        [-2, 3, 1, -2, 1, 1, -1, 1, 0, -2, 1, 1],
+        [0, -2, 1, 1, 0, -1, 1, 0, -2, 1, 1, 0],
+        [0, -1, 1, -2, 1, 1, -2, 1, 1, 0, -2, 1],
+        [-1, 2, 0, -4, 1, 0, 2, 1, -2, 1, 1, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Magdalen",
+        "S.E.H.",
+        "Wadham",
+        "St Catherine's",
+        "Oriel",
+        "New College",
+        "Pembroke",
+        "Christ Church",
+        "Exeter",
+        "Worcester",
+        "University",
+        "Balliol"
+      ],
+      [
+        "Queen's",
+        "Hertford",
+        "Osler House",
+        "St John's",
+        "Mansfield",
+        "Keble",
+        "Wolfson",
+        "Merton",
+        "St Hugh's",
+        "Jesus",
+        "St Hilda's",
+        "Somerville"
+      ],
+      [
+        "Trinity",
+        "L.M.H.",
+        "Lincoln",
+        "Corpus Christi",
+        "St Anne's",
+        "Wadham 2",
+        "Linacre",
+        "New College 2",
+        "Worcester 2",
+        "Hertford 2",
+        "St Antony's",
+        "St John's 2"
+      ],
+      [
+        "Brasenose",
+        "St Peter's",
+        "Exeter 2",
+        "University 2",
+        "Trinity 3",
+        "Wolfson 2",
+        "Christ Church 2",
+        "Green Templeton",
+        "St Anne's 2",
+        "Balliol 2",
+        "Trinity 2",
+        "Merton 2"
+      ],
+      [
+        "Pembroke 2",
+        "St Catherine's 2",
+        "L.M.H. 2",
+        "Lincoln 2",
+        "St Peter's 3",
+        "Green Templeton 2",
+        "Linacre 2",
+        "S.E.H. 2",
+        "Jesus 2",
+        "Lincoln 3",
+        "St Peter's 2",
+        "Magdalen 2",
+        "L.M.H. 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2012,
+    "days": 4,
+    "divisions": [
+      [
+        "Magdalen",
+        "S.E.H.",
+        "Wadham",
+        "St Catherine's",
+        "Oriel",
+        "New College",
+        "Pembroke",
+        "Christ Church",
+        "Exeter",
+        "Worcester",
+        "University",
+        "Balliol"
+      ],
+      [
+        "Queen's",
+        "Hertford",
+        "Osler House",
+        "St John's",
+        "Mansfield",
+        "Keble",
+        "Wolfson",
+        "Merton",
+        "St Hugh's",
+        "Jesus",
+        "St Hilda's",
+        "Somerville"
+      ],
+      [
+        "Trinity",
+        "L.M.H.",
+        "Lincoln",
+        "Corpus Christi",
+        "St Anne's",
+        "Wadham 2",
+        "Linacre",
+        "New College 2",
+        "Worcester 2",
+        "Hertford 2",
+        "St Antony's",
+        "St John's 2"
+      ],
+      [
+        "Brasenose",
+        "St Peter's",
+        "University 2",
+        "Trinity 2",
+        "Wolfson 2",
+        "Christ Church 2",
+        "Green Templeton",
+        "St Anne's 2",
+        "Balliol 2",
+        "Balliol 3",
+        "Merton 2",
+        "Pembroke 2"
+      ],
+      [
+        "L.M.H. 2",
+        "Lincoln 2",
+        "Green Templeton 2",
+        "S.E.H. 2",
+        "Jesus 2",
+        "Lincoln 3",
+        "Magdalen 2",
+        "Oriel 2",
+        "Brasenose 2",
+        "University 3",
+        "Jesus 3",
+        "Somerville 2",
+        "St Anne's 3"
+      ]
+    ],
+    "results": "rre2re-2re1e-1e1e-1re1e-1 re1e1e-2rre1e-1e1e-1e1e-1r e1e2re-3rrrrrre1e4e-2 re1e-1e1e-4re1e1e-2e1e-1e2e-1 re-1re1e-1e1e-1e1e-1re1e-1r\nre1e1e1e1e1e-5e1e-1e1e-1rr e1e-1e2re-2e1e-1e2re1e-3e1e-1 re1e-1e1e-1rrre1e-1re2e-1 re-1re1e-1e1e-1e1e1e-2e1e-1r re2re-2rre1e-1e1e-1rrr\ne1e1e-2re1e1e-2re1e1e1e2e-4 re1e-2e1e1e-2re1e-1e1e-1rr e1e-1e1e-1e1e-1rrre1e-1rr re2re-2e1e-1e1e-1e1e1e1e2e-4 re-1re1e-1e1e-1e1e-1rrrr\ne1e-1e1e-1rre1e1e-2e1e-1e3e-1 rre1e-3rrrre2re1e-3r re1e-1rre1e-1re1e-1e1e-1r rrre1e-1e1e-1e1e-1e1e-1e2e-1 re2re1e2re1e-7re1e-1rr",
+    "move": [
+      [
+        [0, -1, 1, 0, -1, 1, -1, 1, -1, 1, 0, -1],
+        [-1, 2, -1, 1, -2, 1, 1, 0, -4, 1, -1, 1],
+        [-2, 4, 1, 0, 0, 0, 0, 0, 0, -3, 0, 2],
+        [1, -1, 1, -1, 1, -1, 1, 0, 0, -2, 1, 1],
+        [-1, 1, 0, -1, 1, -1, 1, 0, -2, 0, 2, 0, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, -1, 1, 0, 0, -2, 0, 2],
+        [0, -1, 1, -2, 1, 1, -1, 1, -1, 1, 0, -1],
+        [-1, 2, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1],
+        [-1, 1, -3, 1, 0, 2, -1, 1, -2, 0, 2, -1],
+        [1, 0, -1, 1, -1, 1, -5, 1, 1, 1, 1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1],
+        [-4, 2, 1, 1, 1, -1, 1, -1, 1, -2, 0, 2],
+        [0, 0, -1, 1, 0, 0, 0, -1, 1, -1, 1, -1],
+        [1, 0, -1, 1, -1, 1, 0, -2, 1, 1, -2, 1],
+        [-4, 2, 1, 1, 1, 0, -2, 1, 1, 0, -2, 1, 1]
+      ],
+      [
+        [0, 0, -1, 1, 0, -7, 1, 0, 2, 1, 0, 2],
+        [-1, 2, -1, 1, -1, 1, -1, 1, -1, 1, 0, 0],
+        [0, -1, 1, -1, 1, 0, -1, 1, 0, 0, -1, 1],
+        [0, -3, 1, 0, 2, 0, 0, 0, 0, -3, 1, 0],
+        [-1, 3, -1, 1, -2, 1, 1, 0, 0, -1, 1, -1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Magdalen",
+        "Wadham",
+        "New College",
+        "S.E.H.",
+        "Christ Church",
+        "Pembroke",
+        "Hertford",
+        "Oriel",
+        "Worcester",
+        "St John's",
+        "University",
+        "Queen's"
+      ],
+      [
+        "St Catherine's",
+        "Exeter",
+        "Wolfson",
+        "Keble",
+        "Merton",
+        "Balliol",
+        "L.M.H.",
+        "Osler House",
+        "Lincoln",
+        "Mansfield",
+        "Somerville",
+        "Jesus"
+      ],
+      [
+        "St Hilda's",
+        "St Anne's",
+        "St Hugh's",
+        "Corpus Christi",
+        "Trinity",
+        "Wadham 2",
+        "St John's 2",
+        "Linacre",
+        "New College 2",
+        "Brasenose",
+        "University 2",
+        "Worcester 2"
+      ],
+      [
+        "St Antony's",
+        "Green Templeton",
+        "St Peter's",
+        "Wolfson 2",
+        "Hertford 2",
+        "Trinity 2",
+        "St Anne's 2",
+        "Pembroke 2",
+        "Merton 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Christ Church 2",
+        "Balliol 2",
+        "Magdalen 2",
+        "Green Templeton 2",
+        "S.E.H. 2",
+        "Jesus 3",
+        "Balliol 3",
+        "University 3",
+        "Oriel 2",
+        "Lincoln 3",
+        "Brasenose 2",
+        "Somerville 2",
+        "St Anne's 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2013,
+    "days": 4,
+    "divisions": [
+      [
+        "Magdalen",
+        "Wadham",
+        "New College",
+        "S.E.H.",
+        "Christ Church",
+        "Pembroke",
+        "Hertford",
+        "Oriel",
+        "Worcester",
+        "St John's",
+        "University",
+        "Queen's"
+      ],
+      [
+        "St Catherine's",
+        "Exeter",
+        "Wolfson",
+        "Keble",
+        "Merton",
+        "Balliol",
+        "L.M.H.",
+        "Lincoln",
+        "Mansfield",
+        "Somerville",
+        "Jesus",
+        "St Hilda's"
+      ],
+      [
+        "St Anne's",
+        "St Hugh's",
+        "Corpus Christi",
+        "Trinity",
+        "Wadham 2",
+        "St John's 2",
+        "Linacre",
+        "New College 2",
+        "Brasenose",
+        "University 2",
+        "Worcester 2",
+        "St Antony's"
+      ],
+      [
+        "Green Templeton",
+        "St Peter's",
+        "Wolfson 2",
+        "Hertford 2",
+        "Trinity 2",
+        "St Anne's 2",
+        "Pembroke 2",
+        "Exeter 2",
+        "Merton 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Green Templeton 2",
+        "Oriel 2",
+        "Brasenose 2",
+        "Somerville 2",
+        "St John's 3",
+        "St Antony's 2",
+        "St Catherine's 2",
+        "St Hugh's 2",
+        "St Peter's 2",
+        "Wadham 3",
+        "St Hilda's 2",
+        "Corpus Christi 2",
+        "Regent's Park"
+      ]
+    ],
+    "results": "e1e1e-2re1e-1e1e-1rrrrr e1e1e1e1e-4re1e1e-2rrrr e1e1e-2re2re1e-3re1e1e-2r e1e-1e2re-2e1e1e1e-3re1e-1r e1e-1re1e-1e1e-1e1e-1rrrr\nre1e1e-2e1e1e-2e1e-1e1e1e2e-3 re1e1e1e1e-5rre1e-1e1e2e-2 re1e1e-3rre1e-1e1e-1e1e3e-2 rre-2e1e1e-2e1e1e2re-4e2e-1 re2re1e1e-5e1e-1rrrrr\nrre1e1e1e-3rre1e1e1e1e-4 re2e2e-1e1e1e-5e1e-1e1e-1rr e1e-1e2e2e-1e-3e1e2re1e-4e3e-1 rre1e-3e1e1e-2e1e1e-2e3re-2 re-1re1e-1e1e-1e1e-1e1e-1rr\nre1e-1e1e1e-2e3e1e-1e1e-4rr e1e-1rrre1e1e-2e1e-1re1e-1 re1e1e1e1e1e-5rre1e1e-2r re1e1e1e-3e1e1e-2re1e-1rr re2re-2e1e-1e1e-1e1e-1rrr",
+    "move": [
+      [
+        [0, 0, 0, 0, -1, 1, -1, 1, -1, 1, 0, -1],
+        [1, -1, 1, 0, -3, 1, 1, 1, -2, 0, 2, -1],
+        [1, -2, 1, 1, 0, -3, 1, 0, 2, 0, -2, 1],
+        [1, 0, 0, 0, -2, 1, 1, 0, -4, 1, 1, 1],
+        [1, 0, 0, 0, 0, -1, 1, -1, 1, 0, -2, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, -1, 1, -5, 1, 1, 0, 2],
+        [-1, 2, -4, 0, 2, 1, 1, -2, 1, 1, -2, 0],
+        [-2, 3, 1, -1, 1, -1, 1, 0, 0, -3, 1, 1],
+        [-2, 2, 1, -1, 1, 0, 0, -5, 1, 1, 1, 1],
+        [-3, 2, 1, 1, -1, 1, -2, 1, 1, -2, 1, 1, 0]
+      ],
+      [
+        [0, 0, -1, 1, -1, 1, -1, 1, -1, 1, 0, -1],
+        [-2, 0, 3, -2, 1, 1, -2, 1, 1, -3, 1, 0],
+        [-1, 3, -4, 1, 0, 2, 1, -3, -1, 2, 2, -1],
+        [1, 0, -1, 1, -1, 1, -5, 1, 1, -1, 2, 2],
+        [-4, 1, 1, 1, 1, 0, 0, -3, 1, 1, 1, 0, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, -1, 1, -1, 1, -2, 0, 2],
+        [0, 0, -1, 1, 0, -2, 1, 1, -3, 1, 1, 1],
+        [0, -2, 1, 1, 0, 0, -5, 1, 1, 1, 1, 1],
+        [-1, 1, 0, -1, 1, -2, 1, 1, 0, 0, 0, -1],
+        [1, 0, -4, 1, -1, 1, 3, -2, 1, 1, -1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Magdalen",
+        "Wadham",
+        "S.E.H.",
+        "Oriel",
+        "New College",
+        "St John's",
+        "Pembroke",
+        "St Catherine's",
+        "Christ Church",
+        "Balliol",
+        "University",
+        "Worcester"
+      ],
+      [
+        "Wolfson",
+        "Queen's",
+        "L.M.H.",
+        "Hertford",
+        "Lincoln",
+        "Jesus",
+        "Somerville",
+        "Keble",
+        "Corpus Christi",
+        "Trinity",
+        "St Anne's",
+        "Exeter"
+      ],
+      [
+        "Merton",
+        "Wadham 2",
+        "Brasenose",
+        "Mansfield",
+        "St Hugh's",
+        "Linacre",
+        "St Antony's",
+        "Green Templeton",
+        "St John's 2",
+        "New College 2",
+        "University 2",
+        "St Hilda's"
+      ],
+      [
+        "Wolfson 2",
+        "St Peter's",
+        "St Anne's 2",
+        "Pembroke 2",
+        "Worcester 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "Hertford 2",
+        "Green Templeton 2",
+        "Oriel 2",
+        "L.M.H. 2",
+        "Brasenose 2"
+      ],
+      [
+        "Trinity 2",
+        "Somerville 2",
+        "St Catherine's 2",
+        "St Peter's 2",
+        "St John's 3",
+        "Exeter 2",
+        "Merton 2",
+        "Corpus Christi 2",
+        "Regent's Park",
+        "St Antony's 2",
+        "Wadham 3",
+        "St Hugh's 2",
+        "St Hilda's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2015,
+    "days": 4,
+    "divisions": [
+      [
+        "Magdalen",
+        "Wadham",
+        "S.E.H.",
+        "Oriel",
+        "New College",
+        "St John's",
+        "Pembroke",
+        "St Catherine's",
+        "Christ Church",
+        "Balliol",
+        "University",
+        "Worcester"
+      ],
+      [
+        "Wolfson",
+        "Queen's",
+        "L.M.H.",
+        "Hertford",
+        "Lincoln",
+        "Jesus",
+        "Somerville",
+        "Keble",
+        "Corpus Christi",
+        "Trinity",
+        "St Anne's",
+        "Exeter"
+      ],
+      [
+        "Merton",
+        "Wadham 2",
+        "Brasenose",
+        "Mansfield",
+        "St Hugh's",
+        "Linacre",
+        "St Antony's",
+        "Green Templeton",
+        "St John's 2",
+        "New College 2",
+        "University 2",
+        "St Hilda's"
+      ],
+      [
+        "Wolfson 2",
+        "St Peter's",
+        "St Anne's 2",
+        "Pembroke 2",
+        "Worcester 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "Hertford 2",
+        "Green Templeton 2",
+        "Oriel 2",
+        "L.M.H. 2",
+        "Brasenose 2"
+      ],
+      [
+        "Trinity 2",
+        "Somerville 2",
+        "Regent's Park",
+        "St Hugh's 2",
+        "Magdalen 2",
+        "Balliol 2",
+        "Hertford 3",
+        "Keble 2",
+        "Wolfson 3",
+        "Linacre 2",
+        "Lincoln 3",
+        "Mansfield 2",
+        "University 3"
+      ]
+    ],
+    "results": "e2re1e1e1e-5e1e1e-2e1e1e2e-3 re-1re2e2e-1e1e1e1e1e-7rr e2re1e-3e1e1e-2e1e1e-2re2e-1 re-1re1e-1e1e-1e1e1e1e1e-4r e1e-1e2re1e-3rrre1e-1e1e-1\ne2re1e1e1e2re1e1e1e1e2e-12 re1e1e-3e1e1e2re1e-5e1e2e-2 re1e1e-3rre2re2re1e1e-6 re1e-1e1e2re1e-4rre1e-1r e1e1e-2re1e2re1e-4rrrr\ne2re2re1e1e1e1e1e1e1e1e-12 re1e1e-2e1e-1e1e-1e2re-2e2e-1 re1e-2e1e-1e1e-1re1e-1e1e2e-2 re1e1e-3e1e-1e1e1e-2e1e-1e2e-1 re-1e1e1e-2re1e-1e1e-1rrr\nrre1e-1rre1e1e1e-3e1e-1r e1e-1e1e1e-2e2re-2rre1e-1r e1e1e1e-3e1e-1rrre1e-1e2e-1 re1e-2rre1e-1e1e1e1e1e-4r e1e1e-2e1e-1e1e-1e1e-1e1e-1rr",
+    "move": [
+      [
+        [-1, 1, -1, 1, 0, 0, 0, -3, 1, 0, 2, -1],
+        [1, -4, 1, 1, 1, 1, -1, 1, -1, 1, 0, -1],
+        [-1, 2, 0, -2, 1, 1, -2, 1, 1, -3, 1, 0],
+        [2, 0, -7, 1, 1, 1, 1, -1, 2, 2, 0, -1],
+        [-3, 2, 1, 1, -2, 1, 1, -5, 1, 1, 1, 0, 2]
+      ],
+      [
+        [0, 0, 0, 0, -4, 1, 0, 2, 1, 0, -2, 1],
+        [1, -1, 1, 0, 0, -4, 1, 0, 2, 1, -1, 1],
+        [-6, 1, 1, 0, 2, 0, 2, 0, 0, -3, 1, 1],
+        [-2, 2, 1, -5, 1, 0, 2, 1, 1, -3, 1, 1],
+        [-12, 2, 1, 1, 1, 1, 0, 2, 1, 1, 1, 0, 2]
+      ],
+      [
+        [0, 0, 0, -1, 1, -1, 1, 0, -2, 1, 1, -1],
+        [-1, 2, -1, 1, -2, 1, 1, -1, 1, -3, 1, 1],
+        [-2, 2, 1, -1, 1, 0, -1, 1, -1, 1, -2, 1],
+        [-1, 2, -2, 0, 2, -1, 1, -1, 1, -2, 1, 1],
+        [-12, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 0, 2]
+      ],
+      [
+        [0, 0, -1, 1, -1, 1, -1, 1, -1, 1, -2, 1],
+        [1, -4, 1, 1, 1, 1, -1, 1, 0, 0, -2, 1],
+        [-1, 2, -1, 1, 0, 0, 0, -1, 1, -3, 1, 1],
+        [1, -1, 1, 0, 0, -2, 0, 2, -2, 1, 1, -1],
+        [1, -1, 1, -3, 1, 1, 1, 0, 0, -1, 1, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Wadham",
+        "Magdalen",
+        "St John's",
+        "Oriel",
+        "Pembroke",
+        "S.E.H.",
+        "University",
+        "Christ Church",
+        "Wolfson",
+        "Balliol",
+        "Hertford",
+        "Worcester"
+      ],
+      [
+        "New College",
+        "Lincoln",
+        "L.M.H.",
+        "Keble",
+        "Trinity",
+        "St Catherine's",
+        "Corpus Christi",
+        "Jesus",
+        "Somerville",
+        "Wadham 2",
+        "Brasenose",
+        "Linacre"
+      ],
+      [
+        "St Anne's",
+        "Queen's",
+        "Green Templeton",
+        "Merton",
+        "St Hugh's",
+        "Mansfield",
+        "St John's 2",
+        "Wolfson 2",
+        "Exeter",
+        "St Peter's",
+        "Pembroke 2",
+        "St Hilda's"
+      ],
+      [
+        "St Antony's",
+        "Green Templeton 2",
+        "University 2",
+        "Lincoln 2",
+        "New College 2",
+        "Worcester 2",
+        "Jesus 2",
+        "Oriel 2",
+        "Somerville 2",
+        "Regent's Park",
+        "Hertford 2",
+        "St Hugh's 2"
+      ],
+      [
+        "L.M.H. 2",
+        "Balliol 2",
+        "Trinity 2",
+        "Wolfson 3",
+        "Magdalen 2",
+        "Linacre 2",
+        "Hertford 3",
+        "Lincoln 3",
+        "Keble 2",
+        "Brasenose 2",
+        "University 3",
+        "Mansfield 2",
+        "St Anne's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2016,
+    "days": 4,
+    "divisions": [
+      [
+        "Wadham",
+        "Magdalen",
+        "St John's",
+        "Oriel",
+        "Pembroke",
+        "S.E.H.",
+        "University",
+        "Christ Church",
+        "Wolfson",
+        "Balliol",
+        "Hertford",
+        "Worcester"
+      ],
+      [
+        "New College",
+        "Lincoln",
+        "L.M.H.",
+        "Keble",
+        "Trinity",
+        "St Catherine's",
+        "Corpus Christi",
+        "Jesus",
+        "Somerville",
+        "Wadham 2",
+        "Brasenose",
+        "Linacre"
+      ],
+      [
+        "St Anne's",
+        "Queen's",
+        "Green Templeton",
+        "Merton",
+        "St Hugh's",
+        "Mansfield",
+        "St John's 2",
+        "Wolfson 2",
+        "Exeter",
+        "St Peter's",
+        "Pembroke 2",
+        "St Hilda's"
+      ],
+      [
+        "St Antony's",
+        "Green Templeton 2",
+        "University 2",
+        "Lincoln 2",
+        "New College 2",
+        "Jesus 2",
+        "Oriel 2",
+        "Regent's Park",
+        "Hertford 2",
+        "St Hugh's 2",
+        "Balliol 2",
+        "Wolfson 3"
+      ],
+      [
+        "Magdalen 2",
+        "Linacre 2",
+        "Lincoln 3",
+        "Brasenose 2",
+        "University 3",
+        "St Antony's 2",
+        "St Catherine's 2",
+        "Wadham 3",
+        "Brasenose 3",
+        "Christ Church 2",
+        "Pembroke 3",
+        "Trinity 2",
+        "Wolfson 4"
+      ]
+    ],
+    "results": "re1e-1e1e-1rre1e1e-2rrr e1e2re1e-4e1e-1e1e1e1e1e-4r re1e-1e1e1e1e-3e1e1e-2e1e-1r e1e2re-3e1e1e-2rre1e-1rr e1e-1rrre1e1e-2e1e1e-2e1e-1\ne1e1e-2e1e1e-2e1e2e-2e-1e1e3e-2 re2e-1e2re1e1e-7re1e-1rr e1e1e1e-3re1e1e-2e1e1e-2e3e-1 re2e-1e1e-4re1e-1e1e-1e1e1e-2 rre1e-1e1e-1e1e1e-2re1e-1r\nre1e1e-2e2e2e-1e1e1e1e-6e1e-1 rrre1e-1rre2re1e1e-4r e1e1e-2e1e-1rre1e-1e1e1e-2r rre1e-1e1e1e1e1e1e1e-6e1e-1 re2re1e-3e1e-1e1e-1e1e-1rr\ne1e-1e1e1e-2e1e-1e1e-1e1e1e-2r re1e1e-2re1e2re-3e1e-1e2e-1 re-1re1e1e-2e1e-1e1e-1e1e3e-2 rre1e2re1e1e1e1e-9rrr e1e-1re1e1e-2rre1e-1rrr",
+    "move": [
+      [
+        [-1, 1, -2, 1, 1, -2, 1, 1, 0, 0, 0, -1],
+        [1, 0, -1, 1, 0, 0, -2, 1, 1, -3, 0, 2],
+        [1, -1, 1, -2, 1, 1, -3, 1, 1, 1, -1, 1],
+        [0, -4, 1, 1, 1, 1, -1, 1, -4, 1, 0, 2],
+        [1, 0, 0, -2, 1, 1, 0, 0, -1, 1, -1, 1, 0]
+      ],
+      [
+        [0, -1, 1, 0, -2, 1, 1, -1, 1, -1, 1, 0],
+        [-2, 1, 1, -1, 1, -1, 1, 0, -4, 1, -1, 2],
+        [-1, 3, -2, 1, 1, -2, 1, 1, 0, -3, 1, 1],
+        [1, 0, -1, 1, 0, -7, 1, 1, 0, 2, -1, 2],
+        [-2, 3, 1, -1, -2, 2, 1, -2, 1, 1, -2, 1, 1]
+      ],
+      [
+        [0, 0, -1, 1, -1, 1, -1, 1, -3, 1, 0, 2],
+        [-1, 1, -6, 1, 1, 1, 1, 1, 1, -1, 1, 0],
+        [0, -2, 1, 1, -1, 1, 0, 0, -1, 1, -2, 1],
+        [1, -4, 1, 1, 0, 2, 0, 0, -1, 1, 0, 0],
+        [-1, 1, -6, 1, 1, 1, -1, 2, 2, -2, 1, 1, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, -2, 1, 1, 0, -1],
+        [1, 0, 0, -9, 1, 1, 1, 1, 0, 2, 1, 0],
+        [-2, 3, 1, -1, 1, -1, 1, -2, 1, 1, 0, -1],
+        [-1, 2, -1, 1, -3, 0, 2, 1, 0, -2, 1, 1],
+        [0, -2, 1, 1, -1, 1, -1, 1, -2, 1, 1, -1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Magdalen",
+        "Oriel",
+        "Pembroke",
+        "Christ Church",
+        "Wadham",
+        "University",
+        "Wolfson",
+        "Hertford",
+        "New College",
+        "St John's",
+        "Balliol",
+        "Keble"
+      ],
+      [
+        "S.E.H.",
+        "Lincoln",
+        "Trinity",
+        "Jesus",
+        "St Catherine's",
+        "Somerville",
+        "Linacre",
+        "Green Templeton",
+        "Worcester",
+        "St Anne's",
+        "St Hugh's",
+        "Brasenose"
+      ],
+      [
+        "L.M.H.",
+        "Mansfield",
+        "Corpus Christi",
+        "Wolfson 2",
+        "Wadham 2",
+        "Exeter",
+        "Queen's",
+        "St Hilda's",
+        "St Peter's",
+        "Merton",
+        "St Antony's",
+        "New College 2"
+      ],
+      [
+        "St John's 2",
+        "Pembroke 2",
+        "Regent's Park",
+        "Lincoln 2",
+        "Oriel 2",
+        "University 2",
+        "Wolfson 3",
+        "Jesus 2",
+        "Magdalen 2",
+        "Linacre 2",
+        "Balliol 2",
+        "St Hugh's 2"
+      ],
+      [
+        "Lincoln 3",
+        "Brasenose 2",
+        "University 3",
+        "Green Templeton 2",
+        "Christ Church 2",
+        "St Catherine's 2",
+        "St Antony's 2",
+        "Brasenose 3",
+        "Pembroke 3",
+        "Wolfson 4",
+        "Hertford 2",
+        "Trinity 2",
+        "Wadham 3"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2017,
+    "days": 4,
+    "divisions": [
+      [
+        "Magdalen",
+        "Oriel",
+        "Pembroke",
+        "Christ Church",
+        "Wadham",
+        "University",
+        "Wolfson",
+        "Hertford",
+        "New College",
+        "St John's",
+        "Balliol",
+        "Keble"
+      ],
+      [
+        "S.E.H.",
+        "Lincoln",
+        "Trinity",
+        "Jesus",
+        "St Catherine's",
+        "Somerville",
+        "Linacre",
+        "Green Templeton",
+        "Worcester",
+        "St Anne's",
+        "St Hugh's",
+        "Brasenose"
+      ],
+      [
+        "L.M.H.",
+        "Mansfield",
+        "Corpus Christi",
+        "Wolfson 2",
+        "Wadham 2",
+        "Exeter",
+        "Queen's",
+        "St Hilda's",
+        "St Peter's",
+        "Merton",
+        "St Antony's",
+        "New College 2"
+      ],
+      [
+        "St John's 2",
+        "Pembroke 2",
+        "Regent's Park",
+        "Lincoln 2",
+        "Oriel 2",
+        "Worcester 2",
+        "University 2",
+        "Wolfson 3",
+        "Somerville 2",
+        "Jesus 2",
+        "Magdalen 2",
+        "Linacre 2"
+      ],
+      [
+        "Balliol 2",
+        "Lincoln 3",
+        "Christ Church 2",
+        "Hertford 2",
+        "Trinity 2",
+        "Wadham 3",
+        "St Anne's 2",
+        "Mansfield 2",
+        "St Hilda's 2",
+        "Keble 2",
+        "Exeter 2",
+        "Merton 2",
+        "L.M.H. 2"
+      ]
+    ],
+    "results": "re1e-1e1e-1e1e1e1e1e1e-5rr e2e2e-1e1e1e1e-6e1e2re-3e2e-1 re-1re1e-1re1e-1e1e1e-2rr e1e1e-2e1e-1e2re1e-3e1e-1rr re1e-1e1e-1e1e1e-2e1e2re1e-4\ne1e-1e1e-1e1e-1e1e2re1e-4e2e-1 re-1e1e1e-2e1e1e1e-3re1e2e-2 re-1rre1e1e1e1e-4re1e2e-2 re2re1e1e-5e1e1e1e-3e1e2e-2 re-1e1e-1e2re1e1e-4e1e-1rr\ne2e2e-1e-3re1e1e1e-3e1e1e1e-3 rrre2re-2e1e1e1e1e-4e3e-1 rre2re-4rre1e-1e1e-1e2e-1 re1e-2e1e-1e1e1e-2e1e1e-2e2e-1 re1e-2e1e-1rrre1e-1e1e-1r\ne1e1e-2e1e-1re2re1e-3re3e-1 rre1e-3e1e1e-2e2re1e-3e2e-1 re-1e1e-1rrrre1e-1e1e-1r re1e1e-2e1e-1re1e-1e1e1e-2r re1e1e-2e2re1e2re-5rrr",
+    "move": [
+      [
+        [-4, 1, 0, 2, 1, -2, 1, 1, -1, 1, -1, 1],
+        [0, 0, -1, 1, -3, 1, 0, 2, -1, 1, -2, 1],
+        [1, 0, -2, 1, 1, -1, 1, 0, -1, 1, 0, -1],
+        [-1, 2, -3, 0, 2, 1, -6, 1, 1, 1, -1, 2],
+        [2, 0, -5, 1, 1, 1, 1, 1, -1, 1, -1, 1, 0]
+      ],
+      [
+        [0, 0, -1, 1, -4, 1, 1, 0, 2, -1, 1, -1],
+        [-2, 2, 1, -3, 1, 1, 1, -5, 1, 1, 0, 2],
+        [-2, 2, 1, 0, -4, 1, 1, 1, 1, 0, 0, -1],
+        [-2, 2, 1, 0, -3, 1, 1, 1, -2, 1, 1, -1],
+        [-1, 2, -4, 1, 0, 2, 1, -1, 1, -1, 1, -1, 1]
+      ],
+      [
+        [0, -1, 1, -1, 1, 0, 0, 0, -1, 1, -2, 1],
+        [-1, 2, -2, 1, 1, -2, 1, 1, -1, 1, -2, 1],
+        [-1, 2, -1, 1, -1, 1, 0, 0, -4, 0, 2, 0],
+        [-1, 3, -4, 1, 1, 1, 1, -2, 0, 2, 0, 0],
+        [-3, 1, 1, 1, -3, 1, 1, 1, 0, -3, -1, 2, 2]
+      ],
+      [
+        [0, 0, 0, -5, 0, 2, 1, 0, 2, -2, 1, 1],
+        [0, -2, 1, 1, -1, 1, 0, -1, 1, -2, 1, 1],
+        [0, -1, 1, -1, 1, 0, 0, 0, 0, -1, 1, -1],
+        [-1, 2, -3, 1, 0, 2, -2, 1, 1, -3, 1, 0],
+        [-1, 3, 0, -3, 1, 0, 2, 0, -1, 1, -2, 1, 1]
+      ]
+    ],
+    "finish": [
+      [
+        "Oriel",
+        "Wadham",
+        "Christ Church",
+        "Hertford",
+        "Pembroke",
+        "St John's",
+        "Keble",
+        "University",
+        "Wolfson",
+        "Lincoln",
+        "Jesus",
+        "Magdalen"
+      ],
+      [
+        "New College",
+        "Somerville",
+        "Green Templeton",
+        "Balliol",
+        "Trinity",
+        "S.E.H.",
+        "St Anne's",
+        "L.M.H.",
+        "Linacre",
+        "Mansfield",
+        "Wolfson 2",
+        "Worcester"
+      ],
+      [
+        "Brasenose",
+        "Wadham 2",
+        "St Catherine's",
+        "Exeter",
+        "St Hugh's",
+        "Queen's",
+        "St Hilda's",
+        "Merton",
+        "St Antony's",
+        "Oriel 2",
+        "St Peter's",
+        "Pembroke 2"
+      ],
+      [
+        "St John's 2",
+        "Corpus Christi",
+        "Regent's Park",
+        "Somerville 2",
+        "Wolfson 3",
+        "Lincoln 2",
+        "Balliol 2",
+        "Linacre 2",
+        "New College 2",
+        "Jesus 2",
+        "Trinity 2",
+        "Lincoln 3"
+      ],
+      [
+        "Worcester 2",
+        "University 2",
+        "St Anne's 2",
+        "Mansfield 2",
+        "Keble 2",
+        "Hertford 2",
+        "Magdalen 2",
+        "Wadham 3",
+        "L.M.H. 2",
+        "Christ Church 2",
+        "St Hilda's 2",
+        "Merton 2",
+        "Exeter 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2018,
+    "days": 4,
+    "divisions": [
+      [
+        "Oriel",
+        "Wadham",
+        "Christ Church",
+        "Hertford",
+        "Pembroke",
+        "St John's",
+        "Keble",
+        "University",
+        "Wolfson",
+        "Lincoln",
+        "Jesus",
+        "Magdalen"
+      ],
+      [
+        "New College",
+        "Somerville",
+        "Green Templeton",
+        "Balliol",
+        "Trinity",
+        "S.E.H.",
+        "St Anne's",
+        "L.M.H.",
+        "Linacre",
+        "Mansfield",
+        "Wolfson 2",
+        "Worcester"
+      ],
+      [
+        "Brasenose",
+        "Wadham 2",
+        "St Catherine's",
+        "Exeter",
+        "St Hugh's",
+        "Queen's",
+        "St Hilda's",
+        "Merton",
+        "St Antony's",
+        "Oriel 2",
+        "St Peter's",
+        "Pembroke 2"
+      ],
+      [
+        "St John's 2",
+        "Corpus Christi",
+        "Regent's Park",
+        "Somerville 2",
+        "Wolfson 3",
+        "Lincoln 2",
+        "Balliol 2",
+        "Linacre 2",
+        "New College 2",
+        "Jesus 2",
+        "Trinity 2",
+        "Worcester 2"
+      ],
+      [
+        "St Anne's 2",
+        "Mansfield 2",
+        "Hertford 2",
+        "Magdalen 2",
+        "Christ Church 2",
+        "St Hilda's 2",
+        "Merton 2",
+        "St Hugh's 2",
+        "Christ Church 3",
+        "Corpus Christi 2",
+        "Brasenose 2",
+        "St Catherine's 2",
+        "Green Templeton 2"
+      ]
+    ],
+    "results": "e1e-1e1e1e-2e1e-1e1e1e1e3re-5 re1e-2e1e3e1e2e-2e-5e1e-1e2e-1 re-1e2re-2e1e1e-2e1e1e1e-3r e1e-1e1e-1re1e1e1e1e1e1e-6r e2e2e-1e-3e1e-1e1e-1e1e-1rrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrrrrrrrrr\nrrrrrrrrrrrrr rrrrrrrrrrrrr rrrrrre1e1e-2rre1e-1 re1e-1e1e-1re1e2re-3re2e-1 re-1e1e1e-2e1e-1e1e-1e1e-1rr",
+    "move": [
+      [
+        [0, 0, 0, -1, 1, -1, 1, -1, 1, -3, -1, 2],
+        [2, -6, 1, 1, 1, 1, 1, 1, 0, -1, 1, -1],
+        [1, -3, 1, 1, 1, -2, 1, 1, -2, 0, 2, -1],
+        [-1, 2, -1, 1, -5, -2, 2, 1, 3, 1, -2, 1],
+        [-5, 0, 3, 1, 1, 1, -1, 1, -2, 1, 1, -1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, -1, 1, -1, 1, -1, 1, -2, 1, 1, -1],
+        [-1, 2, 0, -3, 0, 2, 1, 0, -1, 1, -1, 1],
+        [-1, 1, 0, 0, -2, 1, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Oriel",
+        "Wadham",
+        "Pembroke",
+        "Christ Church",
+        "Keble",
+        "Hertford",
+        "Wolfson",
+        "St John's",
+        "Magdalen",
+        "New College",
+        "University",
+        "Green Templeton"
+      ],
+      [
+        "Jesus",
+        "Lincoln",
+        "Balliol",
+        "St Anne's",
+        "S.E.H.",
+        "L.M.H.",
+        "Trinity",
+        "Somerville",
+        "Wolfson 2",
+        "Linacre",
+        "Brasenose",
+        "Mansfield"
+      ],
+      [
+        "St Catherine's",
+        "Worcester",
+        "Exeter",
+        "St Hugh's",
+        "St Hilda's",
+        "Merton",
+        "Wadham 2",
+        "Queen's",
+        "St Peter's",
+        "Oriel 2",
+        "St Antony's",
+        "Corpus Christi"
+      ],
+      [
+        "Pembroke 2",
+        "St John's 2",
+        "Somerville 2",
+        "Regent's Park",
+        "Balliol 2",
+        "New College 2",
+        "Linacre 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "Wolfson 3",
+        "Worcester 2",
+        "Hertford 2"
+      ],
+      [
+        "Trinity 2",
+        "Mansfield 2",
+        "Magdalen 2",
+        "Christ Church 2",
+        "St Hilda's 2",
+        "St Anne's 2",
+        "St Hugh's 2",
+        "Merton 2",
+        "Corpus Christi 2",
+        "Brasenose 2",
+        "Christ Church 3",
+        "Green Templeton 2",
+        "St Catherine's 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2019,
+    "days": 4,
+    "divisions": [
+      [
+        "Oriel",
+        "Wadham",
+        "Pembroke",
+        "Christ Church",
+        "Keble",
+        "Hertford",
+        "Wolfson",
+        "St John's",
+        "Magdalen",
+        "New College",
+        "University",
+        "Green Templeton"
+      ],
+      [
+        "Jesus",
+        "Lincoln",
+        "Balliol",
+        "St Anne's",
+        "S.E.H.",
+        "L.M.H.",
+        "Trinity",
+        "Somerville",
+        "Wolfson 2",
+        "Linacre",
+        "Brasenose",
+        "Mansfield"
+      ],
+      [
+        "St Catherine's",
+        "Worcester",
+        "Exeter",
+        "St Hugh's",
+        "St Hilda's",
+        "Merton",
+        "Wadham 2",
+        "Queen's",
+        "St Peter's",
+        "Oriel 2",
+        "St Antony's",
+        "Corpus Christi"
+      ],
+      [
+        "Pembroke 2",
+        "St John's 2",
+        "Somerville 2",
+        "Regent's Park",
+        "Balliol 2",
+        "New College 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "Wolfson 3",
+        "Worcester 2",
+        "Hertford 2",
+        "Mansfield 2"
+      ],
+      [
+        "Christ Church 2",
+        "St Hugh's 2",
+        "Corpus Christi 2",
+        "Green Templeton 2",
+        "St Catherine's 2",
+        "Keble 2",
+        "University 2",
+        "St Peter's 2",
+        "New College 3",
+        "L.M.H. 2",
+        "St Benet's Hall",
+        "Exeter 2",
+        "University 3"
+      ]
+    ],
+    "results": "e2re-2e1e1e-2e2re-2re1e-1r e1e1e1e-3e1e-1e1e1e-2e1e1e2e-3 re1e2re1e1e-6e1e1e-2rrr e1e-1e1e-1re1e1e1e-3re1e-1r re2re1e1e-4re1e1e-2re1e-1\nrre1e-1re3e-1e-1e1e-2e1e-1r re1e1e-2rrrrrrre1r e1e-2e1e-1re2re1e-3e1e-1rr e1e1e1e1e1e-5rrre1e-1e2e-1 re-1re1e-1re1e-1e1e-1e1e-1r\nre2re1e-3e1e1e-2re1e-1e2e-1 re-1e3e1e-1e1e-4re1e-1rrr rrre1e1e-2rre1e-1e1e1e-2 re1e1e-2e1e-1re1e1e-2e1e1e-2 re1e-1re1e-1rrre1e-1rr\nre1e-1re1e-1e1e-1e2re3re-4 re1e-2re1e1e1e-3rrre2e-1 re-1rre1e-1re1e-1e1e-1e2e-1 re-1e1e1e-2re1e-1e1e1e-2rr rre2re-2e1e-1re1e-1rrr",
+    "move": [
+      [
+        [-1, 1, 0, -2, 1, 1, 0, -4, 1, 1, 0, 2],
+        [0, -1, 1, 0, -3, 1, 1, 1, 0, -1, 1, -1],
+        [1, 0, 0, -2, 1, 1, -6, 1, 1, 0, 2, 1],
+        [-3, 2, 1, 1, -2, 1, 1, -1, 1, -3, 1, 1],
+        [1, -1, 1, 0, -2, 0, 2, -2, 1, 1, -2, 0, 2]
+      ],
+      [
+        [0, -1, 1, -1, 1, -1, 1, 0, -1, 1, 0, -1],
+        [-1, 2, -1, 1, 0, 0, 0, -5, 1, 1, 1, 1],
+        [1, 0, -1, 1, -3, 1, 0, 2, 0, -1, 1, -2],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, -2, 1, 1],
+        [0, -1, 1, -2, 1, -1, -1, 3, 0, -1, 1, 0, 0]
+      ],
+      [
+        [0, 0, -1, 1, 0, 0, 0, -1, 1, 0, -1, 1],
+        [-2, 1, 1, -2, 1, 1, 0, -1, 1, -2, 1, 1],
+        [-2, 1, 1, -1, 1, 0, 0, -2, 1, 1, 0, 0],
+        [0, 0, 0, -1, 1, 0, -4, 1, -1, 1, 3, -1],
+        [-1, 2, -1, 1, 0, -2, 1, 1, -3, 1, 0, 2, 0]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, -1, 1, -2, 0, 2, 0],
+        [0, 0, -2, 1, 1, -1, 1, 0, -2, 1, 1, -1],
+        [-1, 2, -1, 1, -1, 1, 0, -1, 1, 0, 0, -1],
+        [-1, 2, 0, 0, 0, -3, 1, 1, 1, 0, -2, 1],
+        [-4, 0, 3, 0, 2, -1, 1, -1, 1, 0, -1, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Wadham",
+        "Pembroke",
+        "Hertford",
+        "Keble",
+        "Oriel",
+        "Wolfson",
+        "Green Templeton",
+        "Christ Church",
+        "Balliol",
+        "New College",
+        "Magdalen",
+        "University"
+      ],
+      [
+        "Jesus",
+        "St Anne's",
+        "L.M.H.",
+        "Trinity",
+        "St John's",
+        "Somerville",
+        "Lincoln",
+        "Brasenose",
+        "St Catherine's",
+        "Mansfield",
+        "Wolfson 2",
+        "St Hilda's"
+      ],
+      [
+        "Linacre",
+        "Worcester",
+        "St Hugh's",
+        "S.E.H.",
+        "St Peter's",
+        "Exeter",
+        "Queen's",
+        "Corpus Christi",
+        "St Antony's",
+        "Merton",
+        "Oriel 2",
+        "St John's 2"
+      ],
+      [
+        "Wadham 2",
+        "Somerville 2",
+        "Regent's Park",
+        "New College 2",
+        "Pembroke 2",
+        "Wolfson 3",
+        "Christ Church 2",
+        "Mansfield 2",
+        "Lincoln 2",
+        "Jesus 2",
+        "St Hugh's 2",
+        "University 2"
+      ],
+      [
+        "Balliol 2",
+        "Worcester 2",
+        "New College 3",
+        "Corpus Christi 2",
+        "Hertford 2",
+        "St Catherine's 2",
+        "Keble 2",
+        "University 3",
+        "Green Templeton 2",
+        "Exeter 2",
+        "L.M.H. 2",
+        "St Peter's 2",
+        "St Benet's Hall"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2022,
+    "days": 4,
+    "divisions": [
+      [
+        "Wolfson",
+        "Pembroke",
+        "Oriel",
+        "University",
+        "Christ Church",
+        "Hertford",
+        "Wadham",
+        "Keble",
+        "New College",
+        "Trinity",
+        "Jesus",
+        "Balliol"
+      ],
+      [
+        "Green Templeton",
+        "St Anne's",
+        "Magdalen",
+        "Somerville",
+        "L.M.H.",
+        "Lincoln",
+        "Brasenose",
+        "St John's",
+        "St Catherine's",
+        "S.E.H.",
+        "Wolfson 2",
+        "Mansfield"
+      ],
+      [
+        "Linacre",
+        "St Peter's",
+        "Corpus Christi",
+        "St Hilda's",
+        "Merton",
+        "St Hugh's",
+        "Queen's",
+        "St Antony's",
+        "Exeter",
+        "Worcester",
+        "New College 2",
+        "Wolfson 3"
+      ],
+      [
+        "Somerville 2",
+        "University 2",
+        "Regent's Park",
+        "Oriel 2",
+        "St John's 2",
+        "Wadham 2",
+        "Mansfield 2",
+        "Christ Church 2",
+        "Linacre 2",
+        "Pembroke 2",
+        "Worcester 2",
+        "Osler House"
+      ],
+      [
+        "Lincoln 2",
+        "Magdalen 2",
+        "S.E.H. 2",
+        "Christ Church 3",
+        "Wolfson 4",
+        "Osler House 2",
+        "Brasenose 2",
+        "St Antony's 2",
+        "Wolfson 5",
+        "Merton 2",
+        "New College 3",
+        "Green Templeton 2",
+        "Keble 2"
+      ]
+    ],
+    "results": "rrre1e-1rrrrre1e-1r e1e1e1e-3e1e2re-3re1e-1e2e-1 re1e1e1e1e1e-6e1e-1re1e-1r rre1e1e1e-3e2re1e-3e1e-1r e1e1e-2e1e-1re1e-1re1e-1rr\ne1e-1e1e-1re1e-1e1e1e-2e3re-2 re-1e1e1e-2e1e-1e1e1e-2e1e1e-2 re1e1e-2re1e1e-2re1e-1e2e-1 re1e-2e1e1e1e-3rrrrrr e2re-2rrrre1e-1re1e-1r\ne1e1e-2e1e-1rrrre1e1e-2r e2e2e-1e2re-5e2re1e-3re2e-1 re-1rre1e-1e2e3e1e-2e-4e1e-1 rrrrre1e-1re1e2re2e-4 re-1e1e-1rrrre1e-1rrr\nre1e2e-2e3re2e-1e1e1e1e-8r rre1e1e1e1e-4re1e1e-2rr re1e-1e1e1e1e-3re2re1e-3r rrrrrre2re-2e1e-1e1e-1 re1e-1e1e-1e1e-1rre1e-1rr",
+    "move": [
+      [
+        [0, 0, -1, 1, 0, -1, 1, 0, -1, 1, -2, 1],
+        [1, -1, 1, -3, 1, 0, 2, -3, 1, 1, 1, 0],
+        [0, -1, 1, 0, -1, 1, -6, 1, 1, 1, 1, 1],
+        [-1, 2, -1, 1, 0, -3, 0, 2, 1, -3, 1, 1],
+        [1, -1, 1, 0, 0, 0, 0, 0, -1, 1, 0, 0, 0]
+      ],
+      [
+        [0, -1, 1, 0, -1, 1, 0, 0, 0, 0, -2, 0],
+        [2, 0, 0, 0, 0, 0, -3, 1, 1, 1, -2, 1],
+        [-1, 2, -1, 1, 0, -2, 1, 1, 0, -2, 1, 1],
+        [-2, 1, 1, -2, 1, 1, -1, 1, -2, 1, 1, -1],
+        [-2, 0, 3, -2, 1, 1, -1, 1, 0, -1, 1, -1, 1]
+      ],
+      [
+        [0, 0, 0, -1, 1, 0, 0, 0, 0, -1, 1, -1],
+        [-4, 2, 0, 2, 1, 0, -1, 1, 0, 0, 0, 0],
+        [-1, 1, -4, -2, 1, 3, 2, -1, 1, 0, 0, -1],
+        [-1, 2, 0, -3, 1, 0, 2, -5, 0, 2, -1, 2],
+        [2, -2, 1, 1, 0, 0, 0, 0, -1, 1, -2, 1, 1]
+      ],
+      [
+        [0, 0, -1, 1, 0, 0, -1, 1, -1, 1, -1, 1],
+        [-1, 1, -1, 1, -2, 0, 2, 0, 0, 0, 0, 0],
+        [0, -3, 1, 0, 2, 0, -3, 1, 1, 1, -1, 1],
+        [0, 0, -2, 1, 1, 0, -4, 1, 1, 1, 1, 0],
+        [0, -8, 1, 1, 1, -1, 2, 0, 3, -2, 2, 1, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "Wolfson",
+        "University",
+        "Wadham",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "Keble",
+        "Hertford",
+        "Jesus",
+        "Trinity",
+        "Magdalen",
+        "New College"
+      ],
+      [
+        "L.M.H.",
+        "Green Templeton",
+        "Brasenose",
+        "St Anne's",
+        "S.E.H.",
+        "Lincoln",
+        "Balliol",
+        "St Catherine's",
+        "Wolfson 2",
+        "Somerville",
+        "Mansfield",
+        "Corpus Christi"
+      ],
+      [
+        "Linacre",
+        "St Antony's",
+        "Exeter",
+        "St Hugh's",
+        "St John's",
+        "St Peter's",
+        "Worcester",
+        "Merton",
+        "Wolfson 3",
+        "St Hilda's",
+        "Oriel 2",
+        "University 2"
+      ],
+      [
+        "New College 2",
+        "Somerville 2",
+        "Christ Church 2",
+        "Linacre 2",
+        "Queen's",
+        "Regent's Park",
+        "Osler House",
+        "Worcester 2",
+        "Magdalen 2",
+        "Lincoln 2",
+        "St John's 2",
+        "Wadham 2"
+      ],
+      [
+        "Mansfield 2",
+        "Wolfson 4",
+        "S.E.H. 2",
+        "Osler House 2",
+        "St Antony's 2",
+        "New College 3",
+        "Christ Church 3",
+        "Brasenose 2",
+        "Keble 2",
+        "Pembroke 2",
+        "Green Templeton 2",
+        "Merton 2",
+        "Wolfson 5"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true],
+      [true, true, true, true, true]
+    ]
+  },
+  {
+    "set": "Torpids",
+    "small": "Torpids",
+    "gender": "Women",
+    "result": "",
+    "year": 2023,
+    "days": 4,
+    "divisions": [
+      [
+        "Wolfson",
+        "University",
+        "Wadham",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "Keble",
+        "Hertford",
+        "Jesus",
+        "Trinity",
+        "Magdalen",
+        "New College"
+      ],
+      [
+        "L.M.H.",
+        "Green Templeton",
+        "Brasenose",
+        "St Anne's",
+        "S.E.H.",
+        "Lincoln",
+        "Balliol",
+        "St Catherine's",
+        "Wolfson 2",
+        "Somerville",
+        "Mansfield",
+        "Corpus Christi"
+      ],
+      [
+        "Linacre",
+        "St Antony's",
+        "Exeter",
+        "St Hugh's",
+        "St John's",
+        "St Peter's",
+        "Worcester",
+        "Merton",
+        "Wolfson 3",
+        "St Hilda's",
+        "Oriel 2",
+        "University 2"
+      ],
+      [
+        "New College 2",
+        "Christ Church 2",
+        "Linacre 2",
+        "Queen's",
+        "Regent's Park",
+        "Osler House",
+        "Worcester 2",
+        "Magdalen 2",
+        "Lincoln 2",
+        "St Hugh's 2",
+        "St John's 2",
+        "Wadham 2"
+      ],
+      [
+        "Mansfield 2",
+        "Wolfson 4",
+        "S.E.H. 2",
+        "St Antony's 2",
+        "Christ Church 3",
+        "Brasenose 2",
+        "Keble 2",
+        "Pembroke 2",
+        "Green Templeton 2",
+        "Merton 2",
+        "St Hilda's 2",
+        "L.M.H. 2"
+      ],
+      [
+        "Hertford 2",
+        "St Peter's 2",
+        "St Catherine's 2",
+        "Balliol 2",
+        "Keble 3",
+        "University 3",
+        "Green Templeton 3",
+        "Lincoln 3",
+        "Linacre 3",
+        "St Peter's 3",
+        "Queen's 2",
+        "Jesus 2",
+        "Exeter 2"
+      ]
+    ],
+    "results": "e1e-1e1e-1e1e1e-2rrrrrr re2e2e2e2e-3e2re1e1e1e3e-11 rre-2re1e-1e2re-2e2re1e-3 re1e-1e1e-1rre1e-1re3re-2 re-1e1e2re-3re2re-2re2e-1 re-1e1e2re-3rre1e1e-2e1e-1\nrrrre1e1e-2rre1e1e2e-3 re-1e2re1e-3e2re1e-3e1e1e-2 rre1e-1re1e-1e1e2re-3e2e-1 re-1e1e-1e1e-1e1e-1e2re-2e2e-1 re1e-2e1e-1re1e-1re1e-1rr e1e1e-2e1e-1re1e1e-2e1e1e-2r\nre2re1e1e-4e1e-1e1e-1e1e-1r e1e1e-2e1e1e1e-3re1e1e-2rr e1e1e1e1e1e-5e2re1e-3e1e-1r re1e-1rrre1e1e-2re1e1e-2 rre1e-1e1e-1rre1e-1e3re-2 re-1e1e-1e1e-1re1e1e-2rrr\nrrre1e2re-3rre1e-1rr e1e-1e1e-1rre2re-2e1e2re-3 re2re1e1e-4rre1e-1re2e-1 re-1e1e-1re1e-1re1e1e-2e2e-1 re1e-2e1e-1e1e-1e1e-1e1e-1e2e-1 re1e-2rre1e-1rrrrrr",
+    "move": [
+      [
+        [-1, 1, -2, 1, 1, 0, 0, -3, 0, 2, 1, -1],
+        [-1, 2, 0, -2, 0, 2, 0, -3, 0, 2, 1, -1],
+        [-2, 0, 3, 0, -1, 1, 0, 0, -1, 1, -1, 1],
+        [-3, 1, 0, 2, -2, 0, 2, -1, 1, 0, -2, 0],
+        [-11, 3, 1, 1, 1, 0, 2, -3, 2, 2, 2, 2],
+        [0, 0, 0, 0, 0, 0, -2, 1, 1, -1, 1, -1, 1]
+      ],
+      [
+        [0, -2, 1, 1, -2, 1, 1, 0, -1, 1, -2, 1],
+        [1, 0, -1, 1, 0, -1, 1, 0, -1, 1, -2, 1],
+        [-1, 2, -2, 0, 2, -1, 1, -1, 1, -1, 1, -1],
+        [-1, 2, -3, 0, 2, 1, -1, 1, 0, -1, 1, 0],
+        [-2, 1, 1, -3, 1, 0, 2, -3, 1, 0, 2, -1],
+        [-3, 2, 1, 1, 0, 0, -2, 1, 1, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, -2, 1, 1, 0, -1, 1, -1, 1, -1],
+        [-2, 0, 3, -1, 1, 0, 0, -1, 1, -1, 1, 0],
+        [-2, 1, 1, 0, -2, 1, 1, 0, 0, 0, -1, 1],
+        [0, -1, 1, -3, 1, 0, 2, -5, 1, 1, 1, 1],
+        [1, 0, -2, 1, 1, 0, -3, 1, 1, 1, -2, 1],
+        [1, -1, 1, -1, 1, -1, 1, -4, 1, 1, 0, 2, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, -1, 1, 0, 0, -2, 1],
+        [-1, 2, -1, 1, -1, 1, -1, 1, -1, 1, -2, 1],
+        [-1, 2, -2, 1, 1, 0, -1, 1, 0, -1, 1, -1],
+        [-1, 2, 0, -1, 1, 0, 0, -4, 1, 1, 0, 2],
+        [-3, 0, 2, 1, -2, 0, 2, 0, 0, -1, 1, -1],
+        [1, 0, -1, 1, 0, 0, -3, 0, 2, 1, 0, 0, 0]
+      ]
+    ],
+    "finish": [
+      [
+        "University",
+        "Pembroke",
+        "Oriel",
+        "Christ Church",
+        "Keble",
+        "Wolfson",
+        "Magdalen",
+        "Wadham",
+        "Trinity",
+        "Green Templeton",
+        "Lincoln",
+        "L.M.H."
+      ],
+      [
+        "Jesus",
+        "New College",
+        "S.E.H.",
+        "Hertford",
+        "Balliol",
+        "Brasenose",
+        "Mansfield",
+        "St Anne's",
+        "Exeter",
+        "Somerville",
+        "St Antony's",
+        "St Peter's"
+      ],
+      [
+        "Wolfson 2",
+        "Corpus Christi",
+        "St Hugh's",
+        "Worcester",
+        "St Catherine's",
+        "St John's",
+        "St Hilda's",
+        "Linacre",
+        "Merton",
+        "Queen's",
+        "University 2",
+        "Worcester 2"
+      ],
+      [
+        "Wolfson 3",
+        "Oriel 2",
+        "Christ Church 2",
+        "Lincoln 2",
+        "Osler House",
+        "Linacre 2",
+        "New College 2",
+        "Wolfson 4",
+        "St Hugh's 2",
+        "S.E.H. 2",
+        "Wadham 2",
+        "Magdalen 2"
+      ],
+      [
+        "Keble 2",
+        "St Antony's 2",
+        "Green Templeton 2",
+        "Regent's Park",
+        "St Hilda's 2",
+        "Brasenose 2",
+        "St John's 2",
+        "Pembroke 2",
+        "L.M.H. 2",
+        "St Peter's 2",
+        "Christ Church 3",
+        "Merton 2"
+      ],
+      [
+        "Mansfield 2",
+        "Balliol 2",
+        "Keble 3",
+        "St Catherine's 2",
+        "Hertford 2",
+        "Linacre 3",
+        "Queen's 2",
+        "Lincoln 3",
+        "Exeter 2",
+        "University 3",
+        "St Peter's 3",
+        "Green Templeton 3",
+        "Jesus 2"
+      ]
+    ],
+    "completed": [
+      [true, true, true, true, true, true],
+      [true, true, true, true, true, true],
+      [true, true, true, true, true, true],
+      [true, true, true, true, true, true]
+    ]
+  }
+]
