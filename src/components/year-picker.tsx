@@ -1,7 +1,5 @@
 "use client";
 
-import clsx from "clsx";
-import Link from "next/link";
 import {
   Children,
   PropsWithChildren,
@@ -10,7 +8,6 @@ import {
   useState,
 } from "react";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
-import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 
 type YearPickerProps = {
   skipLength: number;
@@ -71,7 +68,7 @@ export function YearPicker({
   }, []);
 
   return (
-    <section className="relative bg-white px-0">
+    <section className="relative px-0">
       <div className="p-0 m-0 border-0">
         <div className="relative">
           <Tabs
@@ -96,7 +93,7 @@ export function YearPicker({
           </Tabs>
           {!left && (
             <>
-              <div className="bg-gradient-to-r from-white w-24 absolute left-0 top-0 right-auto h-full pointer-events-none"></div>
+              <div className="bg-gradient-to-r from-white dark:from-black w-24 absolute left-0 top-0 right-auto h-full pointer-events-none"></div>
               <div className="absolute right-auto left-0 bottom-1/2 translate-y-1/2">
                 <button
                   onClick={() => {
@@ -113,7 +110,10 @@ export function YearPicker({
                       focusable="false"
                       aria-hidden="true"
                     >
-                      <path d="M10.4 14.3 26.5 31h-6.4L5.5 16 20.1 1h6.4L10.4 17.7z"></path>
+                      <path
+                        className="fill-black dark:fill-white"
+                        d="M10.4 14.3 26.5 31h-6.4L5.5 16 20.1 1h6.4L10.4 17.7z"
+                      ></path>
                     </svg>
                   </span>
                 </button>
@@ -122,7 +122,7 @@ export function YearPicker({
           )}
           {!right && (
             <>
-              <div className="bg-gradient-to-l from-white w-24 absolute right-0 top-0 left-auto h-full pointer-events-none"></div>
+              <div className="bg-gradient-to-l from-white dark:from-black w-24 absolute right-0 top-0 left-auto h-full pointer-events-none"></div>
               <div className="absolute right-0 left-auto bottom-1/2 translate-y-1/2">
                 <button
                   onClick={() => {
@@ -139,7 +139,10 @@ export function YearPicker({
                       focusable="false"
                       aria-hidden="true"
                     >
-                      <path d="M21.6 14.3 5.5 31h6.4l14.6-15L11.9 1H5.5l16.1 16.7z"></path>
+                      <path
+                        className="fill-black dark:fill-white"
+                        d="M21.6 14.3 5.5 31h6.4l14.6-15L11.9 1H5.5l16.1 16.7z"
+                      ></path>
                     </svg>
                   </span>
                 </button>
