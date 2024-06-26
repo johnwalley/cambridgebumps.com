@@ -81,6 +81,7 @@ const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
 });
 
 export default async function Home({ params }: Props) {
+  console.log(results.town.men);
   const data = results[params.event as any][params.gender as any]
     .filter((result) => result.year >= +params.year)
     .filter((result) => result.year <= +params.year)
