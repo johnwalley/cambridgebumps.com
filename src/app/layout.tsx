@@ -22,6 +22,24 @@ export const metadata: Metadata = {
     default: `${process.env.NEXT_PUBLIC_TITLE} Bumps`, // a default is required when creating a template
   },
   description: "Bumps charts, statistics, and more.",
+  keywords: [
+    "Bumps",
+    "rowing",
+    "charts",
+    "Cambridge",
+    "Oxford",
+    "Eights",
+    "Lents",
+    "Mays",
+    "Torpids",
+  ],
+  authors: [
+    {
+      name: "John Walley",
+      url: "https://www.walley.org.uk",
+    },
+  ],
+  creator: "John Walley",
 };
 
 export default function RootLayout({
