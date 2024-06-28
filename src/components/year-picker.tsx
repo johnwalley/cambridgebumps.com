@@ -34,7 +34,6 @@ export function YearPicker({
 
   useEffect(() => {
     const f = () => {
-      console.log("ahoy");
       selectedRef.current &&
         selectedRef.current.scrollIntoView &&
         selectedRef.current.scrollIntoView({

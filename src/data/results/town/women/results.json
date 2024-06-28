@@ -4263,10 +4263,10 @@
         "Chesterton 1",
         "Champs 1",
         "Cantabs 5",
-        "Isle of Ely 1",
-        "Champs 2"
+        "Isle of Ely 1"
       ],
       [
+        "Champs 2",
         "Camb Vets 1",
         "City 4",
         "X-Press 2",
@@ -4282,11 +4282,11 @@
         "99 5",
         "Cantabs 9",
         "Chesterton 2",
-        "St Neots 2",
-        "Cantabs 10",
-        "City 7"
+        "St Neots 2"
       ],
       [
+        "Cantabs 10",
+        "City 7",
         "99 6",
         "Cantabs 11",
         "Champs 4",
@@ -4301,27 +4301,27 @@
         "City 11"
       ]
     ],
-    "results": "rrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr\nrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr\nrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr\nrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrr",
+    "results": "rrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr\nrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrr",
     "move": [
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       ],
       [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       ]
     ],
     "finish": [
@@ -4342,10 +4342,10 @@
         "Chesterton 1",
         "Champs 1",
         "Cantabs 5",
-        "Isle of Ely 1",
-        "Champs 2"
+        "Isle of Ely 1"
       ],
       [
+        "Champs 2",
         "Camb Vets 1",
         "City 4",
         "X-Press 2",
@@ -4361,11 +4361,11 @@
         "99 5",
         "Cantabs 9",
         "Chesterton 2",
-        "St Neots 2",
-        "Cantabs 10",
-        "City 7"
+        "St Neots 2"
       ],
       [
+        "Cantabs 10",
+        "City 7",
         "99 6",
         "Cantabs 11",
         "Champs 4",
@@ -4381,10 +4381,10 @@
       ]
     ],
     "completed": [
-      [false, false, false],
-      [false, false, false],
-      [false, false, false],
-      [false, false, false]
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+      [true, true, true]
     ]
   }
 ]
