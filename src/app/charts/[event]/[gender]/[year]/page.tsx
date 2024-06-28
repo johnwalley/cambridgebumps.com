@@ -83,8 +83,6 @@ export default async function Home({ params }: Props) {
     .filter((result) => result.year >= +params.year)
     .filter((result) => result.year <= +params.year)[0];
 
-  console.log(data);
-
   if (!data || data.crews.length === 0) {
     return (
       <div className="text-center mb-4">
