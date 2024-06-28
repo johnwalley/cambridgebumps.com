@@ -1,5 +1,3 @@
-import { joinEvents, transformData } from "bumps-results-tools";
-
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import summary from "../../../data/results.json";
@@ -83,16 +81,11 @@ const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
 export default async function Home({ params }: Props) {
   const data = results[params.event as any][params.gender as any]
     .filter((result) => result.year >= +params.year)
-    .filter((result) => result.year <= +params.year)
-    .map(transformData);
+    .filter((result) => result.year <= +params.year)[0];
 
-  const joinedEvents = joinEvents(data, params.event, params.gender);
+  console.log(data);
 
-  joinedEvents.small = params.event;
-  joinedEvents.gender = params.gender;
-  joinedEvents.set = set[params.event as keyof typeof set];
-
-  if (!joinedEvents || joinedEvents.crews.length === 0) {
+  if (!data || data.crews.length === 0) {
     return (
       <div className="text-center mb-4">
         We have no results to show for this year
@@ -103,7 +96,7 @@ export default async function Home({ params }: Props) {
   return (
     <div className="w-full flex flex-col items-center mb-4">
       <div className="w-full min-w-[320px] max-w-[520px]">
-        <BumpsChart data={joinedEvents} />
+        <BumpsChart data={data} />
       </div>
     </div>
   );
