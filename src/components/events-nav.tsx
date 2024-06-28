@@ -1,7 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSelectedLayoutSegments } from "next/navigation";
+import {
+  usePathname,
+  useSearchParams,
+  useSelectedLayoutSegments,
+} from "next/navigation";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
@@ -13,27 +17,53 @@ interface EventsNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 export function EventsNav({ className, ...props }: EventsNavProps) {
   const pathname = usePathname();
   const segments = useSelectedLayoutSegments();
+  const searchParams = useSearchParams();
 
   const events = [
     {
       name: "Eights",
-      href: `/charts/eights/${segments[1]}/${segments[2]}`,
+      href:
+        searchParams.size > 0
+          ? `/charts/eights/${segments[1]}/${
+              segments[2]
+            }?${searchParams.toString()}`
+          : `/charts/eights/${segments[1]}/${segments[2]}`,
     },
     {
       name: "Lents",
-      href: `/charts/lents/${segments[1]}/${segments[2]}`,
+      href:
+        searchParams.size > 0
+          ? `/charts/lents/${segments[1]}/${
+              segments[2]
+            }?${searchParams.toString()}`
+          : `/charts/lents/${segments[1]}/${segments[2]}`,
     },
     {
       name: "Mays",
-      href: `/charts/mays/${segments[1]}/${segments[2]}`,
+      href:
+        searchParams.size > 0
+          ? `/charts/mays/${segments[1]}/${
+              segments[2]
+            }?${searchParams.toString()}`
+          : `/charts/mays/${segments[1]}/${segments[2]}`,
     },
     {
       name: "Torpids",
-      href: `/charts/torpids/${segments[1]}/${segments[2]}`,
+      href:
+        searchParams.size > 0
+          ? `/charts/torpids/${segments[1]}/${
+              segments[2]
+            }?${searchParams.toString()}`
+          : `/charts/torpids/${segments[1]}/${segments[2]}`,
     },
     {
       name: "Town",
-      href: `/charts/town/${segments[1]}/${segments[2]}`,
+      href:
+        searchParams.size > 0
+          ? `/charts/town/${segments[1]}/${
+              segments[2]
+            }?${searchParams.toString()}`
+          : `/charts/town/${segments[1]}/${segments[2]}`,
     },
   ];
 

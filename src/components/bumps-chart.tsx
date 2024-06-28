@@ -13,8 +13,8 @@ export default function BumpsChart({ data }: { data: Event }) {
     <div className={classes.chart}>
       <Chart
         data={data}
-     /*    blades={searchParams.get("blades") === "true"}
-        spoons={searchParams.get("spoons") === "true"} */
+        blades={searchParams.get("blades") === "true"}
+        spoons={searchParams.get("spoons") === "true"}
       />
     </div>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { MagnifyingGlassIcon, TriangleDownIcon } from "@radix-ui/react-icons";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
@@ -20,19 +19,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import Link from "next/link";
-import clsx from "clsx";
-import { Button } from "@/components/ui/button";
 import { EventsNav } from "@/components/events-nav";
 import results from "./data/results.json";
 import {
@@ -40,9 +29,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Suspense, useCallback } from "react";
+import { Suspense } from "react";
 import { Blades } from "./components/blades";
 import { Spoons } from "./components/spoons";
 
@@ -76,6 +63,8 @@ export default function Layout({
 
   const segments = useSelectedLayoutSegments();
 
+  const searchParams = useSearchParams();
+
   const years: string[] = (results as any)["eights"]["men"];
 
   const focusElement = years.findIndex((year) => year === segments[2]);
@@ -94,7 +83,15 @@ export default function Layout({
               className="h-[1.45rem] rounded-sm px-2 text-sm"
               asChild
             >
-              <Link href={`/charts/${segments[0]}/men/${segments[2]}`}>
+              <Link
+                href={
+                  searchParams.size > 0
+                    ? `/charts/${segments[0]}/men/${
+                        segments[2]
+                      }?${searchParams.toString()}`
+                    : `/charts/${segments[0]}/men/${segments[2]}`
+                }
+              >
                 Men
               </Link>
             </TabsTrigger>
@@ -103,7 +100,15 @@ export default function Layout({
               className="h-[1.45rem] rounded-sm px-2 text-sm"
               asChild
             >
-              <Link href={`/charts/${segments[0]}/women/${segments[2]}`}>
+              <Link
+                href={
+                  searchParams.size > 0
+                    ? `/charts/${segments[0]}/women/${
+                        segments[2]
+                      }?${searchParams.toString()}`
+                    : `/charts/${segments[0]}/women/${segments[2]}`
+                }
+              >
                 Women
               </Link>
             </TabsTrigger>
@@ -117,7 +122,13 @@ export default function Layout({
           {years.map((year, i) => (
             <Link
               key={year}
-              href={`/charts/${segments[0]}/${segments[1]}/${year}`}
+              href={
+                searchParams.size > 0
+                  ? `/charts/${segments[0]}/${
+                      segments[1]
+                    }/${year}?${searchParams.toString()}`
+                  : `/charts/${segments[0]}/${segments[1]}/${year}`
+              }
             >
               {year}
             </Link>
@@ -198,7 +209,13 @@ export default function Layout({
               {years.map((year, i) => (
                 <Link
                   key={year}
-                  href={`/charts/${segments[0]}/${segments[1]}/${year}`}
+                  href={
+                    searchParams.size > 0
+                      ? `/charts/${segments[0]}/${
+                          segments[1]
+                        }/${year}?${searchParams.toString()}`
+                      : `/charts/${segments[0]}/${segments[1]}/${year}`
+                  }
                 >
                   {year}
                 </Link>
