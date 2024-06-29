@@ -29,7 +29,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Suspense, useCallback } from "react";
+import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
 import { Spoons } from "./components/spoons";
 import { results } from "./data/results";
@@ -55,7 +55,7 @@ const genderMap = {
   women: "Women",
 };
 
-export default function Layout({
+function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -70,7 +70,7 @@ export default function Layout({
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
-/*   const data = results[segments[0] as any][segments[1] as any]
+  /*   const data = results[segments[0] as any][segments[1] as any]
     .filter((result) => result.year >= +segments[2])
     .filter((result) => result.year <= +segments[2])[0];
 
@@ -248,7 +248,7 @@ export default function Layout({
               <Blades />
             </Suspense>
           </div>
-{/*           <div>
+          {/*           <div>
             <Label htmlFor="event">Highlight clubs</Label>
             <Select
               value={searchParams.get("club") ?? undefined}
@@ -297,5 +297,13 @@ export default function Layout({
         {children}
       </div>
     </div>
+  );
+}
+
+export default function Layout2({ children }: PropsWithChildren) {
+  return (
+    <Suspense>
+      <Layout>{children}</Layout>
+    </Suspense>
   );
 }
