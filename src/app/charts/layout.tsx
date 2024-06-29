@@ -23,15 +23,16 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import Link from "next/link";
 import { EventsNav } from "@/components/events-nav";
-import results from "./data/results.json";
+import summary from "./data/results.json";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Suspense } from "react";
+import { Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
 import { Spoons } from "./components/spoons";
+import { results } from "./data/results";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -65,9 +66,29 @@ export default function Layout({
 
   const searchParams = useSearchParams();
 
-  const years: string[] = (results as any)["eights"]["men"];
+  const years: string[] = (summary as any)["eights"]["men"];
 
   const focusElement = years.findIndex((year) => year === segments[2]);
+
+/*   const data = results[segments[0] as any][segments[1] as any]
+    .filter((result) => result.year >= +segments[2])
+    .filter((result) => result.year <= +segments[2])[0];
+
+  const clubs = Array.from(new Set(data?.crews.map((crew) => crew.club))).sort(
+    (a, b) => a.localeCompare(b)
+  ); */
+
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   return (
     <div className="w-full px-2 mx-auto relative lg:grid items-stretch gap-6 lg:grid-cols-[1fr_400px]">
@@ -227,11 +248,42 @@ export default function Layout({
               <Blades />
             </Suspense>
           </div>
-          <div className="items-top flex space-x-2">
+{/*           <div>
+            <Label htmlFor="event">Highlight clubs</Label>
+            <Select
+              value={searchParams.get("club") ?? undefined}
+              onValueChange={(value) => {
+                router.push(
+                  searchParams.size > 0
+                    ? `/charts/${segments[0]}/${segments[1]}/${
+                        segments[2]
+                      }?${searchParams.toString()}&${createQueryString(
+                        "club",
+                        value
+                      )}`
+                    : `/charts/${segments[0]}/${segments[1]}/${
+                        segments[2]
+                      }?${createQueryString("club", value)}`
+                );
+              }}
+            >
+              <SelectTrigger className="w-[280px]">
+                <SelectValue placeholder="Select a club" />
+              </SelectTrigger>
+              <SelectContent>
+                {clubs.map((club) => (
+                  <SelectItem key={club} value={club}>
+                    {club}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div> */}
+          {/*           <div className="items-top flex space-x-2">
             <Suspense>
               <Spoons />
             </Suspense>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
