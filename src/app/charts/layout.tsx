@@ -1,6 +1,5 @@
 "use client";
 
-import { MagnifyingGlassIcon, TriangleDownIcon } from "@radix-ui/react-icons";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
@@ -20,31 +19,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import Link from "next/link";
-import clsx from "clsx";
-import { Button } from "@/components/ui/button";
 import { EventsNav } from "@/components/events-nav";
-import results from "./data/results.json";
+import summary from "./data/results.json";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Suspense, useCallback } from "react";
+import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
 import { Spoons } from "./components/spoons";
+import { results } from "./data/results";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -67,7 +55,7 @@ const genderMap = {
   women: "Women",
 };
 
-export default function Layout({
+function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -76,9 +64,31 @@ export default function Layout({
 
   const segments = useSelectedLayoutSegments();
 
-  const years: string[] = (results as any)["eights"]["men"];
+  const searchParams = useSearchParams();
+
+  const years: string[] = (summary as any)["eights"]["men"];
 
   const focusElement = years.findIndex((year) => year === segments[2]);
+
+  /*   const data = results[segments[0] as any][segments[1] as any]
+    .filter((result) => result.year >= +segments[2])
+    .filter((result) => result.year <= +segments[2])[0];
+
+  const clubs = Array.from(new Set(data?.crews.map((crew) => crew.club))).sort(
+    (a, b) => a.localeCompare(b)
+  ); */
+
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   return (
     <div className="w-full px-2 mx-auto relative lg:grid items-stretch gap-6 lg:grid-cols-[1fr_400px]">
@@ -94,7 +104,15 @@ export default function Layout({
               className="h-[1.45rem] rounded-sm px-2 text-sm"
               asChild
             >
-              <Link href={`/charts/${segments[0]}/men/${segments[2]}`}>
+              <Link
+                href={
+                  searchParams.size > 0
+                    ? `/charts/${segments[0]}/men/${
+                        segments[2]
+                      }?${searchParams.toString()}`
+                    : `/charts/${segments[0]}/men/${segments[2]}`
+                }
+              >
                 Men
               </Link>
             </TabsTrigger>
@@ -103,7 +121,15 @@ export default function Layout({
               className="h-[1.45rem] rounded-sm px-2 text-sm"
               asChild
             >
-              <Link href={`/charts/${segments[0]}/women/${segments[2]}`}>
+              <Link
+                href={
+                  searchParams.size > 0
+                    ? `/charts/${segments[0]}/women/${
+                        segments[2]
+                      }?${searchParams.toString()}`
+                    : `/charts/${segments[0]}/women/${segments[2]}`
+                }
+              >
                 Women
               </Link>
             </TabsTrigger>
@@ -117,7 +143,13 @@ export default function Layout({
           {years.map((year, i) => (
             <Link
               key={year}
-              href={`/charts/${segments[0]}/${segments[1]}/${year}`}
+              href={
+                searchParams.size > 0
+                  ? `/charts/${segments[0]}/${
+                      segments[1]
+                    }/${year}?${searchParams.toString()}`
+                  : `/charts/${segments[0]}/${segments[1]}/${year}`
+              }
             >
               {year}
             </Link>
@@ -198,7 +230,13 @@ export default function Layout({
               {years.map((year, i) => (
                 <Link
                   key={year}
-                  href={`/charts/${segments[0]}/${segments[1]}/${year}`}
+                  href={
+                    searchParams.size > 0
+                      ? `/charts/${segments[0]}/${
+                          segments[1]
+                        }/${year}?${searchParams.toString()}`
+                      : `/charts/${segments[0]}/${segments[1]}/${year}`
+                  }
                 >
                   {year}
                 </Link>
@@ -210,11 +248,42 @@ export default function Layout({
               <Blades />
             </Suspense>
           </div>
-          <div className="items-top flex space-x-2">
+          {/*           <div>
+            <Label htmlFor="event">Highlight clubs</Label>
+            <Select
+              value={searchParams.get("club") ?? undefined}
+              onValueChange={(value) => {
+                router.push(
+                  searchParams.size > 0
+                    ? `/charts/${segments[0]}/${segments[1]}/${
+                        segments[2]
+                      }?${searchParams.toString()}&${createQueryString(
+                        "club",
+                        value
+                      )}`
+                    : `/charts/${segments[0]}/${segments[1]}/${
+                        segments[2]
+                      }?${createQueryString("club", value)}`
+                );
+              }}
+            >
+              <SelectTrigger className="w-[280px]">
+                <SelectValue placeholder="Select a club" />
+              </SelectTrigger>
+              <SelectContent>
+                {clubs.map((club) => (
+                  <SelectItem key={club} value={club}>
+                    {club}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div> */}
+          {/*           <div className="items-top flex space-x-2">
             <Suspense>
               <Spoons />
             </Suspense>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
@@ -228,5 +297,13 @@ export default function Layout({
         {children}
       </div>
     </div>
+  );
+}
+
+export default function Layout2({ children }: PropsWithChildren) {
+  return (
+    <Suspense>
+      <Layout>{children}</Layout>
+    </Suspense>
   );
 }

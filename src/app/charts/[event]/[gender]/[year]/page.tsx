@@ -1,43 +1,7 @@
-import { joinEvents, transformData } from "bumps-results-tools";
-
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import summary from "../../../data/results.json";
-import { Event } from "react-bumps-chart/dist/types";
-
-import results_eights_men from "../../../../../data/results/eights/men/results.json";
-import results_eights_women from "../../../../../data/results/eights/women/results.json";
-import results_lents_men from "../../../../../data/results/lents/men/results.json";
-import results_lents_women from "../../../../../data/results/lents/women/results.json";
-import results_mays_men from "../../../../../data/results/mays/men/results.json";
-import results_mays_women from "../../../../../data/results/mays/women/results.json";
-import results_torpids_men from "../../../../../data/results/torpids/men/results.json";
-import results_torpids_women from "../../../../../data/results/torpids/women/results.json";
-import results_town_men from "../../../../../data/results/town/men/results.json";
-import results_town_women from "../../../../../data/results/town/women/results.json";
-
-const results = {
-  eights: {
-    men: results_eights_men,
-    women: results_eights_women,
-  },
-  lents: {
-    men: results_lents_men,
-    women: results_lents_women,
-  },
-  mays: {
-    men: results_mays_men,
-    women: results_mays_women,
-  },
-  torpids: {
-    men: results_torpids_men,
-    women: results_torpids_women,
-  },
-  town: {
-    men: results_town_men,
-    women: results_town_women,
-  },
-} as Record<string, Record<string, Event[]>>;
+import { results } from "../../../data/results";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -82,17 +46,10 @@ const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
 
 export default async function Home({ params }: Props) {
   const data = results[params.event as any][params.gender as any]
-    .filter((result) => result.year >= +params.year)
-    .filter((result) => result.year <= +params.year)
-    .map(transformData);
+    .filter((result) => +result.year >= +params.year)
+    .filter((result) => +result.year <= +params.year)[0];
 
-  const joinedEvents = joinEvents(data, params.event, params.gender);
-
-  joinedEvents.small = params.event;
-  joinedEvents.gender = params.gender;
-  joinedEvents.set = set[params.event as keyof typeof set];
-
-  if (!joinedEvents || joinedEvents.crews.length === 0) {
+  if (!data || data.crews.length === 0) {
     return (
       <div className="text-center mb-4">
         We have no results to show for this year
@@ -102,8 +59,8 @@ export default async function Home({ params }: Props) {
 
   return (
     <div className="w-full flex flex-col items-center mb-4">
-      <div className="w-full min-w-[320px] max-w-[520px]">
-        <BumpsChart data={joinedEvents} />
+      <div className="w-full max-w-[520px]">
+        <BumpsChart data={data} />
       </div>
     </div>
   );
