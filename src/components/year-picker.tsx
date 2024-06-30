@@ -29,7 +29,7 @@ export function YearPicker({
   const [left, setLeft] = useState(false);
   const [right, setRight] = useState(false);
 
-  useEffect(() => {
+/*   useEffect(() => {
     const f = () => {
       selectedRef.current &&
         selectedRef.current.scrollIntoView &&
@@ -47,7 +47,7 @@ export function YearPicker({
     return () => {
       window.removeEventListener("resize", f);
     };
-  }, [position]);
+  }, [position]); */
 
   useEffect(() => {
     const e = ref.current;
