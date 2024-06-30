@@ -75,7 +75,7 @@ export default function About() {
   return (
     <div className="container relative">
       <section>
-        <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-lg tracking-tight text-slate-700">
+        <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-lg tracking-tight">
           <div className="pt-4">
             <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
               Vocabulary
