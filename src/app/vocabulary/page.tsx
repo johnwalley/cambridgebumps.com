@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import { Fragment } from "react";
 
 const faqs = [
   {
@@ -84,14 +85,14 @@ export default function About() {
           <div className="pb-12 pt-8">
             <dl className="mt-2 space-y-2">
               {faqs.map((faq) => (
-                <>
+                <Fragment key={faq.question}>
                   <dt>
                     <h3 className="font-semibold">{faq.question}</h3>
                   </dt>
                   <dd>
                     <p className="text-sm">{faq.answer}</p>
                   </dd>
-                </>
+                </Fragment>
               ))}
             </dl>
           </div>
