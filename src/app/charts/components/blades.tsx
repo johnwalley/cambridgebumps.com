@@ -24,7 +24,7 @@ export const Blades = () => {
   return (
     <>
       <Checkbox
-        id="terms1"
+        id="blades"
         checked={searchParams.get("blades") === "true"}
         onCheckedChange={(checked) => {
           router.push(

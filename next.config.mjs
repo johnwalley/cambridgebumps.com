@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/charts",
-        destination: "/charts/mays/men/2024",
+        destination: "/charts/town/men/2024",
         permanent: false,
       },
       {
