@@ -15,6 +15,10 @@ export const docsConfig: DocsConfig = {
       title: "What's it all about?",
       href: "/about",
     },
+    {
+      title: "Vocabulary",
+      href: "/vocabulary",
+    },
   ],
   sidebarNav: [
     {

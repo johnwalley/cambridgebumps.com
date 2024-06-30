@@ -42,6 +42,17 @@ export function MainNav() {
         >
           What&apos;s it all about?
         </Link>
+        <Link
+          href="/vocabulary"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/vocabulary")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Vocabulary
+        </Link>
       </nav>
     </div>
   );
