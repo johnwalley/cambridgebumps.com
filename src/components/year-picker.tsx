@@ -93,59 +93,57 @@ export function YearPicker({
           {!left && (
             <>
               <div className="bg-gradient-to-r from-white dark:from-black w-24 absolute left-0 top-0 right-auto h-full pointer-events-none"></div>
-              <div className="absolute right-auto left-0 bottom-1/2 translate-y-1/2">
-                <button
-                  onClick={() => {
-                    const e = ref.current;
+              <button
+                className="absolute right-auto left-0 bottom-1/2 translate-y-1/2 h-full w-[24px]"
+                onClick={() => {
+                  const e = ref.current;
 
-                    e.scrollLeft -= skipLength;
-                  }}
-                >
-                  <span>
-                    <svg
-                      viewBox="0 0 32 32"
-                      width="1em"
-                      height="1em"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path
-                        className="fill-black dark:fill-white"
-                        d="M10.4 14.3 26.5 31h-6.4L5.5 16 20.1 1h6.4L10.4 17.7z"
-                      ></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+                  e.scrollLeft -= skipLength;
+                }}
+              >
+                <span>
+                  <svg
+                    viewBox="0 0 32 32"
+                    width="1em"
+                    height="1em"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path
+                      className="fill-black dark:fill-white"
+                      d="M10.4 14.3 26.5 31h-6.4L5.5 16 20.1 1h6.4L10.4 17.7z"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
             </>
           )}
           {!right && (
             <>
               <div className="bg-gradient-to-l from-white dark:from-black w-24 absolute right-0 top-0 left-auto h-full pointer-events-none"></div>
-              <div className="absolute right-0 left-auto bottom-1/2 translate-y-1/2">
-                <button
-                  onClick={() => {
-                    const e = ref.current;
+              <button
+                className="absolute left-auto right-0 bottom-1/2 translate-y-1/2 h-full w-[24px]"
+                onClick={() => {
+                  const e = ref.current;
 
-                    e.scrollLeft += skipLength;
-                  }}
-                >
-                  <span>
-                    <svg
-                      viewBox="0 0 32 32"
-                      width="1em"
-                      height="1em"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path
-                        className="fill-black dark:fill-white"
-                        d="M21.6 14.3 5.5 31h6.4l14.6-15L11.9 1H5.5l16.1 16.7z"
-                      ></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+                  e.scrollLeft += skipLength;
+                }}
+              >
+                <span>
+                  <svg
+                    viewBox="0 0 32 32"
+                    width="1em"
+                    height="1em"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path
+                      className="fill-black dark:fill-white"
+                      d="M21.6 14.3 5.5 31h6.4l14.6-15L11.9 1H5.5l16.1 16.7z"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
             </>
           )}
         </div>

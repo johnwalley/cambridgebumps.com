@@ -287,13 +287,11 @@ function Layout({
         </div>
       </div>
       <div>
-        <div className="hidden lg:block">
-          <h1 className="scroll-m-20 pt-2 pb-4 text-3xl font-semibold tracking-tight text-center">{`${
-            set[segments[0] as keyof typeof set]
-          } - ${genderMap[segments[1] as keyof typeof genderMap]} - ${
-            segments[2]
-          }`}</h1>
-        </div>
+        <h1 className="scroll-m-20 pt-2 pb-4 text-xl lg:text-3xl font-semibold tracking-tight text-center">{`${
+          set[segments[0] as keyof typeof set]
+        } - ${genderMap[segments[1] as keyof typeof genderMap]} - ${
+          segments[2]
+        }`}</h1>
         {children}
       </div>
     </div>
