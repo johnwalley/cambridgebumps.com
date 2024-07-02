@@ -1,0 +1,21 @@
+{
+  "headships": [
+    { "club": "Oriel", "headships": 36, "lastYear": 2022 },
+    { "club": "Brasenose", "headships": 22, "lastYear": 1894 },
+    { "club": "Balliol", "headships": 15, "lastYear": 1971 },
+    { "club": "New College", "headships": 15, "lastYear": 1953 },
+    { "club": "Christ Church", "headships": 14, "lastYear": 2023 },
+    { "club": "Exeter", "headships": 13, "lastYear": 1868 },
+    { "club": "Pembroke", "headships": 10, "lastYear": 2017 },
+    { "club": "Magdalen", "headships": 9, "lastYear": 2008 },
+    { "club": "University", "headships": 9, "lastYear": 1926 },
+    { "club": "S.E.H.", "headships": 6, "lastYear": 1966 },
+    { "club": "Corpus Christi", "headships": 4, "lastYear": 1931 },
+    { "club": "St John's", "headships": 3, "lastYear": 1967 },
+    { "club": "Worcester", "headships": 3, "lastYear": 1930 },
+    { "club": "Queen's", "headships": 2, "lastYear": 1958 },
+    { "club": "Trinity", "headships": 2, "lastYear": 1880 },
+    { "club": "Wadham", "headships": 2, "lastYear": 1849 },
+    { "club": "Merton", "headships": 1, "lastYear": 1927 }
+  ]
+}
