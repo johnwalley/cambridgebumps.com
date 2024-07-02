@@ -156,11 +156,13 @@ export default function Statistics() {
               genders.map((gender) => {
                 const data = stats[event][gender]["headships"];
 
-                const years = summary[event][gender];
+                const years = (summary as any)[event][gender];
 
                 return (
                   <div key={`${event}.${gender}`} className="mb-4">
-                    <h3 className="font-bold mb-0">{`${set[event]} - ${genderMap[gender]}`}</h3>
+                    <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
+                      (genderMap as any)[gender]
+                    }`}</h3>
                     <h4 className="mb-4">{`(${years[0]} - ${
                       years[years.length - 1]
                     })`}</h4>
@@ -190,7 +192,7 @@ export default function Statistics() {
                             </div>
                           </div>
                         </li>
-                        {data.slice(1, 10).map((d, i) => (
+                        {data.slice(1, 10).map((d: any, i: number) => (
                           <li
                             key={i}
                             className="flex items-center justify-between pl-3 pr-2 py-2"
