@@ -71,11 +71,19 @@ const genders = ["men", "women"];
 function getColor(club: string) {
   switch (club) {
     case "Oriel":
-      return "blue"; // "#002163";
+      return { h: 220, s: 100, l: 19 };
+    case "Emmanuel":
+      return { h: 0, s: 100, l: 73 };
     case "Jesus":
-      return "red";
+      return { h: 0, s: 100, l: 27 };
+    case "Rob Roy":
+      return { h: 350, s: 95, l: 25 };
+    case "City":
+      return { h: 216, s: 60, l: 18 };
+    case "Osler House":
+      return { h: 0, s: 100, l: 41 };
     default:
-      return "grey";
+      return { h: 220, s: 100, l: 19 };
   }
 }
 
@@ -144,7 +152,7 @@ export default function Statistics() {
   return (
     <div className="container relative">
       <section>
-        <div className="mx-auto px-4 sm:px-6 md:px-  lg:px-12 text-lg tracking-tight">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-lg tracking-tight">
           <div className="pt-4">
             <h1 className="scroll-m-20 text-4xl font-bold tracking-tight mb-4">
               Statistics
@@ -158,6 +166,8 @@ export default function Statistics() {
 
                 const years = (summary as any)[event][gender];
 
+                const heroColor = getColor(data[0].club);
+
                 return (
                   <div key={`${event}.${gender}`} className="mb-4">
                     <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
@@ -166,10 +176,17 @@ export default function Statistics() {
                     <h4 className="mb-4">{`(${years[0]} - ${
                       years[years.length - 1]
                     })`}</h4>
-                    <div className="rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                    <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
                       <ul>
                         <li
-                          className={`h-40 bg-gradient-to-r from-[#002163] to-[#004183]`}
+                          className="h-40"
+                          style={{
+                            backgroundImage: `linear-gradient(to right, hsl(${
+                              heroColor.h
+                            } ${heroColor.s} ${heroColor.l}), hsl(${
+                              heroColor.h
+                            } ${heroColor.s} ${heroColor.l + 20}))`,
+                          }}
                         >
                           <div className="flex justify-between h-full">
                             <div className="flex flex-col justify-between text-white px-4 py-2 h-full">
