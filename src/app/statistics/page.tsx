@@ -164,7 +164,7 @@ export default function Statistics() {
                     <h4 className="mb-4">{`(${years[0]} - ${
                       years[years.length - 1]
                     })`}</h4>
-                    <div className="rounded-2xl overflow-hidden border border-neutral-200">
+                    <div className="rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
                       <ul>
                         <li
                           className={`h-40 bg-gradient-to-r from-[#002163] to-[#004183]`}
