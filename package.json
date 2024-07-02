@@ -33,6 +33,7 @@
     "react": "18.3.1",
     "react-bumps-chart": "^1.10.5",
     "react-dom": "18.3.1",
+    "react-rowing-blades": "^2.4.2",
     "react-wrap-balancer": "^1.1.0",
     "sharp": "^0.33.4",
     "tailwind-merge": "^2.3.0",
