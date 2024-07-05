@@ -18,6 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  formatDetection: { telephone: false },
   title: {
     template: `%s | ${process.env.NEXT_PUBLIC_TITLE} Bumps`,
     default: `${process.env.NEXT_PUBLIC_TITLE} Bumps`, // a default is required when creating a template
