@@ -57,6 +57,12 @@ export default async function Home({ params }: Props) {
     );
   }
 
+  for (const crew of data.crews) {
+    if (crew.club === "City") {
+      crew.highlight = true;
+    }
+  }
+
   return (
     <div className="w-full flex flex-col items-center mb-4">
       <div className="w-full max-w-[520px]">

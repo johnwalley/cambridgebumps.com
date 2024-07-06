@@ -7,11 +7,20 @@ import { SiteFooter } from "@/components/site-footer";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "@/components/providers";
+import { Roboto_Flex } from "next/font/google";
+
+const robotoFlex = Roboto_Flex({
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--react-bumps-chart-font-familty",
+  axes: ["GRAD"],
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -51,7 +60,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoFlex.className}`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
