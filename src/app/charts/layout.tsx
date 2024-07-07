@@ -33,6 +33,8 @@ import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
 import { Spoons } from "./components/spoons";
 import { results } from "./data/results";
+import { Button } from "@/components/ui/button";
+import { Cross2Icon } from "@radix-ui/react-icons";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -70,20 +72,25 @@ function Layout({
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
-  /*   const data = results[segments[0] as any][segments[1] as any]
+  const data = results[segments[0] as any][segments[1] as any]
     .filter((result) => result.year >= +segments[2])
     .filter((result) => result.year <= +segments[2])[0];
 
   const clubs = Array.from(new Set(data?.crews.map((crew) => crew.club))).sort(
     (a, b) => a.localeCompare(b)
-  ); */
+  );
 
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
   const createQueryString = useCallback(
-    (name: string, value: string) => {
+    (name: string, value: string | null) => {
       const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
+
+      if (value === null) {
+        params.delete(name);
+      } else {
+        params.set(name, value);
+      }
 
       return params.toString();
     },
@@ -248,37 +255,46 @@ function Layout({
               <Blades />
             </Suspense>
           </div>
-          {/*           <div>
-            <Label htmlFor="event">Highlight clubs</Label>
-            <Select
-              value={searchParams.get("club") ?? undefined}
-              onValueChange={(value) => {
-                router.push(
-                  searchParams.size > 0
-                    ? `/charts/${segments[0]}/${segments[1]}/${
-                        segments[2]
-                      }?${searchParams.toString()}&${createQueryString(
-                        "club",
-                        value
-                      )}`
-                    : `/charts/${segments[0]}/${segments[1]}/${
-                        segments[2]
-                      }?${createQueryString("club", value)}`
-                );
-              }}
-            >
-              <SelectTrigger className="w-[280px]">
-                <SelectValue placeholder="Select a club" />
-              </SelectTrigger>
-              <SelectContent>
-                {clubs.map((club) => (
-                  <SelectItem key={club} value={club}>
-                    {club}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div> */}
+          <div className="space-y-3">
+            <Label htmlFor="event">Highlight club</Label>
+            <div className="flex">
+              <Select
+                value={searchParams.get("club") ?? ""}
+                onValueChange={(value) => {
+                  router.push(
+                    `/charts/${segments[0]}/${segments[1]}/${
+                      segments[2]
+                    }?${createQueryString("club", value)}`
+                  );
+                }}
+              >
+                <SelectTrigger className="w-[280px]">
+                  <SelectValue placeholder="Select a club" />
+                </SelectTrigger>
+                <SelectContent>
+                  {clubs.map((club) => (
+                    <SelectItem key={club} value={club}>
+                      {club}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Button
+                variant="link"
+                size="icon"
+                disabled={!searchParams.has("club")}
+                onClick={() => {
+                  router.push(
+                    `/charts/${segments[0]}/${segments[1]}/${
+                      segments[2]
+                    }?${createQueryString("club", null)}`
+                  );
+                }}
+              >
+                <Cross2Icon className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
           {/*           <div className="items-top flex space-x-2">
             <Suspense>
               <Spoons />

@@ -6,11 +6,29 @@ import "react-bumps-chart/dist/style.css";
 import { useSearchParams } from "next/navigation";
 import { Event } from "react-bumps-chart/dist/types";
 
+import { Roboto_Flex } from "next/font/google";
+
+const robotoFlex = Roboto_Flex({
+  display: "swap",
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--react-bumps-chart-font-family",
+  axes: ["GRAD"],
+});
+
 export default function BumpsChart({ data }: { data: Event }) {
   const searchParams = useSearchParams();
 
+  for (const crew of data.crews) {
+    if (crew.club === searchParams.get("club")) {
+      crew.highlight = true;
+    } else {
+      crew.highlight = false;
+    }
+  }
+
   return (
-    <div className={classes.chart}>
+    <div className={`${classes.chart} ${robotoFlex.variable}`}>
       <Chart
         data={data}
         blades={searchParams.get("blades") === "true"}
