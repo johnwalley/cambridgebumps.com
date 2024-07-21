@@ -183,9 +183,9 @@ export default function Statistics() {
                           style={{
                             backgroundImage: `linear-gradient(to right, hsl(${
                               heroColor.h
-                            } ${heroColor.s} ${heroColor.l}), hsl(${
+                            } ${heroColor.s}% ${heroColor.l}%), hsl(${
                               heroColor.h
-                            } ${heroColor.s} ${heroColor.l + 20}))`,
+                            } ${heroColor.s}% ${heroColor.l + 20}%))`,
                           }}
                         >
                           <div className="flex justify-between h-full">
