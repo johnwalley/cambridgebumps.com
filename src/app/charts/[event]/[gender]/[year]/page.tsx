@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import summary from "../../../data/results.json";
 import { results } from "../../../data/results";
+import { BumpsChartMultiYear } from "react-bumps-chart";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -46,10 +47,10 @@ const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
 
 export default async function Home({ params }: Props) {
   const data = results[params.event as any][params.gender as any]
-    .filter((result) => +result.year >= +params.year)
-    .filter((result) => +result.year <= +params.year)[0];
+    .filter((result) => Number.parseInt(result.year, 10) >= +params.year)
+    .filter((result) => Number.parseInt(result.year, 10) <= +params.year);
 
-  if (!data || data.crews.length === 0) {
+  if (!data) {
     return (
       <div className="text-center mb-4">
         We have no results to show for this year
@@ -59,9 +60,15 @@ export default async function Home({ params }: Props) {
 
   return (
     <div className="w-full flex flex-col items-center mb-4">
-      <div className="w-full max-w-[520px]">
-        <BumpsChart data={data} />
-      </div>
+      {data.length === 1 ? (
+        <div className="w-full max-w-[520px]">
+          <BumpsChart data={data[0]} />
+        </div>
+      ) : (
+        <div className="w-full max-w-[520px]">
+          <BumpsChartMultiYear data={data} />
+        </div>
+      )}
     </div>
   );
 }
