@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import summary from "../../../data/results.json";
 import { results } from "../../../data/results";
+import BumpsChart from "@/components/bumps-chart";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -25,13 +26,11 @@ const genderMap = {
 };
 
 type Props = {
-  params: { event: string; gender: string; year: string };
+  params: Promise<{ event: string; gender: string; year: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const event = params.event;
-  const gender = params.gender;
-  const year = params.year;
+  const { event, gender, year } = await params;
 
   return {
     title: `${set[event as keyof typeof set]} - ${
@@ -40,14 +39,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
-  ssr: false,
-});
+/* const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
+  ssr: true,
+}); */
 
 export default async function Home({ params }: Props) {
-  const data = results[params.event as any][params.gender as any]
-    .filter((result) => +result.year >= +params.year)
-    .filter((result) => +result.year <= +params.year)[0];
+  const { event, gender, year } = await params;
+
+  const data = results[event as any][gender as any]
+    .filter((result) => +result.year >= +year)
+    .filter((result) => +result.year <= +year)[0];
 
   if (!data || data.crews.length === 0) {
     return (
