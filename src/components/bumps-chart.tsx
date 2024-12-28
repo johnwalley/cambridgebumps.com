@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { Event } from "react-bumps-chart/dist/types";
 
 import { Roboto_Flex } from "next/font/google";
+import { useEffect, useState } from "react";
 
 const robotoFlex = Roboto_Flex({
   display: "swap",
@@ -17,6 +18,12 @@ const robotoFlex = Roboto_Flex({
 });
 
 export default function BumpsChart({ data }: { data: Event }) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const searchParams = useSearchParams();
 
   for (const crew of data.crews) {
@@ -29,11 +36,13 @@ export default function BumpsChart({ data }: { data: Event }) {
 
   return (
     <div className={`${classes.chart} ${robotoFlex.variable}`}>
-      <Chart
-        data={data}
-        blades={searchParams.get("blades") === "true"}
-        spoons={searchParams.get("spoons") === "true"}
-      />
+      {isClient ? (
+        <Chart
+          data={data}
+          blades={searchParams.get("blades") === "true"}
+          spoons={searchParams.get("spoons") === "true"}
+        />
+      ) : null}
     </div>
   );
 }
