@@ -37,15 +37,15 @@ export default function About() {
           </div>
           <div className="pb-12 pt-8">
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              The river in {`${process.env.NEXT_PUBLIC_TITLE}`} presents a unique challenge for hosting
-              traditional rowing competitions. Its meandering course and limited
-              width render standard side-by-side racing impractical. To
-              accommodate the constraints of the river and to enable numerous
-              crews to participate, the Bumps races emerged. This format,
-              different from conventional regattas, was developed to allow a
-              large number of boats to compete in a dynamic and exciting manner,
-              turning the river&rsquo;s limitations into a unique aspect of the
-              race.
+              The river in {`${process.env.NEXT_PUBLIC_TITLE}`} presents a
+              unique challenge for hosting traditional rowing competitions. Its
+              meandering course and limited width render standard side-by-side
+              racing impractical. To accommodate the constraints of the river
+              and to enable numerous crews to participate, the Bumps races
+              emerged. This format, different from conventional regattas, was
+              developed to allow a large number of boats to compete in a dynamic
+              and exciting manner, turning the river&rsquo;s limitations into a
+              unique aspect of the race.
             </p>
             <Image
               className="mt-4"
@@ -135,7 +135,13 @@ export default function About() {
                 <AccordionContent>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     In Cambridge, if you&apos;re new to Bumps, I would recommend{" "}
-                    <a href="https://www.theploughfenditton.co.uk/">The Plough</a> in Fen Ditton.
+                    <a
+                      className="dark:text-white"
+                      href="https://www.theploughfenditton.co.uk/"
+                    >
+                      The Plough
+                    </a>{" "}
+                    in Fen Ditton.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -147,20 +153,38 @@ export default function About() {
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Plenty! For historical results, particularly multi-year, you
                     should check out Tim Granger&apos;s{" "}
-                    <a href="http://www.mcshane.org/bumps/">Bumps charts</a>.
+                    <a
+                      className="dark:text-white"
+                      href="http://www.mcshane.org/bumps/"
+                    >
+                      Bumps charts
+                    </a>
+                    .
                   </p>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     For the authoritative place to go for Oxford bumps, check
                     out Anu Dudhia&apos;s{" "}
-                    <a href="http://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/">
+                    <a
+                      className="dark:text-white"
+                      href="http://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/"
+                    >
                       Oxford Bumps Charts
                     </a>
                     .
                   </p>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     For live results as they happen, check out{" "}
-                    <a href="https://bumps.camfm.co.uk/">Cam FM</a> and{" "}
-                    <a href="https://bumps.live/">Oxford Bumps</a>.
+                    <a
+                      className="dark:text-white"
+                      href="https://bumps.camfm.co.uk/"
+                    >
+                      Cam FM
+                    </a>{" "}
+                    and{" "}
+                    <a className="dark:text-white" href="https://bumps.live/">
+                      Oxford Bumps
+                    </a>
+                    .
                   </p>
                 </AccordionContent>
               </AccordionItem>
