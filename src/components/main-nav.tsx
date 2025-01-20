@@ -32,6 +32,17 @@ export function MainNav() {
           Charts
         </Link>
         <Link
+          href="/multi-year-charts"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/multi-year-charts")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Multi-year charts
+        </Link>
+        <Link
           href="/about"
           className={cn(
             "transition-colors hover:text-foreground/80",
