@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
 import summary from "../../../data/results.json";
 import { results } from "../../../data/results";
 import BumpsChart from "@/components/bumps-chart";
@@ -46,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Home({ params }: Props) {
   const { event, gender, year } = await params;
 
-  const data = results[event as any][gender as any]
+  const data = results[event][gender]
     .filter((result) => +result.year >= +year)
     .filter((result) => +result.year <= +year)[0];
 

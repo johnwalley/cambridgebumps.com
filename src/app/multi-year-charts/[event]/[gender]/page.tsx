@@ -2,8 +2,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import summary from "../../data/results.json";
 import { results } from "../../data/results";
-import BumpsChart from "@/components/bumps-chart";
-import { BumpsChartMultiYear } from "react-bumps-chart";
+import BumpsChart from "@/components/multi-year-bumps-chart";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -57,8 +56,8 @@ export default async function Home({ params }: Props) {
 
   return (
     <div className="w-full mb-4">
-      <div className="" style={{ width: `${data.length * 92}px` }}>
-        <BumpsChartMultiYear data={data} />
+      <div className="" style={{ width: `${data.length * 128}px` }}>
+        <BumpsChart data={data} />
       </div>
     </div>
   );
