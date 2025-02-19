@@ -221,15 +221,6 @@ function Layout({
                 The first recorded bumps race was 1815.
               </HoverCardContent>
             </HoverCard>
-            {/*             <Link
-              href={`/charts/${segments[0]}/${segments[1]}/${
-                (results as any)[segments[0]][segments[1]][
-                  (results as any)[segments[0]][segments[1]].length - 1
-                ]
-              }`}
-            >
-              Latest
-            </Link> */}
             <YearPicker
               key={`${segments[0]}/${segments[1]}`}
               skipLength={256}
@@ -297,11 +288,6 @@ function Layout({
               </Button>
             </div>
           </div>
-          {/*           <div className="items-top flex space-x-2">
-            <Suspense>
-              <Spoons />
-            </Suspense>
-          </div> */}
         </div>
       </div>
       <div>
