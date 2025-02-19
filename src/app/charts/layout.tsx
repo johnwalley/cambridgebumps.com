@@ -231,6 +231,7 @@ function Layout({
               Latest
             </Link> */}
             <YearPicker
+              key={`${segments[0]}/${segments[1]}`}
               skipLength={256}
               focusElement={focusElement}
               position="center"
