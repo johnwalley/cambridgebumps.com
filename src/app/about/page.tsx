@@ -151,29 +151,28 @@ export default function About() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
-                    Plenty! For historical results, particularly multi-year, you
-                    should check out Tim Granger&apos;s{" "}
+                    Absolutely! For historical results, especially multi-year,
+                    Tim Granger&apos;s{" "}
                     <a
                       className="dark:text-white"
                       href="http://www.mcshane.org/bumps/"
                     >
                       Bumps charts
-                    </a>
-                    .
+                    </a>{" "}
+                    is a great resource.
                   </p>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
-                    For the authoritative place to go for Oxford bumps, check
-                    out Anu Dudhia&apos;s{" "}
+                    For everything Oxford bumps-related, Anu Dudhia&apos;s{" "}
                     <a
                       className="dark:text-white"
                       href="http://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/"
                     >
                       Oxford Bumps Charts
-                    </a>
-                    .
+                    </a>{" "}
+                    is the go-to site.
                   </p>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
-                    For live results as they happen, check out{" "}
+                    For live updates during the races, check out{" "}
                     <a
                       className="dark:text-white"
                       href="https://bumps.camfm.co.uk/"
