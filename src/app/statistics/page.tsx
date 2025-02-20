@@ -146,6 +146,7 @@ function getCode(club: string, set: string) {
 
 export const metadata: Metadata = {
   title: `Statistics`,
+  description: "Headship statistics."
 };
 
 export default function Statistics() {

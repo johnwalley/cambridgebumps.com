@@ -70,6 +70,7 @@ This is done for most large rowing events to accomodate a larger number of crews
 
 export const metadata: Metadata = {
   title: `Vocabulary`,
+  description: `definitions of key terms used in bumps racing, such as ‘blades’, ‘bump’, ‘over-bump’, ‘sandwich boat’, and ‘spoons’. It serves as a resource for understanding the unique terminology associated with these rowing events.`,
 };
 
 export default function About() {

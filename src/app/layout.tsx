@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
+import type { Metadata } from "next";
+import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/providers";
+import localFont from "next/font/local";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -52,9 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

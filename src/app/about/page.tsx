@@ -1,28 +1,19 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import image_1 from "./images/motorway-bridge.jpg";
-import bump from "./images/bump.jpg";
-import willow from "./images/willow.jpg";
+
 import Image from "next/image";
 import { Metadata } from "next";
+import bump from "./images/bump.jpg";
+import image_1 from "./images/motorway-bridge.jpg";
+import willow from "./images/willow.jpg";
 
 export const metadata: Metadata = {
   title: `What's it all about?`,
+  description: `Bumps races are unique rowing races where crews aim to ‘bump’ the boat ahead due to the river’s narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the ‘Head of the River’ title by leading the top division at week’s end.`,
 };
 
 export default function About() {
