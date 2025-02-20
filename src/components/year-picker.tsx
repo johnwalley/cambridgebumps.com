@@ -40,13 +40,7 @@ export function YearPicker({
         });
     };
 
-    //window.addEventListener("resize", f);
-
     f();
-
-    /*   return () => {
-      window.removeEventListener("resize", f);
-    }; */
   }, [position]);
 
   useEffect(() => {

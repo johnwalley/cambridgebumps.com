@@ -68,7 +68,7 @@ function Layout({
 
   const searchParams = useSearchParams();
 
-  const years: string[] = (summary as any)["eights"]["men"];
+  const years: string[] = (summary as any)[segments[0]][segments[1]];
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
@@ -143,11 +143,12 @@ function Layout({
           </TabsList>
         </Tabs>
         <YearPicker
+          key={`${segments[0]}/${segments[1]}`}
           skipLength={576}
           focusElement={focusElement}
           position="center"
         >
-          {years.map((year, i) => (
+          {years.map((year) => (
             <Link
               key={year}
               href={
@@ -220,16 +221,8 @@ function Layout({
                 The first recorded bumps race was 1815.
               </HoverCardContent>
             </HoverCard>
-            {/*             <Link
-              href={`/charts/${segments[0]}/${segments[1]}/${
-                (results as any)[segments[0]][segments[1]][
-                  (results as any)[segments[0]][segments[1]].length - 1
-                ]
-              }`}
-            >
-              Latest
-            </Link> */}
             <YearPicker
+              key={`${segments[0]}/${segments[1]}`}
               skipLength={256}
               focusElement={focusElement}
               position="center"
@@ -295,11 +288,6 @@ function Layout({
               </Button>
             </div>
           </div>
-          {/*           <div className="items-top flex space-x-2">
-            <Suspense>
-              <Spoons />
-            </Suspense>
-          </div> */}
         </div>
       </div>
       <div>

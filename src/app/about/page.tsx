@@ -1,28 +1,19 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import image_1 from "./images/motorway-bridge.jpg";
-import bump from "./images/bump.jpg";
-import willow from "./images/willow.jpg";
+
 import Image from "next/image";
 import { Metadata } from "next";
+import bump from "./images/bump.jpg";
+import image_1 from "./images/motorway-bridge.jpg";
+import willow from "./images/willow.jpg";
 
 export const metadata: Metadata = {
   title: `What's it all about?`,
+  description: `Bumps races are unique rowing races where crews aim to ‘bump’ the boat ahead due to the river’s narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the ‘Head of the River’ title by leading the top division at week’s end.`,
 };
 
 export default function About() {
@@ -151,29 +142,28 @@ export default function About() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
-                    Plenty! For historical results, particularly multi-year, you
-                    should check out Tim Granger&apos;s{" "}
+                    Absolutely! For historical results, especially multi-year,
+                    Tim Granger&apos;s{" "}
                     <a
                       className="dark:text-white"
                       href="http://www.mcshane.org/bumps/"
                     >
                       Bumps charts
-                    </a>
-                    .
+                    </a>{" "}
+                    is a great resource.
                   </p>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
-                    For the authoritative place to go for Oxford bumps, check
-                    out Anu Dudhia&apos;s{" "}
+                    For everything Oxford bumps-related, Anu Dudhia&apos;s{" "}
                     <a
                       className="dark:text-white"
                       href="http://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/"
                     >
                       Oxford Bumps Charts
-                    </a>
-                    .
+                    </a>{" "}
+                    is the go-to site.
                   </p>
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
-                    For live results as they happen, check out{" "}
+                    For live updates during the races, check out{" "}
                     <a
                       className="dark:text-white"
                       href="https://bumps.camfm.co.uk/"

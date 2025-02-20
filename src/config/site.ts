@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Cambridge Bumps",
-  url: "https://www.cambridgebumps.com",
-  ogImage: "https://www.cambridgebumps.com/og.jpg",
+  name: `${process.env.NEXT_PUBLIC_TITLE} Bumps` || "Cambridge Bumps",
+  url: process.env.BASE_URL || "https://www.cambridgebumps.com",
+  ogImage: `${process.env.BASE_URL}/og.jpg` || "https://www.cambridgebumps.com/og.jpg",
   description:
     "Bumps charts, statistics, and more.",
   links: {

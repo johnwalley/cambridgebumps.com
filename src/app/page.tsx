@@ -34,9 +34,7 @@ export default function Home() {
           </Link>
         </PageActions>
       </PageHeader>
-      {/*       <section className="-mx-4 sm:-mx-8 pb-20">
-       */}
-      <section className="pb-20 w-screen relative left-1/2 right-1/2 ml-[-50vw]">
+      <section className="pb-20">
         <Photos />
       </section>
     </div>
