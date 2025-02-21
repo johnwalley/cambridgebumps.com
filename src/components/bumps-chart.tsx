@@ -2,7 +2,7 @@
 
 import { BumpsChart as Chart } from "react-bumps-chart";
 import classes from "./bumps-chart.module.css";
-import "react-bumps-chart/dist/style.css";
+import "react-bumps-chart/dist/index.css";
 import { useSearchParams } from "next/navigation";
 import { Event } from "react-bumps-chart/dist/types";
 
