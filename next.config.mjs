@@ -19,6 +19,16 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/multi-year-charts",
+        destination: "/multi-year-charts/town/men",
+        permanent: false,
+      },
+      {
+        source: "/multi-year-charts/:event",
+        destination: "/multi-year-charts/:event/men",
+        permanent: false,
+      },
+      {
         source: "/latest",
         destination: "/charts",
         permanent: false,

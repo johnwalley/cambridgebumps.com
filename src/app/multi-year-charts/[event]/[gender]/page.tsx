@@ -1,7 +1,8 @@
 import { Metadata } from "next";
-import summary from "../../../data/results.json";
-import { results } from "../../../data/results";
-import BumpsChart from "@/components/bumps-chart";
+import dynamic from "next/dynamic";
+import summary from "../../data/results.json";
+import { results } from "../../data/results";
+import BumpsChart from "@/components/multi-year-bumps-chart";
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -29,12 +30,12 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { event, gender, year } = await params;
+  const { event, gender } = await params;
 
   return {
     title: `${set[event as keyof typeof set]} - ${
       genderMap[gender as keyof typeof genderMap]
-    } - ${year}`,
+    }`,
   };
 }
 
@@ -43,23 +44,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }); */
 
 export default async function Home({ params }: Props) {
-  const { event, gender, year } = await params;
+  const { event, gender } = await params;
 
-  const data = results[event][gender]
-    .filter((result) => +result.year >= +year)
-    .filter((result) => +result.year <= +year)[0];
+  const data = results[event as any][gender as any].sort(
+    (a, b) => +a.year - +b.year
+  );
 
-  if (!data || data.crews.length === 0) {
-    return (
-      <div className="text-center mb-4">
-        We have no results to show for this year
-      </div>
-    );
+  if (!data) {
+    return <div className="text-center mb-4">We have no results to show</div>;
   }
 
   return (
-    <div className="w-full flex flex-col items-center mb-4">
-      <div className="w-full max-w-[520px]">
+    <div className="w-full mb-4">
+      <div className="" style={{ width: `${data.length * 128}px` }}>
         <BumpsChart data={data} />
       </div>
     </div>
@@ -71,13 +68,10 @@ export async function generateStaticParams() {
   const genders = ["men", "women"];
 
   const paths = events.flatMap((event) =>
-    genders.flatMap((gender) =>
-      (summary as any)[event][gender].map((year: string) => ({
-        event,
-        gender,
-        year,
-      }))
-    )
+    genders.flatMap((gender) => ({
+      event,
+      gender,
+    }))
   );
 
   return paths;

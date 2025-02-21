@@ -12,6 +12,10 @@ export const docsConfig: DocsConfig = {
       href: "/charts",
     },
     {
+      title: "Multi-year charts",
+      href: "/multi-year-charts",
+    },
+    {
       title: "What's it all about?",
       href: "/about",
     },
