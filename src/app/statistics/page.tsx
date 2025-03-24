@@ -1,30 +1,10 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import image_1 from "./images/motorway-bridge.jpg";
-import bump from "./images/bump.jpg";
-import willow from "./images/willow.jpg";
-import Image from "next/image";
-import { Metadata } from "next";
 // @ts-ignore no types
-import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
+import { Blade, abbreviations, shortShortNames } from "react-rowing-blades";
 
+import { Chart } from "./chart";
+import { Metadata } from "next";
+import { PlacesGainedChart } from "./placesGainedChart";
 import { stats } from "./stats";
-
 import summary from "../charts/data/results.json";
 
 /**
@@ -65,8 +45,12 @@ const genderMap = {
   women: "Women",
 };
 
-const events = ["eights", "lents", "mays", "torpids", "town"];
-const genders = ["men", "women"];
+const events =
+  process.env.NEXT_PUBLIC_TITLE === "Oxford"
+    ? (["eights", "torpids", "mays", "lents", "town"] as const)
+    : (["mays", "lents", "eights", "torpids", "town"] as const);
+
+const genders = ["men", "women"] as const;
 
 function getColor(club: string) {
   switch (club) {
@@ -146,7 +130,7 @@ function getCode(club: string, set: string) {
 
 export const metadata: Metadata = {
   title: `Statistics`,
-  description: "Headship statistics."
+  description: "Headship statistics.",
 };
 
 export default function Statistics() {
@@ -165,15 +149,13 @@ export default function Statistics() {
               genders.map((gender) => {
                 const data = stats[event][gender]["headships"];
 
-                const years = (summary as any)[event][gender];
+                const years = summary[event][gender];
 
                 const heroColor = getColor(data[0].club);
 
                 return (
                   <div key={`${event}.${gender}`} className="mb-4">
-                    <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
-                      (genderMap as any)[gender]
-                    }`}</h3>
+                    <h3 className="font-bold mb-0">{`${set[event]} - ${genderMap[gender]}`}</h3>
                     <h4 className="mb-4">{`(${years[0]} - ${
                       years[years.length - 1]
                     })`}</h4>
@@ -244,6 +226,76 @@ export default function Statistics() {
               })
             )}
           </div>
+          <h2 className="font-bold text-2xl mb-2">Number of crews</h2>
+          {events.map((event) =>
+            genders.map((gender) => {
+              const data = stats[event][gender]["crewsEntered"];
+
+              const chartData = data.map((entry) => ({
+                year: entry.year,
+                crews: entry.total,
+              }));
+
+              const filledChartData = [];
+              const minYear = Math.min(...chartData.map((d) => d.year));
+              const maxYear = Math.max(...chartData.map((d) => d.year));
+
+              for (let year = minYear; year <= maxYear; year++) {
+                const existingData = chartData.find((d) => d.year == year);
+                filledChartData.push(
+                  existingData
+                    ? {
+                        year: String(existingData.year),
+                        crews: existingData.crews,
+                      }
+                    : { year: String(year), crews: 0 }
+                );
+              }
+
+              return (
+                <div key={`${event}.${gender}`}>
+                  <h3 className="font-bold mb-0">{`${set[event]} - ${genderMap[gender]}`}</h3>
+                  <Chart data={filledChartData} />
+                </div>
+              );
+            })
+          )}
+          <h2 className="font-bold text-2xl mb-2">Change in position</h2>
+          {events.map((event) =>
+            genders.map((gender) => {
+              const data = stats[event][gender]["placesGained"];
+
+              const chartData = data;
+
+              const filledChartData = [];
+              const minChange = Math.min(...chartData.map((d) => d.gained));
+              const maxChange = Math.max(...chartData.map((d) => d.gained));
+
+              for (let change = minChange; change <= maxChange; change++) {
+                const existingData = chartData.find((d) => d.gained == change);
+                filledChartData.push(
+                  existingData
+                    ? {
+                        gained: String(existingData.gained),
+                        total: existingData.total,
+                      }
+                    : { gained: String(change), total: 0 }
+                );
+              }
+
+              // Sort by year to ensure proper ordering
+              filledChartData.sort((a, b) => +a.gained - +b.gained);
+
+              console.log(filledChartData);
+
+              return (
+                <div key={`${event}.${gender}`}>
+                  <h3 className="font-bold mb-0">{`${set[event]} - ${genderMap[gender]}`}</h3>
+                  <PlacesGainedChart data={filledChartData} />
+                </div>
+              );
+            })
+          )}
         </div>
       </section>
     </div>

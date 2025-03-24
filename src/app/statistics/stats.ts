@@ -32,4 +32,4 @@ export const stats = {
     men: stats_town_men,
     women: stats_town_women,
   },
-} as Record<string, Record<string, any>>;
+}
