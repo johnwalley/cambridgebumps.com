@@ -4,6 +4,16 @@ const nextConfig = {
   redirects() {
     return [
       {
+        source: "/statistics",
+        destination: "/statistics/town/men",
+        permanent: false,
+      },
+      {
+        source: "/statistics/:event",
+        destination: "/statistics/:event/men",
+        permanent: false,
+      },
+      {
         source: "/charts",
         destination: "/charts/town/men/2024",
         permanent: false,
