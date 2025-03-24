@@ -1,29 +1,9 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import image_1 from "./images/motorway-bridge.jpg";
-import bump from "./images/bump.jpg";
-import willow from "./images/willow.jpg";
-import Image from "next/image";
 import { Metadata } from "next";
 // @ts-ignore no types
 import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
 
-import { stats } from "../../stats";
+import { statisticMapping, stats } from "../../stats";
 
 import summary from "../../../charts/data/results.json";
 
@@ -145,71 +125,75 @@ function getCode(club: string, set: string) {
 }
 
 type Props = {
-  params: Promise<{ event: string; gender: string; }>;
+  params: Promise<{ event: string; gender: string }>;
 };
 
-const STATISTICS = ["headships", "headships"]
+const CLUB_STATISTICS = ["headships", "earliestAppearance"];
+
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
 
   return {
-    title: `${set[event as keyof typeof set]} - ${genderMap[gender as keyof typeof genderMap]}`,
+    title: `Statistics - ${set[event as keyof typeof set]} - ${
+      genderMap[gender as keyof typeof genderMap]
+    } `,
   };
 }
 
 export default async function Statistics({ params }: Props) {
   const { event, gender } = await params;
 
-
-
   const years = (summary as any)[event][gender];
 
-
-
-
   return (
-    <div >
-      <h2 className="font-bold text-2xl mb-2">Headships</h2>
-      <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${(genderMap as any)[gender]
-        }`}</h3>
-      <h4 className="mb-4">{`(${years[0]} - ${years[years.length - 1]
-        })`}</h4>
+    <div>
+      <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
+        (genderMap as any)[gender]
+      }`}</h3>
+      <h4 className="mb-4">{`(${years[0]} - ${years[years.length - 1]})`}</h4>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
-        {STATISTICS.map(statistic => {
+        {CLUB_STATISTICS.map((statistic) => {
           const data = stats[event][gender][statistic];
+          console.log(data);
           const heroColor = getColor(data[0].club);
 
           return (
             <div key={statistic} className="mb-4">
+              <h2 className="font-bold text-2xl mb-2">
+                {statisticMapping[statistic].label}
+              </h2>
               <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
                 <ul className="divide-y divide-neutral-200 dark:divide-neutral-700">
                   <li
                     className="h-40"
                     style={{
-                      backgroundImage: `linear-gradient(to right, hsl(${heroColor.h
-                        } ${heroColor.s}% ${heroColor.l}%), hsl(${heroColor.h
-                        } ${heroColor.s}% ${heroColor.l + 20}%))`,
+                      backgroundImage: `linear-gradient(to right, hsl(${
+                        heroColor.h
+                      } ${heroColor.s}% ${heroColor.l}%), hsl(${heroColor.h} ${
+                        heroColor.s
+                      }% ${heroColor.l + 20}%))`,
                     }}
                   >
                     <div className="flex justify-between h-full">
                       <div className="flex flex-col justify-between text-white px-4 py-2 h-full">
                         <div>
                           <div className="text-sm font-bold">1</div>
-                          <div className="font-bold">{data[0].club}</div>
-                          <div className="text-sm">
-                            {data[0].lastYear}
+                          <div className="font-bold">
+                            {data[0][statisticMapping[statistic].key]}
                           </div>
+                          {statisticMapping[statistic].additional && (
+                            <div className="text-sm">
+                              {data[0][statisticMapping[statistic].additional]}
+                            </div>
+                          )}
                         </div>
                         <div className="text-4xl font-extrabold">
-                          {data[0].headships}
+                          {data[0][statisticMapping[statistic].value]}
                         </div>
                       </div>
                       <div className="pt-2 pr-2 pb-2 flex flex-col justify-center">
-                        <Blade
-                          club={getCode(data[0].club, event)}
-                          size={140}
-                        />
+                        <Blade club={getCode(data[0].club, event)} size={140} />
                       </div>
                     </div>
                   </li>
@@ -223,31 +207,33 @@ export default async function Statistics({ params }: Props) {
                           {i + 2}
                         </div>
                         <div className="mr-4">
-                          <Blade
-                            club={getCode(d.club, event)}
-                            size={48}
-                          />
+                          <Blade club={getCode(d.club, event)} size={48} />
                         </div>
                         <div className="flex flex-col">
                           <div className="font-bold text-base">
-                            {d.club}
+                            {d[statisticMapping[statistic].key]}
                           </div>
-                          <div className="text-sm">{d.lastYear}</div>
+                          {statisticMapping[statistic].additional && (
+                            <div className="text-sm">
+                              {d[statisticMapping[statistic].additional]}
+                            </div>
+                          )}
                         </div>
                       </div>
                       <div className="font-bold text-lg">
-                        {d.headships}
+                        {d[statisticMapping[statistic].value]}
                       </div>
                     </li>
                   ))}
                   <div className="flex items-center ju">
-                    <Link
-                      href={`/statistics/${event}/${gender}/${statistic}`}>View full list</Link>
+                    <Link href={`/statistics/${event}/${gender}/${statistic}`}>
+                      View full list
+                    </Link>
                   </div>
                 </ul>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>

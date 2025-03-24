@@ -1,29 +1,18 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import image_1 from "./images/motorway-bridge.jpg";
-import bump from "./images/bump.jpg";
-import willow from "./images/willow.jpg";
-import Image from "next/image";
 import { Metadata } from "next";
 // @ts-ignore no types
 import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
 
-import { stats } from "../../../stats";
+import { statisticMapping, stats } from "../../../stats";
+
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 import summary from "../../../../charts/data/results.json";
 
@@ -148,98 +137,76 @@ type Props = {
   params: Promise<{ event: string; gender: string; statistic: string }>;
 };
 
-const STATISTICS = ["headships", "headships"]
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { event, gender } = await params;
+  const { event, gender, statistic } = await params;
 
   return {
-    title: `${set[event as keyof typeof set]} - ${genderMap[gender as keyof typeof genderMap]}`,
+    title: `${statistic} - ${set[event as keyof typeof set]} - ${
+      genderMap[gender as keyof typeof genderMap]
+    }`,
   };
 }
 
 export default async function Statistics({ params }: Props) {
   const { event, gender, statistic } = await params;
 
-
-
   const years = (summary as any)[event][gender];
 
   const data = stats[event][gender][statistic];
   const heroColor = getColor(data[0].club);
 
+  console.log(statisticMapping, statistic);
 
   return (
-    <div >
-      <h2 className="font-bold text-2xl mb-2">Headships</h2>
-      <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${(genderMap as any)[gender]
-        }`}</h3>
-      <h4 className="mb-4">{`(${years[0]} - ${years[years.length - 1]
-        })`}</h4>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
-        <div className="mb-4">
-          <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
-            <ul className="divide-y divide-neutral-200 dark:divide-neutral-700">
-              <li
-                className="h-40"
-                style={{
-                  backgroundImage: `linear-gradient(to right, hsl(${heroColor.h
-                    } ${heroColor.s}% ${heroColor.l}%), hsl(${heroColor.h
-                    } ${heroColor.s}% ${heroColor.l + 20}%))`,
-                }}
-              >
-                <div className="flex justify-between h-full">
-                  <div className="flex flex-col justify-between text-white px-4 py-2 h-full">
-                    <div>
-                      <div className="text-sm font-bold">1</div>
-                      <div className="font-bold">{data[0].club}</div>
-                      <div className="text-sm">
-                        {data[0].lastYear}
-                      </div>
-                    </div>
-                    <div className="text-4xl font-extrabold">
-                      {data[0].headships}
-                    </div>
-                  </div>
-                  <div className="pt-2 pr-2 pb-2 flex flex-col justify-center">
-                    <Blade
-                      club={getCode(data[0].club, event)}
-                      size={140}
-                    />
-                  </div>
-                </div>
-              </li>
-              {data.slice(1, data.length).map((d: any, i: number) => (
-                <li
-                  key={i}
-                  className="flex items-center relative justify-between pl-3 pr-2 py-2"
-                >
-                  <div className="flex items-center">
-                    <div className="mr-2 font-bold text-sm min-w-4">
-                      {i + 2}
-                    </div>
-                    <div className="mr-4">
-                      <Blade
-                        club={getCode(d.club, event)}
-                        size={48}
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <div className="font-bold text-base">
-                        {d.club}
-                      </div>
-                      <div className="text-sm">{d.lastYear}</div>
-                    </div>
-                  </div>
-                  <div className="font-bold text-lg">
-                    {d.headships}
-                  </div>
-                </li>
-              ))}
-
-            </ul>
-          </div>
-        </div>
+    <div>
+      <h2 className="font-bold text-2xl mb-2">
+        {statisticMapping[statistic].label}
+      </h2>
+      <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
+        (genderMap as any)[gender]
+      }`}</h3>
+      <h4 className="mb-4">{`(${years[0]} - ${years[years.length - 1]})`}</h4>
+      <div className="mb-4">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[40px]">Rank</TableHead>
+              <TableHead className="">
+                {statisticMapping[statistic].keyLabel}
+              </TableHead>
+              <TableHead className="text-right">
+                {statisticMapping[statistic].valueLabel}
+              </TableHead>
+              {statisticMapping[statistic].additionalLabel && (
+                <TableHead className="text-right">
+                  {statisticMapping[statistic].additionalLabel}
+                </TableHead>
+              )}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.map((row: any, index: number) => (
+              <TableRow key={row[statisticMapping[statistic].key]}>
+                <TableCell className="font-medium">{index + 1}</TableCell>
+                <TableCell className="font-medium flex flex-row gap-2">
+                  <Blade
+                    club={getCode(row[statisticMapping[statistic].key], event)}
+                    size={48}
+                  />
+                  {row[statisticMapping[statistic].key]}
+                </TableCell>
+                <TableCell className="text-right">
+                  {row[statisticMapping[statistic].value]}
+                </TableCell>
+                {statisticMapping[statistic].additional && (
+                  <TableCell className="text-right">
+                    {row[statisticMapping[statistic].additional]}
+                  </TableCell>
+                )}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </div>
   );

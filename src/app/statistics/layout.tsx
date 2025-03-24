@@ -1,32 +1,23 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import image_1 from "./images/motorway-bridge.jpg";
-import bump from "./images/bump.jpg";
-import willow from "./images/willow.jpg";
-import Image from "next/image";
-import { Metadata } from "next";
+"use client";
 // @ts-ignore no types
 import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
 
-import { stats } from "./stats";
+import { statisticMapping, stats } from "./stats";
 
 import summary from "../charts/data/results.json";
 import { PropsWithChildren } from "react";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useRouter, useSelectedLayoutSegments } from "next/navigation";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 /**
  * Ideas for the statistics page:
@@ -145,14 +136,10 @@ function getCode(club: string, set: string) {
   return code;
 }
 
-
-
-export const metadata: Metadata = {
-  title: `Statistics`,
-  description: "Headship statistics."
-};
-
 export default function Statistics({ children }: PropsWithChildren) {
+  const router = useRouter();
+
+  const segments = useSelectedLayoutSegments();
 
   return (
     <div className="container relative">
@@ -163,6 +150,82 @@ export default function Statistics({ children }: PropsWithChildren) {
               Statistics
             </h1>
           </div>
+          <Label htmlFor="event">Event</Label>
+          <Select
+            value={segments[0]}
+            onValueChange={(value) => {
+              router.push(
+                segments[2]
+                  ? `/statistics/${value}/${segments[1]}/${segments[2]}`
+                  : `/statistics/${value}/${segments[1]}`
+              );
+            }}
+          >
+            <SelectTrigger className="w-[280px]">
+              <SelectValue placeholder="Select an event" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Cambridge</SelectLabel>
+                <SelectItem value="lents">Lent Bumps</SelectItem>
+                <SelectItem value="mays">May Bumps</SelectItem>
+                <SelectItem value="town">Town Bumps</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>Oxford</SelectLabel>
+                <SelectItem value="torpids">Torpids</SelectItem>
+                <SelectItem value="eights">Summer Eights</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          <div className="space-y-3">
+            <Label htmlFor="gender">Gender</Label>
+            <RadioGroup
+              id="gender"
+              className="flex flex-col space-y-1"
+              value={segments[1]}
+              onValueChange={(value) => {
+                router.push(
+                  segments[2]
+                    ? `/statistics/${segments[0]}/${value}/${segments[2]}`
+                    : `/statistics/${segments[0]}/${value}`
+                );
+              }}
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="men" id="men" />
+                <Label htmlFor="men">Men</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="women" id="women" />
+                <Label htmlFor="women">Women</Label>
+              </div>
+            </RadioGroup>
+          </div>
+          {segments[2] && (
+            <>
+              <Label htmlFor="event">Statistic</Label>
+              <Select
+                value={segments[2]}
+                onValueChange={(value) => {
+                  router.push(
+                    `/statistics/${segments[0]}/${segments[1]}/${value}`
+                  );
+                }}
+              >
+                <SelectTrigger className="w-[280px]">
+                  <SelectValue placeholder="Select a statistic" />
+                </SelectTrigger>
+                <SelectContent>
+                  {Object.keys(statisticMapping).map((statistic) => (
+                    <SelectItem value={statistic}>
+                      {statisticMapping[statistic].label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </>
+          )}
           <div>{children}</div>
         </div>
       </section>

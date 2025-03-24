@@ -32,10 +32,14 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
 
+  const data = results[event as any][gender as any].sort(
+    (a, b) => +a.year - +b.year
+  );
+
   return {
-    title: `${set[event as keyof typeof set]} - ${
+    title: `Multi-year chart - ${set[event as keyof typeof set]} - ${
       genderMap[gender as keyof typeof genderMap]
-    }`,
+    } - ${data[0].year}-${data[data.length - 1].year}`,
   };
 }
 
