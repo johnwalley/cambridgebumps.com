@@ -11,6 +11,46 @@ import stats_torpids_women from "../../data/stats/torpids/women/stats.json";
 import stats_town_men from "../../data/stats/town/men/stats.json";
 import stats_town_women from "../../data/stats/town/women/stats.json";
 
+
+export const statisticMapping: Record<
+  string,
+  {
+    label: string;
+    key: string;
+    keyLabel: string;
+    value: string;
+    valueLabel: string;
+    additional?: string;
+    additionalLabel?: string;
+  }
+> = {
+  headships: {
+    label: "Headships",
+    key: "club",
+    keyLabel: "Club",
+    value: "headships",
+    valueLabel: "Headships",
+    additional: "lastYear",
+    additionalLabel: "Last year",
+  },
+  headDays: {
+    label: "Total days at headship",
+    key: "club",
+    keyLabel: "Club",
+    value: "days",
+    valueLabel: "Days",
+  },
+  headLong: {
+    label: "Continuous days at headship",
+    key: "club",
+    keyLabel: "Club",
+    value: "days",
+    valueLabel: "Days",
+    additional: "span",
+    additionalLabel: "Span",
+  },
+};
+
 export const stats = {
   eights: {
     men: stats_eights_men,

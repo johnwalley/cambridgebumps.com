@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender, year } = await params;
 
   return {
-    title: `${set[event as keyof typeof set]} - ${
+    title: `Chart - ${set[event as keyof typeof set]} - ${
       genderMap[gender as keyof typeof genderMap]
     } - ${year}`,
   };
