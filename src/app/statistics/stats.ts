@@ -33,12 +33,21 @@ export const statisticMapping: Record<
     additional: "lastYear",
     additionalLabel: "Last year",
   },
-  earliestAppearance: {
-    label: "Earliest appearance",
+  headDays: {
+    label: "Total days at headship",
     key: "club",
     keyLabel: "Club",
-    value: "year",
-    valueLabel: "Year",
+    value: "days",
+    valueLabel: "Days",
+  },
+  headLong: {
+    label: "Continuous days at headship",
+    key: "club",
+    keyLabel: "Club",
+    value: "days",
+    valueLabel: "Days",
+    additional: "span",
+    additionalLabel: "Span",
   },
 };
 

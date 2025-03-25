@@ -149,23 +149,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Statistics({ params }: Props) {
   const { event, gender, statistic } = await params;
-
   const years = (summary as any)[event][gender];
-
   const data = stats[event][gender][statistic];
-  const heroColor = getColor(data[0].club);
-
-  console.log(statisticMapping, statistic);
 
   return (
     <div>
-      <h2 className="font-bold text-2xl mb-2">
+      <h2 className="font-bold text-xl mb-2">
         {statisticMapping[statistic].label}
       </h2>
-      <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
-        (genderMap as any)[gender]
-      }`}</h3>
-      <h4 className="mb-4">{`(${years[0]} - ${years[years.length - 1]})`}</h4>
+
       <div className="mb-4">
         <Table>
           <TableHeader>

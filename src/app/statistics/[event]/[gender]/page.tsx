@@ -48,20 +48,36 @@ const genderMap = {
 const events = ["eights", "lents", "mays", "torpids", "town"];
 const genders = ["men", "women"];
 
-function getColor(club: string) {
+function getColor(club: string, event: string) {
   switch (club) {
     case "Oriel":
       return { h: 220, s: 100, l: 19 };
     case "Emmanuel":
       return { h: 0, s: 100, l: 73 };
     case "Jesus":
-      return { h: 0, s: 100, l: 27 };
+      if (event === "eights" || event === "torpids") {
+        return { h: 142, s: 100, l: 30.6 };
+      } else {
+        return { h: 0, s: 100, l: 27 };
+      }
     case "Rob Roy":
       return { h: 350, s: 95, l: 25 };
     case "City":
       return { h: 216, s: 60, l: 18 };
     case "Osler House":
       return { h: 0, s: 100, l: 41 };
+    case "Churchill":
+      return { h: 340, s: 100, l: 72 };
+    case "LMBC":
+      return { h: 0, s: 100, l: 43.1 };
+    case "Brasenose":
+      return { h: 0, s: 0, l: 12.5 };
+    case "Magdalen":
+      return { h: 0, s: 0, l: 8.2 };
+    case "Pembroke":
+      return { h: 0, s: 100, l: 73.3 };
+    case "Somerville":
+      return { h: 0, s: 100, l: 46.7 };
     default:
       return { h: 220, s: 100, l: 19 };
   }
@@ -128,8 +144,7 @@ type Props = {
   params: Promise<{ event: string; gender: string }>;
 };
 
-const CLUB_STATISTICS = ["headships", "earliestAppearance"];
-
+const CLUB_STATISTICS = Object.keys(statisticMapping);
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
@@ -148,15 +163,10 @@ export default async function Statistics({ params }: Props) {
 
   return (
     <div>
-      <h3 className="font-bold mb-0">{`${(set as any)[event]} - ${
-        (genderMap as any)[gender]
-      }`}</h3>
-      <h4 className="mb-4">{`(${years[0]} - ${years[years.length - 1]})`}</h4>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {CLUB_STATISTICS.map((statistic) => {
           const data = stats[event][gender][statistic];
-          console.log(data);
-          const heroColor = getColor(data[0].club);
+          const heroColor = getColor(data[0].club, event);
 
           return (
             <div key={statistic} className="mb-4">
@@ -213,11 +223,11 @@ export default async function Statistics({ params }: Props) {
                           <div className="font-bold text-base">
                             {d[statisticMapping[statistic].key]}
                           </div>
-                          {statisticMapping[statistic].additional && (
-                            <div className="text-sm">
-                              {d[statisticMapping[statistic].additional]}
-                            </div>
-                          )}
+                          <div className="text-sm">
+                            {statisticMapping[statistic].additional
+                              ? d[statisticMapping[statistic].additional]
+                              : "\u00A0"}
+                          </div>
                         </div>
                       </div>
                       <div className="font-bold text-lg">
@@ -225,7 +235,7 @@ export default async function Statistics({ params }: Props) {
                       </div>
                     </li>
                   ))}
-                  <div className="flex items-center ju">
+                  <div className="flex items-center justify-center py-2 px-2">
                     <Link href={`/statistics/${event}/${gender}/${statistic}`}>
                       View full list
                     </Link>
