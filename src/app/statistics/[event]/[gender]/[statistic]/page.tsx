@@ -203,3 +203,20 @@ export default async function Statistics({ params }: Props) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const events = ["eights", "lents", "mays", "torpids", "town"];
+  const genders = ["men", "women"];
+
+  const paths = events.flatMap((event) =>
+    genders.flatMap((gender) =>
+      Object.keys(statisticMapping).map((statistic) => ({
+        event,
+        gender,
+        statistic,
+      }))
+    )
+  );
+
+  return paths;
+}
