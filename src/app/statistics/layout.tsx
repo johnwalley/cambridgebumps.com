@@ -1,12 +1,6 @@
 "use client";
-// @ts-ignore no types
-import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
 
-import { statisticMapping, stats } from "./stats";
-
-import summary from "../charts/data/results.json";
-import { PropsWithChildren } from "react";
-import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Select,
   SelectContent,
@@ -16,25 +10,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+// @ts-ignore no types
+import { abbreviations, shortShortNames } from "react-rowing-blades";
+import { statisticMapping, stats } from "./stats";
 import { useRouter, useSelectedLayoutSegments } from "next/navigation";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-/**
- * Ideas for the statistics page:
- *
- * All-time(club):
- * - headships
- *
- * All-time(crew):
- * - blades
- *
- * Per year(club):
- * - number of crews
- * - places gained/lost
- *
- * Per year(crew):
- * - places gained/lost
- */
+import { Label } from "@/components/ui/label";
+import { PropsWithChildren } from "react";
 
 const SET = {
   EIGHTS: "Summer Eights",

@@ -1,37 +1,17 @@
-import { Metadata } from "next";
 // @ts-ignore no types
-import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
-
-import { statisticMapping, stats } from "../../../stats";
-
+import { Blade, abbreviations, shortShortNames } from "react-rowing-blades";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { statisticMapping, stats } from "../../../stats";
 
+import { Metadata } from "next";
 import summary from "../../../../charts/data/results.json";
-
-/**
- * Ideas for the statistics page:
- *
- * All-time(club):
- * - headships
- *
- * All-time(crew):
- * - blades
- *
- * Per year(club):
- * - number of crews
- * - places gained/lost
- *
- * Per year(crew):
- * - places gained/lost
- */
 
 const SET = {
   EIGHTS: "Summer Eights",

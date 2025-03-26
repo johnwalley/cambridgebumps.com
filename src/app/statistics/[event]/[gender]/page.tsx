@@ -1,28 +1,10 @@
-import Link from "next/link";
-import { Metadata } from "next";
 // @ts-ignore no types
-import { Blade, shortShortNames, abbreviations } from "react-rowing-blades";
-
+import { Blade, abbreviations, shortShortNames } from "react-rowing-blades";
 import { statisticMapping, stats } from "../../stats";
 
+import Link from "next/link";
+import { Metadata } from "next";
 import summary from "../../../charts/data/results.json";
-
-/**
- * Ideas for the statistics page:
- *
- * All-time(club):
- * - headships
- *
- * All-time(crew):
- * - blades
- *
- * Per year(club):
- * - number of crews
- * - places gained/lost
- *
- * Per year(crew):
- * - places gained/lost
- */
 
 const SET = {
   EIGHTS: "Summer Eights",
@@ -44,9 +26,6 @@ const genderMap = {
   men: "Men",
   women: "Women",
 };
-
-const events = ["eights", "lents", "mays", "torpids", "town"];
-const genders = ["men", "women"];
 
 function getColor(club: string, event: string) {
   switch (club) {

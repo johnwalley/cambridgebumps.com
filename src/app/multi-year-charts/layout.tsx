@@ -1,10 +1,5 @@
 "use client";
 
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { PropsWithChildren, Suspense, useCallback } from "react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
@@ -18,7 +13,6 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  usePathname,
   useRouter,
   useSearchParams,
   useSelectedLayoutSegments,
@@ -30,9 +24,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
-import { Spoons } from "./components/spoons";
 import { results } from "./data/results";
-import summary from "./data/results.json";
 
 const SET = {
   EIGHTS: "Summer Eights",

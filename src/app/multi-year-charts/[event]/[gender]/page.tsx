@@ -1,8 +1,6 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
-import summary from "../../data/results.json";
-import { results } from "../../data/results";
 import BumpsChart from "@/components/multi-year-bumps-chart";
+import { Metadata } from "next";
+import { results } from "../../data/results";
 
 const SET = {
   EIGHTS: "Summer Eights",
