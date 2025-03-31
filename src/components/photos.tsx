@@ -18,7 +18,7 @@ export function Photos() {
   ];
 
   return (
-    <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 -ml-8 -mr-8 w-[calc(100%+4rem)]">
+    <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 sm:-ml-8 sm:-mr-8 sm:w-[calc(100%+4rem)] -ml-4 -mr-4 w-[calc(100%+2rem)] ">
       {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
         <div
           key={image.src}
