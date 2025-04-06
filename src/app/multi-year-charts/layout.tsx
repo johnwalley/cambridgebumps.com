@@ -25,27 +25,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
 import { results } from "./data/results";
-
-const SET = {
-  EIGHTS: "Summer Eights",
-  TORPIDS: "Torpids",
-  LENTS: "Lent Bumps",
-  MAYS: "May Bumps",
-  TOWN: "Town Bumps",
-};
-
-const set = {
-  eights: SET.EIGHTS,
-  torpids: SET.TORPIDS,
-  lents: SET.LENTS,
-  mays: SET.MAYS,
-  town: SET.TOWN,
-};
-
-const genderMap = {
-  men: "Men",
-  women: "Women",
-};
+import { genderMap, set } from "@/lib/utils";
 
 function Layout({
   children,

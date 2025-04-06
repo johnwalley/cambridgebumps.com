@@ -1,28 +1,9 @@
-import { Metadata } from "next";
-import summary from "../../../data/results.json";
-import { results } from "../../../data/results";
+import { events, genderMap, genders, set } from "@/lib/utils";
+
 import BumpsChart from "@/components/bumps-chart";
-
-const SET = {
-  EIGHTS: "Summer Eights",
-  TORPIDS: "Torpids",
-  LENTS: "Lent Bumps",
-  MAYS: "May Bumps",
-  TOWN: "Town Bumps",
-};
-
-const set = {
-  eights: SET.EIGHTS,
-  torpids: SET.TORPIDS,
-  lents: SET.LENTS,
-  mays: SET.MAYS,
-  town: SET.TOWN,
-};
-
-const genderMap = {
-  men: "Men",
-  women: "Women",
-};
+import { Metadata } from "next";
+import { results } from "../../../data/results";
+import summary from "../../../data/results.json";
 
 type Props = {
   params: Promise<{ event: string; gender: string; year: string }>;
@@ -67,9 +48,6 @@ export default async function Home({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const events = ["eights", "lents", "mays", "torpids", "town"];
-  const genders = ["men", "women"];
-
   const paths = events.flatMap((event) =>
     genders.flatMap((gender) =>
       (summary as any)[event][gender].map((year: string) => ({

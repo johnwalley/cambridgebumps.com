@@ -1,5 +1,4 @@
-// @ts-ignore no types
-import { Blade, abbreviations, shortShortNames } from "react-rowing-blades";
+import type { Gender, Set } from "@/lib/utils";
 import {
   Table,
   TableBody,
@@ -8,42 +7,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { events, genderMap, genders, getCode, set } from "@/lib/utils";
 import { statisticMapping, stats } from "../../../stats";
 
+// @ts-ignore no types
+import { Blade } from "react-rowing-blades";
 import { Metadata } from "next";
 import summary from "../../../../charts/data/results.json";
-import { getCode } from "@/lib/utils";
-
-const SET = {
-  EIGHTS: "Summer Eights",
-  TORPIDS: "Torpids",
-  LENTS: "Lent Bumps",
-  MAYS: "May Bumps",
-  TOWN: "Town Bumps",
-};
-
-const set = {
-  eights: SET.EIGHTS,
-  torpids: SET.TORPIDS,
-  lents: SET.LENTS,
-  mays: SET.MAYS,
-  town: SET.TOWN,
-};
-
-const genderMap = {
-  men: "Men",
-  women: "Women",
-};
-
-const events = ["eights", "lents", "mays", "torpids", "town"];
-const genders = ["men", "women"];
-
-
-
-
 
 type Props = {
-  params: Promise<{ event: string; gender: string; statistic: string }>;
+  params: Promise<{ event: Set; gender: Gender; statistic: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -114,9 +87,6 @@ export default async function Statistics({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const events = ["eights", "lents", "mays", "torpids", "town"];
-  const genders = ["men", "women"];
-
   const paths = events.flatMap((event) =>
     genders.flatMap((gender) =>
       Object.keys(statisticMapping).map((statistic) => ({

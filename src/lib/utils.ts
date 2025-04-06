@@ -1,13 +1,32 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 //@ts-ignore types
 import { abbreviations, shortShortNames } from "react-rowing-blades";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
-export function getCode(club: string, set: string) {
+export const set: Record<Set, string> = {
+  eights: "Summer Eights",
+  torpids: "Torpids",
+  lents: "Lent Bumps",
+  mays: "May Bumps",
+  town: "Town Bumps",
+};
+
+export const genderMap: Record<Gender, string> = {
+  men: "Men",
+  women: "Women",
+};
+
+export const events = ["eights", "lents", "mays", "torpids", "town"] as const;
+export type Set = (typeof events)[number];
+
+export const genders = ["men", "women"] as const;
+export type Gender = (typeof genders)[number];
+
+export function getCode(club: string, set: Set) {
   let names;
   let abbr;
 

@@ -1,32 +1,19 @@
+import {
+  events,
+  type Gender,
+  genderMap,
+  genders,
+  getCode,
+  Set,
+  set,
+} from "@/lib/utils";
 import { statisticMapping, stats } from "../../stats";
 
+import { Metadata } from "next";
+import Link from "next/link";
 // @ts-ignore no types
 import { Blade } from "react-rowing-blades";
-import Link from "next/link";
-import { Metadata } from "next";
 import summary from "../../../charts/data/results.json";
-import { getCode } from "@/lib/utils";
-
-const SET = {
-  EIGHTS: "Summer Eights",
-  TORPIDS: "Torpids",
-  LENTS: "Lent Bumps",
-  MAYS: "May Bumps",
-  TOWN: "Town Bumps",
-};
-
-const set = {
-  eights: SET.EIGHTS,
-  torpids: SET.TORPIDS,
-  lents: SET.LENTS,
-  mays: SET.MAYS,
-  town: SET.TOWN,
-};
-
-const genderMap = {
-  men: "Men",
-  women: "Women",
-};
 
 function getColor(club: string, event: string) {
   switch (club) {
@@ -64,7 +51,7 @@ function getColor(club: string, event: string) {
 }
 
 type Props = {
-  params: Promise<{ event: string; gender: string }>;
+  params: Promise<{ event: Set; gender: Gender }>;
 };
 
 const CLUB_STATISTICS = Object.keys(statisticMapping);
@@ -174,9 +161,6 @@ export default async function Statistics({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const events = ["eights", "lents", "mays", "torpids", "town"];
-  const genders = ["men", "women"];
-
   const paths = events.flatMap((event) =>
     genders.flatMap((gender) => ({
       event,

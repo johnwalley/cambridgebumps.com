@@ -49,6 +49,20 @@ export const statisticMapping: Record<
     additional: "span",
     additionalLabel: "Span",
   },
+  crewsEntered: {
+    label: "Crews entered",
+    key: "club",
+    keyLabel: "Club",
+    value: "count",
+    valueLabel: "Number",
+  },
+  bladesAwarded: {
+    label: "Blades awarded",
+    key: "club",
+    keyLabel: "Club",
+    value: "count",
+    valueLabel: "Number",
+  },
 };
 
 export const stats = {

@@ -31,31 +31,10 @@ import {
 } from "@/components/ui/hover-card";
 import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
-import { Spoons } from "./components/spoons";
 import { results } from "./data/results";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
-
-const SET = {
-  EIGHTS: "Summer Eights",
-  TORPIDS: "Torpids",
-  LENTS: "Lent Bumps",
-  MAYS: "May Bumps",
-  TOWN: "Town Bumps",
-};
-
-const set = {
-  eights: SET.EIGHTS,
-  torpids: SET.TORPIDS,
-  lents: SET.LENTS,
-  mays: SET.MAYS,
-  town: SET.TOWN,
-};
-
-const genderMap = {
-  men: "Men",
-  women: "Women",
-};
+import { genderMap, set } from "@/lib/utils";
 
 function Layout({
   children,
