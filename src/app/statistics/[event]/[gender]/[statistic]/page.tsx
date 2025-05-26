@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender, statistic } = await params;
 
   return {
-    title: `${statistic} - ${set[event as keyof typeof set]} - ${
+    title: `${statisticMapping[statistic].label} - ${set[event as keyof typeof set]} - ${
       genderMap[gender as keyof typeof genderMap]
     }`,
   };
