@@ -1,15 +1,19 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
+import { Icons } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Icons } from "@/components/icons";
+import Link from "next/link";
+import { usePathname, useSelectedLayoutSegments } from "next/navigation";
+import * as React from "react";
 
 export function MainNav() {
   const pathname = usePathname();
+  const segments = useSelectedLayoutSegments();
+
+  // Extract current event and gender from URL segments
+  const currentEvent = segments[1];
+  const currentGender = segments[2];
 
   return (
     <div className="mr-4 hidden md:flex">
@@ -21,7 +25,11 @@ export function MainNav() {
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         <Link
-          href="/charts"
+          href={
+            currentEvent && currentGender
+              ? `/charts/${currentEvent}/${currentGender}`
+              : "/charts"
+          }
           className={cn(
             "transition-colors hover:text-foreground/80",
             pathname?.startsWith("/charts")
@@ -32,7 +40,11 @@ export function MainNav() {
           Charts
         </Link>
         <Link
-          href="/multi-year-charts"
+          href={
+            currentEvent && currentGender
+              ? `/multi-year-charts/${currentEvent}/${currentGender}`
+              : "/multi-year-charts"
+          }
           className={cn(
             "transition-colors hover:text-foreground/80",
             pathname?.startsWith("/multi-year-charts")
@@ -54,7 +66,11 @@ export function MainNav() {
           What&apos;s it all about?
         </Link>
         <Link
-          href="/statistics"
+          href={
+            currentEvent && currentGender
+              ? `/statistics/${currentEvent}/${currentGender}`
+              : "/statistics"
+          }
           className={cn(
             "transition-colors hover:text-foreground/80",
             pathname?.startsWith("/statistics")
