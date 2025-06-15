@@ -10,10 +10,12 @@ export const docsConfig: DocsConfig = {
     {
       title: "Charts",
       href: "/charts",
+      requiresEventGender: true,
     },
     {
       title: "Multi-year charts",
       href: "/multi-year-charts",
+      requiresEventGender: true,
     },
     {
       title: "What's it all about?",
@@ -22,6 +24,7 @@ export const docsConfig: DocsConfig = {
     {
       title: "Statistics",
       href: "/statistics",
+      requiresEventGender: true,
     },
     {
       title: "Vocabulary",

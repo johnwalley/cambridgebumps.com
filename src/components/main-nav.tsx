@@ -1,8 +1,10 @@
 "use client";
 
 import { Icons } from "@/components/icons";
+import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { MainNavItem } from "@/types/nav";
 import Link from "next/link";
 import { usePathname, useSelectedLayoutSegments } from "next/navigation";
 import * as React from "react";
@@ -15,6 +17,24 @@ export function MainNav() {
   const currentEvent = segments[1];
   const currentGender = segments[2];
 
+  // Build href with event/gender context and search params
+  const buildHref = (item: MainNavItem): string => {
+    if (item.requiresEventGender && currentEvent && currentGender) {
+      return `${item.href}/${currentEvent}/${currentGender}`;
+    }
+
+    return `${item.href}`;
+  };
+
+  // Check if current path matches nav item
+  const isActive = (item: MainNavItem): boolean => {
+    if (item.href) {
+      return pathname?.startsWith(item.href) ?? false;
+    }
+
+    return false;
+  };
+
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -24,73 +44,18 @@ export function MainNav() {
         </span>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
-        <Link
-          href={
-            currentEvent && currentGender
-              ? `/charts/${currentEvent}/${currentGender}`
-              : "/charts"
-          }
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/charts")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Charts
-        </Link>
-        <Link
-          href={
-            currentEvent && currentGender
-              ? `/multi-year-charts/${currentEvent}/${currentGender}`
-              : "/multi-year-charts"
-          }
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/multi-year-charts")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Multi-year charts
-        </Link>
-        <Link
-          href="/about"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/about")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          What&apos;s it all about?
-        </Link>
-        <Link
-          href={
-            currentEvent && currentGender
-              ? `/statistics/${currentEvent}/${currentGender}`
-              : "/statistics"
-          }
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/statistics")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Statistics
-        </Link>
-        <Link
-          href="/vocabulary"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/vocabulary")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Vocabulary
-        </Link>
+        {docsConfig.mainNav.map((item) => (
+          <Link
+            key={item.title}
+            href={buildHref(item)}
+            className={cn(
+              "transition-colors hover:text-foreground/80",
+              isActive(item) ? "text-foreground" : "text-foreground/60"
+            )}
+          >
+            {item.title}
+          </Link>
+        ))}
       </nav>
     </div>
   );

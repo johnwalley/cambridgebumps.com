@@ -15,17 +15,17 @@ const nextConfig = {
       },
       {
         source: "/charts",
-        destination: "/charts/town/men/2024",
+        destination: "/charts/town/men/2025",
         permanent: false,
       },
       {
         source: "/charts/:event",
-        destination: "/charts/:event/men/2024",
+        destination: "/charts/:event/men/2025",
         permanent: false,
       },
       {
         source: "/charts/:event/:gender",
-        destination: "/charts/:event/:gender/2024",
+        destination: "/charts/:event/:gender/2025",
         permanent: false,
       },
       {
