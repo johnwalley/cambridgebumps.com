@@ -19,10 +19,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/* const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
-  ssr: true,
-}); */
-
 export default async function Home({ params }: Props) {
   const { event, gender, year } = await params;
 
