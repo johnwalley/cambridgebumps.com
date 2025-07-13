@@ -1,7 +1,7 @@
 import image1 from "@/images/bump.jpg";
 import image2 from "@/images/motorway-bridge.jpg";
 import image4 from "@/images/willow.jpg";
-import image3 from "@/images/bump-2.jpg";
+import image3 from "@/images/mays_2025_1.jpg";
 import image5 from "@/images/cannon.jpg";
 
 import clsx from "clsx";
@@ -19,7 +19,7 @@ export function Photos() {
 
   return (
     <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 sm:-ml-8 sm:-mr-8 sm:w-[calc(100%+4rem)] -ml-4 -mr-4 w-[calc(100%+2rem)] ">
-      {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+      {[image1, image2, image3, image5, image4].map((image, imageIndex) => (
         <div
           key={image.src}
           className={clsx(
