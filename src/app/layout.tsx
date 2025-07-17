@@ -17,7 +17,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  formatDetection: { telephone: false },
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
   other: { chrome: "nointentdetection" },
   title: {
     template: `%s | ${process.env.NEXT_PUBLIC_TITLE} Bumps`,
