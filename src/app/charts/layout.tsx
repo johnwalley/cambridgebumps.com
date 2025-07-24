@@ -278,7 +278,7 @@ function Layout({
         {segments[0] === "town" && segments[2] === "2025" && (
           <p className="text-center text-sm pb-2">
             Not affiliated with the CRA. For official live results please visit
-            the CRA's{" "}
+            the CRA{" "}
             <a
               href="https://www.crarowing.co.uk/town-bumps/about-the-cra-town-bumps/results"
               className="dark:text-white"
