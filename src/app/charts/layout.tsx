@@ -269,12 +269,25 @@ function Layout({
           </div>
         </div>
       </div>
-      <div>
+      <div className="pb-4">
         <h1 className="scroll-m-20 pt-2 pb-4 text-xl lg:text-3xl font-semibold tracking-tight text-center">{`${
           set[segments[0] as keyof typeof set]
         } - ${genderMap[segments[1] as keyof typeof genderMap]} - ${
           segments[2]
         }`}</h1>
+        {segments[0] === "town" && segments[2] === "2025" && (
+          <p className="text-center text-sm pb-2">
+            Not affiliated with the CRA. For official live results please visit
+            the CRA's{" "}
+            <a
+              href="https://www.crarowing.co.uk/town-bumps/about-the-cra-town-bumps/results"
+              className="dark:text-white"
+            >
+              results page
+            </a>
+            .
+          </p>
+        )}
         {children}
       </div>
     </div>
