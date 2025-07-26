@@ -1,22 +1,22 @@
 {
   "headships": [
-    { "club": "City", "headships": 16, "lastYear": "2016" },
+    { "club": "City", "headships": 17, "lastYear": "2025" },
     { "club": "Cantabs", "headships": 9, "lastYear": "2024" },
     { "club": "Rob Roy", "headships": 7, "lastYear": "2007" },
     { "club": "99", "headships": 7, "lastYear": "2006" },
     { "club": "X-Press", "headships": 2, "lastYear": "1999" }
   ],
   "crewsEntered": [
-    { "club": "City", "count": 283 },
-    { "club": "Cantabs", "count": 229 },
-    { "club": "99", "count": 183 },
-    { "club": "Champs", "count": 147 },
+    { "club": "City", "count": 294 },
+    { "club": "Cantabs", "count": 241 },
+    { "club": "99", "count": 191 },
+    { "club": "Champs", "count": 151 },
     { "club": "Rob Roy", "count": 111 },
-    { "club": "X-Press", "count": 106 },
-    { "club": "Chesterton", "count": 73 },
-    { "club": "St Radegund", "count": 30 },
+    { "club": "X-Press", "count": 110 },
+    { "club": "Chesterton", "count": 76 },
+    { "club": "St Radegund", "count": 33 },
+    { "club": "Isle of Ely", "count": 24 },
     { "club": "St Neots", "count": 24 },
-    { "club": "Isle of Ely", "count": 22 },
     { "club": "Camb Veterans", "count": 13 },
     { "club": "Coopers & Lybrand", "count": 8 },
     { "club": "Leckhampton", "count": 8 },
@@ -39,11 +39,12 @@
     { "club": "Ionica", "count": 1 },
     { "club": "Domino", "count": 1 },
     { "club": "St Ives/Ely", "count": 1 },
-    { "club": "Camb Vets", "count": 1 }
+    { "club": "Camb Vets", "count": 1 },
+    { "club": "Peregrines", "count": 1 }
   ],
   "headDays": [
-    { "club": "City", "days": 66 },
-    { "club": "Cantabs", "days": 34 },
+    { "club": "City", "days": 69 },
+    { "club": "Cantabs", "days": 35 },
     { "club": "99", "days": 31 },
     { "club": "Rob Roy", "days": 23 },
     { "club": "X-Press", "days": 9 }
@@ -56,13 +57,13 @@
     { "club": "X-Press", "days": 9, "span": "1998 - 2000" }
   ],
   "bladesAwarded": [
-    { "club": "Cantabs", "count": 35 },
-    { "club": "City", "count": 28 },
+    { "club": "Cantabs", "count": 36 },
+    { "club": "City", "count": 31 },
     { "club": "99", "count": 24 },
     { "club": "Rob Roy", "count": 18 },
-    { "club": "X-Press", "count": 13 },
+    { "club": "X-Press", "count": 14 },
     { "club": "Champs", "count": 8 },
-    { "club": "Chesterton", "count": 4 },
+    { "club": "Chesterton", "count": 5 },
     { "club": "Coopers & Lybrand", "count": 1 },
     { "club": "Lady Somerset", "count": 1 },
     { "club": "Leckhampton", "count": 1 },

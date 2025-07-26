@@ -1,22 +1,22 @@
 {
   "headships": [
     { "club": "Rob Roy", "headships": 30, "lastYear": "2014" },
-    { "club": "City", "headships": 19, "lastYear": "2024" },
+    { "club": "City", "headships": 20, "lastYear": "2025" },
     { "club": "99", "headships": 15, "lastYear": "2022" },
     { "club": "Cantabs", "headships": 11, "lastYear": "2021" },
     { "club": "Albert Institute", "headships": 1, "lastYear": "1869" }
   ],
   "crewsEntered": [
-    { "club": "Cantabs", "count": 574 },
-    { "club": "99", "count": 493 },
-    { "club": "City", "count": 463 },
+    { "club": "Cantabs", "count": 586 },
+    { "club": "99", "count": 505 },
+    { "club": "City", "count": 480 },
     { "club": "Rob Roy", "count": 361 },
-    { "club": "Champs", "count": 289 },
-    { "club": "X-Press", "count": 283 },
-    { "club": "Chesterton", "count": 133 },
+    { "club": "Champs", "count": 297 },
+    { "club": "X-Press", "count": 288 },
+    { "club": "Chesterton", "count": 137 },
     { "club": "Scouts", "count": 85 },
-    { "club": "St Radegund", "count": 52 },
-    { "club": "St Neots", "count": 38 },
+    { "club": "St Radegund", "count": 54 },
+    { "club": "St Neots", "count": 40 },
     { "club": "Churchill", "count": 31 },
     { "club": "St Ives", "count": 31 },
     { "club": "Telephones", "count": 30 },
@@ -91,6 +91,7 @@
     { "club": "Touche Ross", "count": 2 },
     { "club": "Ionica", "count": 2 },
     { "club": "Sharks", "count": 2 },
+    { "club": "Camb Vets", "count": 2 },
     { "club": "Church of England Young Men's Society", "count": 1 },
     { "club": "Young Men's Christian Association", "count": 1 },
     { "club": "Hero", "count": 1 },
@@ -125,12 +126,11 @@
     { "club": "Pineapple Chunks", "count": 1 },
     { "club": "Cam Cable", "count": 1 },
     { "club": "Applied Psychology", "count": 1 },
-    { "club": "Strangeways Lab", "count": 1 },
-    { "club": "Camb Vets", "count": 1 }
+    { "club": "Strangeways Lab", "count": 1 }
   ],
   "headDays": [
     { "club": "Rob Roy", "days": 120 },
-    { "club": "City", "days": 77 },
+    { "club": "City", "days": 81 },
     { "club": "99", "days": 56 },
     { "club": "Cantabs", "days": 45 },
     { "club": "Albert Institute", "days": 5 },
@@ -145,10 +145,10 @@
     { "club": "United College Servants", "days": 2, "span": "1868" }
   ],
   "bladesAwarded": [
-    { "club": "City", "count": 65 },
+    { "club": "City", "count": 67 },
     { "club": "Rob Roy", "count": 52 },
+    { "club": "Cantabs", "count": 44 },
     { "club": "99", "count": 41 },
-    { "club": "Cantabs", "count": 41 },
     { "club": "Champs", "count": 23 },
     { "club": "X-Press", "count": 17 },
     { "club": "Chesterton", "count": 8 },
