@@ -39,7 +39,7 @@ export default async function Home({ params }: Props) {
 
   return (
     <div className="w-full mb-4">
-      <div className="" style={{ width: `${data.length * 96}px` }}>
+      <div className="px-10" style={{ width: `${data.length * 96}px` }}>
         <BumpsChart data={data} />
       </div>
     </div>
