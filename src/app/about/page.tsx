@@ -12,7 +12,7 @@ import image_1 from "./images/motorway-bridge.jpg";
 import willow from "./images/willow.jpg";
 
 export const metadata: Metadata = {
-  title: `What's it all about?`,
+  title: `Bumps explained`,
   description: `Bumps races are unique rowing races where crews aim to ‘bump’ the boat ahead due to the river’s narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the ‘Head of the River’ title by leading the top division at week’s end.`,
 };
 
@@ -23,7 +23,7 @@ export default function About() {
         <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-lg tracking-tight">
           <div className="pt-4">
             <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
-              What&rsquo;s it all about?
+              Bumps explained
             </h1>
           </div>
           <div className="pb-12 pt-8">

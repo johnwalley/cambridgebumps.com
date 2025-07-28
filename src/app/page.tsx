@@ -28,9 +28,9 @@ export default function Home() {
           </Link>
           <Link
             href="/about"
-            className={cn(buttonVariants({ variant: "outline" }))}
+            className={cn(buttonVariants({ variant: "ghost" }))}
           >
-            What&apos;s it all about?
+            Bumps explained
           </Link>
         </PageActions>
       </PageHeader>

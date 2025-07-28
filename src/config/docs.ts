@@ -18,7 +18,7 @@ export const docsConfig: DocsConfig = {
       requiresEventGender: true,
     },
     {
-      title: "What's it all about?",
+      title: "Bumps explained",
       href: "/about",
     },
     {
