@@ -13,7 +13,10 @@ import willow from "./images/willow.jpg";
 
 export const metadata: Metadata = {
   title: `Bumps explained`,
-  description: `Bumps races are unique rowing races where crews aim to ‘bump’ the boat ahead due to the river’s narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the ‘Head of the River’ title by leading the top division at week’s end.`,
+  description: `Bumps races are unique rowing races where crews aim to 'bump' the boat ahead due to the river's narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the 'Head of the River' title by leading the top division at week's end.`,
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function About() {
@@ -127,8 +130,10 @@ export default function About() {
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     In Cambridge, if you&apos;re new to Bumps, I would recommend{" "}
                     <a
-                      className="dark:text-white"
+                      className="underline dark:text-white"
                       href="https://www.theploughfenditton.co.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       The Plough
                     </a>{" "}
@@ -145,8 +150,10 @@ export default function About() {
                     Absolutely! For historical results, especially multi-year,
                     Tim Granger&apos;s{" "}
                     <a
-                      className="dark:text-white"
+                      className="underline dark:text-white"
                       href="http://www.mcshane.org/bumps/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Bumps charts
                     </a>{" "}
@@ -155,8 +162,10 @@ export default function About() {
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     For everything Oxford bumps-related, Anu Dudhia&apos;s{" "}
                     <a
-                      className="dark:text-white"
+                      className="underline dark:text-white"
                       href="http://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Oxford Bumps Charts
                     </a>{" "}
@@ -165,13 +174,20 @@ export default function About() {
                   <p className="leading-7 [&:not(:first-child)]:mt-6">
                     For live updates during the races, check out{" "}
                     <a
-                      className="dark:text-white"
+                      className="underline dark:text-white"
                       href="https://bumps.camfm.co.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Cam FM
                     </a>{" "}
                     and{" "}
-                    <a className="dark:text-white" href="https://bumps.live/">
+                    <a
+                      className="underline dark:text-white"
+                      href="https://bumps.live/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Oxford Bumps
                     </a>
                     .

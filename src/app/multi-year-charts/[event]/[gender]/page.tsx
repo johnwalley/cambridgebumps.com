@@ -15,10 +15,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     (a, b) => +a.year - +b.year
   );
 
+  const eventName = set[event as keyof typeof set];
+  const genderName = genderMap[gender as keyof typeof genderMap];
+  const yearRange = `${data[0].year}-${data[data.length - 1].year}`;
+
   return {
-    title: `Multi-year chart - ${set[event as keyof typeof set]} - ${
-      genderMap[gender as keyof typeof genderMap]
-    } - ${data[0].year}-${data[data.length - 1].year}`,
+    title: `${eventName} ${yearRange} - ${genderName} - Multi-year Chart`,
+    description: `Historical bumps chart for ${eventName} (${genderName}) from ${data[0].year} to ${data[data.length - 1].year}. Track club and college positions across ${data.length} years of racing.`,
+    alternates: {
+      canonical: `/multi-year-charts/${event}/${gender}`,
+    },
   };
 }
 

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     title: `${process.env.NEXT_PUBLIC_TITLE} Bumps - Rowing Race Charts & Statistics`,
     description: `Interactive bumps charts and historical results for ${process.env.NEXT_PUBLIC_TITLE} rowing races. View race results, track your college or club, and explore statistics from over 200 years of bumps racing.`,
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

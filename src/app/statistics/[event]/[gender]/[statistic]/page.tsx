@@ -22,10 +22,16 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender, statistic } = await params;
 
+  const eventName = set[event as keyof typeof set];
+  const genderName = genderMap[gender as keyof typeof genderMap];
+  const statisticLabel = statisticMapping[statistic].label;
+
   return {
-    title: `${statisticMapping[statistic].label} - ${set[event as keyof typeof set]} - ${
-      genderMap[gender as keyof typeof genderMap]
-    }`,
+    title: `${statisticLabel} - ${eventName} - ${genderName}`,
+    description: `${statisticLabel} rankings for ${eventName} (${genderName}). See which clubs and colleges top the historical records.`,
+    alternates: {
+      canonical: `/statistics/${event}/${gender}/${statistic}`,
+    },
   };
 }
 

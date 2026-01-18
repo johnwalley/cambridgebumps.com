@@ -59,10 +59,15 @@ const CLUB_STATISTICS = Object.keys(statisticMapping);
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
 
+  const eventName = set[event as keyof typeof set];
+  const genderName = genderMap[gender as keyof typeof genderMap];
+
   return {
-    title: `Statistics - ${set[event as keyof typeof set]} - ${
-      genderMap[gender as keyof typeof genderMap]
-    } `,
+    title: `${eventName} Statistics - ${genderName}`,
+    description: `Statistics for ${eventName} (${genderName}): headships, total days at head, blades awarded, and crews entered. Historical data and records.`,
+    alternates: {
+      canonical: `/statistics/${event}/${gender}`,
+    },
   };
 }
 
