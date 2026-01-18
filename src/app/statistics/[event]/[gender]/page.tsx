@@ -113,7 +113,7 @@ export default async function Statistics({ params }: Props) {
                         </div>
                       </div>
                       <div className="pt-2 pr-2 pb-2 flex flex-col justify-center">
-                        <Blade club={getCode(data[0].club, event)} size={140} />
+                        <Blade club={getCode(data[0].club, event) as any} size={140} />
                       </div>
                     </div>
                   </li>
@@ -127,7 +127,7 @@ export default async function Statistics({ params }: Props) {
                           {i + 2}
                         </div>
                         <div className="mr-4">
-                          <Blade club={getCode(d.club, event)} size={48} />
+                          <Blade club={getCode(d.club, event) as any} size={48} />
                         </div>
                         <div className="flex flex-col">
                           <div className="font-bold text-base">

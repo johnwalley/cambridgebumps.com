@@ -26,6 +26,7 @@ function PageHeaderHeading({
 }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h1
+      data-nosnippet
       className={cn(
         "text-center text-3xl font-semibold leading-tight md:text-4xl lg:leading-[1.1]",
         className
@@ -56,6 +57,7 @@ function PageActions({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
+      data-nosnippet
       className={cn(
         "flex w-full items-center justify-center space-x-4 py-4 md:pb-10",
         className

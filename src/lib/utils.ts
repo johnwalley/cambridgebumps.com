@@ -27,8 +27,8 @@ export const genders = ["men", "women"] as const;
 export type Gender = (typeof genders)[number];
 
 export function getCode(club: string, set: Set) {
-  let names;
-  let abbr;
+  let names: Record<string, string>;
+  let abbr: Record<string, string>;
 
   switch (set) {
     case "mays":

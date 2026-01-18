@@ -59,14 +59,13 @@ export default async function Statistics({ params }: Props) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {data.map((row: any, index: number) => (
+            {data.map((row: any, index: number) => {
+              const clubCode = getCode(row[statisticMapping[statistic].key], event);
+              return (
               <TableRow key={row[statisticMapping[statistic].key]}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell className="font-medium flex flex-row gap-2 items-center">
-                  <Blade
-                    club={getCode(row[statisticMapping[statistic].key], event)}
-                    size={32}
-                  />
+                  {clubCode && <Blade club={clubCode as any} size={32} />}
                   {row[statisticMapping[statistic].key]}
                 </TableCell>
                 <TableCell className="text-right">
@@ -78,7 +77,8 @@ export default async function Statistics({ params }: Props) {
                   </TableCell>
                 )}
               </TableRow>
-            ))}
+              );
+            })}
           </TableBody>
         </Table>
       </div>

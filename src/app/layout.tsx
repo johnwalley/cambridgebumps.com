@@ -17,6 +17,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.BASE_URL || "https://www.cambridgebumps.com"
+  ),
   formatDetection: {
     telephone: false,
     date: false,
@@ -26,9 +29,10 @@ export const metadata: Metadata = {
   other: { chrome: "nointentdetection" },
   title: {
     template: `%s | ${process.env.NEXT_PUBLIC_TITLE} Bumps`,
-    default: `${process.env.NEXT_PUBLIC_TITLE} Bumps`, // a default is required when creating a template
+    default: `${process.env.NEXT_PUBLIC_TITLE} Bumps`,
   },
-  description: "Bumps charts, statistics, and more.",
+  description:
+    "Interactive charts and historical results for Cambridge and Oxford bumps rowing races. Explore May Bumps, Lent Bumps, Summer Eights, and Torpids from 1815 to today.",
   keywords: [
     "Bumps",
     "rowing",
@@ -47,6 +51,15 @@ export const metadata: Metadata = {
     },
   ],
   creator: "John Walley",
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: `${process.env.NEXT_PUBLIC_TITLE} Bumps`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@johnmwalley",
+  },
 };
 
 export default function RootLayout({
