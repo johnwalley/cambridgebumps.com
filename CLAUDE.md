@@ -32,10 +32,10 @@ npm run lint
 
 The site switches between Cambridge and Oxford configurations using environment variables:
 
-- `.env.cambridge` - Sets `NEXT_PUBLIC_TITLE=Cambridge` and `BASE_URL=https://www.cambridgebumps.com`
-- `.env.oxford` - Sets `NEXT_PUBLIC_TITLE=Oxford` and `BASE_URL=https://www.oxfordbumps.com`
+- `.env.cambridge` - Sets `NEXT_PUBLIC_TITLE=Cambridge`, `BASE_URL=https://www.cambridgebumps.com`, and `NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG`
+- `.env.oxford` - Sets `NEXT_PUBLIC_TITLE=Oxford`, `BASE_URL=https://www.oxfordbumps.com`, and `NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG`
 
-These control the site title, analytics tag, and base URL throughout the application.
+These control the site title, Google Analytics tag, and base URL throughout the application.
 
 ## Architecture
 
@@ -46,7 +46,8 @@ The app uses Next.js 15's App Router with a route structure based on rowing even
 - `/` - Home page
 - `/charts/[event]/[gender]/[year]` - Single-year bumps charts
 - `/multi-year-charts/[event]/[gender]` - Multi-year bumps charts
-- `/statistics/[event]/[gender]/[statistic]` - Statistics pages
+- `/statistics/[event]/[gender]` - Statistics overview
+- `/statistics/[event]/[gender]/[statistic]` - Individual statistics pages
 - `/about` - Bumps racing explanation
 - `/vocabulary` - Rowing terminology
 
@@ -70,13 +71,17 @@ The app is primarily statically generated:
 
 ### Data Organization
 
-Results data is structured as:
+Results and statistics data is structured as:
 ```
-src/data/results/
-├── [event]/
-│   ├── men/
-│   └── women/
-└── results.json (summary of available years)
+src/data/
+├── results/
+│   ├── [event]/
+│   │   ├── men/
+│   │   └── women/
+│   └── results.json (summary of available years)
+├── stats/                (pre-computed statistics)
+src/app/charts/data/
+└── results.json          (duplicate summary used by chart routes)
 ```
 
 Each event directory contains TypeScript files that export race results for specific years.
@@ -87,8 +92,15 @@ Each event directory contains TypeScript files that export race results for spec
 - `src/components/multi-year-bumps-chart.tsx` - Multi-year chart visualization
 - `src/components/events-nav.tsx` - Event/gender navigation
 - `src/components/site-header.tsx` - Main site header with navigation
+- `src/components/site-footer.tsx` - Site footer
+- `src/components/main-nav.tsx` - Desktop navigation
+- `src/components/mobile-nav.tsx` - Mobile navigation
 - `src/components/year-picker.tsx` - Year selection component
+- `src/components/mode-toggle.tsx` - Dark/light theme toggle
+- `src/components/photos.tsx` - Photo display
 - `src/components/ui/` - shadcn/ui components (Radix UI primitives)
+- `src/app/charts/components/` - Chart-specific blades/spoons sub-components
+- `src/app/multi-year-charts/components/` - Multi-year chart-specific sub-components
 
 ### Utilities
 
@@ -103,16 +115,28 @@ Each event directory contains TypeScript files that export race results for spec
 
 Charts support URL search parameters:
 - `?club=<clubname>` - Highlights a specific club in the chart
-- `?blades=true` - Shows blades (awarded for going Head of the River)
-- `?spoons=true` - Shows spoons (awarded for finishing last)
+- `?blades=true` - Shows blades (awarded for bumping up every day of the event)
+- `?spoons=true` - Shows spoons (awarded for being bumped down every day of the event)
 
 The bumps chart component uses `useSearchParams()` to read these and applies highlighting dynamically.
+
+### SEO
+
+- `src/app/robots.ts` - Dynamic robots.txt generation
+- `src/app/sitemap.ts` - Dynamic sitemap generation
+- Google Analytics via `@next/third-parties/google` in the root layout
+
+### Fonts
+
+- Geist Sans and Geist Mono loaded as local fonts from `src/app/fonts/`
+- Roboto Flex loaded for bumps chart rendering
 
 ## Key Dependencies
 
 - `react-bumps-chart` - Core bumps chart visualization library
 - `react-rowing-blades` - Club blade/colors rendering
 - `bumps-results-tools` - Results data processing utilities
+- `@next/third-parties` - Google Analytics integration
 - `next-themes` - Dark mode support
 - Radix UI components via shadcn/ui for accessible UI primitives
 
