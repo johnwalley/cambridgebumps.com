@@ -12,7 +12,7 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 
 ## Tech Stack
 
-- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Framework**: [Next.js 16](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Components**: [Radix UI](https://www.radix-ui.com/) & [shadcn/ui](https://ui.shadcn.com/)
 - **Charts**: [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart)

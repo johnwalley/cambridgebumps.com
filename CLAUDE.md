@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a Next.js 15 application that displays bumps charts, statistics, and historical data for Cambridge and Oxford rowing races. The app uses the App Router architecture and is built with TypeScript, Tailwind CSS, and Radix UI components.
+This is a Next.js 16 application that displays bumps charts, statistics, and historical data for Cambridge and Oxford rowing races. The app uses the App Router architecture and is built with TypeScript, Tailwind CSS, and Radix UI components.
 
 The application serves two different sites from a single codebase:
 - **cambridgebumps.com** - Cambridge rowing events (Lents, Mays, Town)
