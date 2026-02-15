@@ -16,16 +16,16 @@ Configuration is controlled via environment variables in `.env.cambridge` and `.
 
 ```bash
 # Development server (with Turbopack)
-npm run dev
+pnpm dev
 
 # Production build
-npm run build
+pnpm build
 
 # Start production server
-npm start
+pnpm start
 
 # Lint code
-npm run lint
+pnpm lint
 ```
 
 ## Environment Configuration

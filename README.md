@@ -23,8 +23,8 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18+
+- [pnpm](https://pnpm.io/)
 
 ### Installation
 
@@ -36,12 +36,12 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Run the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
