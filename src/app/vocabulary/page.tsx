@@ -91,7 +91,7 @@ export default function About() {
               {faqs.map((faq) => (
                 <Fragment key={faq.question}>
                   <dt>
-                    <h3 className="font-semibold">{faq.question}</h3>
+                    <h2 className="font-semibold">{faq.question}</h2>
                   </dt>
                   <dd>
                     <p className="text-sm">{faq.answer}</p>

@@ -88,7 +88,9 @@ export function YearPicker({
             <>
               <div className="bg-gradient-to-r from-white dark:from-black w-24 absolute left-0 top-0 right-auto h-full pointer-events-none"></div>
               <button
-                className="absolute right-auto left-0 bottom-1/2 translate-y-1/2 h-full w-[24px]"
+                type="button"
+                aria-label="Scroll left"
+                className="absolute right-auto left-0 bottom-1/2 translate-y-1/2 h-full w-[24px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded"
                 onClick={() => {
                   const e = ref.current;
 
@@ -116,7 +118,9 @@ export function YearPicker({
             <>
               <div className="bg-gradient-to-l from-white dark:from-black w-24 absolute right-0 top-0 left-auto h-full pointer-events-none"></div>
               <button
-                className="absolute left-auto right-0 bottom-1/2 translate-y-1/2 h-full w-[24px]"
+                type="button"
+                aria-label="Scroll right"
+                className="absolute left-auto right-0 bottom-1/2 translate-y-1/2 h-full w-[24px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded"
                 onClick={() => {
                   const e = ref.current;
 

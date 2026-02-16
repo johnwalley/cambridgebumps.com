@@ -24,7 +24,7 @@ export const Spoons = () => {
   return (
     <>
       <Checkbox
-        id="terms1"
+        id="spoons"
         checked={searchParams.get("spoons") === "true"}
         onCheckedChange={(checked) => {
           router.push(
@@ -36,7 +36,7 @@ export const Spoons = () => {
       />
       <div className="grid gap-1.5 leading-none">
         <label
-          htmlFor="terms1"
+          htmlFor="spoons"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
           Highlight spoons

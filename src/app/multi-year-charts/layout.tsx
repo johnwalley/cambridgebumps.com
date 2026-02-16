@@ -119,7 +119,7 @@ function Layout({
                 router.push(`/multi-year-charts/${value}/${segments[1]}`);
               }}
             >
-              <SelectTrigger className="w-[280px]">
+              <SelectTrigger id="event" className="w-[280px]">
                 <SelectValue placeholder="Select an event" />
               </SelectTrigger>
               <SelectContent>
@@ -163,7 +163,7 @@ function Layout({
             </Suspense>
           </div>
           <div>
-            <Label htmlFor="event" className="mb-4 block">Highlight club</Label>
+            <Label htmlFor="highlight-club" className="mb-4 block">Highlight club</Label>
             <div className="flex">
               <Select
                 value={searchParams.get("club") ?? ""}
@@ -175,7 +175,7 @@ function Layout({
                   );
                 }}
               >
-                <SelectTrigger className="w-[280px]">
+                <SelectTrigger id="highlight-club" className="w-[280px]">
                   <SelectValue placeholder="Select a club" />
                 </SelectTrigger>
                 <SelectContent>

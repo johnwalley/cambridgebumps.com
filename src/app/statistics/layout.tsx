@@ -44,7 +44,7 @@ export default function Statistics({ children }: PropsWithChildren) {
                   );
                 }}
               >
-                <SelectTrigger className="w-[280px]">
+                <SelectTrigger id="event" className="w-[280px]">
                   <SelectValue placeholder="Select an event" />
                 </SelectTrigger>
                 <SelectContent>
@@ -88,7 +88,7 @@ export default function Statistics({ children }: PropsWithChildren) {
             </div>
             {segments[2] && (
               <div>
-                <Label htmlFor="event" className="mb-4 block">Statistic</Label>
+                <Label htmlFor="statistic" className="mb-4 block">Statistic</Label>
                 <Select
                   value={segments[2]}
                   onValueChange={(value) => {
@@ -97,7 +97,7 @@ export default function Statistics({ children }: PropsWithChildren) {
                     );
                   }}
                 >
-                  <SelectTrigger className="w-[280px]">
+                  <SelectTrigger id="statistic" className="w-[280px]">
                     <SelectValue placeholder="Select a statistic" />
                   </SelectTrigger>
                   <SelectContent>

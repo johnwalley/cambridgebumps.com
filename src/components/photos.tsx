@@ -8,6 +8,14 @@ import clsx from "clsx";
 
 import Image from "next/image";
 
+const images = [
+  { src: image1, alt: "A bump taking place during a bumps race" },
+  { src: image2, alt: "Rowing crews racing under a bridge" },
+  { src: image3, alt: "May Bumps 2025 racing on the River Cam" },
+  { src: image5, alt: "The cannon used to start bumps races" },
+  { src: image4, alt: "Crews rowing past willow trees on the river" },
+];
+
 export function Photos() {
   let rotations = [
     "rotate-2",
@@ -19,17 +27,17 @@ export function Photos() {
 
   return (
     <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 sm:-ml-8 sm:-mr-8 sm:w-[calc(100%+4rem)] -ml-4 -mr-4 w-[calc(100%+2rem)] ">
-      {[image1, image2, image3, image5, image4].map((image, imageIndex) => (
+      {images.map((image, imageIndex) => (
         <div
-          key={image.src}
+          key={image.src.src}
           className={clsx(
             "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800",
             rotations[imageIndex % rotations.length]
           )}
         >
           <Image
-            src={image}
-            alt=""
+            src={image.src}
+            alt={image.alt}
             sizes="(min-width: 640px) 18rem, 11rem"
             className="absolute inset-0 h-full w-full object-cover"
           />
