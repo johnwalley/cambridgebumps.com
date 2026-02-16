@@ -135,8 +135,8 @@ function Layout({
               </SelectGroup>
             </SelectContent>
           </Select>
-          <div className="space-y-3">
-            <Label htmlFor="gender">Gender</Label>
+          <div>
+            <Label htmlFor="gender" className="mb-4 block">Gender</Label>
             <RadioGroup
               id="gender"
               className="flex flex-col space-y-1"

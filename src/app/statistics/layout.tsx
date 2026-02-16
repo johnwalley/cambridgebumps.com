@@ -62,8 +62,8 @@ export default function Statistics({ children }: PropsWithChildren) {
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-3">
-              <Label htmlFor="gender">Gender</Label>
+            <div>
+              <Label htmlFor="gender" className="mb-4 block">Gender</Label>
               <RadioGroup
                 id="gender"
                 className="flex flex-row space-x-1 items-center"
