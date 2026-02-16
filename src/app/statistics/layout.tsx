@@ -33,7 +33,7 @@ export default function Statistics({ children }: PropsWithChildren) {
           </div>
           <div className="flex flex-col gap-2 mb-4 md:flex-row md:gap-4">
             <div>
-              <Label htmlFor="event">Event</Label>
+              <Label htmlFor="event" className="mb-4 block">Event</Label>
               <Select
                 value={segments[0]}
                 onValueChange={(value) => {
@@ -88,7 +88,7 @@ export default function Statistics({ children }: PropsWithChildren) {
             </div>
             {segments[2] && (
               <div>
-                <Label htmlFor="event">Statistic</Label>
+                <Label htmlFor="event" className="mb-4 block">Statistic</Label>
                 <Select
                   value={segments[2]}
                   onValueChange={(value) => {

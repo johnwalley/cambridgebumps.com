@@ -145,30 +145,32 @@ function Layout({
       </div>
       <div className="hidden lg:block order-2 border-l py-4">
         <div className="flex flex-col space-y-3 px-4">
-          <Label htmlFor="event">Event</Label>
-          <Select
-            value={segments[0]}
-            onValueChange={(value) => {
-              router.push(`/charts/${value}/${segments[1]}/${segments[2]}`);
-            }}
-          >
-            <SelectTrigger className="w-[280px]">
-              <SelectValue placeholder="Select an event" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Cambridge</SelectLabel>
-                <SelectItem value="lents">Lent Bumps</SelectItem>
-                <SelectItem value="mays">May Bumps</SelectItem>
-                <SelectItem value="town">Town Bumps</SelectItem>
-              </SelectGroup>
-              <SelectGroup>
-                <SelectLabel>Oxford</SelectLabel>
-                <SelectItem value="torpids">Torpids</SelectItem>
-                <SelectItem value="eights">Summer Eights</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <div>
+            <Label htmlFor="event" className="mb-4 block">Event</Label>
+            <Select
+              value={segments[0]}
+              onValueChange={(value) => {
+                router.push(`/charts/${value}/${segments[1]}/${segments[2]}`);
+              }}
+            >
+              <SelectTrigger className="w-[280px]">
+                <SelectValue placeholder="Select an event" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Cambridge</SelectLabel>
+                  <SelectItem value="lents">Lent Bumps</SelectItem>
+                  <SelectItem value="mays">May Bumps</SelectItem>
+                  <SelectItem value="town">Town Bumps</SelectItem>
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>Oxford</SelectLabel>
+                  <SelectItem value="torpids">Torpids</SelectItem>
+                  <SelectItem value="eights">Summer Eights</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
           <div>
             <Label htmlFor="gender" className="mb-4 block">Gender</Label>
             <RadioGroup
@@ -189,10 +191,10 @@ function Layout({
               </div>
             </RadioGroup>
           </div>
-          <div className="space-y-3">
+          <div>
             <HoverCard openDelay={200}>
               <HoverCardTrigger asChild>
-                <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-4 block">
                   Year
                 </span>
               </HoverCardTrigger>
@@ -227,8 +229,8 @@ function Layout({
               <Blades />
             </Suspense>
           </div>
-          <div className="space-y-3">
-            <Label htmlFor="event">Highlight club</Label>
+          <div>
+            <Label htmlFor="event" className="mb-4 block">Highlight club</Label>
             <div className="flex">
               <Select
                 value={searchParams.get("club") ?? ""}
