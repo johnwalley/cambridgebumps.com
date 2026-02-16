@@ -65,6 +65,10 @@ p a {
   border-bottom: 1px solid var(--primary);
 }
 
+.dark p a {
+  color: #e2e8f0;
+}
+
 @layer base {
   :root {
     --background: hsl(0 0% 100%);
