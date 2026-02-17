@@ -29,13 +29,13 @@
     "react-dom": "19.2.4",
     "react-rowing-blades": "^2.4.2",
     "react-wrap-balancer": "^1.1.1",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.5",
     "tailwind-merge": "^3",
     "tw-animate-css": "^1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^22.10.2",
+    "@types/node": "^24.10.13",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "eslint": "^9",
