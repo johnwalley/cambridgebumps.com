@@ -16,6 +16,8 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
+export const dynamicParams = false;
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.BASE_URL || "https://www.cambridgebumps.com"
