@@ -17,6 +17,8 @@ const geistMono = localFont({
 });
 
 export const dynamicParams = false;
+export const dynamic = 'force-static';
+export const revalidate = false;
 
 export const metadata: Metadata = {
   metadataBase: new URL(
