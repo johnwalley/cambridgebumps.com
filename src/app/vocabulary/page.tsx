@@ -35,6 +35,10 @@ const faqs = [
 On the next day, the two will switch places in the starting order.`,
   },
   {
+    question: "Conceding",
+    answer: "When a crew acknowledges they have been caught and the cox raises a hand to signal the bump.",
+  },
+  {
     question: "Division",
     answer: `Racing is split into divisions. For example, in May Bumps there are 17 crews per division.
     
@@ -43,6 +47,10 @@ This is done for most large rowing events to accomodate a larger number of crews
   {
     question: "Head of the River",
     answer: `The crew who finishes top of the first division after the last day of racing is complete.`,
+  },
+  {
+    question: "Marshalling",
+    answer: "The process of lining crews up at the start before racing begins.",
   },
   {
     question: "Over-bump",
@@ -64,7 +72,7 @@ This is done for most large rowing events to accomodate a larger number of crews
     question: "Torpids",
     answer: `Torpids is one of two bumps races held annually by Oxford University around the start of March. 
     
-    The rules around bumping are unusual in that once a bump has taken place, the crew whose boat was bumped has to continue racing (and is liable to be bumped again) whilst the bumping crew moves to the side. This can lead to a crew moving down several places during a day's racing`,
+    The rules around bumping are unusual in that once a bump has taken place, the crew whose boat was bumped has to continue racing (and is liable to be bumped again) whilst the bumping crew moves to the side. This can lead to a crew moving down several places during a day's racing.`,
   },
 ];
 
