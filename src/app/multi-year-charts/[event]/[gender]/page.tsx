@@ -1,4 +1,4 @@
-import { events, genderMap, genders, set } from "@/lib/utils";
+import { events, genderMap, genders, getEventContext, set } from "@/lib/utils";
 
 import BumpsChart from "@/components/multi-year-bumps-chart";
 import { Metadata } from "next";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${eventName} ${yearRange} - ${genderName} - Multi-year Chart`,
-    description: `Historical bumps chart for ${eventName} (${genderName}) from ${data[0].year} to ${data[data.length - 1].year}. Track club and college positions across ${data.length} years of racing.`,
+    description: `Historical bumps chart for ${eventName} (${genderName}) from ${data[0].year} to ${data[data.length - 1].year}. Track ${getEventContext(event)} positions across ${data.length} years of racing.`,
     alternates: {
       canonical: `/multi-year-charts/${event}/${gender}`,
     },

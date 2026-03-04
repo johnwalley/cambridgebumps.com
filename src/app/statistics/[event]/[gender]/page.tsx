@@ -4,6 +4,7 @@ import {
   genderMap,
   genders,
   getCode,
+  getEventContext,
   Set,
   set,
 } from "@/lib/utils";
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${eventName} Statistics - ${genderName}`,
-    description: `Statistics for ${eventName} (${genderName}): headships, total days at head, blades awarded, and crews entered. Historical data and records.`,
+    description: `${eventName} statistics (${genderName}): headships, total days at head, blades awarded, and crews entered. Historical ${getEventContext(event)} rowing records.`,
     alternates: {
       canonical: `/statistics/${event}/${gender}`,
     },

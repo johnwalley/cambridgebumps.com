@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { events, genderMap, genders, getCode, set } from "@/lib/utils";
+import { events, genderMap, genders, getCode, getEventContext, set } from "@/lib/utils";
 import { statisticMapping, stats } from "../../../stats";
 
 // @ts-ignore no types
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${statisticLabel} - ${eventName} - ${genderName}`,
-    description: `${statisticLabel} rankings for ${eventName} (${genderName}). See which clubs and colleges top the historical records.`,
+    description: `${statisticLabel} rankings for ${eventName} (${genderName}). See which ${getEventContext(event)} crews top the historical records.`,
     alternates: {
       canonical: `/statistics/${event}/${gender}/${statistic}`,
     },

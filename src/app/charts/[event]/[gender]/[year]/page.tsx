@@ -1,4 +1,4 @@
-import { events, genderMap, genders, set } from "@/lib/utils";
+import { events, genderMap, genders, getEventContext, set } from "@/lib/utils";
 
 import BumpsChart from "@/components/bumps-chart";
 import { Metadata } from "next";
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${eventName} ${year} - ${genderName}`,
-    description: `Bumps chart for ${eventName} ${year} (${genderName}). View race results, positions, and bumps for all crews.`,
+    description: `${eventName} ${year} bumps chart (${genderName}). View race results, daily positions, and bumps for all ${getEventContext(event)} crews.`,
     alternates: {
       canonical: `/charts/${event}/${gender}/${year}`,
     },

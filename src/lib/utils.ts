@@ -26,6 +26,21 @@ export type Set = (typeof events)[number];
 export const genders = ["men", "women"] as const;
 export type Gender = (typeof genders)[number];
 
+export function getEventContext(event: Set | string): string {
+  switch (event) {
+    case "lents":
+    case "mays":
+      return "Cambridge college";
+    case "eights":
+    case "torpids":
+      return "Oxford college";
+    case "town":
+      return "town rowing club";
+    default:
+      return "college";
+  }
+}
+
 export function getCode(club: string, set: Set) {
   let names: Record<string, string>;
   let abbr: Record<string, string>;
