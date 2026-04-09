@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import results from "./charts/data/results.json";
 
+export const dynamic = "force-static";
+
 const BASE_URL = process.env.BASE_URL;
 
 const events = ["eights", "lents", "mays", "torpids", "town"] as const;
