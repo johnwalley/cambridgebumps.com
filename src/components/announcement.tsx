@@ -10,8 +10,9 @@ export function Announcement() {
     >
       <BellIcon className="h-4 w-4" />
       <Separator className="mx-2 h-4" orientation="vertical" />{" "}
-      <span>Lent Bumps 2026</span>
+      <span>Summer Eights 2026</span>
       <ArrowRightIcon className="ml-1 h-4 w-4" />
     </Link>
   );
 }
+  
