@@ -1,7 +1,10 @@
+const title = process.env.NEXT_PUBLIC_TITLE || "Cambridge";
+const baseUrl = process.env.BASE_URL || "https://www.cambridgebumps.com";
+
 export const siteConfig = {
-  name: `${process.env.NEXT_PUBLIC_TITLE} Bumps` || "Cambridge Bumps",
-  url: process.env.BASE_URL || "https://www.cambridgebumps.com",
-  ogImage: `${process.env.BASE_URL}/og.jpg` || "https://www.cambridgebumps.com/og.jpg",
+  name: `${title} Bumps`,
+  url: baseUrl,
+  ogImage: `${baseUrl}/og.jpg`,
   description:
     "Bumps charts, statistics, and more.",
   links: {

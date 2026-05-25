@@ -24,12 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Home({ params }: Props) {
+export default async function ChartPage({ params }: Props) {
   const { event, gender, year } = await params;
 
-  const data = results[event][gender]
-    .filter((result) => +result.year >= +year)
-    .filter((result) => +result.year <= +year)[0];
+  const data = results[event][gender].find((result) => +result.year === +year);
 
   if (!data || data.crews.length === 0) {
     return (

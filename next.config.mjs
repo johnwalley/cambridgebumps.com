@@ -5,6 +5,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // NOTE: `redirects()` is NOT applied by `output: "export"` — Next.js emits a
+  // build warning and the static export ignores these. They only take effect in
+  // `next dev` / `next start`. Production redirects must be configured at the host
+  // (e.g. Cloudflare/Netlify). The hardcoded default year below (2025) is likewise
+  // dev-only and goes stale each season; keep it in sync with the host config.
   redirects() {
     return [
       {

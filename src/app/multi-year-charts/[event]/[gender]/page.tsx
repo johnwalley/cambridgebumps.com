@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { results } from "../../data/results";
 
 type Props = {
-  params: Promise<{ event: string; gender: string; year: string }>;
+  params: Promise<{ event: string; gender: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -28,18 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/* const BumpsChart = dynamic(() => import("@/components/bumps-chart"), {
-  ssr: true,
-}); */
-
-export default async function Home({ params }: Props) {
+export default async function MultiYearChartPage({ params }: Props) {
   const { event, gender } = await params;
 
   const data = results[event as any][gender as any].sort(
     (a, b) => +a.year - +b.year
   );
 
-  if (!data) {
+  if (data.length === 0) {
     return <div className="text-center mb-4">We have no results to show</div>;
   }
 
