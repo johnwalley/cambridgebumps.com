@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "gen:redirects": "node scripts/generate-vercel-redirects.mjs"
   },
   "type": "module",
   "dependencies": {

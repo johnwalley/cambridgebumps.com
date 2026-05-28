@@ -14,7 +14,6 @@ import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 
 import { Label } from "@/components/ui/label";
 import { PropsWithChildren } from "react";
-// @ts-ignore no types
 import { statisticMapping } from "./stats";
 
 export default function Statistics({ children }: PropsWithChildren) {

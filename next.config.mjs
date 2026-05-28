@@ -1,134 +1,19 @@
+import { buildRedirects } from "./scripts/redirects.mjs";
+
 /** @type {import('next').NextConfig} */
+
+// Redirects are defined once in `scripts/redirects.mjs`. In production they're
+// applied at the host via `vercel.json` (run `pnpm gen:redirects` to update it),
+// because `output: "export"` ignores `redirects()` and Next.js warns if it's set.
+// In `next dev` there's no export, so we attach them here for local development.
+const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig = {
   output: "export",
   images: {
     unoptimized: true,
   },
-  // NOTE: `redirects()` is NOT applied by `output: "export"` — Next.js emits a
-  // build warning and the static export ignores these. They only take effect in
-  // `next dev` / `next start`. Production redirects must be configured at the host
-  // (e.g. Cloudflare/Netlify). The hardcoded default year below (2025) is likewise
-  // dev-only and goes stale each season; keep it in sync with the host config.
-  redirects() {
-    return [
-      {
-        source: "/statistics",
-        destination: "/statistics/town/men",
-        permanent: false,
-      },
-      {
-        source: "/statistics/:event",
-        destination: "/statistics/:event/men",
-        permanent: false,
-      },
-      {
-        source: "/charts",
-        destination: "/charts/town/men/2025",
-        permanent: false,
-      },
-      {
-        source: "/charts/:event",
-        destination: "/charts/:event/men/2025",
-        permanent: false,
-      },
-      {
-        source: "/charts/:event/:gender",
-        destination: "/charts/:event/:gender/2025",
-        permanent: false,
-      },
-      {
-        source: "/multi-year-charts",
-        destination: "/multi-year-charts/town/men",
-        permanent: false,
-      },
-      {
-        source: "/multi-year-charts/:event",
-        destination: "/multi-year-charts/:event/men",
-        permanent: false,
-      },
-      {
-        source: "/latest",
-        destination: "/charts",
-        permanent: false,
-      },
-      {
-        source: "/latest/:event",
-        destination: "/charts/:event",
-        permanent: false,
-      },
-      {
-        source: "/latest/:event/:gender",
-        destination: "/charts/:event/:gender",
-        permanent: false,
-      },
-      {
-        source: "/history",
-        destination: "/charts",
-        permanent: false,
-      },
-      {
-        source: "/history/:event",
-        destination: "/charts/:event",
-        permanent: false,
-      },
-      {
-        source: "/history/:event/:gender",
-        destination: "/charts/:event/:gender",
-        permanent: false,
-      },
-      {
-        source: "/eights/men",
-        destination: "/charts/eights/men",
-        permanent: true,
-      },
-      {
-        source: "/eights/women",
-        destination: "/charts/eights/women",
-        permanent: true,
-      },
-      {
-        source: "/lents/men",
-        destination: "/charts/lents/men",
-        permanent: true,
-      },
-      {
-        source: "/lents/women",
-        destination: "/charts/lents/women",
-        permanent: true,
-      },
-      {
-        source: "/mays/men",
-        destination: "/charts/mays/men",
-        permanent: true,
-      },
-      {
-        source: "/mays/women",
-        destination: "/charts/mays/women",
-        permanent: true,
-      },
-      {
-        source: "/torpids/men",
-        destination: "/charts/torpids/men",
-        permanent: true,
-      },
-      {
-        source: "/torpids/women",
-        destination: "/charts/torpids/women",
-        permanent: true,
-      },
-      {
-        source: "/town/men",
-        destination: "/charts/town/men",
-        permanent: true,
-      },
-      {
-        source: "/town/women",
-        destination: "/charts/town/women",
-        permanent: true,
-      },
-    ];
-  },
+  ...(isDev ? { redirects: async () => buildRedirects() } : {}),
 };
 
 export default nextConfig;

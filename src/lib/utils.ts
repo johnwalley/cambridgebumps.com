@@ -1,7 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-//@ts-ignore types
-import { abbreviations, shortShortNames } from "react-rowing-blades";
+import { abbreviations, clubs, shortShortNames } from "react-rowing-blades";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -26,6 +25,19 @@ export type Set = (typeof events)[number];
 export const genders = ["men", "women"] as const;
 export type Gender = (typeof genders)[number];
 
+export const isEvent = (x: string): x is Set =>
+  (events as readonly string[]).includes(x);
+
+export const isGender = (x: string): x is Gender =>
+  (genders as readonly string[]).includes(x);
+
+// Shape of the per-event results summary JSON (lists of years by category).
+// Each event has `all`, `split`, `men` and `women` keys, all arrays of year strings.
+export type ResultsSummary = Record<
+  Set,
+  Record<Gender | "all" | "split", string[]>
+>;
+
 export function getEventContext(event: Set | string): string {
   switch (event) {
     case "lents":
@@ -41,7 +53,10 @@ export function getEventContext(event: Set | string): string {
   }
 }
 
-export function getCode(club: string, set: Set) {
+// Union of all valid club codes accepted by react-rowing-blades' <Blade>.
+export type ClubCode = (typeof clubs)[keyof typeof clubs][number];
+
+export function getCode(club: string, set: Set): ClubCode | undefined {
   let names: Record<string, string>;
   let abbr: Record<string, string>;
 
@@ -60,7 +75,7 @@ export function getCode(club: string, set: Set) {
       names = shortShortNames.uk;
       abbr = Object.assign(
         {},
-        ...Object.values(abbreviations.uk).map((x: any) => ({ [x]: x }))
+        ...Object.values(abbreviations.uk).map((x) => ({ [x]: x }))
       );
       break;
     default:
@@ -95,5 +110,5 @@ export function getCode(club: string, set: Set) {
     }
   }
 
-  return code;
+  return code as ClubCode | undefined;
 }

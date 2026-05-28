@@ -10,10 +10,8 @@ import {
 import { events, genderMap, genders, getCode, getEventContext, set } from "@/lib/utils";
 import { statisticMapping, stats } from "../../../stats";
 
-// @ts-ignore no types
 import { Blade } from "react-rowing-blades";
 import { Metadata } from "next";
-import summary from "../../../../charts/data/results.json";
 
 type Props = {
   params: Promise<{ event: Set; gender: Gender; statistic: string }>;
@@ -37,7 +35,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Statistics({ params }: Props) {
   const { event, gender, statistic } = await params;
-  const years = (summary as any)[event][gender];
   const data = stats[event][gender][statistic];
 
   return (
@@ -71,7 +68,7 @@ export default async function Statistics({ params }: Props) {
               <TableRow key={row[statisticMapping[statistic].key]}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell className="font-medium flex flex-row gap-2 items-center">
-                  {clubCode && <Blade club={clubCode as any} size={32} />}
+                  {clubCode && <Blade club={clubCode} size={32} />}
                   {row[statisticMapping[statistic].key]}
                 </TableCell>
                 <TableCell className="text-right">

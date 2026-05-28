@@ -23,7 +23,7 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 24+
 - [pnpm](https://pnpm.io/)
 
 ### Installation

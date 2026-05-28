@@ -38,7 +38,7 @@ function Layout({
 
   const searchParams = useSearchParams();
 
-  const data = results[segments[0] as any][segments[1] as any];
+  const data = results[segments[0]][segments[1]];
 
   const clubs = Array.from(
     new Set(data?.flatMap((event) => event.crews.map((crew) => crew.club)))

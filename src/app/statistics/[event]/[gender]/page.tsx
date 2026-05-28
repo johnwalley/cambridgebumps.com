@@ -12,9 +12,7 @@ import { statisticMapping, stats } from "../../stats";
 
 import { Metadata } from "next";
 import Link from "next/link";
-// @ts-ignore no types
 import { Blade } from "react-rowing-blades";
-import summary from "../../../charts/data/results.json";
 
 function getColor(club: string, event: string) {
   switch (club) {
@@ -75,14 +73,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Statistics({ params }: Props) {
   const { event, gender } = await params;
 
-  const years = (summary as any)[event][gender];
-
   return (
     <div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {CLUB_STATISTICS.map((statistic) => {
           const data = stats[event][gender][statistic];
           const heroColor = getColor(data[0].club, event);
+          const heroClub = getCode(data[0].club, event);
 
           return (
             <div key={statistic} className="mb-4">
@@ -119,11 +116,13 @@ export default async function Statistics({ params }: Props) {
                         </div>
                       </div>
                       <div className="pt-2 pr-2 pb-2 flex flex-col justify-center">
-                        <Blade club={getCode(data[0].club, event) as any} size={140} />
+                        {heroClub && <Blade club={heroClub} size={140} />}
                       </div>
                     </div>
                   </li>
-                  {data.slice(1, 10).map((d: any, i: number) => (
+                  {data.slice(1, 10).map((d: any, i: number) => {
+                    const dClub = getCode(d.club, event);
+                    return (
                     <li
                       key={i}
                       className="flex items-center relative justify-between pl-3 pr-2 py-2"
@@ -133,7 +132,7 @@ export default async function Statistics({ params }: Props) {
                           {i + 2}
                         </div>
                         <div className="mr-4">
-                          <Blade club={getCode(d.club, event) as any} size={48} />
+                          {dClub && <Blade club={dClub} size={48} />}
                         </div>
                         <div className="flex flex-col">
                           <div className="font-bold text-base">
@@ -150,7 +149,8 @@ export default async function Statistics({ params }: Props) {
                         {d[statisticMapping[statistic].value]}
                       </div>
                     </li>
-                  ))}
+                    );
+                  })}
                   <div className="flex items-center justify-center py-2 px-2">
                     <Link href={`/statistics/${event}/${gender}/${statistic}`}>
                       View full list

@@ -1,7 +1,17 @@
-import { events, genderMap, genders, getEventContext, set } from "@/lib/utils";
+import {
+  events,
+  genderMap,
+  genders,
+  getEventContext,
+  isEvent,
+  isGender,
+  type ResultsSummary,
+  set,
+} from "@/lib/utils";
 
 import BumpsChart from "@/components/bumps-chart";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { results } from "../../../data/results";
 import summary from "../../../data/results.json";
 
@@ -27,6 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ChartPage({ params }: Props) {
   const { event, gender, year } = await params;
 
+  if (!isEvent(event) || !isGender(gender)) {
+    notFound();
+  }
+
   const data = results[event][gender].find((result) => +result.year === +year);
 
   if (!data || data.crews.length === 0) {
@@ -49,7 +63,7 @@ export default async function ChartPage({ params }: Props) {
 export async function generateStaticParams() {
   const paths = events.flatMap((event) =>
     genders.flatMap((gender) =>
-      (summary as any)[event][gender].map((year: string) => ({
+      (summary as ResultsSummary)[event][gender].map((year) => ({
         event,
         gender,
         year,

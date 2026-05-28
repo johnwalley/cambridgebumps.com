@@ -1,7 +1,16 @@
-import { events, genderMap, genders, getEventContext, set } from "@/lib/utils";
+import {
+  events,
+  genderMap,
+  genders,
+  getEventContext,
+  isEvent,
+  isGender,
+  set,
+} from "@/lib/utils";
 
 import BumpsChart from "@/components/multi-year-bumps-chart";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { results } from "../../data/results";
 
 type Props = {
@@ -11,9 +20,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
 
-  const data = results[event as any][gender as any].sort(
-    (a, b) => +a.year - +b.year
-  );
+  const data = results[event][gender].sort((a, b) => +a.year - +b.year);
 
   const eventName = set[event as keyof typeof set];
   const genderName = genderMap[gender as keyof typeof genderMap];
@@ -31,9 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function MultiYearChartPage({ params }: Props) {
   const { event, gender } = await params;
 
-  const data = results[event as any][gender as any].sort(
-    (a, b) => +a.year - +b.year
-  );
+  if (!isEvent(event) || !isGender(gender)) {
+    notFound();
+  }
+
+  const data = results[event][gender].sort((a, b) => +a.year - +b.year);
 
   if (data.length === 0) {
     return <div className="text-center mb-4">We have no results to show</div>;

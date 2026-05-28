@@ -41,7 +41,7 @@ These control the site title, Google Analytics tag, and base URL throughout the 
 
 ### App Router Structure
 
-The app uses Next.js 15's App Router with a route structure based on rowing events:
+The app uses Next.js 16's App Router with a route structure based on rowing events:
 
 - `/` - Home page
 - `/charts/[event]/[gender]/[year]` - Single-year bumps charts

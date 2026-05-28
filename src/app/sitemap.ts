@@ -1,12 +1,11 @@
 import { MetadataRoute } from "next";
+import { events, genders, type ResultsSummary } from "@/lib/utils";
 import results from "./charts/data/results.json";
 
 export const dynamic = "force-static";
 
 const BASE_URL = process.env.BASE_URL;
 
-const events = ["eights", "lents", "mays", "torpids", "town"] as const;
-const genders = ["men", "women"] as const;
 const statistics = [
   "headships",
   "headDays",
@@ -40,8 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Generate chart page URLs for each event/gender/year
   const chartPages: MetadataRoute.Sitemap = events.flatMap((event) =>
     genders.flatMap((gender) => {
-      const years = (results as any)[event]?.[gender] || [];
-      return years.map((year: string) => ({
+      const years = (results as ResultsSummary)[event][gender];
+      return years.map((year) => ({
         url: `${BASE_URL}/charts/${event}/${gender}/${year}`,
         lastModified: new Date(),
         changeFrequency: "yearly" as const,

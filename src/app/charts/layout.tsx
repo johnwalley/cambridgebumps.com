@@ -34,7 +34,13 @@ import { Blades } from "./components/blades";
 import { results } from "./data/results";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import { genderMap, set } from "@/lib/utils";
+import {
+  genderMap,
+  set,
+  type Gender,
+  type ResultsSummary,
+  type Set,
+} from "@/lib/utils";
 
 function Layout({
   children,
@@ -47,11 +53,13 @@ function Layout({
 
   const searchParams = useSearchParams();
 
-  const years: string[] = (summary as any)[segments[0]][segments[1]];
+  const years: string[] = (summary as ResultsSummary)[segments[0] as Set][
+    segments[1] as Gender
+  ];
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
-  const data = results[segments[0] as any][segments[1] as any]
+  const data = results[segments[0]][segments[1]]
     .filter((result) => +result.year >= +segments[2])
     .filter((result) => +result.year <= +segments[2])[0];
 

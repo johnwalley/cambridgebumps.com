@@ -36,7 +36,7 @@ export const Blades = () => {
       />
       <div className="grid gap-1.5 leading-none">
         <label
-          htmlFor="terms1"
+          htmlFor="blades"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
           Highlight blades
