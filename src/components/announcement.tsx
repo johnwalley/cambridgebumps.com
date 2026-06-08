@@ -5,12 +5,12 @@ import Link from "next/link";
 export function Announcement() {
   return (
     <Link
-      href="/charts/eights/women/2026"
+      href="/charts/mays/women/2026"
       className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
     >
       <BellIcon className="h-4 w-4" />
       <Separator className="mx-2 h-4" orientation="vertical" />{" "}
-      <span>Summer Eights 2026</span>
+      <span>May Bumps 2026</span>
       <ArrowRightIcon className="ml-1 h-4 w-4" />
     </Link>
   );
