@@ -39,6 +39,7 @@ export function Photos() {
             src={image.src}
             alt={image.alt}
             sizes="(min-width: 640px) 18rem, 11rem"
+            priority
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
