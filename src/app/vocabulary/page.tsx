@@ -1,23 +1,4 @@
-import { Icons } from "@/components/icons";
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
-import { Fragment } from "react";
 
 const faqs = [
   {
@@ -36,12 +17,13 @@ On the next day, the two will switch places in the starting order.`,
   },
   {
     question: "Conceding",
-    answer: "When a crew acknowledges they have been caught and the cox raises a hand to signal the bump.",
+    answer:
+      "When a crew acknowledges they have been caught and the cox raises a hand to signal the bump.",
   },
   {
     question: "Division",
     answer: `Racing is split into divisions. For example, in May Bumps there are 17 crews per division.
-    
+
 This is done for most large rowing events to accomodate a larger number of crews than would otherwise be possible to have on the river at once.`,
   },
   {
@@ -70,9 +52,9 @@ This is done for most large rowing events to accomodate a larger number of crews
   },
   {
     question: "Torpids",
-    answer: `Torpids is one of two bumps races held annually by Oxford University around the start of March. 
-    
-    The rules around bumping are unusual in that once a bump has taken place, the crew whose boat was bumped has to continue racing (and is liable to be bumped again) whilst the bumping crew moves to the side. This can lead to a crew moving down several places during a day's racing.`,
+    answer: `Torpids is one of two bumps races held annually by Oxford University around the start of March.
+
+The rules around bumping are unusual in that once a bump has taken place, the crew whose boat was bumped has to continue racing (and is liable to be bumped again) whilst the bumping crew moves to the side. This can lead to a crew moving down several places during a day's racing.`,
   },
 ];
 
@@ -86,25 +68,26 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="container relative">
+    <div className="relative container">
       <section>
-        <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-lg tracking-tight">
+        <div className="mx-auto px-4 text-lg tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
           <div className="pt-4">
             <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
               Vocabulary
             </h1>
           </div>
-          <div className="pb-12 pt-8">
-            <dl className="mt-2 space-y-2">
+          <div className="pt-8 pb-12">
+            <dl className="divide-y divide-border border-t border-border">
               {faqs.map((faq) => (
-                <Fragment key={faq.question}>
-                  <dt>
-                    <h2 className="font-semibold">{faq.question}</h2>
-                  </dt>
-                  <dd>
-                    <p className="text-sm">{faq.answer}</p>
+                <div
+                  key={faq.question}
+                  className="grid gap-1 py-5 sm:grid-cols-[12rem_1fr] sm:gap-6"
+                >
+                  <dt className="text-base font-semibold">{faq.question}</dt>
+                  <dd className="text-base leading-7 whitespace-pre-line text-muted-foreground">
+                    {faq.answer}
                   </dd>
-                </Fragment>
+                </div>
               ))}
             </dl>
           </div>

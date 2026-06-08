@@ -75,7 +75,7 @@ export default async function Statistics({ params }: Props) {
 
   return (
     <div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {CLUB_STATISTICS.map((statistic) => {
           const data = stats[event][gender][statistic];
           const heroColor = getColor(data[0].club, event);
@@ -83,10 +83,10 @@ export default async function Statistics({ params }: Props) {
 
           return (
             <div key={statistic} className="mb-4">
-              <h2 className="font-bold text-2xl mb-2">
+              <h2 className="mb-2 text-2xl font-bold">
                 {statisticMapping[statistic].label}
               </h2>
-              <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
+              <div className="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
                 <ul className="divide-y divide-neutral-200 dark:divide-neutral-700">
                   <li
                     className="h-40"
@@ -98,8 +98,8 @@ export default async function Statistics({ params }: Props) {
                       }% ${heroColor.l + 20}%))`,
                     }}
                   >
-                    <div className="flex justify-between h-full">
-                      <div className="flex flex-col justify-between text-white px-4 py-2 h-full">
+                    <div className="flex h-full justify-between">
+                      <div className="flex h-full flex-col justify-between px-4 py-2 text-white">
                         <div>
                           <div className="text-sm font-bold">1</div>
                           <div className="font-bold">
@@ -115,7 +115,7 @@ export default async function Statistics({ params }: Props) {
                           {data[0][statisticMapping[statistic].value]}
                         </div>
                       </div>
-                      <div className="pt-2 pr-2 pb-2 flex flex-col justify-center">
+                      <div className="flex flex-col justify-center pt-2 pr-2 pb-2">
                         {heroClub && <Blade club={heroClub} size={140} />}
                       </div>
                     </div>
@@ -123,35 +123,35 @@ export default async function Statistics({ params }: Props) {
                   {data.slice(1, 10).map((d: any, i: number) => {
                     const dClub = getCode(d.club, event);
                     return (
-                    <li
-                      key={i}
-                      className="flex items-center relative justify-between pl-3 pr-2 py-2"
-                    >
-                      <div className="flex items-center">
-                        <div className="mr-2 font-bold text-sm min-w-4">
-                          {i + 2}
-                        </div>
-                        <div className="mr-4">
-                          {dClub && <Blade club={dClub} size={48} />}
-                        </div>
-                        <div className="flex flex-col">
-                          <div className="font-bold text-base">
-                            {d[statisticMapping[statistic].key]}
+                      <li
+                        key={i}
+                        className="relative flex items-center justify-between py-2 pr-2 pl-3"
+                      >
+                        <div className="flex items-center">
+                          <div className="mr-2 min-w-4 text-sm font-bold">
+                            {i + 2}
                           </div>
-                          <div className="text-sm">
-                            {statisticMapping[statistic].additional
-                              ? d[statisticMapping[statistic].additional]
-                              : "\u00A0"}
+                          <div className="mr-4">
+                            {dClub && <Blade club={dClub} size={48} />}
+                          </div>
+                          <div className="flex flex-col">
+                            <div className="text-base font-bold">
+                              {d[statisticMapping[statistic].key]}
+                            </div>
+                            <div className="text-sm">
+                              {statisticMapping[statistic].additional
+                                ? d[statisticMapping[statistic].additional]
+                                : "\u00A0"}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="font-bold text-lg">
-                        {d[statisticMapping[statistic].value]}
-                      </div>
-                    </li>
+                        <div className="text-lg font-bold">
+                          {d[statisticMapping[statistic].value]}
+                        </div>
+                      </li>
                     );
                   })}
-                  <div className="flex items-center justify-center py-2 px-2">
+                  <div className="flex items-center justify-center px-2 py-2">
                     <Link href={`/statistics/${event}/${gender}/${statistic}`}>
                       View full list
                     </Link>
@@ -171,7 +171,7 @@ export async function generateStaticParams() {
     genders.flatMap((gender) => ({
       event,
       gender,
-    }))
+    })),
   );
 
   return paths;

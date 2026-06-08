@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Next.js 16 application that displays bumps charts, statistics, and historical data for Cambridge and Oxford rowing races. The app uses the App Router architecture and is built with TypeScript, Tailwind CSS, and Radix UI components.
 
 The application serves two different sites from a single codebase:
+
 - **cambridgebumps.com** - Cambridge rowing events (Lents, Mays, Town)
 - **oxfordbumps.com** - Oxford rowing events (Eights, Torpids)
 
@@ -52,6 +53,7 @@ The app uses Next.js 16's App Router with a route structure based on rowing even
 - `/vocabulary` - Rowing terminology
 
 **Route Parameters:**
+
 - `[event]` - One of: `eights`, `torpids`, `lents`, `mays`, `town`
 - `[gender]` - Either `men` or `women`
 - `[year]` - Historical year (e.g., `2025`, `1887`)
@@ -59,6 +61,7 @@ The app uses Next.js 16's App Router with a route structure based on rowing even
 ### Static Site Generation
 
 The app is primarily statically generated:
+
 - Charts and statistics use `generateStaticParams()` to pre-render all valid event/gender/year combinations at build time
 - Results data is stored in JSON format in `src/data/results/` organized by event
 - The results summary in `src/app/charts/data/results.json` lists all available years for each event/gender combination
@@ -72,6 +75,7 @@ The app is primarily statically generated:
 ### Data Organization
 
 Results and statistics data is structured as:
+
 ```
 src/data/
 ├── results/
@@ -105,6 +109,7 @@ Each event directory contains TypeScript files that export race results for spec
 ### Utilities
 
 `src/lib/utils.ts` contains:
+
 - `cn()` - Tailwind class name merger using clsx and tailwind-merge
 - `set` - Mapping of event keys to display names (e.g., `mays` → "May Bumps")
 - `genderMap` - Gender key to display name mapping
@@ -114,6 +119,7 @@ Each event directory contains TypeScript files that export race results for spec
 ### Client-Side Features
 
 Charts support URL search parameters:
+
 - `?club=<clubname>` - Highlights a specific club in the chart
 - `?blades=true` - Shows blades (awarded for bumping up every day of the event)
 - `?spoons=true` - Shows spoons (awarded for being bumped down every day of the event)

@@ -29,12 +29,14 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/johnwalley/cambridgebumps.com.git
    cd cambridgebumps.com
    ```
 
 2. Install dependencies:
+
    ```bash
    pnpm install
    ```

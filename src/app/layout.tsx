@@ -18,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.BASE_URL || "https://www.cambridgebumps.com"
+    process.env.BASE_URL || "https://www.cambridgebumps.com",
   ),
   formatDetection: {
     telephone: false,
@@ -78,12 +78,14 @@ export default function RootLayout({
         >
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-4 focus:text-foreground"
           >
             Skip to main content
           </a>
           <SiteHeader />
-          <main id="main-content" className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           {/* <SiteFooter /> */}
         </ThemeProvider>
       </body>

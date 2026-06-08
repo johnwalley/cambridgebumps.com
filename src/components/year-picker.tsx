@@ -62,7 +62,7 @@ export function YearPicker({
 
   return (
     <section className="relative px-0">
-      <div className="p-0 m-0 border-0">
+      <div className="m-0 border-0 p-0">
         <div className="relative">
           <Tabs
             ref={ref}
@@ -86,11 +86,11 @@ export function YearPicker({
           </Tabs>
           {!left && (
             <>
-              <div className="bg-gradient-to-r from-white dark:from-black w-24 absolute left-0 top-0 right-auto h-full pointer-events-none"></div>
+              <div className="pointer-events-none absolute top-0 right-auto left-0 h-full w-24 bg-gradient-to-r from-white dark:from-black"></div>
               <button
                 type="button"
                 aria-label="Scroll left"
-                className="absolute right-auto left-0 bottom-1/2 translate-y-1/2 h-full w-[24px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded"
+                className="absolute right-auto bottom-1/2 left-0 h-full w-[24px] translate-y-1/2 rounded focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
                 onClick={() => {
                   const e = ref.current;
 
@@ -116,11 +116,11 @@ export function YearPicker({
           )}
           {!right && (
             <>
-              <div className="bg-gradient-to-l from-white dark:from-black w-24 absolute right-0 top-0 left-auto h-full pointer-events-none"></div>
+              <div className="pointer-events-none absolute top-0 right-0 left-auto h-full w-24 bg-gradient-to-l from-white dark:from-black"></div>
               <button
                 type="button"
                 aria-label="Scroll right"
-                className="absolute left-auto right-0 bottom-1/2 translate-y-1/2 h-full w-[24px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded"
+                className="absolute right-0 bottom-1/2 left-auto h-full w-[24px] translate-y-1/2 rounded focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
                 onClick={() => {
                   const e = ref.current;
 

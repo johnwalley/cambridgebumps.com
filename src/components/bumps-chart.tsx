@@ -21,7 +21,7 @@ export default function BumpsChart({ data }: { data: Event }) {
   const isClient = useSyncExternalStore(
     () => () => {},
     () => true,
-    () => false
+    () => false,
   );
 
   const searchParams = useSearchParams();

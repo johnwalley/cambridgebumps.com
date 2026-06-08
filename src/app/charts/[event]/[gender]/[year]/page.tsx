@@ -45,14 +45,14 @@ export default async function ChartPage({ params }: Props) {
 
   if (!data || data.crews.length === 0) {
     return (
-      <div className="text-center mb-4">
+      <div className="mb-4 text-center">
         We have no results to show for this year
       </div>
     );
   }
 
   return (
-    <div className="w-full flex flex-col items-center mb-4">
+    <div className="mb-4 flex w-full flex-col items-center">
       <div className="w-full max-w-[520px]">
         <BumpsChart data={data} />
       </div>
@@ -67,8 +67,8 @@ export async function generateStaticParams() {
         event,
         gender,
         year,
-      }))
-    )
+      })),
+    ),
   );
 
   return paths;

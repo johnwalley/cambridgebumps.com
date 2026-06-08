@@ -22,24 +22,26 @@ export default function Statistics({ children }: PropsWithChildren) {
   const segments = useSelectedLayoutSegments();
 
   return (
-    <div className="container relative">
+    <div className="relative container">
       <section>
-        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-lg tracking-tight">
+        <div className="mx-auto px-4 text-lg tracking-tight sm:px-6 md:px-8 lg:px-12">
           <div className="pt-4">
-            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight mb-4">
+            <h1 className="mb-4 scroll-m-20 text-4xl font-bold tracking-tight">
               Statistics
             </h1>
           </div>
-          <div className="flex flex-col gap-2 mb-4 md:flex-row md:gap-4">
+          <div className="mb-4 flex flex-col gap-2 md:flex-row md:gap-4">
             <div>
-              <Label htmlFor="event" className="mb-4 block">Event</Label>
+              <Label htmlFor="event" className="mb-4 block">
+                Event
+              </Label>
               <Select
                 value={segments[0]}
                 onValueChange={(value) => {
                   router.push(
                     segments[2]
                       ? `/statistics/${value}/${segments[1]}/${segments[2]}`
-                      : `/statistics/${value}/${segments[1]}`
+                      : `/statistics/${value}/${segments[1]}`,
                   );
                 }}
               >
@@ -62,16 +64,18 @@ export default function Statistics({ children }: PropsWithChildren) {
               </Select>
             </div>
             <div>
-              <Label htmlFor="gender" className="mb-4 block">Gender</Label>
+              <Label htmlFor="gender" className="mb-4 block">
+                Gender
+              </Label>
               <RadioGroup
                 id="gender"
-                className="flex flex-row space-x-1 items-center"
+                className="flex flex-row items-center space-x-1"
                 value={segments[1]}
                 onValueChange={(value) => {
                   router.push(
                     segments[2]
                       ? `/statistics/${segments[0]}/${value}/${segments[2]}`
-                      : `/statistics/${segments[0]}/${value}`
+                      : `/statistics/${segments[0]}/${value}`,
                   );
                 }}
               >
@@ -87,12 +91,14 @@ export default function Statistics({ children }: PropsWithChildren) {
             </div>
             {segments[2] && (
               <div>
-                <Label htmlFor="statistic" className="mb-4 block">Statistic</Label>
+                <Label htmlFor="statistic" className="mb-4 block">
+                  Statistic
+                </Label>
                 <Select
                   value={segments[2]}
                   onValueChange={(value) => {
                     router.push(
-                      `/statistics/${segments[0]}/${segments[1]}/${value}`
+                      `/statistics/${segments[0]}/${segments[1]}/${value}`,
                     );
                   }}
                 >

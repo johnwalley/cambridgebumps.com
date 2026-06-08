@@ -5,8 +5,7 @@ export const siteConfig = {
   name: `${title} Bumps`,
   url: baseUrl,
   ogImage: `${baseUrl}/og.jpg`,
-  description:
-    "Bumps charts, statistics, and more.",
+  description: "Bumps charts, statistics, and more.",
   links: {
     website: "https://www.walley.org.uk",
     twitter: "https://twitter.com/johnmwalley",

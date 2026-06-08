@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "yearly" as const,
         priority: 0.7,
       }));
-    })
+    }),
   );
 
   // Generate multi-year chart page URLs
@@ -56,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.6,
-    }))
+    })),
   );
 
   // Generate statistics overview pages
@@ -67,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "yearly" as const,
         priority: 0.6,
-      }))
+      })),
   );
 
   // Generate individual statistics pages
@@ -78,8 +78,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "yearly" as const,
         priority: 0.5,
-      }))
-    )
+      })),
+    ),
   );
 
   return [

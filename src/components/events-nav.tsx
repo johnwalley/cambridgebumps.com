@@ -89,7 +89,7 @@ export function EventsNav({ className, ...props }: EventsNavProps) {
                     pathname?.startsWith(event.href) ||
                       (index === 0 && pathname === "/")
                       ? "bg-muted font-medium text-primary"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground",
                   )}
                 >
                   {event.name}

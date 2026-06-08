@@ -64,7 +64,7 @@ function Layout({
     .filter((result) => +result.year <= +segments[2])[0];
 
   const clubs = Array.from(new Set(data?.crews.map((crew) => crew.club))).sort(
-    (a, b) => a.localeCompare(b)
+    (a, b) => a.localeCompare(b),
   );
 
   // Get a new searchParams string by merging the current
@@ -81,12 +81,12 @@ function Layout({
 
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
 
   return (
-    <div className="w-full px-2 mx-auto relative lg:grid items-stretch gap-6 lg:grid-cols-[1fr_400px]">
-      <div className="lg:hidden flex flex-col space-y-2 mt-2 mb-4">
+    <div className="relative mx-auto w-full items-stretch gap-6 px-2 lg:grid lg:grid-cols-[1fr_400px]">
+      <div className="mt-2 mb-4 flex flex-col space-y-2 lg:hidden">
         <EventsNav />
         <Tabs
           value={segments[1]}
@@ -151,10 +151,12 @@ function Layout({
           ))}
         </YearPicker>
       </div>
-      <div className="hidden lg:block order-2 border-l py-4">
+      <div className="order-2 hidden border-l py-4 lg:block">
         <div className="flex flex-col space-y-3 px-4">
           <div>
-            <Label htmlFor="event" className="mb-4 block">Event</Label>
+            <Label htmlFor="event" className="mb-4 block">
+              Event
+            </Label>
             <Select
               value={segments[0]}
               onValueChange={(value) => {
@@ -180,7 +182,9 @@ function Layout({
             </Select>
           </div>
           <div>
-            <Label htmlFor="gender" className="mb-4 block">Gender</Label>
+            <Label htmlFor="gender" className="mb-4 block">
+              Gender
+            </Label>
             <RadioGroup
               id="gender"
               className="flex flex-col space-y-1"
@@ -202,7 +206,7 @@ function Layout({
           <div>
             <HoverCard openDelay={200}>
               <HoverCardTrigger asChild>
-                <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-4 block">
+                <span className="mb-4 block text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                   Year
                 </span>
               </HoverCardTrigger>
@@ -238,7 +242,9 @@ function Layout({
             </Suspense>
           </div>
           <div>
-            <Label htmlFor="highlight-club" className="mb-4 block">Highlight club</Label>
+            <Label htmlFor="highlight-club" className="mb-4 block">
+              Highlight club
+            </Label>
             <div className="flex">
               <Select
                 value={searchParams.get("club") ?? ""}
@@ -246,7 +252,7 @@ function Layout({
                   router.push(
                     `/charts/${segments[0]}/${segments[1]}/${
                       segments[2]
-                    }?${createQueryString("club", value)}`
+                    }?${createQueryString("club", value)}`,
                   );
                 }}
               >
@@ -269,7 +275,7 @@ function Layout({
                   router.push(
                     `/charts/${segments[0]}/${segments[1]}/${
                       segments[2]
-                    }?${createQueryString("club", null)}`
+                    }?${createQueryString("club", null)}`,
                   );
                 }}
               >
@@ -280,13 +286,13 @@ function Layout({
         </div>
       </div>
       <div className="pb-4">
-        <h1 className="scroll-m-20 pt-2 pb-4 text-xl lg:text-3xl font-semibold tracking-tight text-center">{`${
+        <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">{`${
           set[segments[0] as keyof typeof set]
         } - ${genderMap[segments[1] as keyof typeof genderMap]} - ${
           segments[2]
         }`}</h1>
         {segments[0] === "town" && segments[2] === "2025" && (
-          <p className="text-center text-sm pb-2">
+          <p className="pb-2 text-center text-sm">
             Not affiliated with the CRA. For official live results please visit
             the CRA{" "}
             <a

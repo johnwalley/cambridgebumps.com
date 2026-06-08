@@ -50,7 +50,7 @@ export function MainNav() {
             href={buildHref(item)}
             className={cn(
               "transition-colors hover:text-foreground/80",
-              isActive(item) ? "text-foreground" : "text-foreground/60"
+              isActive(item) ? "text-foreground" : "text-foreground/60",
             )}
           >
             {item.title}

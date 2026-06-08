@@ -45,11 +45,11 @@ export default async function MultiYearChartPage({ params }: Props) {
   const data = results[event][gender].sort((a, b) => +a.year - +b.year);
 
   if (data.length === 0) {
-    return <div className="text-center mb-4">We have no results to show</div>;
+    return <div className="mb-4 text-center">We have no results to show</div>;
   }
 
   return (
-    <div className="w-full mb-4">
+    <div className="mb-4 w-full">
       <div className="px-10" style={{ width: `${data.length * 96}px` }}>
         <BumpsChart data={data} />
       </div>
@@ -62,7 +62,7 @@ export async function generateStaticParams() {
     genders.flatMap((gender) => ({
       event,
       gender,
-    }))
+    })),
   );
 
   return paths;

@@ -11,7 +11,6 @@ import stats_torpids_women from "../../data/stats/torpids/women/stats.json";
 import stats_town_men from "../../data/stats/town/men/stats.json";
 import stats_town_women from "../../data/stats/town/women/stats.json";
 
-
 export const statisticMapping: Record<
   string,
   {

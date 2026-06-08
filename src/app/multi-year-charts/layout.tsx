@@ -41,7 +41,7 @@ function Layout({
   const data = results[segments[0]][segments[1]];
 
   const clubs = Array.from(
-    new Set(data?.flatMap((event) => event.crews.map((crew) => crew.club)))
+    new Set(data?.flatMap((event) => event.crews.map((crew) => crew.club))),
   )
     .filter((crew) => crew.length > 0)
     .sort((a, b) => a.localeCompare(b));
@@ -60,12 +60,12 @@ function Layout({
 
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
 
   return (
-    <div className="w-full px-2 mx-auto relative lg:grid items-stretch gap-6 lg:grid-cols-[1fr_400px] h-[calc(100vh-4rem)]">
-      <div className="lg:hidden flex flex-col space-y-2 mt-2 mb-4">
+    <div className="relative mx-auto h-[calc(100vh-4rem)] w-full items-stretch gap-6 px-2 lg:grid lg:grid-cols-[1fr_400px]">
+      <div className="mt-2 mb-4 flex flex-col space-y-2 lg:hidden">
         <MultiYearEventsNav />
         <Tabs
           value={segments[1]}
@@ -109,10 +109,12 @@ function Layout({
           </TabsList>
         </Tabs>
       </div>
-      <div className="hidden lg:block order-2 border-l py-4">
+      <div className="order-2 hidden border-l py-4 lg:block">
         <div className="flex flex-col space-y-3 px-4">
           <div>
-            <Label htmlFor="event" className="mb-4 block">Event</Label>
+            <Label htmlFor="event" className="mb-4 block">
+              Event
+            </Label>
             <Select
               value={segments[0]}
               onValueChange={(value) => {
@@ -138,7 +140,9 @@ function Layout({
             </Select>
           </div>
           <div>
-            <Label htmlFor="gender" className="mb-4 block">Gender</Label>
+            <Label htmlFor="gender" className="mb-4 block">
+              Gender
+            </Label>
             <RadioGroup
               id="gender"
               className="flex flex-col space-y-1"
@@ -163,7 +167,9 @@ function Layout({
             </Suspense>
           </div>
           <div>
-            <Label htmlFor="highlight-club" className="mb-4 block">Highlight club</Label>
+            <Label htmlFor="highlight-club" className="mb-4 block">
+              Highlight club
+            </Label>
             <div className="flex">
               <Select
                 value={searchParams.get("club") ?? ""}
@@ -171,7 +177,7 @@ function Layout({
                   router.push(
                     `/multi-year-charts/${segments[0]}/${
                       segments[1]
-                    }?${createQueryString("club", value)}`
+                    }?${createQueryString("club", value)}`,
                   );
                 }}
               >
@@ -194,7 +200,7 @@ function Layout({
                   router.push(
                     `/multi-year-charts/${segments[0]}/${
                       segments[1]
-                    }?${createQueryString("club", null)}`
+                    }?${createQueryString("club", null)}`,
                   );
                 }}
               >
@@ -204,8 +210,8 @@ function Layout({
           </div>
         </div>
       </div>
-      <div className="flex flex-col h-full overflow-hidden">
-        <h1 className="scroll-m-20 pt-2 pb-4 text-xl lg:text-3xl font-semibold tracking-tight text-center">{`${
+      <div className="flex h-full flex-col overflow-hidden">
+        <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">{`${
           set[segments[0] as keyof typeof set]
         } - ${genderMap[segments[1] as keyof typeof genderMap]}`}</h1>
         <div className="overflow-auto">{children}</div>

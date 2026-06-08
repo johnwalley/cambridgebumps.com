@@ -7,7 +7,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { events, genderMap, genders, getCode, getEventContext, set } from "@/lib/utils";
+import {
+  events,
+  genderMap,
+  genders,
+  getCode,
+  getEventContext,
+  set,
+} from "@/lib/utils";
 import { statisticMapping, stats } from "../../../stats";
 
 import { Blade } from "react-rowing-blades";
@@ -39,7 +46,7 @@ export default async function Statistics({ params }: Props) {
 
   return (
     <div>
-      <h2 className="font-bold text-xl mb-2">
+      <h2 className="mb-2 text-xl font-bold">
         {statisticMapping[statistic].label}
       </h2>
 
@@ -63,23 +70,26 @@ export default async function Statistics({ params }: Props) {
           </TableHeader>
           <TableBody>
             {data.map((row: any, index: number) => {
-              const clubCode = getCode(row[statisticMapping[statistic].key], event);
+              const clubCode = getCode(
+                row[statisticMapping[statistic].key],
+                event,
+              );
               return (
-              <TableRow key={row[statisticMapping[statistic].key]}>
-                <TableCell className="font-medium">{index + 1}</TableCell>
-                <TableCell className="font-medium flex flex-row gap-2 items-center">
-                  {clubCode && <Blade club={clubCode} size={32} />}
-                  {row[statisticMapping[statistic].key]}
-                </TableCell>
-                <TableCell className="text-right">
-                  {row[statisticMapping[statistic].value]}
-                </TableCell>
-                {statisticMapping[statistic].additional && (
-                  <TableCell className="text-right">
-                    {row[statisticMapping[statistic].additional]}
+                <TableRow key={row[statisticMapping[statistic].key]}>
+                  <TableCell className="font-medium">{index + 1}</TableCell>
+                  <TableCell className="flex flex-row items-center gap-2 font-medium">
+                    {clubCode && <Blade club={clubCode} size={32} />}
+                    {row[statisticMapping[statistic].key]}
                   </TableCell>
-                )}
-              </TableRow>
+                  <TableCell className="text-right">
+                    {row[statisticMapping[statistic].value]}
+                  </TableCell>
+                  {statisticMapping[statistic].additional && (
+                    <TableCell className="text-right">
+                      {row[statisticMapping[statistic].additional]}
+                    </TableCell>
+                  )}
+                </TableRow>
               );
             })}
           </TableBody>
@@ -96,8 +106,8 @@ export async function generateStaticParams() {
         event,
         gender,
         statistic,
-      }))
-    )
+      })),
+    ),
   );
 
   return paths;

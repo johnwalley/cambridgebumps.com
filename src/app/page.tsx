@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="container relative">
+    <div className="relative container">
       <PageHeader>
         <Announcement />
         <PageHeaderHeading>

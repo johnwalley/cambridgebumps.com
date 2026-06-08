@@ -11,7 +11,7 @@ function PageHeader({
     <section
       className={cn(
         "mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8",
-        className
+        className,
       )}
       {...props}
     >
@@ -28,8 +28,8 @@ function PageHeaderHeading({
     <h1
       data-nosnippet
       className={cn(
-        "text-center text-3xl font-semibold leading-tight md:text-4xl lg:leading-[1.1]",
-        className
+        "text-center text-3xl leading-tight font-semibold md:text-4xl lg:leading-[1.1]",
+        className,
       )}
       {...props}
     />
@@ -44,7 +44,7 @@ function PageHeaderDescription({
     <Balance
       className={cn(
         "max-w-[750px] text-center text-lg font-light text-foreground",
-        className
+        className,
       )}
       {...props}
     />
@@ -60,7 +60,7 @@ function PageActions({
       data-nosnippet
       className={cn(
         "flex w-full items-center justify-center space-x-4 py-4 md:pb-10",
-        className
+        className,
       )}
       {...props}
     />

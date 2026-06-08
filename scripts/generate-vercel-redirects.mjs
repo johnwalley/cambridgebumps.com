@@ -14,7 +14,10 @@ import { buildRedirects, getDefaultYear } from "./redirects.mjs";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const redirects = buildRedirects();
 
-writeFileSync(join(root, "vercel.json"), JSON.stringify({ redirects }, null, 2) + "\n");
+writeFileSync(
+  join(root, "vercel.json"),
+  JSON.stringify({ redirects }, null, 2) + "\n",
+);
 console.log(
-  `Wrote vercel.json with ${redirects.length} redirects (default year ${getDefaultYear()}).`
+  `Wrote vercel.json with ${redirects.length} redirects (default year ${getDefaultYear()}).`,
 );

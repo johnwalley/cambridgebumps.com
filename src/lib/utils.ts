@@ -75,7 +75,7 @@ export function getCode(club: string, set: Set): ClubCode | undefined {
       names = shortShortNames.uk;
       abbr = Object.assign(
         {},
-        ...Object.values(abbreviations.uk).map((x) => ({ [x]: x }))
+        ...Object.values(abbreviations.uk).map((x) => ({ [x]: x })),
       );
       break;
     default:

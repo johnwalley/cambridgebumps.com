@@ -14,7 +14,10 @@ import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 
 interface MultiYearEventsNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function MultiYearEventsNav({ className, ...props }: MultiYearEventsNavProps) {
+export function MultiYearEventsNav({
+  className,
+  ...props
+}: MultiYearEventsNavProps) {
   const pathname = usePathname();
   const segments = useSelectedLayoutSegments();
   const searchParams = useSearchParams();
@@ -89,7 +92,7 @@ export function MultiYearEventsNav({ className, ...props }: MultiYearEventsNavPr
                     pathname?.startsWith(event.href) ||
                       (index === 0 && pathname === "/")
                       ? "bg-muted font-medium text-primary"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground",
                   )}
                 >
                   {event.name}
