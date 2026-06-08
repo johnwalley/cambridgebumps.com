@@ -1,4 +1,5 @@
 import { buildRedirects } from "./scripts/redirects.mjs";
+import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
 
@@ -10,10 +11,13 @@ const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig = {
   output: "export",
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   images: {
     unoptimized: true,
   },
   ...(isDev ? { redirects: async () => buildRedirects() } : {}),
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

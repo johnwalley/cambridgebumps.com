@@ -1,0 +1,79 @@
+import Image from "next/image";
+import bump from "./images/bump.jpg";
+import image_1 from "./images/motorway-bridge.jpg";
+import willow from "./images/willow.jpg";
+
+export const metadata = {
+  title: `Bumps explained`,
+  description: `Bumps races are unique rowing races where crews aim to 'bump' the boat ahead due to the river's narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the 'Head of the River' title by leading the top division at week's end.`,
+  alternates: {
+    canonical: "/about",
+  },
+};
+
+# Bumps explained
+
+The river in {process.env.NEXT_PUBLIC_TITLE} presents a unique challenge for
+hosting traditional rowing competitions. Its meandering course and limited width
+render standard side-by-side racing impractical. To accommodate the constraints
+of the river and to enable numerous crews to participate, the Bumps races
+emerged. This format, different from conventional regattas, was developed to
+allow a large number of boats to compete in a dynamic and exciting manner,
+turning the river&rsquo;s limitations into a unique aspect of the race.
+
+<Image src={image_1} alt="Multiple boats chasing each other" />
+
+Men and women race separately. Boats are split into multiple divisions. Each
+division has 17-18 boats and crews start 90 feet apart.
+
+The aim of the race is to catch and ‘bump’ the crew in front of you. A bump is
+awarded if the crew in front concedes. And yes, this can require you to actually
+hit the boat in front! Crews that bump one another must pull over to the side to
+allow the crews behind to continue.
+
+<Image src={bump} alt="Crew about to bump another crew" />
+
+Racing takes place over four days with the finishing order at the end of a day
+determining the starting order for the following day. This means that a crew
+which bumps the crew in front will gain their starting position for the next day.
+
+A crew which ends up at the top of their division gets to race again at the
+bottom of the next division on the same day. This crew is known as the sandwich
+boat due to the fact that they are sandwiched between two divisions. The honour
+is double-edged because while you get the opportunity to go up a division you
+also must race twice in one day!
+
+The crew which ends the week at the top of the first division is awarded the
+headship, or head of the river. Due to the nature of Bumps this might not
+necessarily be the fastest crew, but it is always a mighty achievement and well
+deserved.
+
+Crews which achieve a bump are given willow branches to ‘wear’ as they row back
+to their boathouses.
+
+<Image src={willow} alt="Crew who have bumped" />
+
+## FAQ
+
+**Why can&rsquo;t I see the latest results for an event in progress?**
+
+I rely on official and unofficial sources to update first. It is then up to me to
+update this website. I&rsquo;m not always within reach of a computer so sometimes
+it can take up to a day to update.
+
+**This looks fun. Where can I go to watch?**
+
+In Cambridge, if you&rsquo;re new to Bumps, I would recommend
+[The Plough](https://www.theploughfenditton.co.uk/) in Fen Ditton.
+
+**Any other bumps websites you would recommend?**
+
+Absolutely! For historical results, especially multi-year, Tim Granger&rsquo;s
+[Bumps charts](http://www.mcshane.org/bumps/) is a great resource.
+
+For everything Oxford bumps-related, Anu Dudhia&rsquo;s
+[Oxford Bumps Charts](http://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/) is the
+go-to site.
+
+For live updates during the races, check out
+[Cam FM](https://bumps.camfm.co.uk/) and [Oxford Bumps](https://bumps.live/).
