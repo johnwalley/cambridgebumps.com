@@ -13,12 +13,15 @@ import {
   genders,
   getCode,
   getEventContext,
+  isEvent,
+  isGender,
   set,
 } from "@/lib/utils";
 import { statisticMapping, stats } from "../../../stats";
 
 import { Blade } from "react-rowing-blades";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ event: Set; gender: Gender; statistic: string }>;
@@ -27,8 +30,12 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender, statistic } = await params;
 
-  const eventName = set[event as keyof typeof set];
-  const genderName = genderMap[gender as keyof typeof genderMap];
+  if (!isEvent(event) || !isGender(gender) || !(statistic in statisticMapping)) {
+    return {};
+  }
+
+  const eventName = set[event];
+  const genderName = genderMap[gender];
   const statisticLabel = statisticMapping[statistic].label;
 
   return {
@@ -42,6 +49,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Statistics({ params }: Props) {
   const { event, gender, statistic } = await params;
+
+  if (!isEvent(event) || !isGender(gender) || !(statistic in statisticMapping)) {
+    notFound();
+  }
+
   const data = stats[event][gender][statistic];
 
   return (

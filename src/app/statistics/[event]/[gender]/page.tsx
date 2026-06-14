@@ -5,6 +5,8 @@ import {
   genders,
   getCode,
   getEventContext,
+  isEvent,
+  isGender,
   Set,
   set,
 } from "@/lib/utils";
@@ -12,6 +14,7 @@ import { statisticMapping, stats } from "../../stats";
 
 import { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Blade } from "react-rowing-blades";
 
 function getColor(club: string, event: string) {
@@ -58,8 +61,12 @@ const CLUB_STATISTICS = Object.keys(statisticMapping);
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
 
-  const eventName = set[event as keyof typeof set];
-  const genderName = genderMap[gender as keyof typeof genderMap];
+  if (!isEvent(event) || !isGender(gender)) {
+    return {};
+  }
+
+  const eventName = set[event];
+  const genderName = genderMap[gender];
 
   return {
     title: `${eventName} Statistics - ${genderName}`,
@@ -72,6 +79,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Statistics({ params }: Props) {
   const { event, gender } = await params;
+
+  if (!isEvent(event) || !isGender(gender)) {
+    notFound();
+  }
 
   return (
     <div>
