@@ -38,6 +38,23 @@ export type ResultsSummary = Record<
   Record<Gender | "all" | "split", string[]>
 >;
 
+// Some historical mays/men entries store compound year strings such as
+// "1827 February March" (two distinct races held in the same year). The leading
+// 4-digit year is the canonical key used by URLs and the year summary, so match
+// on that: `+"1827 February March"` is NaN, whereas parseInt yields 1827.
+export function yearOf(year: string | number): number {
+  return parseInt(String(year), 10);
+}
+
+// Find the result for a given year, tolerating compound year strings. When a
+// year holds more than one race (the early mays/men years), the first is used.
+export function findResultByYear<T extends { year: string | number }>(
+  results: T[],
+  year: string | number,
+): T | undefined {
+  return results.find((result) => yearOf(result.year) === yearOf(year));
+}
+
 export function getEventContext(event: Set | string): string {
   switch (event) {
     case "lents":

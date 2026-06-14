@@ -1,5 +1,6 @@
 import {
   events,
+  findResultByYear,
   genderMap,
   genders,
   getEventContext,
@@ -30,8 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const hasData =
     isEvent(event) &&
     isGender(gender) &&
-    (results[event][gender].find((result) => +result.year === +year)?.crews
-      .length ?? 0) > 0;
+    (findResultByYear(results[event][gender], year)?.crews.length ?? 0) > 0;
 
   return {
     title: `${eventName} ${year} - ${genderName}`,
@@ -50,7 +50,7 @@ export default async function ChartPage({ params }: Props) {
     notFound();
   }
 
-  const data = results[event][gender].find((result) => +result.year === +year);
+  const data = findResultByYear(results[event][gender], year);
 
   if (!data || data.crews.length === 0) {
     return (

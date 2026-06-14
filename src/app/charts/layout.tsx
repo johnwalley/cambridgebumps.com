@@ -35,6 +35,7 @@ import { results } from "./data/results";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import {
+  findResultByYear,
   genderMap,
   set,
   type Gender,
@@ -59,9 +60,7 @@ function Layout({
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
-  const data = results[segments[0]][segments[1]]
-    .filter((result) => +result.year >= +segments[2])
-    .filter((result) => +result.year <= +segments[2])[0];
+  const data = findResultByYear(results[segments[0]][segments[1]], segments[2]);
 
   const clubs = Array.from(new Set(data?.crews.map((crew) => crew.club))).sort(
     (a, b) => a.localeCompare(b),
