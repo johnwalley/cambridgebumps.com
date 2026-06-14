@@ -4,7 +4,6 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import {
-  usePathname,
   useRouter,
   useSearchParams,
   useSelectedLayoutSegments,
@@ -219,7 +218,7 @@ function Layout({
               focusElement={focusElement}
               position="center"
             >
-              {years.map((year, i) => (
+              {years.map((year) => (
                 <Link
                   key={year}
                   href={

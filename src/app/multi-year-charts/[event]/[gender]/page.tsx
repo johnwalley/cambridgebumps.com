@@ -20,10 +20,18 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender } = await params;
 
-  const data = results[event][gender].sort((a, b) => +a.year - +b.year);
+  if (!isEvent(event) || !isGender(gender)) {
+    return {};
+  }
 
-  const eventName = set[event as keyof typeof set];
-  const genderName = genderMap[gender as keyof typeof genderMap];
+  const data = [...results[event][gender]].sort((a, b) => +a.year - +b.year);
+
+  if (data.length === 0) {
+    return {};
+  }
+
+  const eventName = set[event];
+  const genderName = genderMap[gender];
   const yearRange = `${data[0].year}-${data[data.length - 1].year}`;
 
   return {
@@ -42,7 +50,7 @@ export default async function MultiYearChartPage({ params }: Props) {
     notFound();
   }
 
-  const data = results[event][gender].sort((a, b) => +a.year - +b.year);
+  const data = [...results[event][gender]].sort((a, b) => +a.year - +b.year);
 
   if (data.length === 0) {
     return <div className="mb-4 text-center">We have no results to show</div>;
