@@ -1,8 +1,8 @@
-import image1 from "@/images/bump.jpg";
-import image2 from "@/images/motorway-bridge.jpg";
-import image4 from "@/images/willow.jpg";
-import image3 from "@/images/mays_2025_1.jpg";
-import image5 from "@/images/cannon.jpg";
+import image1 from "@/images/bump.webp";
+import image2 from "@/images/motorway-bridge.webp";
+import image4 from "@/images/mays_2025_2.webp";
+import image3 from "@/images/mays_2025_1.webp";
+import image5 from "@/images/cannon.webp";
 
 import clsx from "clsx";
 
@@ -13,7 +13,7 @@ const images = [
   { src: image2, alt: "Rowing crews racing under a bridge" },
   { src: image3, alt: "May Bumps 2025 racing on the River Cam" },
   { src: image5, alt: "The cannon used to start bumps races" },
-  { src: image4, alt: "Crews rowing past willow trees on the river" },
+  { src: image4, alt: "May Bumps 2025 racing on the River Cam" },
 ];
 
 export function Photos() {
