@@ -6,15 +6,13 @@ import {
   getEventContext,
   isEvent,
   isGender,
-  type ResultsSummary,
   set,
 } from "@/lib/utils";
 
 import BumpsChart from "@/components/bumps-chart";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { results } from "@/data/results";
-import summary from "../../../data/results.json";
+import { results, summary } from "@/data/results";
 
 type Props = {
   params: Promise<{ event: string; gender: string; year: string }>;
@@ -78,7 +76,7 @@ export async function generateStaticParams() {
 
   const paths = events.flatMap((event) =>
     genders.flatMap((gender) => {
-      const years = (summary as ResultsSummary)[event][gender];
+      const years = summary[event][gender];
       const allYears = years.includes(currentYear)
         ? years
         : [...years, currentYear];

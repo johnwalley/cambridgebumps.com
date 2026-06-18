@@ -11,12 +11,16 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 // The bare `/charts` redirect lands on town/men, so the default year is the
-// latest year for which town/men has results.
+// latest year for which town/men has results. Read straight from the source
+// results (the same data the app's summary is derived from) so there's no
+// separate summary file to keep in sync.
 export function getDefaultYear() {
-  const summary = JSON.parse(
-    readFileSync(join(root, "src/app/charts/data/results.json"), "utf8"),
+  const results = JSON.parse(
+    readFileSync(join(root, "src/data/results/town/men/results.json"), "utf8"),
   );
-  return Math.max(...summary.town.men.map(Number));
+  // Years may be compound strings such as "1827 February March"; the leading
+  // 4-digit year is canonical.
+  return Math.max(...results.map((r) => Number(String(r.year).split(" ")[0])));
 }
 
 const EVENTS = ["eights", "lents", "mays", "torpids", "town"];

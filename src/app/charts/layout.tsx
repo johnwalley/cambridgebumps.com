@@ -22,7 +22,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import Link from "next/link";
 import { EventsNav } from "@/components/events-nav";
-import summary from "./data/results.json";
+import { results, summary } from "@/data/results";
 import {
   HoverCard,
   HoverCardContent,
@@ -30,7 +30,6 @@ import {
 } from "@/components/ui/hover-card";
 import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
-import { results } from "@/data/results";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import {
@@ -38,7 +37,6 @@ import {
   genderMap,
   set,
   type Gender,
-  type ResultsSummary,
   type Set,
 } from "@/lib/utils";
 
@@ -53,9 +51,7 @@ function Layout({
 
   const searchParams = useSearchParams();
 
-  const years: string[] = (summary as ResultsSummary)[segments[0] as Set][
-    segments[1] as Gender
-  ];
+  const years: string[] = summary[segments[0] as Set][segments[1] as Gender];
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
