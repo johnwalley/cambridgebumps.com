@@ -1,10 +1,10 @@
 import {
   events,
   type Gender,
-  genderMap,
   genders,
   getCode,
   getEventContext,
+  getGenderLabel,
   isEvent,
   isGender,
   Set,
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const eventName = set[event];
-  const genderName = genderMap[gender];
+  const genderName = getGenderLabel(event, gender);
 
   return {
     title: `${eventName} Statistics - ${genderName}`,

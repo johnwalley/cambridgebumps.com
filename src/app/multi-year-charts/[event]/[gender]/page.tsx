@@ -1,8 +1,8 @@
 import {
   events,
-  genderMap,
   genders,
   getEventContext,
+  getGenderLabel,
   isEvent,
   isGender,
   set,
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const eventName = set[event];
-  const genderName = genderMap[gender];
+  const genderName = getGenderLabel(event, gender);
   const yearRange = `${data[0].year}-${data[data.length - 1].year}`;
 
   return {

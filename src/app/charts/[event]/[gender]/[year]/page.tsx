@@ -1,9 +1,9 @@
 import {
   events,
   findResultByYear,
-  genderMap,
   genders,
   getEventContext,
+  getGenderLabel,
   isEvent,
   isGender,
   set,
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { event, gender, year } = await params;
 
   const eventName = set[event as keyof typeof set];
-  const genderName = genderMap[gender as keyof typeof genderMap];
+  const genderName = getGenderLabel(event, gender);
 
   // Pages pre-generated for a year with no results yet (see
   // generateStaticParams) shouldn't be indexed as thin content.

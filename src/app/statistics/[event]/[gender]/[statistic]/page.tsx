@@ -9,10 +9,10 @@ import {
 } from "@/components/ui/table";
 import {
   events,
-  genderMap,
   genders,
   getCode,
   getEventContext,
+  getGenderLabel,
   isEvent,
   isGender,
   set,
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const eventName = set[event];
-  const genderName = genderMap[gender];
+  const genderName = getGenderLabel(event, gender);
   const statisticLabel = statisticMapping[statistic].label;
 
   return {

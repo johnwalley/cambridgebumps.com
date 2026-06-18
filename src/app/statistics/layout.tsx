@@ -14,6 +14,7 @@ import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 
 import { Label } from "@/components/ui/label";
 import { PropsWithChildren } from "react";
+import { getGenderLabel } from "@/lib/utils";
 import { statisticMapping } from "./stats";
 
 export default function Statistics({ children }: PropsWithChildren) {
@@ -65,7 +66,7 @@ export default function Statistics({ children }: PropsWithChildren) {
             </div>
             <div>
               <Label htmlFor="gender" className="mb-4 block">
-                Gender
+                Category
               </Label>
               <RadioGroup
                 id="gender"
@@ -81,7 +82,7 @@ export default function Statistics({ children }: PropsWithChildren) {
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="men" id="men" />
-                  <Label htmlFor="men">Men</Label>
+                  <Label htmlFor="men">{getGenderLabel(segments[0], "men")}</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="women" id="women" />

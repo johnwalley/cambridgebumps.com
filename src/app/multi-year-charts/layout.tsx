@@ -25,7 +25,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
 import { results } from "@/data/results";
-import { genderMap, set } from "@/lib/utils";
+import { getGenderLabel, set } from "@/lib/utils";
 
 function Layout({
   children,
@@ -86,7 +86,7 @@ function Layout({
                     : `/multi-year-charts/${segments[0]}/men`
                 }
               >
-                Men
+                {getGenderLabel(segments[0], "men")}
               </Link>
             </TabsTrigger>
             <TabsTrigger
@@ -141,7 +141,7 @@ function Layout({
           </div>
           <div>
             <Label htmlFor="gender" className="mb-4 block">
-              Gender
+              Category
             </Label>
             <RadioGroup
               id="gender"
@@ -153,7 +153,7 @@ function Layout({
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="men" id="men" />
-                <Label htmlFor="men">Men</Label>
+                <Label htmlFor="men">{getGenderLabel(segments[0], "men")}</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="women" id="women" />
@@ -213,7 +213,7 @@ function Layout({
       <div className="flex h-full flex-col overflow-hidden">
         <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">{`${
           set[segments[0] as keyof typeof set]
-        } - ${genderMap[segments[1] as keyof typeof genderMap]}`}</h1>
+        } - ${getGenderLabel(segments[0], segments[1])}`}</h1>
         <div className="overflow-auto">{children}</div>
       </div>
     </div>

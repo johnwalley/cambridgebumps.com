@@ -19,6 +19,21 @@ export const genderMap: Record<Gender, string> = {
   women: "Women",
 };
 
+// Events whose men's category is now branded "Open" (the Cambridge events).
+const openEvents = new Set<Set>(["lents", "mays", "town"]);
+
+// Display label for a category, event-aware. The men's category of the
+// Cambridge events (Lents, Mays, Town) is now branded "Open"; everything else
+// (Oxford men's, all women's) keeps its genderMap label. Note this is a
+// display-only concern — the URL slug stays "men".
+export function getGenderLabel(
+  event: Set | string,
+  gender: Gender | string,
+): string {
+  if (gender === "men" && openEvents.has(event as Set)) return "Open";
+  return genderMap[gender as Gender];
+}
+
 export const events = ["eights", "lents", "mays", "torpids", "town"] as const;
 export type Set = (typeof events)[number];
 

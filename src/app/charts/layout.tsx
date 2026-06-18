@@ -34,7 +34,7 @@ import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import {
   findResultByYear,
-  genderMap,
+  getGenderLabel,
   set,
   type Gender,
   type Set,
@@ -101,7 +101,7 @@ function Layout({
                     : `/charts/${segments[0]}/men/${segments[2]}`
                 }
               >
-                Men
+                {getGenderLabel(segments[0], "men")}
               </Link>
             </TabsTrigger>
             <TabsTrigger
@@ -177,7 +177,7 @@ function Layout({
           </div>
           <div>
             <Label htmlFor="gender" className="mb-4 block">
-              Gender
+              Category
             </Label>
             <RadioGroup
               id="gender"
@@ -189,7 +189,7 @@ function Layout({
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="men" id="men" />
-                <Label htmlFor="men">Men</Label>
+                <Label htmlFor="men">{getGenderLabel(segments[0], "men")}</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="women" id="women" />
@@ -282,7 +282,7 @@ function Layout({
       <div className="pb-4">
         <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">{`${
           set[segments[0] as keyof typeof set]
-        } - ${genderMap[segments[1] as keyof typeof genderMap]} - ${
+        } - ${getGenderLabel(segments[0], segments[1])} - ${
           segments[2]
         }`}</h1>
         {segments[0] === "town" && segments[2] === "2025" && (
