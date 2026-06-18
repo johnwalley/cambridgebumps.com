@@ -13,7 +13,7 @@ import {
 import BumpsChart from "@/components/bumps-chart";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { results } from "../../../data/results";
+import { results } from "@/data/results";
 import summary from "../../../data/results.json";
 
 type Props = {

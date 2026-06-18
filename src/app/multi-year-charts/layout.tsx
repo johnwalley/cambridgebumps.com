@@ -24,7 +24,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
-import { results } from "./data/results";
+import { results } from "@/data/results";
 import { genderMap, set } from "@/lib/utils";
 
 function Layout({

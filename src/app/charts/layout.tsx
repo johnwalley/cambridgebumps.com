@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/hover-card";
 import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
-import { results } from "./data/results";
+import { results } from "@/data/results";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import {
