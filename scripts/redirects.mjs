@@ -10,22 +10,31 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-// The bare `/charts` redirect lands on town/men, so the default year is the
-// latest year for which town/men has results. Read straight from the source
-// results (the same data the app's summary is derived from) so there's no
-// separate summary file to keep in sync.
-export function getDefaultYear() {
+// The latest year for which a given event/gender has results. Read straight
+// from the source results (the same data the app's summary is derived from) so
+// there's no separate summary file to keep in sync.
+export function getLatestYear(event, gender) {
   const results = JSON.parse(
-    readFileSync(join(root, "src/data/results/town/men/results.json"), "utf8"),
+    readFileSync(
+      join(root, `src/data/results/${event}/${gender}/results.json`),
+      "utf8",
+    ),
   );
   // Years may be compound strings such as "1827 February March"; the leading
   // 4-digit year is canonical.
   return Math.max(...results.map((r) => Number(String(r.year).split(" ")[0])));
 }
 
-const EVENTS = ["eights", "lents", "mays", "torpids", "town"];
+// The bare `/charts` redirect lands on town/men, so the default year is the
+// latest year for which town/men has results.
+export function getDefaultYear() {
+  return getLatestYear("town", "men");
+}
 
-export function buildRedirects(year = getDefaultYear()) {
+const EVENTS = ["eights", "lents", "mays", "torpids", "town"];
+const GENDERS = ["men", "women"];
+
+export function buildRedirects() {
   return [
     {
       source: "/statistics",
@@ -39,19 +48,25 @@ export function buildRedirects(year = getDefaultYear()) {
     },
     {
       source: "/charts",
-      destination: `/charts/town/men/${year}`,
+      destination: `/charts/town/men/${getLatestYear("town", "men")}`,
       permanent: false,
     },
-    {
-      source: "/charts/:event",
-      destination: `/charts/:event/men/${year}`,
+    // Each event/gender redirects to its own latest year, since events don't
+    // all share the same most-recent season (e.g. Town lags the others). These
+    // explicit rules replace `/charts/:event` and `/charts/:event/:gender`
+    // wildcards, which could only supply a single year for every event.
+    ...EVENTS.map((event) => ({
+      source: `/charts/${event}`,
+      destination: `/charts/${event}/men/${getLatestYear(event, "men")}`,
       permanent: false,
-    },
-    {
-      source: "/charts/:event/:gender",
-      destination: `/charts/:event/:gender/${year}`,
-      permanent: false,
-    },
+    })),
+    ...EVENTS.flatMap((event) =>
+      GENDERS.map((gender) => ({
+        source: `/charts/${event}/${gender}`,
+        destination: `/charts/${event}/${gender}/${getLatestYear(event, gender)}`,
+        permanent: false,
+      })),
+    ),
     {
       source: "/multi-year-charts",
       destination: "/multi-year-charts/town/men",

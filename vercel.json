@@ -16,13 +16,78 @@
       "permanent": false
     },
     {
-      "source": "/charts/:event",
-      "destination": "/charts/:event/men/2025",
+      "source": "/charts/eights",
+      "destination": "/charts/eights/men/2026",
       "permanent": false
     },
     {
-      "source": "/charts/:event/:gender",
-      "destination": "/charts/:event/:gender/2025",
+      "source": "/charts/lents",
+      "destination": "/charts/lents/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/mays",
+      "destination": "/charts/mays/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/torpids",
+      "destination": "/charts/torpids/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/town",
+      "destination": "/charts/town/men/2025",
+      "permanent": false
+    },
+    {
+      "source": "/charts/eights/men",
+      "destination": "/charts/eights/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/eights/women",
+      "destination": "/charts/eights/women/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/lents/men",
+      "destination": "/charts/lents/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/lents/women",
+      "destination": "/charts/lents/women/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/mays/men",
+      "destination": "/charts/mays/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/mays/women",
+      "destination": "/charts/mays/women/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/torpids/men",
+      "destination": "/charts/torpids/men/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/torpids/women",
+      "destination": "/charts/torpids/women/2026",
+      "permanent": false
+    },
+    {
+      "source": "/charts/town/men",
+      "destination": "/charts/town/men/2025",
+      "permanent": false
+    },
+    {
+      "source": "/charts/town/women",
+      "destination": "/charts/town/women/2025",
       "permanent": false
     },
     {
