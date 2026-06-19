@@ -8,13 +8,15 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-chart-meta.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "gen:redirects": "node scripts/generate-vercel-redirects.mjs"
+    "gen:redirects": "node scripts/generate-vercel-redirects.mjs",
+    "gen:chart-meta": "node scripts/generate-chart-meta.mjs"
   },
   "type": "module",
   "dependencies": {

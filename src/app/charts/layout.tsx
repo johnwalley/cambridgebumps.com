@@ -22,7 +22,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import Link from "next/link";
 import { EventsNav } from "@/components/events-nav";
-import { results, summary } from "@/data/results";
+import { clubsByYear, summary } from "@/data/chart-meta";
 import {
   HoverCard,
   HoverCardContent,
@@ -32,13 +32,7 @@ import { PropsWithChildren, Suspense, useCallback } from "react";
 import { Blades } from "./components/blades";
 import { Button } from "@/components/ui/button";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import {
-  findResultByYear,
-  getGenderLabel,
-  set,
-  type Gender,
-  type Set,
-} from "@/lib/utils";
+import { getGenderLabel, set, type Gender, type Set } from "@/lib/utils";
 
 function Layout({
   children,
@@ -55,11 +49,9 @@ function Layout({
 
   const focusElement = years.findIndex((year) => year === segments[2]);
 
-  const data = findResultByYear(results[segments[0]][segments[1]], segments[2]);
-
-  const clubs = Array.from(new Set(data?.crews.map((crew) => crew.club))).sort(
-    (a, b) => a.localeCompare(b),
-  );
+  const clubs =
+    clubsByYear[segments[0] as Set]?.[segments[1] as Gender]?.[segments[2]] ??
+    [];
 
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
@@ -189,7 +181,9 @@ function Layout({
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="men" id="men" />
-                <Label htmlFor="men">{getGenderLabel(segments[0], "men")}</Label>
+                <Label htmlFor="men">
+                  {getGenderLabel(segments[0], "men")}
+                </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="women" id="women" />
@@ -282,9 +276,7 @@ function Layout({
       <div className="pb-4">
         <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">{`${
           set[segments[0] as keyof typeof set]
-        } - ${getGenderLabel(segments[0], segments[1])} - ${
-          segments[2]
-        }`}</h1>
+        } - ${getGenderLabel(segments[0], segments[1])} - ${segments[2]}`}</h1>
         {segments[0] === "town" && segments[2] === "2025" && (
           <p className="pb-2 text-center text-sm">
             Not affiliated with the CRA. For official live results please visit

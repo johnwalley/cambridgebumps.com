@@ -24,8 +24,8 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
-import { results } from "@/data/results";
-import { getGenderLabel, set } from "@/lib/utils";
+import { clubsAll } from "@/data/chart-meta";
+import { getGenderLabel, set, type Gender, type Set } from "@/lib/utils";
 
 function Layout({
   children,
@@ -38,13 +38,7 @@ function Layout({
 
   const searchParams = useSearchParams();
 
-  const data = results[segments[0]][segments[1]];
-
-  const clubs = Array.from(
-    new Set(data?.flatMap((event) => event.crews.map((crew) => crew.club))),
-  )
-    .filter((crew) => crew.length > 0)
-    .sort((a, b) => a.localeCompare(b));
+  const clubs = clubsAll[segments[0] as Set]?.[segments[1] as Gender] ?? [];
 
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
@@ -153,7 +147,9 @@ function Layout({
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="men" id="men" />
-                <Label htmlFor="men">{getGenderLabel(segments[0], "men")}</Label>
+                <Label htmlFor="men">
+                  {getGenderLabel(segments[0], "men")}
+                </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="women" id="women" />
