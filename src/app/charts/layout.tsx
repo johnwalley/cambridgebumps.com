@@ -23,6 +23,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { EventsNav } from "@/components/events-nav";
 import { clubsByYear, summary } from "@/data/chart-meta";
+import { yearsWithVideos } from "@/data/videos";
 import {
   HoverCard,
   HoverCardContent,
@@ -52,6 +53,36 @@ function Layout({
   const clubs =
     clubsByYear[segments[0] as Set]?.[segments[1] as Gender]?.[segments[2]] ??
     [];
+
+  // Years (for the current event/gender) that have at least one video, so the
+  // year picker can mark them with an indicator dot.
+  const videoYears = yearsWithVideos(segments[0], segments[1]);
+
+  // The mobile and desktop year pickers render an identical list of year links;
+  // build it once so the video indicator stays in sync across both.
+  const yearLinks = years.map((year) => {
+    const hasVideo = videoYears.has(year);
+
+    return (
+      <Link
+        key={year}
+        title={hasVideo ? "Has video" : undefined}
+        href={
+          searchParams.size > 0
+            ? `/charts/${segments[0]}/${segments[1]}/${year}?${searchParams.toString()}`
+            : `/charts/${segments[0]}/${segments[1]}/${year}`
+        }
+      >
+        {year}
+        {hasVideo && (
+          <span
+            aria-hidden="true"
+            className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-red-600 align-middle"
+          />
+        )}
+      </Link>
+    );
+  });
 
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
@@ -121,20 +152,7 @@ function Layout({
           focusElement={focusElement}
           position="center"
         >
-          {years.map((year) => (
-            <Link
-              key={year}
-              href={
-                searchParams.size > 0
-                  ? `/charts/${segments[0]}/${
-                      segments[1]
-                    }/${year}?${searchParams.toString()}`
-                  : `/charts/${segments[0]}/${segments[1]}/${year}`
-              }
-            >
-              {year}
-            </Link>
-          ))}
+          {yearLinks}
         </YearPicker>
       </div>
       <div className="order-2 hidden border-l py-4 lg:block">
@@ -208,20 +226,7 @@ function Layout({
               focusElement={focusElement}
               position="center"
             >
-              {years.map((year) => (
-                <Link
-                  key={year}
-                  href={
-                    searchParams.size > 0
-                      ? `/charts/${segments[0]}/${
-                          segments[1]
-                        }/${year}?${searchParams.toString()}`
-                      : `/charts/${segments[0]}/${segments[1]}/${year}`
-                  }
-                >
-                  {year}
-                </Link>
-              ))}
+              {yearLinks}
             </YearPicker>
           </div>
           <div className="items-top flex space-x-2">

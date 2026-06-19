@@ -13,6 +13,8 @@ import BumpsChart from "@/components/bumps-chart";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { results, summary } from "@/data/results";
+import { getRaceVideos } from "@/data/videos";
+import { RaceVideos } from "@/components/race-videos";
 
 type Props = {
   params: Promise<{ event: string; gender: string; year: string }>;
@@ -58,10 +60,13 @@ export default async function ChartPage({ params }: Props) {
     );
   }
 
+  const raceVideos = getRaceVideos(event, gender, year);
+
   return (
     <div className="mb-4 flex w-full flex-col items-center">
       <div className="w-full max-w-[520px]">
         <BumpsChart data={data} />
+        <RaceVideos videos={raceVideos} />
       </div>
     </div>
   );
