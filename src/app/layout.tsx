@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/providers";
+import { RememberEvent } from "@/components/remember-event";
 import localFont from "next/font/local";
 
 const geistSans = localFont({
@@ -76,6 +77,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <RememberEvent />
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-4 focus:text-foreground"

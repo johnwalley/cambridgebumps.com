@@ -5,6 +5,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header";
+import { BumpsChartsCta } from "@/components/bumps-charts-cta";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -35,9 +36,7 @@ export default function Home() {
           Bumps charts, statistics, and more.
         </PageHeaderDescription>
         <PageActions>
-          <Link href="/charts/" className={cn(buttonVariants())}>
-            Bumps charts
-          </Link>
+          <BumpsChartsCta />
           <Link
             href="/about"
             className={cn(buttonVariants({ variant: "ghost" }))}

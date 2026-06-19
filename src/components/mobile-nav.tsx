@@ -11,21 +11,31 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useEventPreference } from "@/hooks/use-event-preference";
 import { MainNavItem } from "@/types/nav";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
 
   const segments = useSelectedLayoutSegments();
+  const pref = useEventPreference();
 
   // Extract current event and gender from URL segments
   const currentEvent = segments[1];
   const currentGender = segments[2];
 
-  // Build href with event/gender context and search params
+  // Build href with event/gender context. Prefer the event/gender in the
+  // current URL; otherwise fall back to the remembered preference so a visitor
+  // on / or /about is taken back to their last-chosen event. The year is
+  // omitted — the redirect supplies the latest year.
   const buildHref = (item: MainNavItem): string => {
-    if (item.requiresEventGender && currentEvent && currentGender) {
-      return `${item.href}/${currentEvent}/${currentGender}`;
+    if (item.requiresEventGender) {
+      if (currentEvent && currentGender) {
+        return `${item.href}/${currentEvent}/${currentGender}`;
+      }
+      if (pref) {
+        return `${item.href}/${pref.event}/${pref.gender}`;
+      }
     }
 
     return `${item.href}`;
