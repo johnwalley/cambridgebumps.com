@@ -296,7 +296,7 @@ function Layout({
   );
 }
 
-export default function Layout2({ children }: PropsWithChildren) {
+export default function ChartsLayout({ children }: PropsWithChildren) {
   return (
     <Suspense>
       <Layout>{children}</Layout>
