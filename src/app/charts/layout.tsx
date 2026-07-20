@@ -277,7 +277,7 @@ function Layout({
         <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">{`${
           set[segments[0] as keyof typeof set]
         } - ${getGenderLabel(segments[0], segments[1])} - ${segments[2]}`}</h1>
-        {segments[0] === "town" && segments[2] === "2025" && (
+        {segments[0] === "town" && segments[2] === years[years.length - 1] && (
           <p className="pb-2 text-center text-sm">
             Not affiliated with the CRA. For official live results please visit
             the CRA{" "}
