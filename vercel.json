@@ -12,7 +12,7 @@
     },
     {
       "source": "/charts",
-      "destination": "/charts/town/men/2025",
+      "destination": "/charts/town/men/2026",
       "permanent": false
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "source": "/charts/town",
-      "destination": "/charts/town/men/2025",
+      "destination": "/charts/town/men/2026",
       "permanent": false
     },
     {
@@ -82,12 +82,12 @@
     },
     {
       "source": "/charts/town/men",
-      "destination": "/charts/town/men/2025",
+      "destination": "/charts/town/men/2026",
       "permanent": false
     },
     {
       "source": "/charts/town/women",
-      "destination": "/charts/town/women/2025",
+      "destination": "/charts/town/women/2026",
       "permanent": false
     },
     {
