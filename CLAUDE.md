@@ -159,3 +159,15 @@ TypeScript is configured with `@/*` mapping to `src/*` for cleaner imports.
 3. **Typed route parameters**: Events and genders are defined as const arrays with extracted types to ensure type safety across routing
 
 4. **Extensive redirects**: Legacy URLs are preserved via redirects in `next.config.mjs` to maintain SEO and existing links
+
+## Redirects and the "latest year" default
+
+Redirects are defined once in `scripts/redirects.mjs` and consumed in two places:
+
+- `next.config.mjs` applies them live in `next dev` (computed from the results data on every request).
+- `scripts/generate-vercel-redirects.mjs` writes `vercel.json`, which serves them in **production** (because `output: "export"` ignores Next.js `redirects()`).
+
+The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived from the latest year in each event/gender's `results.json` — never hand-edited.
+
+> [!IMPORTANT]
+> **After adding a new year's results, run `pnpm gen:redirects` and commit the updated `vercel.json`.** Otherwise the "Bumps charts" link and bare `/charts/...` URLs will keep redirecting to the previous year in production, even though `next dev` looks correct. This bit us when Town 2026 was added but `vercel.json` still pointed to 2025.
