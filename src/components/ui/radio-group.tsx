@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { CheckIcon } from "@radix-ui/react-icons";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";

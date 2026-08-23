@@ -1,4 +1,4 @@
-import { Event } from "react-bumps-chart/dist/types";
+import type { Event } from "react-bumps-chart/dist/types";
 
 import {
   events,

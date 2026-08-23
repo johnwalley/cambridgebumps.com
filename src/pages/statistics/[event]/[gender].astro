@@ -1,0 +1,151 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Blade } from "react-rowing-blades";
+
+import { statisticMapping, stats } from "@/data/stats";
+import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
+import {
+  events,
+  genders,
+  getCode,
+  getEventContext,
+  getGenderLabel,
+  set,
+  type Gender,
+  type Set,
+} from "@/lib/utils";
+
+export const getStaticPaths = (() =>
+  events.flatMap((event) =>
+    genders.map((gender) => ({ params: { event, gender } })),
+  )) satisfies GetStaticPaths;
+
+// The colour behind each statistic's leader. Roughly the club's own colours.
+function getColor(club: string, event: string) {
+  switch (club) {
+    case "Oriel":
+      return { h: 220, s: 100, l: 19 };
+    case "Emmanuel":
+      return { h: 0, s: 100, l: 73 };
+    case "Jesus":
+      if (event === "eights" || event === "torpids") {
+        return { h: 142, s: 100, l: 30.6 };
+      } else {
+        return { h: 0, s: 100, l: 27 };
+      }
+    case "Rob Roy":
+      return { h: 350, s: 95, l: 25 };
+    case "City":
+      return { h: 216, s: 60, l: 18 };
+    case "Osler House":
+      return { h: 0, s: 100, l: 41 };
+    case "Churchill":
+      return { h: 340, s: 100, l: 72 };
+    case "LMBC":
+      return { h: 0, s: 100, l: 43.1 };
+    case "Brasenose":
+      return { h: 0, s: 0, l: 12.5 };
+    case "Magdalen":
+      return { h: 0, s: 0, l: 8.2 };
+    case "Pembroke":
+      return { h: 0, s: 100, l: 73.3 };
+    case "Somerville":
+      return { h: 0, s: 100, l: 46.7 };
+    default:
+      return { h: 220, s: 100, l: 19 };
+  }
+}
+
+const event = Astro.params.event as Set;
+const gender = Astro.params.gender as Gender;
+
+const eventName = set[event];
+const genderName = getGenderLabel(event, gender);
+
+const clubStatistics = Object.keys(statisticMapping);
+---
+
+<StatisticsLayout
+  event={event}
+  gender={gender}
+  title={`${eventName} Statistics - ${genderName}`}
+  description={`${eventName} statistics (${genderName}): headships, total days at head, blades awarded, and crews entered. Historical ${getEventContext(event)} rowing records.`}
+  canonical={`/statistics/${event}/${gender}`}
+>
+  <div>
+    <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        clubStatistics.map((statistic) => {
+          const mapping = statisticMapping[statistic];
+          const data = stats[event][gender][statistic];
+          const heroColor = getColor(data[0].club, event);
+          const heroClub = getCode(data[0].club, event);
+
+          return (
+            <div class="mb-4">
+              <h2 class="mb-2 text-2xl font-bold">{mapping.label}</h2>
+              <div class="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
+                <ul class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <li
+                    class="h-40"
+                    style={`background-image: linear-gradient(to right, hsl(${heroColor.h} ${heroColor.s}% ${heroColor.l}%), hsl(${heroColor.h} ${heroColor.s}% ${heroColor.l + 20}%));`}
+                  >
+                    <div class="flex h-full justify-between">
+                      <div class="flex h-full flex-col justify-between px-4 py-2 text-white">
+                        <div>
+                          <div class="text-sm font-bold">1</div>
+                          <div class="font-bold">{data[0][mapping.key]}</div>
+                          {mapping.additional && (
+                            <div class="text-sm">
+                              {data[0][mapping.additional]}
+                            </div>
+                          )}
+                        </div>
+                        <div class="text-4xl font-extrabold">
+                          {data[0][mapping.value]}
+                        </div>
+                      </div>
+                      <div class="flex flex-col justify-center pt-2 pr-2 pb-2">
+                        {heroClub && <Blade club={heroClub} size={140} />}
+                      </div>
+                    </div>
+                  </li>
+                  {data.slice(1, 10).map((d: any, i: number) => {
+                    const dClub = getCode(d.club, event);
+
+                    return (
+                      <li class="relative flex items-center justify-between py-2 pr-2 pl-3">
+                        <div class="flex items-center">
+                          <div class="mr-2 min-w-4 text-sm font-bold">
+                            {i + 2}
+                          </div>
+                          <div class="mr-4">
+                            {dClub && <Blade club={dClub} size={48} />}
+                          </div>
+                          <div class="flex flex-col">
+                            <div class="text-base font-bold">
+                              {d[mapping.key]}
+                            </div>
+                            <div class="text-sm">
+                              {mapping.additional ? d[mapping.additional] : " "}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-lg font-bold">{d[mapping.value]}</div>
+                      </li>
+                    );
+                  })}
+                  <div class="flex items-center justify-center px-2 py-2">
+                    <a href={`/statistics/${event}/${gender}/${statistic}`}>
+                      View full list
+                    </a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</StatisticsLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+// Layout for the MDX pages: the same prose container the Next.js `about`
+// route's layout provided. Front matter supplies the metadata.
+interface Props {
+  frontmatter: {
+    title?: string;
+    description?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="relative container">
+    <section>
+      <div
+        class="mx-auto px-4 text-lg tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <div class="prose max-w-none py-8 prose-slate dark:prose-invert">
+          <slot />
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

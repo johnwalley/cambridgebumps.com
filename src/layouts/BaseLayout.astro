@@ -1,0 +1,107 @@
+---
+import "@/styles/globals.css";
+
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
+import { SiteHeader } from "@/components/site-header";
+import { googleAnalyticsTag, siteConfig } from "@/config/site";
+
+interface Props {
+  /** Page title; the site name is appended. Omit on the home page. */
+  title?: string;
+  description?: string;
+  /** Path (or absolute URL) for <link rel="canonical">. Defaults to this page. */
+  canonical?: string | null;
+  noindex?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+// `build.format: "file"` means `Astro.url.pathname` carries the `.html`
+// suffix during the build (`/about.html`) while the dev server and the
+// deployed site both serve `/about`. Normalise it so canonical URLs and the
+// header's idea of "where am I" are the URLs visitors actually see.
+const pathname =
+  Astro.url.pathname
+    .replace(/\/?(index)?\.html$/, "")
+    .replace(/(.)\/$/, "$1") || "/";
+
+const {
+  title,
+  description = "Interactive charts and historical results for Cambridge and Oxford bumps rowing races. Explore May Bumps, Lent Bumps, Summer Eights, and Torpids from 1815 to today.",
+  canonical = pathname,
+  noindex = false,
+  ogTitle,
+  ogDescription,
+} = Astro.props;
+
+const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
+const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="format-detection"
+      content="telephone=no, date=no, address=no, email=no"
+    />
+    <meta name="chrome" content="nointentdetection" />
+    <meta
+      name="keywords"
+      content="Bumps, rowing, charts, Cambridge, Oxford, Eights, Lents, Mays, Torpids"
+    />
+    <meta name="author" content="John Walley" />
+    <link rel="author" href="https://www.walley.org.uk" />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={ogTitle ?? pageTitle} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@johnmwalley" />
+
+    {/* Applies the stored theme before first paint, so there's no flash. */}
+    <script is:inline>
+      (() => {
+        try {
+          const stored = localStorage.getItem("theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+
+          document.documentElement.classList.toggle("dark", theme === "dark");
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          // Ignore (private mode / storage disabled).
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-4 focus:text-foreground"
+    >
+      Skip to main content
+    </a>
+    <SiteHeader pathname={pathname} client:load />
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    {googleAnalyticsTag && <GoogleAnalytics id={googleAnalyticsTag} />}
+  </body>
+</html>

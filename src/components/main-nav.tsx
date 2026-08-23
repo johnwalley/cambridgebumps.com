@@ -1,23 +1,16 @@
-"use client";
-
 import { Icons } from "@/components/icons";
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
 import { useEventPreference } from "@/hooks/use-event-preference";
 import { cn } from "@/lib/utils";
-import { MainNavItem } from "@/types/nav";
-import Link from "next/link";
-import { usePathname, useSelectedLayoutSegments } from "next/navigation";
-import * as React from "react";
+import type { MainNavItem } from "@/types/nav";
 
-export function MainNav() {
-  const pathname = usePathname();
-  const segments = useSelectedLayoutSegments();
+export function MainNav({ pathname }: { pathname: string }) {
   const pref = useEventPreference();
 
-  // Extract current event and gender from URL segments
-  const currentEvent = segments[1];
-  const currentGender = segments[2];
+  // Extract the current event and gender from the URL, e.g.
+  // "/charts/eights/women/2025" -> event "eights", gender "women".
+  const [, currentEvent, currentGender] = pathname.split("/").filter(Boolean);
 
   // Build href with event/gender context. Prefer the event/gender in the
   // current URL; otherwise fall back to the remembered preference so a visitor
@@ -37,25 +30,20 @@ export function MainNav() {
   };
 
   // Check if current path matches nav item
-  const isActive = (item: MainNavItem): boolean => {
-    if (item.href) {
-      return pathname?.startsWith(item.href) ?? false;
-    }
-
-    return false;
-  };
+  const isActive = (item: MainNavItem): boolean =>
+    item.href ? pathname.startsWith(item.href) : false;
 
   return (
     <div className="mr-4 hidden lg:flex">
-      <Link href="/" className="mr-6 flex items-center space-x-2">
+      <a href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
-      </Link>
+      </a>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         {docsConfig.mainNav.map((item) => (
-          <Link
+          <a
             key={item.title}
             href={buildHref(item)}
             className={cn(
@@ -64,7 +52,7 @@ export function MainNav() {
             )}
           >
             {item.title}
-          </Link>
+          </a>
         ))}
       </nav>
     </div>

@@ -1,8 +1,5 @@
-"use client";
-
 import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,9 +8,20 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { applyTheme, getTheme, setTheme } from "@/lib/theme";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  // Follow the OS while the theme is "system" (the default).
+  React.useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const onChange = () => {
+      if (getTheme() === "system") applyTheme("system");
+    };
+
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <DropdownMenu>

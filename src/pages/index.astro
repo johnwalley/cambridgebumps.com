@@ -1,0 +1,50 @@
+---
+import { Announcement } from "@/components/announcement";
+import { BumpsChartsCta } from "@/components/bumps-charts-cta";
+import Photos from "@/components/Photos.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { cn } from "@/lib/utils";
+
+const description = `Interactive bumps charts and historical results for ${siteConfig.title} rowing races. View race results, track your college or club, and explore statistics from over 200 years of bumps racing.`;
+---
+
+<BaseLayout
+  description={description}
+  ogTitle={`${siteConfig.title} Bumps - Rowing Race Charts & Statistics`}
+  ogDescription={description}
+  canonical="/"
+>
+  <div class="relative container">
+    <section
+      class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8"
+    >
+      <Announcement />
+      <h1
+        data-nosnippet
+        class="text-center text-3xl leading-tight font-semibold md:text-4xl lg:leading-[1.1]"
+      >
+        There is nothing — absolutely nothing — half so much worth doing as
+        simply messing about in boats.
+      </h1>
+      <p
+        class="max-w-[750px] text-center text-lg font-light text-balance text-foreground"
+      >
+        Bumps charts, statistics, and more.
+      </p>
+      <div
+        data-nosnippet
+        class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10"
+      >
+        <BumpsChartsCta client:load />
+        <a href="/about" class={cn(buttonVariants({ variant: "ghost" }))}>
+          Bumps explained
+        </a>
+      </div>
+    </section>
+    <section class="pb-20">
+      <Photos />
+    </section>
+  </div>
+</BaseLayout>

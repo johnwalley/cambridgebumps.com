@@ -1,0 +1,40 @@
+---
+import { StatisticsNav } from "@/components/statistics-nav";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { Gender, Set } from "@/lib/utils";
+
+interface Props {
+  event: Set;
+  gender: Gender;
+  /** Only set on an individual statistic's page. */
+  statistic?: string;
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { event, gender, statistic, title, description, canonical } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="relative container">
+    <section>
+      <div class="mx-auto px-4 text-lg tracking-tight sm:px-6 md:px-8 lg:px-12">
+        <div class="pt-4">
+          <h1 class="mb-4 scroll-m-20 text-4xl font-bold tracking-tight">
+            Statistics
+          </h1>
+        </div>
+        <StatisticsNav
+          client:load
+          event={event}
+          gender={gender}
+          statistic={statistic}
+        />
+        <div>
+          <slot />
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

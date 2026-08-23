@@ -1,5 +1,6 @@
 // Single source of truth for redirects, shared by:
-//  - `next.config.mjs` (applied in `next dev` for local development)
+//  - `astro.config.mjs` (via `buildAstroRedirects`, so `astro dev`/`preview` and
+//    any plain static host behave like production)
 //  - `scripts/generate-vercel-redirects.mjs` (writes `vercel.json` for production)
 //
 // The default chart year is derived from the results data, never hand-edited.
@@ -112,4 +113,38 @@ export function buildRedirects() {
       },
     ]),
   ];
+}
+
+// Astro's `redirects` config takes a map of concrete paths, so the `:event` /
+// `:gender` patterns above are expanded against the known event and gender
+// lists. `vercel.json` keeps the compact pattern form.
+function expand(source, destination) {
+  let pairs = [[source, destination]];
+
+  for (const [param, values] of [
+    [":event", EVENTS],
+    [":gender", GENDERS],
+  ]) {
+    if (!source.includes(param)) continue;
+
+    pairs = pairs.flatMap(([s, d]) =>
+      values.map((value) => [
+        s.replaceAll(param, value),
+        d.replaceAll(param, value),
+      ]),
+    );
+  }
+
+  return pairs;
+}
+
+export function buildAstroRedirects() {
+  return Object.fromEntries(
+    buildRedirects().flatMap(({ source, destination, permanent }) =>
+      expand(source, destination).map(([s, d]) => [
+        s,
+        { status: permanent ? 301 : 302, destination: d },
+      ]),
+    ),
+  );
 }

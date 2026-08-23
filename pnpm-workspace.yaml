@@ -1,5 +1,5 @@
 allowBuilds:
+  esbuild: true
   sharp: true
-  unrs-resolver: false
 minimumReleaseAgeExclude:
   - prettier-plugin-tailwindcss@0.8.1

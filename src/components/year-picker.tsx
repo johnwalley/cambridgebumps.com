@@ -1,11 +1,9 @@
-"use client";
-
 import {
   Children,
-  PropsWithChildren,
   useEffect,
   useRef,
   useState,
+  type PropsWithChildren,
 } from "react";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 
@@ -13,7 +11,6 @@ type YearPickerProps = {
   skipLength: number;
   focusElement?: number;
   position?: ScrollLogicalPosition;
-  spacing?: number;
 };
 
 export function YearPicker({
@@ -21,7 +18,6 @@ export function YearPicker({
   skipLength,
   focusElement = 0,
   position = "start",
-  spacing = 0,
 }: PropsWithChildren<YearPickerProps>) {
   const ref = useRef<HTMLDivElement>(null!);
   const selectedRef = useRef<HTMLButtonElement>(null!);
@@ -30,17 +26,11 @@ export function YearPicker({
   const [right, setRight] = useState(false);
 
   useEffect(() => {
-    const f = () => {
-      selectedRef.current &&
-        selectedRef.current.scrollIntoView &&
-        selectedRef.current.scrollIntoView({
-          inline: position,
-          block: "nearest",
-          behavior: "instant",
-        });
-    };
-
-    f();
+    selectedRef.current?.scrollIntoView?.({
+      inline: position,
+      block: "nearest",
+      behavior: "instant",
+    });
   }, [position]);
 
   useEffect(() => {

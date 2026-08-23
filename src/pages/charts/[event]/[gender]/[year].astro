@@ -1,0 +1,74 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import { ChartsShell } from "@/components/charts-shell";
+import { clubsByYear } from "@/data/chart-meta";
+import { results, summary } from "@/data/results";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  events,
+  findResultByYear,
+  genders,
+  getEventContext,
+  getGenderLabel,
+  set,
+  type Gender,
+  type Set,
+} from "@/lib/utils";
+
+export const getStaticPaths = (() => {
+  // Also pre-generate the current year for every event/gender so that upcoming
+  // events whose results aren't posted yet render the friendly "We have no
+  // results to show for this year" message rather than a 404. (A static build
+  // only serves paths returned here.)
+  const currentYear = String(new Date().getFullYear());
+
+  return events.flatMap((event) =>
+    genders.flatMap((gender) => {
+      const years = summary[event][gender];
+      const allYears = years.includes(currentYear)
+        ? years
+        : [...years, currentYear];
+
+      return allYears.map((year) => ({ params: { event, gender, year } }));
+    }),
+  );
+}) satisfies GetStaticPaths;
+
+const event = Astro.params.event as Set;
+const gender = Astro.params.gender as Gender;
+const year = Astro.params.year as string;
+
+const years = summary[event][gender];
+const clubs = clubsByYear[event]?.[gender]?.[year] ?? [];
+
+// Years pre-generated without results yet (see `getStaticPaths`) render a
+// friendly message and stay out of the index rather than being thin content.
+const result = findResultByYear(results[event][gender], year);
+const data = result && result.crews.length > 0 ? result : null;
+
+const eventName = set[event];
+const genderName = getGenderLabel(event, gender);
+
+// The Town Bumps results for the current year are unofficial until the CRA
+// publishes theirs.
+const showCraNotice = event === "town" && year === years[years.length - 1];
+---
+
+<BaseLayout
+  title={`${eventName} ${year} - ${genderName}`}
+  description={`${eventName} ${year} bumps chart (${genderName}). View race results, daily positions, and bumps for all ${getEventContext(event)} crews.`}
+  canonical={`/charts/${event}/${gender}/${year}`}
+  noindex={data === null}
+>
+  <ChartsShell
+    client:load
+    event={event}
+    gender={gender}
+    year={year}
+    years={years}
+    clubs={clubs}
+    data={data}
+    showCraNotice={showCraNotice}
+  />
+</BaseLayout>

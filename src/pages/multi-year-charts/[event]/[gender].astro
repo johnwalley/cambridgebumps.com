@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import { MultiYearChartsShell } from "@/components/multi-year-charts-shell";
+import { clubsAll } from "@/data/chart-meta";
+import { results } from "@/data/results";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  events,
+  genders,
+  getEventContext,
+  getGenderLabel,
+  set,
+  type Gender,
+  type Set,
+} from "@/lib/utils";
+
+export const getStaticPaths = (() =>
+  events.flatMap((event) =>
+    genders.map((gender) => ({ params: { event, gender } })),
+  )) satisfies GetStaticPaths;
+
+const event = Astro.params.event as Set;
+const gender = Astro.params.gender as Gender;
+
+const data = [...results[event][gender]].sort((a, b) => +a.year - +b.year);
+const clubs = clubsAll[event]?.[gender] ?? [];
+
+const eventName = set[event];
+const genderName = getGenderLabel(event, gender);
+
+const first = data[0]?.year;
+const last = data[data.length - 1]?.year;
+const yearRange = `${first}-${last}`;
+---
+
+<BaseLayout
+  title={data.length > 0
+    ? `${eventName} ${yearRange} - ${genderName} - Multi-year Chart`
+    : undefined}
+  description={data.length > 0
+    ? `Historical bumps chart for ${eventName} (${genderName}) from ${first} to ${last}. Track ${getEventContext(event)} positions across ${data.length} years of racing.`
+    : undefined}
+  canonical={`/multi-year-charts/${event}/${gender}`}
+>
+  <MultiYearChartsShell
+    client:load
+    event={event}
+    gender={gender}
+    clubs={clubs}
+    dataUrl={`/data/results/${event}/${gender}.json`}
+    years={data.length}
+  />
+</BaseLayout>

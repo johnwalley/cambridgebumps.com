@@ -12,12 +12,12 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 
 ## Tech Stack
 
-- **Framework**: [Next.js 16](https://nextjs.org/)
+- **Framework**: [Astro](https://astro.build/) (static output, [React](https://react.dev/) islands)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Components**: [Radix UI](https://www.radix-ui.com/) & [shadcn/ui](https://ui.shadcn.com/)
 - **Charts**: [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart)
 - **Icons**: [Radix Icons](https://icons.radix-ui.com/)
-- **Fonts**: [Geist](https://vercel.com/font)
+- **Fonts**: [Geist](https://vercel.com/font) and [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex)
 
 ## Getting Started
 
@@ -46,8 +46,29 @@ Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
    pnpm dev
    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4321](http://localhost:4321) with your browser to see the result.
+
+### Commands
+
+| Command               | Action                                                |
+| --------------------- | ----------------------------------------------------- |
+| `pnpm dev`            | Start the dev server at `localhost:4321`              |
+| `pnpm dev:oxford`     | Same, serving the Oxford configuration                |
+| `pnpm build`          | Build the production site to `./dist/`                |
+| `pnpm build:oxford`   | Build the Oxford site to `./dist/`                    |
+| `pnpm preview`        | Serve the built site locally                          |
+| `pnpm lint`           | Run ESLint                                            |
+| `pnpm typecheck`      | Run `astro check`                                     |
+| `pnpm format`         | Format with Prettier                                  |
+| `pnpm gen:redirects`  | Regenerate `vercel.json` from `scripts/redirects.mjs` |
+| `pnpm gen:chart-meta` | Regenerate `src/data/chart-meta.json`                 |
 
 ### Environment Variables
 
-The project uses environment variables to switch between Cambridge and Oxford configurations. You can use the provided `.env.cambridge` and `.env.oxford` files.
+The project uses environment variables to switch between the Cambridge and Oxford configurations. `SITE` picks which of the checked-in files is read — `.env.cambridge` by default, `.env.oxford` when `SITE=oxford` (what `pnpm dev:oxford` and `pnpm build:oxford` set):
+
+- `PUBLIC_TITLE` — "Cambridge" or "Oxford"
+- `PUBLIC_BASE_URL` — the canonical origin
+- `PUBLIC_GOOGLE_ANALYTICS_TAG` — the GA measurement ID
+
+Variables set in the real environment (for example a hosting provider's project settings) take precedence over the files.

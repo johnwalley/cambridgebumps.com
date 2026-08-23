@@ -1,0 +1,109 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Blade } from "react-rowing-blades";
+
+import { statisticMapping, stats } from "@/data/stats";
+import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
+import {
+  events,
+  genders,
+  getCode,
+  getEventContext,
+  getGenderLabel,
+  set,
+  type Gender,
+  type Set,
+} from "@/lib/utils";
+
+export const getStaticPaths = (() =>
+  events.flatMap((event) =>
+    genders.flatMap((gender) =>
+      Object.keys(statisticMapping).map((statistic) => ({
+        params: { event, gender, statistic },
+      })),
+    ),
+  )) satisfies GetStaticPaths;
+
+const event = Astro.params.event as Set;
+const gender = Astro.params.gender as Gender;
+const statistic = Astro.params.statistic as string;
+
+const mapping = statisticMapping[statistic];
+const data = stats[event][gender][statistic];
+
+const eventName = set[event];
+const genderName = getGenderLabel(event, gender);
+---
+
+<StatisticsLayout
+  event={event}
+  gender={gender}
+  statistic={statistic}
+  title={`${mapping.label} - ${eventName} - ${genderName}`}
+  description={`${mapping.label} rankings for ${eventName} (${genderName}). See which ${getEventContext(event)} crews top the historical records.`}
+  canonical={`/statistics/${event}/${gender}/${statistic}`}
+>
+  <div>
+    <h2 class="mb-2 text-xl font-bold">{mapping.label}</h2>
+
+    <div class="mb-4">
+      <div class="relative w-full overflow-auto">
+        <table class="w-full caption-bottom text-sm">
+          <thead class="[&_tr]:border-b">
+            <tr
+              class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
+            >
+              <th
+                class="h-10 w-[40px] px-2 text-left align-middle font-medium text-muted-foreground"
+              >
+                Rank
+              </th>
+              <th
+                class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+              >
+                {mapping.keyLabel}
+              </th>
+              <th
+                class="h-10 px-2 text-right align-middle font-medium text-muted-foreground"
+              >
+                {mapping.valueLabel}
+              </th>
+              {
+                mapping.additionalLabel && (
+                  <th class="h-10 px-2 text-right align-middle font-medium text-muted-foreground">
+                    {mapping.additionalLabel}
+                  </th>
+                )
+              }
+            </tr>
+          </thead>
+          <tbody class="[&_tr:last-child]:border-0">
+            {
+              data.map((row: any, index: number) => {
+                const clubCode = getCode(row[mapping.key], event);
+
+                return (
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-2 align-middle font-medium">{index + 1}</td>
+                    <td class="flex flex-row items-center gap-2 p-2 align-middle font-medium">
+                      {clubCode && <Blade club={clubCode} size={32} />}
+                      {row[mapping.key]}
+                    </td>
+                    <td class="p-2 text-right align-middle">
+                      {row[mapping.value]}
+                    </td>
+                    {mapping.additional && (
+                      <td class="p-2 text-right align-middle">
+                        {row[mapping.additional]}
+                      </td>
+                    )}
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</StatisticsLayout>

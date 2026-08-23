@@ -1,7 +1,3 @@
-"use client";
-
-import Link from "next/link";
-
 import { buttonVariants } from "@/components/ui/button";
 import { useEventPreference } from "@/hooks/use-event-preference";
 import { cn } from "@/lib/utils";
@@ -16,8 +12,8 @@ export function BumpsChartsCta() {
   const href = pref ? `/charts/${pref.event}/${pref.gender}` : "/charts/";
 
   return (
-    <Link href={href} className={cn(buttonVariants())}>
+    <a href={href} className={cn(buttonVariants())}>
       Bumps charts
-    </Link>
+    </a>
   );
 }

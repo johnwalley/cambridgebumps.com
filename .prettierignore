@@ -1,5 +1,5 @@
 node_modules/
-.next/
-out/
+dist/
+.astro/
 src/data/
 pnpm-lock.yaml

@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";

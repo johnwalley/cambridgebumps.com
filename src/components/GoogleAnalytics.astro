@@ -1,0 +1,21 @@
+---
+// Google Analytics, previously wired up with `@next/third-parties`.
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+// Google's own gtag bootstrap, kept verbatim (it relies on `arguments`, which
+// gtag.js distinguishes from a plain array).
+const snippet = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', ${JSON.stringify(id)});`;
+---
+
+<script
+  is:inline
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+<script is:inline set:html={snippet} />

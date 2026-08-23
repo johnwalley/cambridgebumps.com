@@ -1,0 +1,95 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const faqs = [
+  {
+    question: "Blades",
+    answer: `If a crew bumps, or are head of the river every day then they are awarded blades.`,
+  },
+  {
+    question: "Bank party",
+    answer: `People who cycle alongside a crew during the race. They offer encouragement and advice during the race, and usually help with getting the crew ready for the start.`,
+  },
+  {
+    question: "Bump",
+    answer: `A bump is awarded when a chasing boat either overtakes or makes contact with the boat in front.
+
+On the next day, the two will switch places in the starting order.`,
+  },
+  {
+    question: "Conceding",
+    answer:
+      "When a crew acknowledges they have been caught and the cox raises a hand to signal the bump.",
+  },
+  {
+    question: "Division",
+    answer: `Racing is split into divisions. For example, in May Bumps there are 17 crews per division.
+
+This is done for most large rowing events to accomodate a larger number of crews than would otherwise be possible to have on the river at once.`,
+  },
+  {
+    question: "Head of the River",
+    answer: `The crew who finishes top of the first division after the last day of racing is complete.`,
+  },
+  {
+    question: "Marshalling",
+    answer: "The process of lining crews up at the start before racing begins.",
+  },
+  {
+    question: "Over-bump",
+    answer: `The two crews in front bump out and you chase down, and bump, the crew that started three places ahead of you.`,
+  },
+  {
+    question: "Rowing over",
+    answer: `When you neither bump or get bumped you must complete the course and are said to have 'rowed over'. You retain the same start position for the next day's racing.`,
+  },
+  {
+    question: "Sandwich boat",
+    answer: `The sandwich boat is the name given to the crew at top of a division (except the first division). They then race at the bottom of the division above. If they bump the crew moves up a division.`,
+  },
+  {
+    question: "Spoons",
+    answer: `If a crew is bumped every day then they are awarded spoons.`,
+  },
+  {
+    question: "Torpids",
+    answer: `Torpids is one of two bumps races held annually by Oxford University around the start of March.
+
+The rules around bumping are unusual in that once a bump has taken place, the crew whose boat was bumped has to continue racing (and is liable to be bumped again) whilst the bumping crew moves to the side. This can lead to a crew moving down several places during a day's racing.`,
+  },
+];
+---
+
+<BaseLayout
+  title="Vocabulary"
+  description="Learn the key terms used in bumps racing: blades, bump, over-bump, sandwich boat, spoons, and more. A glossary for understanding Cambridge and Oxford rowing terminology."
+  canonical="/vocabulary"
+>
+  <div class="relative container">
+    <section>
+      <div
+        class="mx-auto px-4 text-lg tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
+      >
+        <div class="pt-4">
+          <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">
+            Vocabulary
+          </h1>
+        </div>
+        <div class="pt-8 pb-12">
+          <dl class="divide-y divide-border border-t border-border">
+            {
+              faqs.map((faq) => (
+                <div class="grid gap-1 py-5 sm:grid-cols-[12rem_1fr] sm:gap-6">
+                  <dt class="text-base font-semibold">{faq.question}</dt>
+                  <dd class="text-base leading-7 whitespace-pre-line text-muted-foreground">
+                    {faq.answer}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
