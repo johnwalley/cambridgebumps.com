@@ -1,6 +1,7 @@
 {
   "framework": "astro",
   "outputDirectory": "dist",
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/statistics",
