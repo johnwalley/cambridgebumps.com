@@ -35,11 +35,19 @@ const rotations = [
           rotations[index % rotations.length],
         ]}
       >
+        {/*
+          The card is a 9:10 portrait but the photos are landscape, so
+          `object-cover` scales each one to ~2x the card's width and crops the
+          sides off. `sizes` therefore doubles the card width (18rem -> 36rem,
+          11rem -> 22rem) — the browser only knows the element's layout width
+          and would otherwise pick a candidate half the resolution it needs.
+        */}
         <Image
           src={image.src}
           alt={image.alt}
-          widths={[176, 288, 352, 576]}
-          sizes="(min-width: 640px) 18rem, 11rem"
+          widths={[352, 576, 704, 1152]}
+          sizes="(min-width: 640px) 36rem, 22rem"
+          quality={85}
           loading="eager"
           fetchpriority="high"
           class="absolute inset-0 h-full w-full object-cover"
