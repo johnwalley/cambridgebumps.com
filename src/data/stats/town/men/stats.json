@@ -1,22 +1,22 @@
 {
   "headships": [
     { "club": "Rob Roy", "headships": 30, "lastYear": "2014" },
-    { "club": "City", "headships": 20, "lastYear": "2025" },
+    { "club": "City", "headships": 21, "lastYear": "2026" },
     { "club": "99", "headships": 15, "lastYear": "2022" },
     { "club": "Cantabs", "headships": 11, "lastYear": "2021" },
     { "club": "Albert Institute", "headships": 1, "lastYear": "1869" }
   ],
   "crewsEntered": [
-    { "club": "Cantabs", "count": 586 },
-    { "club": "99", "count": 505 },
-    { "club": "City", "count": 480 },
+    { "club": "Cantabs", "count": 598 },
+    { "club": "99", "count": 514 },
+    { "club": "City", "count": 496 },
     { "club": "Rob Roy", "count": 361 },
-    { "club": "Champs", "count": 297 },
-    { "club": "X-Press", "count": 288 },
-    { "club": "Chesterton", "count": 137 },
+    { "club": "Champs", "count": 307 },
+    { "club": "X-Press", "count": 294 },
+    { "club": "Chesterton", "count": 141 },
     { "club": "Scouts", "count": 85 },
-    { "club": "St Radegund", "count": 54 },
-    { "club": "St Neots", "count": 40 },
+    { "club": "St Radegund", "count": 56 },
+    { "club": "St Neots", "count": 42 },
     { "club": "Churchill", "count": 31 },
     { "club": "St Ives", "count": 31 },
     { "club": "Telephones", "count": 30 },
@@ -28,7 +28,7 @@
     { "club": "Beehives", "count": 21 },
     { "club": "Cambs High School", "count": 20 },
     { "club": "Cam Grammar School", "count": 18 },
-    { "club": "Isle of Ely", "count": 16 },
+    { "club": "Isle of Ely", "count": 18 },
     { "club": "Instrument Co", "count": 15 },
     { "club": "Lady Somerset", "count": 15 },
     { "club": "Maximum Entropy", "count": 15 },
@@ -74,6 +74,7 @@
     { "club": "Deloitte", "count": 3 },
     { "club": "Cherry Hinton", "count": 3 },
     { "club": "Bullard Lab", "count": 3 },
+    { "club": "Camb Vets", "count": 3 },
     { "club": "United College Servants", "count": 2 },
     { "club": "Church of England", "count": 2 },
     { "club": "Grammar School OB", "count": 2 },
@@ -91,7 +92,6 @@
     { "club": "Touche Ross", "count": 2 },
     { "club": "Ionica", "count": 2 },
     { "club": "Sharks", "count": 2 },
-    { "club": "Camb Vets", "count": 2 },
     { "club": "Church of England Young Men's Society", "count": 1 },
     { "club": "Young Men's Christian Association", "count": 1 },
     { "club": "Hero", "count": 1 },
@@ -130,7 +130,7 @@
   ],
   "headDays": [
     { "club": "Rob Roy", "days": 120 },
-    { "club": "City", "days": 81 },
+    { "club": "City", "days": 85 },
     { "club": "99", "days": 56 },
     { "club": "Cantabs", "days": 45 },
     { "club": "Albert Institute", "days": 5 },
@@ -145,9 +145,9 @@
     { "club": "United College Servants", "days": 2, "span": "1868" }
   ],
   "bladesAwarded": [
-    { "club": "City", "count": 67 },
+    { "club": "City", "count": 69 },
     { "club": "Rob Roy", "count": 52 },
-    { "club": "Cantabs", "count": 44 },
+    { "club": "Cantabs", "count": 46 },
     { "club": "99", "count": 41 },
     { "club": "Champs", "count": 23 },
     { "club": "X-Press", "count": 17 },
@@ -167,6 +167,7 @@
     { "club": "Addenbrooke's", "count": 2 },
     { "club": "Red Lion Toft", "count": 2 },
     { "club": "Barclays Bank", "count": 2 },
+    { "club": "Isle of Ely", "count": 2 },
     { "club": "Leys Lysander", "count": 2 },
     { "club": "Albert Institute", "count": 1 },
     { "club": "Instrument Co", "count": 1 },
@@ -185,7 +186,6 @@
     { "club": "Maximum Entropy", "count": 1 },
     { "club": "Trinity Hall", "count": 1 },
     { "club": "Marshalls", "count": 1 },
-    { "club": "Cam Consultants", "count": 1 },
-    { "club": "Isle of Ely", "count": 1 }
+    { "club": "Cam Consultants", "count": 1 }
   ]
 }
