@@ -8,10 +8,21 @@ const { id } = Astro.props;
 
 // Google's own gtag bootstrap, kept verbatim (it relies on `arguments`, which
 // gtag.js distinguishes from a plain array).
+//
+// View transitions keep the document alive across navigation, so gtag only ever
+// sees one page load and `config`'s automatic page view would be the only one
+// recorded. Turning that off and sending a view from `astro:page-load` — which
+// fires on the initial load as well as after every swap — counts each page once.
 const snippet = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', ${JSON.stringify(id)});`;
+gtag('config', ${JSON.stringify(id)}, { send_page_view: false });
+document.addEventListener('astro:page-load', () => {
+  gtag('event', 'page_view', {
+    page_location: location.href,
+    page_title: document.title,
+  });
+});`;
 ---
 
 <script

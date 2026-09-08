@@ -1,4 +1,5 @@
 import { Cross2Icon } from "@radix-ui/react-icons";
+import { navigate } from "astro:transitions/client";
 import type { Event } from "react-bumps-chart/dist/types";
 
 import BumpsChart from "@/components/bumps-chart";
@@ -109,14 +110,16 @@ export function ChartsShell({
           <EventSelect
             value={event}
             onValueChange={(value) => {
-              window.location.href = `/charts/${value}/${gender}/${year}`;
+              navigate(
+                withParams(`/charts/${value}/${gender}/${year}`, params),
+              );
             }}
           />
           <GenderRadioGroup
             event={event}
             value={gender}
             onValueChange={(value) => {
-              window.location.href = `/charts/${event}/${value}/${year}`;
+              navigate(withParams(`/charts/${event}/${value}/${year}`, params));
             }}
           />
           <div>

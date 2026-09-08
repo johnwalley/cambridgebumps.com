@@ -32,8 +32,14 @@ export function useChartParams() {
 
     const query = next.toString();
 
+    // Carry the router's own history state onto the new entry. `<ClientRouter />`
+    // stores a scroll position and an index on every entry it creates and reads
+    // them back on `popstate`; an entry pushed with a bare `{}` would leave it
+    // restoring an undefined scroll position. Copying the current state keeps
+    // the bookkeeping intact, at the cost of stepping back over a view option
+    // being a page swap rather than an update in place.
     window.history.pushState(
-      {},
+      window.history.state,
       "",
       query ? `${window.location.pathname}?${query}` : window.location.pathname,
     );

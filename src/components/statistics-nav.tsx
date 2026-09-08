@@ -1,3 +1,5 @@
+import { navigate } from "astro:transitions/client";
+
 import { EventSelect } from "@/components/event-select";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
 import { Label } from "@/components/ui/label";
@@ -25,9 +27,11 @@ export function StatisticsNav({
   statistic,
 }: StatisticsNavProps) {
   const go = (nextEvent: Set, nextGender: Gender, nextStatistic?: string) => {
-    window.location.href = nextStatistic
-      ? `/statistics/${nextEvent}/${nextGender}/${nextStatistic}`
-      : `/statistics/${nextEvent}/${nextGender}`;
+    navigate(
+      nextStatistic
+        ? `/statistics/${nextEvent}/${nextGender}/${nextStatistic}`
+        : `/statistics/${nextEvent}/${nextGender}`,
+    );
   };
 
   return (

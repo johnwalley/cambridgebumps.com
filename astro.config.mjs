@@ -38,6 +38,11 @@ export default defineConfig({
   // matching redirect pages so `astro dev`, `astro preview` and any plain
   // static host behave the same way.
   redirects: buildAstroRedirects(),
+  // `BaseLayout.astro` swaps pages in place with `<ClientRouter />`; prefetching
+  // on hover means the swap usually has the next page already in cache. The
+  // hover strategy is debounced and deduplicated, so sweeping the pointer along
+  // the year strip only fetches the year the visitor settles on.
+  prefetch: { prefetchAll: true, defaultStrategy: "hover" },
   integrations: [react(), mdx()],
   vite: {
     plugins: [tailwindcss()],

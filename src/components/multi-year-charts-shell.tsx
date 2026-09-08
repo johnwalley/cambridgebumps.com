@@ -1,4 +1,5 @@
 import { Cross2Icon } from "@radix-ui/react-icons";
+import { navigate } from "astro:transitions/client";
 
 import { EventSelect } from "@/components/event-select";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
@@ -74,14 +75,18 @@ export function MultiYearChartsShell({
           <EventSelect
             value={event}
             onValueChange={(value) => {
-              window.location.href = `/multi-year-charts/${value}/${gender}`;
+              navigate(
+                withParams(`/multi-year-charts/${value}/${gender}`, params),
+              );
             }}
           />
           <GenderRadioGroup
             event={event}
             value={gender}
             onValueChange={(value) => {
-              window.location.href = `/multi-year-charts/${event}/${value}`;
+              navigate(
+                withParams(`/multi-year-charts/${event}/${value}`, params),
+              );
             }}
           />
           <div className="items-top flex space-x-2">

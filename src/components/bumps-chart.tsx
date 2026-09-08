@@ -2,6 +2,9 @@ import { BumpsChart as Chart } from "react-bumps-chart";
 import type { Event } from "react-bumps-chart/dist/types";
 import { useMemo, useSyncExternalStore } from "react";
 
+import { ChartPlaceholder } from "@/components/chart-placeholder";
+import { estimateChartViewBox } from "@/lib/chart-size";
+
 import classes from "./bumps-chart.module.css";
 import "react-bumps-chart/dist/index.css";
 
@@ -25,6 +28,10 @@ export default function BumpsChart({
     () => false,
   );
 
+  // Reserve the chart's height for the paints before it can render, so the page
+  // doesn't grow by 1600-odd pixels the moment hydration finishes.
+  const viewBox = useMemo(() => estimateChartViewBox(data), [data]);
+
   const highlightedData = useMemo(
     () => ({
       ...data,
@@ -40,6 +47,8 @@ export default function BumpsChart({
     <div className={classes.chart}>
       {isClient ? (
         <Chart data={highlightedData} blades={blades} spoons={spoons} />
+      ) : viewBox ? (
+        <ChartPlaceholder viewBox={viewBox} rows={data.crews.length} />
       ) : null}
     </div>
   );

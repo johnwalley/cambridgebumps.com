@@ -1,6 +1,8 @@
 ---
 import "@/styles/globals.css";
 
+import { ClientRouter } from "astro:transitions";
+
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 import { SiteHeader } from "@/components/site-header";
 import { googleAnalyticsTag, siteConfig } from "@/config/site";
@@ -60,6 +62,16 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
 
+    {
+      /*
+      Navigation swaps the page in place rather than loading a new document, so
+      moving between years keeps the scroll position and drops the white flash
+      between pages. Links are prefetched on hover (see `astro.config.mjs`), so
+      the swap usually has nothing left to fetch.
+    */
+    }
+    <ClientRouter />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content={siteConfig.name} />
@@ -73,20 +85,31 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
     {/* Applies the stored theme before first paint, so there's no flash. */}
     <script is:inline>
       (() => {
-        try {
-          const stored = localStorage.getItem("theme");
-          const theme =
-            stored === "light" || stored === "dark"
-              ? stored
-              : window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light";
+        const applyTheme = () => {
+          try {
+            const stored = localStorage.getItem("theme");
+            const theme =
+              stored === "light" || stored === "dark"
+                ? stored
+                : window.matchMedia("(prefers-color-scheme: dark)").matches
+                  ? "dark"
+                  : "light";
 
-          document.documentElement.classList.toggle("dark", theme === "dark");
-          document.documentElement.style.colorScheme = theme;
-        } catch {
-          // Ignore (private mode / storage disabled).
-        }
+            document.documentElement.classList.toggle("dark", theme === "dark");
+            document.documentElement.style.colorScheme = theme;
+          } catch {
+            // Ignore (private mode / storage disabled).
+          }
+        };
+
+        applyTheme();
+
+        // A view transition replaces <html>'s attributes with the incoming
+        // page's, which drops the class just set. `astro:after-swap` runs
+        // before the new page paints, so re-applying there keeps the theme
+        // steady across navigation. This script isn't re-run on a swap, so the
+        // listener is only ever registered once.
+        document.addEventListener("astro:after-swap", applyTheme);
       })();
     </script>
   </head>
