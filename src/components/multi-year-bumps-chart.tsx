@@ -5,6 +5,10 @@ import { useEffect, useMemo, useState } from "react";
 import classes from "./bumps-chart.module.css";
 import "react-bumps-chart/dist/index.css";
 
+// A stable identity, so the memo below doesn't hand the chart a fresh array on
+// every render while the results are still loading.
+const EMPTY: Event[] = [];
+
 type MultiYearBumpsChartProps = {
   // A whole event's results run to megabytes and the chart only renders in the
   // browser, so the data is fetched from a static JSON file (built by
@@ -45,17 +49,22 @@ export default function MultiYearBumpsChart({
     };
   }, [src]);
 
-  const highlightedData = useMemo(
-    () =>
-      (data ?? []).map((event) => ({
-        ...event,
-        crews: event.crews.map((crew) => ({
-          ...crew,
-          highlight: crew.club === club,
-        })),
+  // A whole event is ~250 races and ~19,000 crews, so cloning every one of them
+  // to set a flag is not free. The results carry no highlight of their own, so
+  // with no club selected — the default, and every blades/spoons toggle — the
+  // fetched data can be handed straight to the chart.
+  const highlightedData = useMemo(() => {
+    if (!data) return EMPTY;
+    if (!club) return data;
+
+    return data.map((event) => ({
+      ...event,
+      crews: event.crews.map((crew) => ({
+        ...crew,
+        highlight: crew.club === club,
       })),
-    [data, club],
-  );
+    }));
+  }, [data, club]);
 
   if (failed) {
     return (

@@ -32,16 +32,20 @@ export default function BumpsChart({
   // doesn't grow by 1600-odd pixels the moment hydration finishes.
   const viewBox = useMemo(() => estimateChartViewBox(data), [data]);
 
-  const highlightedData = useMemo(
-    () => ({
+  // The results carry no highlight of their own, so with no club selected the
+  // year's data goes to the chart untouched rather than being cloned crew by
+  // crew on every render.
+  const highlightedData = useMemo(() => {
+    if (!club) return data;
+
+    return {
       ...data,
       crews: data.crews.map((crew) => ({
         ...crew,
         highlight: crew.club === club,
       })),
-    }),
-    [data, club],
-  );
+    };
+  }, [data, club]);
 
   return (
     <div className={classes.chart}>

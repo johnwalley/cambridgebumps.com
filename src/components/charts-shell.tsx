@@ -61,14 +61,11 @@ export function ChartsShell({
 
   const focusElement = years.findIndex((candidate) => candidate === year);
 
-  const yearLinks = years.map((candidate) => (
-    <a
-      key={candidate}
-      href={withParams(`/charts/${event}/${gender}/${candidate}`, params)}
-    >
-      {candidate}
-    </a>
-  ));
+  // The same list feeds both year strips (the mobile one and the sidebar one).
+  const yearItems = years.map((candidate) => ({
+    href: withParams(`/charts/${event}/${gender}/${candidate}`, params),
+    label: candidate,
+  }));
 
   return (
     <div className="relative mx-auto w-full items-stretch gap-6 px-2 lg:grid lg:grid-cols-[1fr_400px]">
@@ -98,12 +95,11 @@ export function ChartsShell({
         </Tabs>
         <YearPicker
           key={`${event}/${gender}`}
+          items={yearItems}
           skipLength={576}
           focusElement={focusElement}
           position="center"
-        >
-          {yearLinks}
-        </YearPicker>
+        />
       </div>
       <div className="order-2 hidden border-l py-4 lg:block">
         <div className="flex flex-col space-y-3 px-4">
@@ -135,12 +131,11 @@ export function ChartsShell({
             </HoverCard>
             <YearPicker
               key={`${event}/${gender}`}
+              items={yearItems}
               skipLength={256}
               focusElement={focusElement}
               position="center"
-            >
-              {yearLinks}
-            </YearPicker>
+            />
           </div>
           <div className="items-top flex space-x-2">
             <HighlightToggle

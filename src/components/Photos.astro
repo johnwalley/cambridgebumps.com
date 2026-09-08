@@ -42,14 +42,22 @@ const rotations = [
           11rem -> 22rem) — the browser only knows the element's layout width
           and would otherwise pick a candidate half the resolution it needs.
         */}
+        {/*
+          Loading all five eagerly at high priority pulled ~550 KB of
+          decorative photos in front of everything else on a 2x display. Only
+          the first two cards are on screen at every width — the strip runs off
+          the right of a phone — so the rest are lazy: a wide viewport shows
+          them a beat later, a narrow one never fetches them at all.
+        */}
         <Image
           src={image.src}
           alt={image.alt}
           widths={[352, 576, 704, 1152]}
           sizes="(min-width: 640px) 36rem, 22rem"
-          quality={85}
-          loading="eager"
-          fetchpriority="high"
+          quality={75}
+          loading={index < 2 ? "eager" : "lazy"}
+          fetchpriority={index === 0 ? "high" : "auto"}
+          decoding={index === 0 ? "sync" : "async"}
           class="absolute inset-0 h-full w-full object-cover"
         />
       </div>

@@ -9,10 +9,14 @@ import * as React from "react";
 // The first render (server render and hydration alike) sees an empty set of
 // params, matching the static HTML; the real query string is read in an effect.
 export function useChartParams() {
-  const [params, setParams] = React.useState(() => new URLSearchParams());
+  // The raw query string, not a `URLSearchParams`: a fresh object is never
+  // equal to the last one, so storing one would re-render the whole shell —
+  // both year strips included — on mount even when the URL carries no params
+  // at all, which is the common case. A string lets React bail out.
+  const [search, setSearch] = React.useState("");
 
   React.useEffect(() => {
-    const read = () => setParams(new URLSearchParams(window.location.search));
+    const read = () => setSearch(window.location.search);
 
     read();
 
@@ -20,6 +24,8 @@ export function useChartParams() {
     window.addEventListener("popstate", read);
     return () => window.removeEventListener("popstate", read);
   }, []);
+
+  const params = React.useMemo(() => new URLSearchParams(search), [search]);
 
   const setParam = React.useCallback((name: string, value: string | null) => {
     const next = new URLSearchParams(window.location.search);
@@ -44,7 +50,7 @@ export function useChartParams() {
       query ? `${window.location.pathname}?${query}` : window.location.pathname,
     );
 
-    setParams(next);
+    setSearch(query ? `?${query}` : "");
   }, []);
 
   return { params, setParam };

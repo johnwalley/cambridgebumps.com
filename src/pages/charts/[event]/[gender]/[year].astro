@@ -5,6 +5,7 @@ import { ChartsShell } from "@/components/charts-shell";
 import { clubsByYear } from "@/data/chart-meta";
 import { results, summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { slimRace } from "@/lib/slim-results";
 import {
   events,
   findResultByYear,
@@ -44,8 +45,11 @@ const clubs = clubsByYear[event]?.[gender]?.[year] ?? [];
 
 // Years pre-generated without results yet (see `getStaticPaths`) render a
 // friendly message and stay out of the index rather than being thin content.
+// `slimRace` drops the per-crew flags the chart recomputes or reads only for
+// truthiness; the year's results are serialised into the island's props, and
+// Astro escapes every quote in them to `&quot;`, so each byte here costs six.
 const result = findResultByYear(results[event][gender], year);
-const data = result && result.crews.length > 0 ? result : null;
+const data = result && result.crews.length > 0 ? slimRace(result) : null;
 
 const eventName = set[event];
 const genderName = getGenderLabel(event, gender);

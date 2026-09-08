@@ -1,33 +1,27 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/* Self-hosted Roboto Flex (latin subset, GRAD axis) — the bumps charts render
-   their labels with it and vary the GRAD axis for highlighted crews. */
-@import "@fontsource-variable/roboto-flex/grad.css";
 
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
-/* Geist, self-hosted from `public/fonts` (previously loaded via `next/font`). */
+/* Self-hosted Roboto Flex (GRAD axis) — the bumps charts render their labels
+   with it and vary the GRAD axis for highlighted crews. Declared here rather
+   than imported from `@fontsource-variable/roboto-flex/grad.css`, which also
+   pulls in the Cyrillic, Greek and Vietnamese subsets: their `unicode-range`
+   means a browser never downloads them, but they still ship five unused woff2
+   files into `dist/`. The site is English-only, so latin is all it needs. */
 @font-face {
-  font-family: "Geist Sans";
-  src: url("/fonts/GeistVF.woff") format("woff");
-  font-weight: 100 900;
+  font-family: "Roboto Flex Variable";
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Geist Mono";
-  src: url("/fonts/GeistMonoVF.woff") format("woff");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --font-geist-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-geist-mono: "Geist Mono", ui-monospace, monospace;
+  font-weight: 100 1000;
+  src: url("@fontsource-variable/roboto-flex/files/roboto-flex-latin-grad-normal.woff2")
+    format("woff2-variations");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 @theme inline {
@@ -169,5 +163,20 @@ p a {
 @media (max-width: 640px) {
   .container {
     padding-inline: 1rem;
+  }
+}
+
+/* The year strip on the chart pages renders one link per year — nearly 200 of
+   them, twice over (the mobile strip and the sidebar one). Spelling the
+   utilities out on every link put ~150 KB of identical `class` text into every
+   chart page, so they collapse into one component class here. See
+   `src/components/year-picker.tsx`. */
+@layer components {
+  .year-tab {
+    @apply inline-flex h-[1.45rem] items-center justify-center rounded-sm px-2 py-1 text-sm font-medium whitespace-nowrap ring-offset-background transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+
+  .year-tab[aria-current="page"] {
+    @apply bg-background text-foreground shadow;
   }
 }
