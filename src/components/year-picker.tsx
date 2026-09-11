@@ -35,13 +35,40 @@ export function YearPicker({
   const leftRef = useRef<HTMLDivElement>(null!);
   const rightRef = useRef<HTMLDivElement>(null!);
 
+  // The chart pages persist their island across view transitions, so clicking a
+  // year updates `focusElement` in place rather than tearing the strip down and
+  // rebuilding it at `scrollLeft: 0`. The first pass still has to jump — the
+  // selected year has never been on screen — but every later one can slide it
+  // back into the middle.
+  const firstScroll = useRef(true);
+  const lastScroll = useRef(0);
+
   useEffect(() => {
-    selectedRef.current?.scrollIntoView?.({
-      inline: position,
-      block: "nearest",
-      behavior: "instant",
-    });
-  }, [position]);
+    const target = selectedRef.current;
+
+    if (!target?.scrollIntoView) return;
+
+    const jump =
+      firstScroll.current ||
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+    firstScroll.current = false;
+
+    const scroll = (behavior: ScrollBehavior) =>
+      target.scrollIntoView({ inline: position, block: "nearest", behavior });
+
+    if (jump) {
+      scroll("instant");
+      return;
+    }
+
+    // A smooth scroll asked for mid-swap is dropped on the floor: the view
+    // transition suppresses rendering while it swaps the document, and the
+    // pending scroll animation goes with it. A frame later it takes.
+    const frame = requestAnimationFrame(() => scroll("smooth"));
+
+    return () => cancelAnimationFrame(frame);
+  }, [focusElement, position]);
 
   useEffect(() => {
     const e = ref.current;
@@ -53,14 +80,29 @@ export function YearPicker({
       leftRef.current.hidden = Math.abs(e.scrollLeft) < 1;
       rightRef.current.hidden =
         Math.abs(e.scrollLeft - (e.scrollWidth - e.clientWidth)) < 1;
+
+      lastScroll.current = e.scrollLeft;
+    };
+
+    // Surviving the swap keeps the strip's React state and its DOM, but not its
+    // scroll offset: the router lifts the island out of the old document and
+    // drops it into the new one, and a box that leaves the tree comes back at
+    // zero. Put it back before the new page paints, or the slide to the chosen
+    // year starts from year one every time.
+    // `behavior: "instant"` matters: the box sets `scroll-behavior: smooth`, so
+    // assigning `scrollLeft` would animate the restore itself.
+    const restore = () => {
+      e.scrollTo({ left: lastScroll.current, behavior: "instant" });
     };
 
     e.addEventListener("scroll", f);
+    document.addEventListener("astro:after-swap", restore);
 
     f();
 
     return () => {
       e.removeEventListener("scroll", f);
+      document.removeEventListener("astro:after-swap", restore);
     };
   }, []);
 

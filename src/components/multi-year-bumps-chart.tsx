@@ -32,6 +32,13 @@ export default function MultiYearBumpsChart({
   useEffect(() => {
     let cancelled = false;
 
+    // The shell is persisted across view transitions, so switching event or
+    // gender re-runs this effect on a component still holding the previous
+    // event's results. Clear them, or the old chart sits under the new page's
+    // heading until the fetch lands.
+    setData(null);
+    setFailed(false);
+
     fetch(src)
       .then((response) => {
         if (!response.ok) throw new Error(`Failed to load ${src}`);

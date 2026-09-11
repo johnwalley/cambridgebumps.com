@@ -120,7 +120,11 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
     >
       Skip to main content
     </a>
-    <SiteHeader pathname={pathname} client:load />
+    <SiteHeader
+      pathname={pathname}
+      client:load
+      transition:persist="site-header"
+    />
     <main id="main-content" class="flex-1">
       <slot />
     </main>

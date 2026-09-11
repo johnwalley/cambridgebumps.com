@@ -20,9 +20,17 @@ export function useChartParams() {
 
     read();
 
-    // Keep in sync with the back/forward buttons.
+    // Keep in sync with the back/forward buttons. `astro:after-swap` covers the
+    // other direction: the shells are persisted across view transitions, so
+    // this effect never runs again after the first page — without it the params
+    // would stay frozen at whatever the URL held when the island was hydrated.
     window.addEventListener("popstate", read);
-    return () => window.removeEventListener("popstate", read);
+    document.addEventListener("astro:after-swap", read);
+
+    return () => {
+      window.removeEventListener("popstate", read);
+      document.removeEventListener("astro:after-swap", read);
+    };
   }, []);
 
   const params = React.useMemo(() => new URLSearchParams(search), [search]);

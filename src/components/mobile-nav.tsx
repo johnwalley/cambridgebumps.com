@@ -14,6 +14,18 @@ export function MobileNav({ pathname }: { pathname: string }) {
 
   const pref = useEventPreference();
 
+  // The header is persisted across view transitions, so following one of the
+  // sheet's own links no longer tears the sheet down with the old page: it
+  // would stay mounted — scroll lock, focus trap and all — over the page it
+  // just navigated to. Close it as soon as a navigation starts.
+  React.useEffect(() => {
+    const close = () => setOpen(false);
+
+    document.addEventListener("astro:before-preparation", close);
+    return () =>
+      document.removeEventListener("astro:before-preparation", close);
+  }, []);
+
   // Extract the current event and gender from the URL, e.g.
   // "/charts/eights/women/2025" -> event "eights", gender "women".
   const [, currentEvent, currentGender] = pathname.split("/").filter(Boolean);
