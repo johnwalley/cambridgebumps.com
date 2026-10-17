@@ -18,6 +18,15 @@ export function SiteHeader({ pathname }: { pathname: string }) {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <MainNav pathname={pathname} />
         <MobileNav pathname={pathname} />
+        {/* The desktop nav carries the logo; below lg it's hidden, so the
+            header would otherwise be just the menu and icon buttons. */}
+        <a
+          href="/"
+          className="flex items-center space-x-2 whitespace-nowrap lg:hidden"
+        >
+          <Icons.logo className="h-5 w-5" />
+          <span className="font-bold">{siteConfig.name}</span>
+        </a>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none"></div>
           <nav className="flex items-center">
