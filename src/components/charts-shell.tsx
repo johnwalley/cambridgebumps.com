@@ -1,4 +1,3 @@
-import { Cross2Icon } from "@radix-ui/react-icons";
 import { navigate } from "astro:transitions/client";
 import type { Event } from "react-bumps-chart/dist/types";
 
@@ -6,21 +5,12 @@ import BumpsChart from "@/components/bumps-chart";
 import { EventSelect } from "@/components/event-select";
 import { EventsNav } from "@/components/events-nav";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
-import { HighlightToggle } from "@/components/highlight-toggle";
-import { Button } from "@/components/ui/button";
+import { HighlightControls } from "@/components/highlight-controls";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { YearPicker } from "@/components/year-picker";
 import { useChartParams, withParams } from "@/hooks/use-chart-params";
@@ -100,6 +90,15 @@ export function ChartsShell({
           focusElement={focusElement}
           position="center"
         />
+        {data && (
+          <HighlightControls
+            clubs={clubs}
+            club={club}
+            blades={blades}
+            setParam={setParam}
+            compact
+          />
+        )}
       </div>
       <div className="order-2 hidden border-l py-4 lg:block">
         <div className="flex flex-col space-y-3 px-4">
@@ -137,47 +136,12 @@ export function ChartsShell({
               position="center"
             />
           </div>
-          <div className="items-top flex space-x-2">
-            <HighlightToggle
-              id="blades"
-              label="Highlight blades"
-              description="Crews who have gone up every day are highlighted."
-              checked={blades}
-              onCheckedChange={(checked) =>
-                setParam("blades", checked ? "true" : "false")
-              }
-            />
-          </div>
-          <div>
-            <Label htmlFor="highlight-club" className="mb-4 block">
-              Highlight club
-            </Label>
-            <div className="flex">
-              <Select
-                value={club ?? ""}
-                onValueChange={(value) => setParam("club", value)}
-              >
-                <SelectTrigger id="highlight-club" className="w-[280px]">
-                  <SelectValue placeholder="Select a club" />
-                </SelectTrigger>
-                <SelectContent>
-                  {clubs.map((name) => (
-                    <SelectItem key={name} value={name}>
-                      {name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Button
-                variant="link"
-                size="icon"
-                disabled={club === null}
-                onClick={() => setParam("club", null)}
-              >
-                <Cross2Icon className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
+          <HighlightControls
+            clubs={clubs}
+            club={club}
+            blades={blades}
+            setParam={setParam}
+          />
         </div>
       </div>
       <div className="pb-4">
