@@ -39,7 +39,7 @@ export default defineConfig({
   // `vercel.json`, which Vercel merges into the adapter's routes.
   adapter: vercel(),
   // Defined once in `scripts/redirects.mjs`; also served by `astro dev`.
-  redirects: buildAstroRedirects(),
+  redirects: buildAstroRedirects({ title: TITLE }),
   // `BaseLayout.astro` swaps pages in place with `<ClientRouter />`; prefetching
   // on hover means the swap usually has the next page already in cache. The
   // hover strategy is debounced and deduplicated, so sweeping the pointer along

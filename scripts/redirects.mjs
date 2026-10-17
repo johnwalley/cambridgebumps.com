@@ -28,11 +28,21 @@ export function getLatestYear(event, gender) {
 const EVENTS = ["eights", "lents", "mays", "torpids", "town"];
 const GENDERS = ["men", "women"];
 
-export function buildRedirects() {
+// The event the bare `/charts`, `/statistics` and `/multi-year-charts` routes
+// open on: one of the site's own. Cambridge keeps Town, its default all along.
+/** @param {string} title */
+function defaultEvent(title) {
+  return title === "Oxford" ? "eights" : "town";
+}
+
+/** @param {{ title: string }} site */
+export function buildRedirects({ title }) {
+  const event = defaultEvent(title);
+
   return [
     {
       source: "/statistics",
-      destination: "/statistics/town/men",
+      destination: `/statistics/${event}/men`,
       permanent: false,
     },
     {
@@ -42,7 +52,7 @@ export function buildRedirects() {
     },
     {
       source: "/charts",
-      destination: `/charts/town/men/${getLatestYear("town", "men")}`,
+      destination: `/charts/${event}/men/${getLatestYear(event, "men")}`,
       permanent: false,
     },
     // Each event/gender redirects to its own latest year, since events don't
@@ -63,7 +73,7 @@ export function buildRedirects() {
     ),
     {
       source: "/multi-year-charts",
-      destination: "/multi-year-charts/town/men",
+      destination: `/multi-year-charts/${event}/men`,
       permanent: false,
     },
     {
@@ -131,9 +141,10 @@ function expand(source, destination) {
   return pairs;
 }
 
-export function buildAstroRedirects() {
+/** @param {{ title: string }} site */
+export function buildAstroRedirects(site) {
   return Object.fromEntries(
-    buildRedirects().flatMap(({ source, destination, permanent }) =>
+    buildRedirects(site).flatMap(({ source, destination, permanent }) =>
       expand(source, destination).map(([s, d]) => [
         s,
         // 308/307 are what `vercel.json`'s `permanent` flag used to produce.
