@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useEventPreference } from "@/hooks/use-event-preference";
+import { cn, isGender } from "@/lib/utils";
 import type { MainNavItem } from "@/types/nav";
 
 export function MobileNav({ pathname }: { pathname: string }) {
@@ -46,6 +47,18 @@ export function MobileNav({ pathname }: { pathname: string }) {
 
     return `${item.href}`;
   };
+
+  // The Events links go to an event's latest chart. Keep the category the
+  // visitor is looking at (or last looked at) rather than always landing on
+  // the men's/Open chart.
+  const gender =
+    currentGender && isGender(currentGender) ? currentGender : pref?.gender;
+
+  const buildEventHref = (href: string): string =>
+    gender ? `${href}/${gender}` : href;
+
+  const isActive = (href: string): boolean =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -96,7 +109,12 @@ export function MobileNav({ pathname }: { pathname: string }) {
             {docsConfig.mainNav.map(
               (item) =>
                 item.href && (
-                  <a key={item.href} href={buildHref(item)}>
+                  <a
+                    key={item.href}
+                    href={buildHref(item)}
+                    aria-current={isActive(item.href) ? "true" : undefined}
+                    className={cn(isActive(item.href) && "font-medium")}
+                  >
                     {item.title}
                   </a>
                 ),
@@ -111,7 +129,17 @@ export function MobileNav({ pathname }: { pathname: string }) {
                     <React.Fragment key={item.href}>
                       {!item.disabled &&
                         (item.href ? (
-                          <a href={item.href} className="text-muted-foreground">
+                          <a
+                            href={buildEventHref(item.href)}
+                            aria-current={
+                              isActive(item.href) ? "true" : undefined
+                            }
+                            className={cn(
+                              isActive(item.href)
+                                ? "font-medium text-foreground"
+                                : "text-muted-foreground",
+                            )}
+                          >
                             {item.title}
                             {item.label && (
                               <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
