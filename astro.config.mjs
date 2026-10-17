@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 
 import { buildAstroRedirects } from "./scripts/redirects.mjs";
@@ -30,13 +31,14 @@ const GOOGLE_ANALYTICS_TAG =
 export default defineConfig({
   site: BASE_URL,
   output: "static",
-  // Emit `charts/mays/men/2025.html` rather than `.../2025/index.html`, so the
-  // deployed URLs match the ones the site has always served.
-  build: { format: "file" },
-  // Redirects are defined once in `scripts/redirects.mjs`. In production the
-  // host applies them from `vercel.json` (`pnpm gen:redirects`); these generate
-  // matching redirect pages so `astro dev`, `astro preview` and any plain
-  // static host behave the same way.
+  // The adapter writes `.vercel/output/config.json`, turning `redirects` below
+  // into real HTTP redirects computed at build time, so the latest-year
+  // defaults can never go stale. It also forces `build.format: "directory"`
+  // (`charts/mays/men/2025/index.html`), which Vercel serves at the same
+  // extensionless URLs. Response headers it doesn't cover live in
+  // `vercel.json`, which Vercel merges into the adapter's routes.
+  adapter: vercel(),
+  // Defined once in `scripts/redirects.mjs`; also served by `astro dev`.
   redirects: buildAstroRedirects(),
   // `BaseLayout.astro` swaps pages in place with `<ClientRouter />`; prefetching
   // on hover means the swap usually has the next page already in cache. The

@@ -1,7 +1,6 @@
-// Single source of truth for redirects, shared by:
-//  - `astro.config.mjs` (via `buildAstroRedirects`, so `astro dev`/`preview` and
-//    any plain static host behave like production)
-//  - `scripts/generate-vercel-redirects.mjs` (writes `vercel.json` for production)
+// Single source of truth for redirects. `astro.config.mjs` passes them to
+// Astro via `buildAstroRedirects`; in production `@astrojs/vercel` turns them
+// into HTTP redirects at build time, and `astro dev` serves them directly.
 //
 // The default chart year is derived from the results data, never hand-edited.
 
@@ -24,12 +23,6 @@ export function getLatestYear(event, gender) {
   // Years may be compound strings such as "1827 February March"; the leading
   // 4-digit year is canonical.
   return Math.max(...results.map((r) => Number(String(r.year).split(" ")[0])));
-}
-
-// The bare `/charts` redirect lands on town/men, so the default year is the
-// latest year for which town/men has results.
-export function getDefaultYear() {
-  return getLatestYear("town", "men");
 }
 
 const EVENTS = ["eights", "lents", "mays", "torpids", "town"];
@@ -117,7 +110,7 @@ export function buildRedirects() {
 
 // Astro's `redirects` config takes a map of concrete paths, so the `:event` /
 // `:gender` patterns above are expanded against the known event and gender
-// lists. `vercel.json` keeps the compact pattern form.
+// lists.
 function expand(source, destination) {
   let pairs = [[source, destination]];
 
@@ -143,7 +136,8 @@ export function buildAstroRedirects() {
     buildRedirects().flatMap(({ source, destination, permanent }) =>
       expand(source, destination).map(([s, d]) => [
         s,
-        { status: permanent ? 301 : 302, destination: d },
+        // 308/307 are what `vercel.json`'s `permanent` flag used to produce.
+        { status: permanent ? 308 : 307, destination: d },
       ]),
     ),
   );

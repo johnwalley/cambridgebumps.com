@@ -18,10 +18,11 @@ interface Props {
   ogDescription?: string;
 }
 
-// `build.format: "file"` means `Astro.url.pathname` carries the `.html`
-// suffix during the build (`/about.html`) while the dev server and the
-// deployed site both serve `/about`. Normalise it so canonical URLs and the
-// header's idea of "where am I" are the URLs visitors actually see.
+// During the build `Astro.url.pathname` follows `build.format` — a trailing
+// slash for "directory" (`/about/`, which `@astrojs/vercel` forces), `.html`
+// for "file" — while the dev server and the deployed site both serve
+// `/about`. Normalise it so canonical URLs and the header's idea of "where am
+// I" are the URLs visitors actually see.
 const pathname =
   Astro.url.pathname
     .replace(/\/?(index)?\.html$/, "")

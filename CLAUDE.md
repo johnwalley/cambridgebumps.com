@@ -42,8 +42,6 @@ pnpm format:check
 # Regenerate the client-safe chart metadata (also runs automatically on prebuild)
 pnpm gen:chart-meta
 
-# Regenerate vercel.json redirects (run after adding a new year — see below)
-pnpm gen:redirects
 ```
 
 `pnpm build` runs a `prebuild` hook (`scripts/generate-chart-meta.mjs`) that regenerates `src/data/chart-meta.json` first.
@@ -84,7 +82,7 @@ Variables set in the real environment (Vercel project settings, a shell export) 
 
 ### Static output
 
-The site is a **fully static build** (`output: "static"`): `pnpm build` emits HTML/JS to `dist/` with no server at runtime. `build.format: "file"` makes Astro write `charts/mays/men/2025.html` rather than `…/2025/index.html`, so the deployed URLs are exactly the ones the site has always served.
+The site is a **fully static build** (`output: "static"`): `pnpm build` emits HTML/JS to `dist/` with no server at runtime. The `@astrojs/vercel` adapter copies it to `.vercel/output/static` and writes `.vercel/output/config.json` (Vercel's Build Output API) with the redirects and routes. The adapter forces `build.format: "directory"` (`charts/mays/men/2025/index.html`), which Vercel serves at the extensionless URLs the site has always used.
 
 - Every dynamic route lists its pages in `getStaticPaths()`
 - Results data is stored in JSON format in `src/data/results/` organized by event
@@ -103,7 +101,8 @@ Everything else (statistics tables, blades, photos, prose) is rendered at build 
 
 ### Configuration Files
 
-- `astro.config.mjs` — integrations, redirects, site URL, env injection
+- `astro.config.mjs` — integrations, Vercel adapter, redirects, site URL, env injection
+- `vercel.json` — framework preset and response headers the adapter doesn't emit (the `/data/results` cache policy). Vercel merges these into the adapter's routes; don't add `redirects` here
 - `src/config/site.ts` - Site metadata (name, description, social links) read from `import.meta.env`
 - `src/config/docs.ts` - Navigation structure defining main nav and sidebar items
 
@@ -209,15 +208,9 @@ TypeScript is configured with `@/*` mapping to `src/*` for cleaner imports.
 
 ## Redirects and the "latest year" default
 
-Redirects are defined once in `scripts/redirects.mjs` and consumed in two places:
+Redirects are defined once in `scripts/redirects.mjs`. `astro.config.mjs` passes them to Astro's `redirects` (via `buildAstroRedirects`, which expands the `:event`/`:gender` patterns into concrete paths). In production, `@astrojs/vercel` turns them into real HTTP redirects in `.vercel/output/config.json` at build time. `astro dev` serves them too. `astro preview` does not: the adapter turns off Astro's HTML redirect pages, so `dist/` has none.
 
-- `scripts/generate-vercel-redirects.mjs` writes `vercel.json`, which serves them in **production**.
-- `astro.config.mjs` turns the same list into Astro `redirects` (via `buildAstroRedirects`, which expands the `:event`/`:gender` patterns into concrete paths). These generate small redirect pages so `astro dev`, `astro preview` and any plain static host behave like production.
-
-The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived from the latest year in each event/gender's `results.json` — never hand-edited.
+The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived from the latest year in each event/gender's `results.json` at build time — never hand-edited, and nothing to regenerate.
 
 > [!IMPORTANT]
-> **After adding a new year's results, regenerate both derived artifacts and commit them:**
->
-> 1. `pnpm gen:redirects` → updates `vercel.json`. Otherwise the "Bumps charts" link and bare `/charts/...` URLs will keep redirecting to the previous year in production. This bit us when Town 2026 was added but `vercel.json` still pointed to 2025.
-> 2. `pnpm gen:chart-meta` → updates `src/data/chart-meta.json` (the year lists and club dropdowns). This runs automatically on `pnpm build`'s prebuild, but `astro dev` reads the committed file, so regenerate it to see the new year/clubs locally.
+> **After adding a new year's results**, run `pnpm gen:chart-meta` and commit `src/data/chart-meta.json` (the year lists and club dropdowns). `pnpm build`'s prebuild regenerates it automatically, but `astro dev` reads the committed file, so regenerate it to see the new year/clubs locally.
