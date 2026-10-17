@@ -3,7 +3,7 @@ import type { Event } from "react-bumps-chart/dist/types";
 
 import BumpsChart from "@/components/bumps-chart";
 import { EventSelect } from "@/components/event-select";
-import { EventsNav } from "@/components/events-nav";
+import { EventsNav, type YearFor } from "@/components/events-nav";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
 import { HighlightControls } from "@/components/highlight-controls";
 import {
@@ -22,6 +22,8 @@ type ChartsShellProps = {
   year: string;
   /** Every year this event/gender has results for, oldest first. */
   years: string[];
+  /** Where each event/category link lands — see `YearFor`. */
+  yearFor: YearFor;
   /** Club names racing in this year, for the "Highlight club" dropdown. */
   clubs: string[];
   /** The year's results, or null when there are none yet. */
@@ -39,6 +41,7 @@ export function ChartsShell({
   gender,
   year,
   years,
+  yearFor,
   clubs,
   data,
   showCraNotice,
@@ -60,7 +63,12 @@ export function ChartsShell({
   return (
     <div className="relative mx-auto w-full items-stretch gap-6 px-2 lg:grid lg:grid-cols-[1fr_400px]">
       <div className="mt-2 mb-4 flex flex-col space-y-2 lg:hidden">
-        <EventsNav event={event} gender={gender} year={year} params={params} />
+        <EventsNav
+          event={event}
+          gender={gender}
+          yearFor={yearFor}
+          params={params}
+        />
         <Tabs value={gender} className="relative grid w-full scroll-m-20 gap-4">
           <TabsList className="h-7 rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)] sm:flex">
             <TabsTrigger
@@ -68,7 +76,12 @@ export function ChartsShell({
               className="h-[1.45rem] rounded-sm px-2 text-sm"
               asChild
             >
-              <a href={withParams(`/charts/${event}/men/${year}`, params)}>
+              <a
+                href={withParams(
+                  `/charts/${event}/men/${yearFor[event].men}`,
+                  params,
+                )}
+              >
                 {getGenderLabel(event, "men")}
               </a>
             </TabsTrigger>
@@ -77,7 +90,12 @@ export function ChartsShell({
               className="h-[1.45rem] rounded-sm px-2 text-sm"
               asChild
             >
-              <a href={withParams(`/charts/${event}/women/${year}`, params)}>
+              <a
+                href={withParams(
+                  `/charts/${event}/women/${yearFor[event].women}`,
+                  params,
+                )}
+              >
                 Women
               </a>
             </TabsTrigger>
@@ -106,7 +124,10 @@ export function ChartsShell({
             value={event}
             onValueChange={(value) => {
               navigate(
-                withParams(`/charts/${value}/${gender}/${year}`, params),
+                withParams(
+                  `/charts/${value}/${gender}/${yearFor[value][gender]}`,
+                  params,
+                ),
               );
             }}
           />
@@ -114,7 +135,12 @@ export function ChartsShell({
             event={event}
             value={gender}
             onValueChange={(value) => {
-              navigate(withParams(`/charts/${event}/${value}/${year}`, params));
+              navigate(
+                withParams(
+                  `/charts/${event}/${value}/${yearFor[event][value]}`,
+                  params,
+                ),
+              );
             }}
           />
           <div>
