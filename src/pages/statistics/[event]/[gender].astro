@@ -166,12 +166,15 @@ const clubStatistics = Object.keys(statisticMapping);
                     </li>
                   );
                 })}
-                <div class="flex items-center justify-center px-2 py-2">
-                  <a href={`/statistics/${event}/${gender}/${statistic}`}>
-                    View full list
-                  </a>
-                </div>
               </ul>
+              {/* Every card ends in this link, so the visible text alone would
+                  be a run of identical "View full list"s to a screen reader. */}
+              <div class="flex items-center justify-center border-t border-neutral-200 px-2 py-2 dark:border-neutral-700">
+                <a href={`/statistics/${event}/${gender}/${statistic}`}>
+                  View full list
+                  <span class="sr-only"> of {mapping.label.toLowerCase()}</span>
+                </a>
+              </div>
             </div>
           </div>
         );
