@@ -61,6 +61,28 @@ export function yearOf(year: string | number): number {
   return parseInt(String(year), 10);
 }
 
+// The year in `years` closest to `year` — `year` itself when it's there. The
+// earlier of two equally close years wins. Undefined only for an empty list.
+export function nearestYear(
+  years: string[],
+  year: string | number,
+): string | undefined {
+  const target = yearOf(year);
+
+  let best: string | undefined;
+
+  for (const candidate of years) {
+    if (
+      best === undefined ||
+      Math.abs(yearOf(candidate) - target) < Math.abs(yearOf(best) - target)
+    ) {
+      best = candidate;
+    }
+  }
+
+  return best;
+}
+
 // Find the result for a given year, tolerating compound year strings. When a
 // year holds more than one race (the early mays/men years), the first is used.
 export function findResultByYear<T extends { year: string | number }>(

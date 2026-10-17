@@ -73,7 +73,7 @@ export function HighlightControls({
         description={
           compact
             ? undefined
-            : "Crews who have gone up every day are highlighted."
+            : "Crews who bumped every day, or stayed head of the river, are highlighted."
         }
         checked={blades}
         onCheckedChange={(checked) =>
