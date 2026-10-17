@@ -58,6 +58,17 @@ export function HighlightControls({
           />
         </SelectTrigger>
         <SelectContent>
+          {/* `?club=` is carried between years, so it can name a club that
+              didn't race in this one. List it anyway, flagged, so the picker
+              shows what's selected (and can clear it) instead of silently
+              falling back to its placeholder. The highlight returns on the
+              years the club did race. */}
+          {club !== null && !clubs.includes(club) && (
+            <SelectItem value={club}>
+              {club}{" "}
+              <span className="text-muted-foreground">(did not race)</span>
+            </SelectItem>
+          )}
           {clubs.map((name) => (
             <SelectItem key={name} value={name}>
               {name}
