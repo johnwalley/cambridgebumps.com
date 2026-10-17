@@ -4,8 +4,29 @@ import { BumpsChartsCta } from "@/components/bumps-charts-cta";
 import Photos from "@/components/Photos.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { cn } from "@/lib/utils";
+import { cn, set, yearOf, type Set } from "@/lib/utils";
+
+// The site's own events in the order they're raced through the year, so when
+// two share the latest season the later one is the most recent racing.
+const seasonOrder: Set[] =
+  siteConfig.title === "Oxford"
+    ? ["torpids", "eights"]
+    : ["lents", "mays", "town"];
+
+const latestYear = (event: Set) =>
+  Math.max(...[...summary[event].men, ...summary[event].women].map(yearOf));
+
+// The announcement points at the most recent racing, derived from the
+// results, so it moves on by itself when a new event's results go in.
+const latestEvent = seasonOrder.reduce((latest, event) =>
+  latestYear(event) >= latestYear(latest) ? event : latest,
+);
+const announcementYear = String(latestYear(latestEvent));
+const announcementGender = summary[latestEvent].men.includes(announcementYear)
+  ? "men"
+  : "women";
 
 const description = `Interactive bumps charts and historical results for ${siteConfig.title} rowing races. View race results, track your college or club, and explore statistics from over 200 years of bumps racing.`;
 ---
@@ -18,17 +39,24 @@ const description = `Interactive bumps charts and historical results for ${siteC
 >
   <div class="relative container">
     <section class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8">
-      <Announcement />
-      <h1
-        data-nosnippet
-        class="text-center text-3xl leading-tight font-semibold md:text-4xl lg:leading-[1.1]"
-      >
-        There is nothing — absolutely nothing — half so much worth doing as
-        simply messing about in boats.
-      </h1>
-      <p class="max-w-[750px] text-center text-lg font-light text-balance text-foreground">
+      <Announcement
+        href={`/charts/${latestEvent}/${announcementGender}/${announcementYear}`}
+        label={`${set[latestEvent]} ${announcementYear}`}
+      />
+      {/* The quote is the page's visual headline, but the heading is what
+          the site is for; the quote is attributed as an epigraph. */}
+      <figure data-nosnippet>
+        <blockquote class="text-center text-3xl leading-tight font-semibold md:text-4xl lg:leading-[1.1]">
+          There is nothing — absolutely nothing — half so much worth doing as
+          simply messing about in boats.
+        </blockquote>
+        <figcaption class="mt-2 text-center text-sm text-muted-foreground">
+          — Kenneth Grahame, <cite>The Wind in the Willows</cite>
+        </figcaption>
+      </figure>
+      <h1 class="max-w-[750px] text-center text-lg font-light text-balance text-foreground">
         Bumps charts, statistics, and more.
-      </p>
+      </h1>
       <div
         data-nosnippet
         class="flex w-full items-center justify-center gap-4 py-4 md:pb-10"
