@@ -6,11 +6,6 @@ import { EventSelect } from "@/components/event-select";
 import { EventsNav, type YearFor } from "@/components/events-nav";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
 import { HighlightControls } from "@/components/highlight-controls";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { YearPicker } from "@/components/year-picker";
 import { useChartParams, withParams } from "@/hooks/use-chart-params";
@@ -144,16 +139,9 @@ export function ChartsShell({
             }}
           />
           <div>
-            <HoverCard openDelay={200}>
-              <HoverCardTrigger asChild>
-                <span className="mb-4 block text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                  Year
-                </span>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-[320px] text-sm" side="left">
-                The first recorded bumps race was 1815.
-              </HoverCardContent>
-            </HoverCard>
+            <span className="mb-4 block text-sm leading-none font-medium">
+              Year
+            </span>
             <YearPicker
               key={`${event}/${gender}`}
               items={yearItems}
