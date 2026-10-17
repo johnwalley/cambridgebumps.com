@@ -1,10 +1,26 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const faqs = [
+type Source = { label: string; href: string };
+
+const dudhia = (anchor: string): Source => ({
+  label: "Oxford Bumps glossary",
+  href: `https://eodg.atm.ox.ac.uk/user/dudhia/rowing/bumps/glossary.html#${anchor}`,
+});
+const cucbcRules: Source = {
+  label: "CUCBC rules for the Lent and May Bumps",
+  href: "https://www.cucbc.org/handbook/racing/bumps",
+};
+const wikipedia = (section: string): Source => ({
+  label: "Wikipedia: Bumps race",
+  href: `https://en.wikipedia.org/wiki/Bumps_race#${section}`,
+});
+
+const faqs: { question: string; answer: string; source?: Source }[] = [
   {
     question: "Blades",
-    answer: `If a crew bumps, or are head of the river every day then they are awarded blades.`,
+    answer: `If a crew bumps every day, or finishes head of the river, they are awarded blades.`,
+    source: dudhia("blades"),
   },
   {
     question: "Bank party",
@@ -14,22 +30,28 @@ const faqs = [
     question: "Bump",
     answer: `A bump is awarded when a chasing boat either overtakes or makes contact with the boat in front.
 
-On the next day, the two will switch places in the starting order.`,
+On the next day, the two will switch places in the starting order.
+
+The technical rules for what counts as a bump are more complicated. In Cambridge, for example, a chasing boat can be awarded a bump without making contact, by drawing level with the boat in front. See the CUCBC rules for the details.`,
+    source: cucbcRules,
   },
   {
     question: "Conceding",
     answer:
       "When a crew acknowledges they have been caught and the cox raises a hand to signal the bump.",
+    source: wikipedia("Racing_practice_and_procedures"),
   },
   {
     question: "Division",
     answer: `Racing is split into divisions. For example, in May Bumps there are 17 crews per division.
 
 This is done for most large rowing events to accomodate a larger number of crews than would otherwise be possible to have on the river at once.`,
+    source: cucbcRules,
   },
   {
     question: "Head of the River",
     answer: `The crew who finishes top of the first division after the last day of racing is complete.`,
+    source: wikipedia("Organisation"),
   },
   {
     question: "Marshalling",
@@ -38,24 +60,32 @@ This is done for most large rowing events to accomodate a larger number of crews
   {
     question: "Over-bump",
     answer: `The two crews in front bump out and you chase down, and bump, the crew that started three places ahead of you.`,
+    source: dudhia("overbump"),
   },
   {
     question: "Rowing over",
     answer: `When you neither bump or get bumped you must complete the course and are said to have 'rowed over'. You retain the same start position for the next day's racing.`,
+    source: wikipedia("Racing_practice_and_procedures"),
   },
   {
     question: "Sandwich boat",
     answer: `The sandwich boat is the name given to the crew at top of a division (except the first division). They then race at the bottom of the division above. If they bump the crew moves up a division.`,
+    source: dudhia("sandwich"),
   },
   {
     question: "Spoons",
     answer: `If a crew is bumped every day then they are awarded spoons.`,
+    source: wikipedia("Organisation"),
   },
   {
     question: "Torpids",
     answer: `Torpids is one of two bumps races held annually by Oxford University around the start of March.
 
 The rules around bumping are unusual in that once a bump has taken place, the crew whose boat was bumped has to continue racing (and is liable to be bumped again) whilst the bumping crew moves to the side. This can lead to a crew moving down several places during a day's racing.`,
+    source: {
+      label: "Wikipedia: Torpids",
+      href: "https://en.wikipedia.org/wiki/Torpids",
+    },
   },
 ];
 ---
@@ -78,8 +108,19 @@ The rules around bumping are unusual in that once a bump has taken place, the cr
             {faqs.map((faq) => (
               <div class="grid gap-1 py-5 sm:grid-cols-[12rem_1fr] sm:gap-6">
                 <dt class="text-base font-semibold">{faq.question}</dt>
-                <dd class="text-base leading-7 whitespace-pre-line text-muted-foreground">
-                  {faq.answer}
+                <dd class="text-base leading-7 text-muted-foreground">
+                  <p class="whitespace-pre-line">{faq.answer}</p>
+                  {faq.source && (
+                    <div class="mt-2 text-sm text-muted-foreground/70">
+                      Source:{" "}
+                      <a
+                        href={faq.source.href}
+                        class="underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-current"
+                      >
+                        {faq.source.label}
+                      </a>
+                    </div>
+                  )}
                 </dd>
               </div>
             ))}
