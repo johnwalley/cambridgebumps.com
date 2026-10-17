@@ -200,7 +200,16 @@ export function ChartsShell({
           </div>
         ) : (
           <div className="mb-4 text-center">
-            We have no results to show for this year
+            <p>We have no results to show for this year yet.</p>
+            <a
+              href={withParams(
+                `/charts/${event}/${gender}/${yearFor[event][gender]}`,
+                params,
+              )}
+              className="underline underline-offset-4 hover:text-primary"
+            >
+              See the {yearFor[event][gender]} results
+            </a>
           </div>
         )}
       </div>
