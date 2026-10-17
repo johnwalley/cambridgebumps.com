@@ -1,26 +1,17 @@
-import { Cross2Icon } from "@radix-ui/react-icons";
 import { navigate } from "astro:transitions/client";
 import type { Event } from "react-bumps-chart/dist/types";
 
 import BumpsChart from "@/components/bumps-chart";
+import { ClubCombobox } from "@/components/club-combobox";
 import { EventSelect } from "@/components/event-select";
 import { EventsNav } from "@/components/events-nav";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
 import { HighlightToggle } from "@/components/highlight-toggle";
-import { Button } from "@/components/ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { YearPicker } from "@/components/year-picker";
 import { useChartParams, withParams } from "@/hooks/use-chart-params";
@@ -148,36 +139,11 @@ export function ChartsShell({
               }
             />
           </div>
-          <div>
-            <Label htmlFor="highlight-club" className="mb-4 block">
-              Highlight club
-            </Label>
-            <div className="flex">
-              <Select
-                value={club ?? ""}
-                onValueChange={(value) => setParam("club", value)}
-              >
-                <SelectTrigger id="highlight-club" className="w-[280px]">
-                  <SelectValue placeholder="Select a club" />
-                </SelectTrigger>
-                <SelectContent>
-                  {clubs.map((name) => (
-                    <SelectItem key={name} value={name}>
-                      {name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Button
-                variant="link"
-                size="icon"
-                disabled={club === null}
-                onClick={() => setParam("club", null)}
-              >
-                <Cross2Icon className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
+          <ClubCombobox
+            clubs={clubs}
+            value={club}
+            onValueChange={(value) => setParam("club", value)}
+          />
         </div>
       </div>
       <div className="pb-4">
