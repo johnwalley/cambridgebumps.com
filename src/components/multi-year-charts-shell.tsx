@@ -16,7 +16,7 @@ type MultiYearChartsShellProps = {
   clubs: string[];
   /** Static JSON holding this event/gender's results. */
   dataUrl: string;
-  /** How many years the chart spans; it's 96px wide per year. */
+  /** How many years the chart spans; see `MultiYearBumpsChart`'s `width`. */
   years: number;
 };
 
@@ -34,7 +34,11 @@ export function MultiYearChartsShell({
   const spoons = params.get("spoons") === "true";
 
   return (
-    <div className="relative mx-auto h-[calc(100vh-4rem)] w-full items-stretch gap-6 px-2 lg:grid lg:grid-cols-[1fr_400px]">
+    // Fills the viewport below the header (3.5rem plus its 1px bottom border),
+    // so the chart box is the only thing that scrolls — on phones the controls
+    // stack above it in the same column rather than pushing it off the bottom
+    // of the page.
+    <div className="relative mx-auto flex h-[calc(100dvh-3.5rem-1px)] w-full flex-col items-stretch px-2 lg:grid lg:grid-cols-[1fr_400px] lg:gap-6">
       <div className="mt-2 mb-4 flex flex-col space-y-2 lg:hidden">
         <MultiYearEventsNav event={event} gender={gender} params={params} />
         <Tabs value={gender} className="relative grid w-full scroll-m-20 gap-4">
@@ -96,21 +100,20 @@ export function MultiYearChartsShell({
           />
         </div>
       </div>
-      <div className="flex h-full flex-col overflow-hidden">
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:h-full">
         <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">
           {`${set[event]} - ${getGenderLabel(event, gender)}`}
         </h1>
         <div className="overflow-auto">
           {years > 0 ? (
             <div className="mb-4 w-full">
-              <div className="px-10" style={{ width: `${years * 96}px` }}>
-                <MultiYearBumpsChart
-                  src={dataUrl}
-                  club={club}
-                  blades={blades}
-                  spoons={spoons}
-                />
-              </div>
+              <MultiYearBumpsChart
+                src={dataUrl}
+                width={years * 96}
+                club={club}
+                blades={blades}
+                spoons={spoons}
+              />
             </div>
           ) : (
             <div className="mb-4 text-center">We have no results to show</div>
