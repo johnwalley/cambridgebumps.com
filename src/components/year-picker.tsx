@@ -32,6 +32,13 @@ export function YearPicker({
   const listRef = useRef<HTMLDivElement>(null!);
   const selectedRef = useRef<HTMLAnchorElement>(null!);
 
+  // A year with no results yet — the current year, pre-generated before its
+  // results are posted (see the chart page's `getStaticPaths`) — isn't in the
+  // strip, so nothing is selected. Its nearest year is then the strip's last:
+  // make that the Tab stop and scroll target, or the strip couldn't be reached
+  // from the keyboard at all and would open at 1815.
+  const tabStop = focusElement >= 0 ? focusElement : items.length - 1;
+
   const leftRef = useRef<HTMLDivElement>(null!);
   const rightRef = useRef<HTMLDivElement>(null!);
 
@@ -68,7 +75,7 @@ export function YearPicker({
     const frame = requestAnimationFrame(() => scroll("smooth"));
 
     return () => cancelAnimationFrame(frame);
-  }, [focusElement, position]);
+  }, [tabStop, position]);
 
   useEffect(() => {
     const e = ref.current;
@@ -158,10 +165,10 @@ export function YearPicker({
               {items.map((item, i) => (
                 <a
                   key={item.href}
-                  ref={i === focusElement ? selectedRef : null}
+                  ref={i === tabStop ? selectedRef : null}
                   href={item.href}
                   className="year-tab"
-                  tabIndex={i === focusElement ? 0 : -1}
+                  tabIndex={i === tabStop ? 0 : -1}
                   aria-current={i === focusElement ? "page" : undefined}
                 >
                   {item.label}
