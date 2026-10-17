@@ -3,7 +3,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 type HighlightToggleProps = {
   id: string;
   label: string;
-  description: string;
+  description?: string;
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
 };
@@ -31,7 +31,9 @@ export function HighlightToggle({
         >
           {label}
         </label>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        {description && (
+          <p className="text-sm text-muted-foreground">{description}</p>
+        )}
       </div>
     </>
   );
