@@ -166,7 +166,7 @@ The top-level `src/data/results/results.json` is a separately-maintained summary
 Charts support URL search parameters:
 
 - `?club=<clubname>` - Highlights a specific club in the chart
-- `?blades=true` - Shows blades (awarded for bumping up every day of the event)
+- `?blades=true` - Shows blades (awarded for bumping up every day of the event, or finishing head of the river)
 - `?spoons=true` - Shows spoons (awarded for being bumped down every day of the event)
 
 `src/hooks/use-chart-params.ts` owns them: the shell reads the query string after mount and updates it with `history.pushState`, so toggling a highlight re-renders the chart without a page load. Links that change event/gender/year carry the current query string along (`withParams`).
