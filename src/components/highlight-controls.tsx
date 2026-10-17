@@ -1,16 +1,10 @@
 import { useId } from "react";
 import { Cross2Icon } from "@radix-ui/react-icons";
 
+import { ClubCombobox } from "@/components/club-combobox";
 import { HighlightToggle } from "@/components/highlight-toggle";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
 type HighlightControlsProps = {
@@ -44,38 +38,15 @@ export function HighlightControls({
 
   const clubPicker = (
     <div className={cn("flex", compact && "min-w-0 flex-1")}>
-      <Select
-        value={club ?? ""}
-        onValueChange={(value) => setParam("club", value)}
-      >
-        <SelectTrigger
-          id={clubId}
-          aria-label={compact ? "Highlight club" : undefined}
-          className={compact ? "h-8 min-w-0 flex-1" : "w-[280px]"}
-        >
-          <SelectValue
-            placeholder={compact ? "Highlight a club" : "Select a club"}
-          />
-        </SelectTrigger>
-        <SelectContent>
-          {/* `?club=` is carried between years, so it can name a club that
-              didn't race in this one. List it anyway, flagged, so the picker
-              shows what's selected (and can clear it) instead of silently
-              falling back to its placeholder. The highlight returns on the
-              years the club did race. */}
-          {club !== null && !clubs.includes(club) && (
-            <SelectItem value={club}>
-              {club}{" "}
-              <span className="text-muted-foreground">(did not race)</span>
-            </SelectItem>
-          )}
-          {clubs.map((name) => (
-            <SelectItem key={name} value={name}>
-              {name}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <ClubCombobox
+        id={clubId}
+        clubs={clubs}
+        value={club}
+        onChange={(value) => setParam("club", value)}
+        placeholder={compact ? "Highlight a club" : "Select a club"}
+        aria-label={compact ? "Highlight club" : undefined}
+        className={compact ? "h-8 min-w-0 flex-1" : "w-[280px]"}
+      />
       <Button
         variant="link"
         size="icon"
