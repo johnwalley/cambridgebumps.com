@@ -149,7 +149,9 @@ export function YearPicker({
   };
 
   return (
-    <section className="relative px-0">
+    // Named so a screen reader announces "Year, navigation" rather than an
+    // unlabelled run of ~200 links.
+    <nav aria-label="Year" className="relative px-0">
       <div className="m-0 border-0 p-0">
         <div className="relative">
           <div
@@ -234,6 +236,6 @@ export function YearPicker({
           </div>
         </div>
       </div>
-    </section>
+    </nav>
   );
 }
