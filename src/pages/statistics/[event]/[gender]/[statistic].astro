@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
 
-import { statisticMapping, stats } from "@/data/stats";
+import { competitionRanks, statisticMapping, stats } from "@/data/stats";
 import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
 import {
   events,
@@ -30,6 +30,7 @@ const statistic = Astro.params.statistic as string;
 
 const mapping = statisticMapping[statistic];
 const data = stats[event][gender][statistic];
+const ranks = competitionRanks(data.map((row: any) => row[mapping.value]));
 
 const eventName = set[event];
 const genderName = getGenderLabel(event, gender);
@@ -73,7 +74,7 @@ const genderName = getGenderLabel(event, gender);
 
               return (
                 <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                  <td class="p-2 align-middle font-medium">{index + 1}</td>
+                  <td class="p-2 align-middle font-medium">{ranks[index]}</td>
                   <td class="p-2 align-middle font-medium">
                     {/* The flex layout lives on an inner div: a flex <td> drops
                         out of table layout and loses its column. */}

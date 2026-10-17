@@ -84,3 +84,16 @@ export const stats = {
     women: stats_town_women,
   },
 } as Record<string, Record<string, any>>;
+
+// Standard competition ranking ("1224"): equal values share a rank and the
+// next distinct value skips past them, so three clubs on 12 days are all 1st
+// and the next is 4th. The lists arrive sorted by value.
+export function competitionRanks(values: unknown[]): number[] {
+  const ranks: number[] = [];
+
+  values.forEach((value, i) => {
+    ranks.push(i > 0 && value === values[i - 1] ? ranks[i - 1] : i + 1);
+  });
+
+  return ranks;
+}

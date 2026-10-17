@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
 
-import { statisticMapping, stats } from "@/data/stats";
+import { competitionRanks, statisticMapping, stats } from "@/data/stats";
 import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
 import {
   events,
@@ -103,6 +103,7 @@ const clubStatistics = Object.keys(statisticMapping);
       {clubStatistics.map((statistic) => {
         const mapping = statisticMapping[statistic];
         const data = stats[event][gender][statistic];
+        const ranks = competitionRanks(data.map((d: any) => d[mapping.value]));
         const heroColor = getColor(data[0].club, event);
         const heroText = textClassFor(heroColor);
         const heroClub = getCode(data[0].club, event);
@@ -124,7 +125,7 @@ const clubStatistics = Object.keys(statisticMapping);
                       ]}
                     >
                       <div>
-                        <div class="text-sm font-bold">1</div>
+                        <div class="text-sm font-bold">{ranks[0]}</div>
                         <div class="font-bold">{data[0][mapping.key]}</div>
                         {mapping.additional && (
                           <div class="text-sm">
@@ -148,7 +149,7 @@ const clubStatistics = Object.keys(statisticMapping);
                     <li class="relative flex items-center justify-between py-2 pr-2 pl-3">
                       <div class="flex items-center">
                         <div class="mr-2 min-w-4 text-sm font-bold">
-                          {i + 2}
+                          {ranks[i + 1]}
                         </div>
                         <div class="mr-4">
                           {dClub && <Blade club={dClub} size={48} />}
