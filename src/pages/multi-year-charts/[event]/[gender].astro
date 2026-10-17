@@ -35,12 +35,16 @@ const yearRange = `${first}-${last}`;
 ---
 
 <BaseLayout
-  title={data.length > 0
-    ? `${eventName} ${yearRange} - ${genderName} - Multi-year Chart`
-    : undefined}
-  description={data.length > 0
-    ? `Historical bumps chart for ${eventName} (${genderName}) from ${first} to ${last}. Track ${getEventContext(event)} positions across ${data.length} years of racing.`
-    : undefined}
+  title={
+    data.length > 0
+      ? `${eventName} ${yearRange} - ${genderName} - Multi-year Chart`
+      : undefined
+  }
+  description={
+    data.length > 0
+      ? `Historical bumps chart for ${eventName} (${genderName}) from ${first} to ${last}. Track ${getEventContext(event)} positions across ${data.length} years of racing.`
+      : undefined
+  }
   canonical={`/multi-year-charts/${event}/${gender}`}
 >
   <MultiYearChartsShell

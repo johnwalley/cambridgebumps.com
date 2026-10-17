@@ -50,57 +50,45 @@ const genderName = getGenderLabel(event, gender);
       <div class="relative w-full overflow-auto">
         <table class="w-full caption-bottom text-sm">
           <thead class="[&_tr]:border-b">
-            <tr
-              class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
-            >
-              <th
-                class="h-10 w-[40px] px-2 text-left align-middle font-medium text-muted-foreground"
-              >
+            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+              <th class="h-10 w-[40px] px-2 text-left align-middle font-medium text-muted-foreground">
                 Rank
               </th>
-              <th
-                class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              >
+              <th class="h-10 px-2 text-left align-middle font-medium text-muted-foreground">
                 {mapping.keyLabel}
               </th>
-              <th
-                class="h-10 px-2 text-right align-middle font-medium text-muted-foreground"
-              >
+              <th class="h-10 px-2 text-right align-middle font-medium text-muted-foreground">
                 {mapping.valueLabel}
               </th>
-              {
-                mapping.additionalLabel && (
-                  <th class="h-10 px-2 text-right align-middle font-medium text-muted-foreground">
-                    {mapping.additionalLabel}
-                  </th>
-                )
-              }
+              {mapping.additionalLabel && (
+                <th class="h-10 px-2 text-right align-middle font-medium text-muted-foreground">
+                  {mapping.additionalLabel}
+                </th>
+              )}
             </tr>
           </thead>
           <tbody class="[&_tr:last-child]:border-0">
-            {
-              data.map((row: any, index: number) => {
-                const clubCode = getCode(row[mapping.key], event);
+            {data.map((row: any, index: number) => {
+              const clubCode = getCode(row[mapping.key], event);
 
-                return (
-                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                    <td class="p-2 align-middle font-medium">{index + 1}</td>
-                    <td class="flex flex-row items-center gap-2 p-2 align-middle font-medium">
-                      {clubCode && <Blade club={clubCode} size={32} />}
-                      {row[mapping.key]}
-                    </td>
+              return (
+                <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td class="p-2 align-middle font-medium">{index + 1}</td>
+                  <td class="flex flex-row items-center gap-2 p-2 align-middle font-medium">
+                    {clubCode && <Blade club={clubCode} size={32} />}
+                    {row[mapping.key]}
+                  </td>
+                  <td class="p-2 text-right align-middle">
+                    {row[mapping.value]}
+                  </td>
+                  {mapping.additional && (
                     <td class="p-2 text-right align-middle">
-                      {row[mapping.value]}
+                      {row[mapping.additional]}
                     </td>
-                    {mapping.additional && (
-                      <td class="p-2 text-right align-middle">
-                        {row[mapping.additional]}
-                      </td>
-                    )}
-                  </tr>
-                );
-              })
-            }
+                  )}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

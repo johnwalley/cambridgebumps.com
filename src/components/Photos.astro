@@ -24,43 +24,39 @@ const rotations = [
 ];
 ---
 
-<div
-  class="-my-4 -mr-4 -ml-4 flex w-[calc(100%+2rem)] justify-center gap-5 overflow-hidden py-4 sm:-mr-8 sm:-ml-8 sm:w-[calc(100%+4rem)] sm:gap-8"
->
-  {
-    images.map((image, index) => (
-      <div
-        class:list={[
-          "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800",
-          rotations[index % rotations.length],
-        ]}
-      >
-        {/*
+<div class="-my-4 -mr-4 -ml-4 flex w-[calc(100%+2rem)] justify-center gap-5 overflow-hidden py-4 sm:-mr-8 sm:-ml-8 sm:w-[calc(100%+4rem)] sm:gap-8">
+  {images.map((image, index) => (
+    <div
+      class:list={[
+        "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800",
+        rotations[index % rotations.length],
+      ]}
+    >
+      {/*
           The card is a 9:10 portrait but the photos are landscape, so
           `object-cover` scales each one to ~2x the card's width and crops the
           sides off. `sizes` therefore doubles the card width (18rem -> 36rem,
           11rem -> 22rem) — the browser only knows the element's layout width
           and would otherwise pick a candidate half the resolution it needs.
         */}
-        {/*
+      {/*
           Loading all five eagerly at high priority pulled ~550 KB of
           decorative photos in front of everything else on a 2x display. Only
           the first two cards are on screen at every width — the strip runs off
           the right of a phone — so the rest are lazy: a wide viewport shows
           them a beat later, a narrow one never fetches them at all.
         */}
-        <Image
-          src={image.src}
-          alt={image.alt}
-          widths={[352, 576, 704, 1152]}
-          sizes="(min-width: 640px) 36rem, 22rem"
-          quality={75}
-          loading={index < 2 ? "eager" : "lazy"}
-          fetchpriority={index === 0 ? "high" : "auto"}
-          decoding={index === 0 ? "sync" : "async"}
-          class="absolute inset-0 h-full w-full object-cover"
-        />
-      </div>
-    ))
-  }
+      <Image
+        src={image.src}
+        alt={image.alt}
+        widths={[352, 576, 704, 1152]}
+        sizes="(min-width: 640px) 36rem, 22rem"
+        quality={75}
+        loading={index < 2 ? "eager" : "lazy"}
+        fetchpriority={index === 0 ? "high" : "auto"}
+        decoding={index === 0 ? "sync" : "async"}
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+  ))}
 </div>

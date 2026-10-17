@@ -16,9 +16,7 @@ const { frontmatter } = Astro.props;
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <div class="relative container">
     <section>
-      <div
-        class="mx-auto px-4 text-lg tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12"
-      >
+      <div class="mx-auto px-4 text-lg tracking-tight sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12">
         <div class="prose max-w-none py-8 prose-slate dark:prose-invert">
           <slot />
         </div>
