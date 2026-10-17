@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn, getGenderLabel, type Gender, type Set } from "@/lib/utils";
@@ -15,13 +17,20 @@ export function GenderRadioGroup({
   onValueChange: (value: Gender) => void;
   orientation?: "vertical" | "horizontal";
 }) {
+  const id = useId();
+
+  // A `<label for>` can't name the radio group — its root is a div, which
+  // isn't labellable — so the heading names it through `aria-labelledby`.
   return (
     <div>
-      <Label htmlFor="gender" className="mb-4 block">
+      <span
+        id={`${id}-label`}
+        className="mb-4 block text-sm leading-none font-medium"
+      >
         Category
-      </Label>
+      </span>
       <RadioGroup
-        id="gender"
+        aria-labelledby={`${id}-label`}
         className={cn(
           "flex",
           orientation === "vertical"
@@ -32,12 +41,12 @@ export function GenderRadioGroup({
         onValueChange={(next) => onValueChange(next as Gender)}
       >
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="men" id="men" />
-          <Label htmlFor="men">{getGenderLabel(event, "men")}</Label>
+          <RadioGroupItem value="men" id={`${id}-men`} />
+          <Label htmlFor={`${id}-men`}>{getGenderLabel(event, "men")}</Label>
         </div>
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="women" id="women" />
-          <Label htmlFor="women">Women</Label>
+          <RadioGroupItem value="women" id={`${id}-women`} />
+          <Label htmlFor={`${id}-women`}>Women</Label>
         </div>
       </RadioGroup>
     </div>
