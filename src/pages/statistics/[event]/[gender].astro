@@ -56,6 +56,32 @@ function getColor(club: string, event: string) {
   }
 }
 
+// WCAG relative luminance of an HSL colour.
+function luminance({ h, s, l }: { h: number; s: number; l: number }) {
+  const a = (s / 100) * Math.min(l / 100, 1 - l / 100);
+  const channel = (n: number) => {
+    const k = (n + h / 30) % 12;
+    const c = l / 100 - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+    return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * channel(0) + 0.7152 * channel(8) + 0.0722 * channel(4);
+}
+
+const contrast = (a: number, b: number) =>
+  (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+
+// The leader's text sits on the card's darkest end. White, as the cards have
+// always used, unless it falls short of WCAG AA (4.5:1) there — Churchill's
+// pink, Pembroke's light red — in which case whichever of white and
+// near-black reads better.
+function textClassFor(color: { h: number; s: number; l: number }) {
+  const background = luminance(color);
+  const white = contrast(1, background);
+  const dark = contrast(luminance({ h: 0, s: 0, l: 4 }), background);
+
+  return white >= 4.5 || white >= dark ? "text-white" : "text-neutral-950";
+}
+
 const event = Astro.params.event as Set;
 const gender = Astro.params.gender as Gender;
 
@@ -78,6 +104,7 @@ const clubStatistics = Object.keys(statisticMapping);
         const mapping = statisticMapping[statistic];
         const data = stats[event][gender][statistic];
         const heroColor = getColor(data[0].club, event);
+        const heroText = textClassFor(heroColor);
         const heroClub = getCode(data[0].club, event);
 
         return (
@@ -90,7 +117,12 @@ const clubStatistics = Object.keys(statisticMapping);
                   style={`background-image: linear-gradient(to right, hsl(${heroColor.h} ${heroColor.s}% ${heroColor.l}%), hsl(${heroColor.h} ${heroColor.s}% ${heroColor.l + 20}%));`}
                 >
                   <div class="flex h-full justify-between">
-                    <div class="flex h-full flex-col justify-between px-4 py-2 text-white">
+                    <div
+                      class:list={[
+                        "flex h-full flex-col justify-between px-4 py-2",
+                        heroText,
+                      ]}
+                    >
                       <div>
                         <div class="text-sm font-bold">1</div>
                         <div class="font-bold">{data[0][mapping.key]}</div>
