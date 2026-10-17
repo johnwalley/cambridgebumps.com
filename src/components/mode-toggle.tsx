@@ -5,12 +5,16 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { applyTheme, getTheme, setTheme } from "@/lib/theme";
+import { applyTheme, getTheme, setTheme, type Theme } from "@/lib/theme";
 
 export function ModeToggle() {
+  // Which option to tick. Read from storage as the menu opens rather than on
+  // render, so the server render and hydration needn't know it.
+  const [theme, setCurrent] = React.useState<Theme>("system");
   // Follow the OS while the theme is "system" (the default).
   React.useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
@@ -24,7 +28,7 @@ export function ModeToggle() {
   }, []);
 
   return (
-    <DropdownMenu>
+    <DropdownMenu onOpenChange={(open) => open && setCurrent(getTheme())}>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="w-9 px-0">
           <SunIcon className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
@@ -33,15 +37,17 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
+        <DropdownMenuRadioGroup
+          value={theme}
+          onValueChange={(value) => {
+            setTheme(value as Theme);
+            setCurrent(value as Theme);
+          }}
+        >
+          <DropdownMenuRadioItem value="light">Light</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="dark">Dark</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="system">System</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
