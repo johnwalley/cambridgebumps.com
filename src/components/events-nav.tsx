@@ -17,10 +17,14 @@ const labels: Record<Set, string> = {
   town: "Town",
 };
 
+// The year each event/category's chart link should land on, chosen by the page
+// so a link never points at a year that event/category didn't race.
+export type YearFor = Record<Set, Record<Gender, string>>;
+
 type EventsNavProps = {
   event: Set;
   gender: Gender;
-  year: string;
+  yearFor: YearFor;
   params: URLSearchParams;
   className?: string;
 };
@@ -28,7 +32,7 @@ type EventsNavProps = {
 export function EventsNav({
   event,
   gender,
-  year,
+  yearFor,
   params,
   className,
 }: EventsNavProps) {
@@ -45,7 +49,10 @@ export function EventsNav({
                 asChild
               >
                 <a
-                  href={withParams(`/charts/${key}/${gender}/${year}`, params)}
+                  href={withParams(
+                    `/charts/${key}/${gender}/${yearFor[key][gender]}`,
+                    params,
+                  )}
                   title={set[key]}
                   className={cn(
                     "flex h-7 items-center justify-center rounded-full text-center text-sm transition-colors hover:text-primary",
