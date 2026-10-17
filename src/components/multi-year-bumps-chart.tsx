@@ -1,6 +1,6 @@
 import { BumpsChartMultiYear as Chart } from "react-bumps-chart";
 import type { Event } from "react-bumps-chart/dist/types";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import classes from "./bumps-chart.module.css";
 import "react-bumps-chart/dist/index.css";
@@ -15,6 +15,8 @@ type MultiYearBumpsChartProps = {
   // `src/pages/data/results/[event]/[gender].json.ts`) rather than inlined into
   // the page.
   src: string;
+  /** The chart's width in pixels — 96 per year. */
+  width: number;
   club?: string | null;
   blades?: boolean;
   spoons?: boolean;
@@ -22,12 +24,24 @@ type MultiYearBumpsChartProps = {
 
 export default function MultiYearBumpsChart({
   src,
+  width,
   club,
   blades = false,
   spoons = false,
 }: MultiYearBumpsChartProps) {
   const [data, setData] = useState<Event[] | null>(null);
   const [failed, setFailed] = useState(false);
+
+  const ref = useRef<HTMLDivElement>(null);
+
+  // The chart runs oldest to newest, left to right, and is tens of thousands
+  // of pixels wide; most visitors want the latest seasons, so open on the
+  // right-hand end once there's a chart to show. Only on load — highlighting a
+  // club or toggling blades leaves the scroll position where the visitor put
+  // it.
+  useEffect(() => {
+    ref.current?.scrollIntoView({ inline: "end", block: "nearest" });
+  }, [data]);
 
   useEffect(() => {
     let cancelled = false;
@@ -85,8 +99,10 @@ export default function MultiYearBumpsChart({
     return <div className="py-8 text-center">Loading chart&hellip;</div>;
   }
 
+  // The width applies only once the chart is here: the loading and error
+  // messages are centred, and centred in a 20,000px box they'd be off screen.
   return (
-    <div className={classes.chart}>
+    <div ref={ref} className={`${classes.chart} px-10`} style={{ width }}>
       <Chart data={highlightedData} blades={blades} spoons={spoons} />
     </div>
   );
