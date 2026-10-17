@@ -64,6 +64,7 @@ export function MultiYearChartsShell({
             clubs={clubs}
             club={club}
             blades={blades}
+            spoons={spoons}
             setParam={setParam}
             compact
           />
@@ -92,6 +93,7 @@ export function MultiYearChartsShell({
             clubs={clubs}
             club={club}
             blades={blades}
+            spoons={spoons}
             setParam={setParam}
           />
         </div>

@@ -95,6 +95,7 @@ export function ChartsShell({
             clubs={clubs}
             club={club}
             blades={blades}
+            spoons={spoons}
             setParam={setParam}
             compact
           />
@@ -140,6 +141,7 @@ export function ChartsShell({
             clubs={clubs}
             club={club}
             blades={blades}
+            spoons={spoons}
             setParam={setParam}
           />
         </div>

@@ -18,6 +18,7 @@ type HighlightControlsProps = {
   clubs: string[];
   club: string | null;
   blades: boolean;
+  spoons: boolean;
   setParam: (name: string, value: string | null) => void;
   /**
    * The single row shown above the chart on narrow screens, rather than the
@@ -26,7 +27,7 @@ type HighlightControlsProps = {
   compact?: boolean;
 };
 
-// The "Highlight club" select and "Highlight blades" toggle shared by both
+// The "Highlight club" select and blades/spoons toggles shared by both
 // chart shells. Each shell renders it twice — in the sidebar and above the
 // chart on narrow screens, one of them hidden by CSS — so the ids come from
 // `useId` rather than being fixed, or the two copies' labels would point at
@@ -35,15 +36,15 @@ export function HighlightControls({
   clubs,
   club,
   blades,
+  spoons,
   setParam,
   compact = false,
 }: HighlightControlsProps) {
   const id = useId();
   const clubId = `${id}-club`;
-  const bladesId = `${id}-blades`;
 
   const clubPicker = (
-    <div className={cn("flex", compact && "min-w-0 flex-1")}>
+    <div className={cn("flex", compact && "min-w-40 flex-1")}>
       <Select
         value={club ?? ""}
         onValueChange={(value) => setParam("club", value)}
@@ -78,7 +79,12 @@ export function HighlightControls({
     </div>
   );
 
-  const bladesToggle = (
+  const toggle = (
+    name: "blades" | "spoons",
+    label: string,
+    checked: boolean,
+    description: string,
+  ) => (
     <div
       className={cn(
         "flex space-x-2",
@@ -86,26 +92,36 @@ export function HighlightControls({
       )}
     >
       <HighlightToggle
-        id={bladesId}
-        label={compact ? "Blades" : "Highlight blades"}
-        description={
-          compact
-            ? undefined
-            : "Crews who have gone up every day are highlighted."
-        }
-        checked={blades}
-        onCheckedChange={(checked) =>
-          setParam("blades", checked ? "true" : "false")
-        }
+        id={`${id}-${name}`}
+        label={compact ? label : `Highlight ${name}`}
+        description={compact ? undefined : description}
+        checked={checked}
+        onCheckedChange={(next) => setParam(name, next ? "true" : "false")}
       />
     </div>
   );
 
+  const bladesToggle = toggle(
+    "blades",
+    "Blades",
+    blades,
+    "Crews who have gone up every day are highlighted.",
+  );
+  const spoonsToggle = toggle(
+    "spoons",
+    "Spoons",
+    spoons,
+    "Crews who have gone down every day are highlighted.",
+  );
+
   if (compact) {
     return (
-      <div className="flex items-center gap-3">
+      // On the narrowest phones the toggles wrap below the club picker
+      // rather than squeezing it.
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
         {clubPicker}
         {bladesToggle}
+        {spoonsToggle}
       </div>
     );
   }
@@ -113,6 +129,7 @@ export function HighlightControls({
   return (
     <>
       {bladesToggle}
+      {spoonsToggle}
       <div>
         <Label htmlFor={clubId} className="mb-4 block">
           Highlight club
