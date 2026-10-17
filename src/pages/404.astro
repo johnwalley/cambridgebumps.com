@@ -1,15 +1,36 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+// The bare section routes redirect to a sensible default event and year, so
+// they work as "start here" links from a mistyped or out-of-date URL.
+const links = [
+  { href: "/charts", label: "Charts" },
+  { href: "/multi-year-charts", label: "Multi-year charts" },
+  { href: "/statistics", label: "Statistics" },
+  { href: "/", label: "Home" },
+];
 ---
 
 <BaseLayout title="Page not found" canonical={null} noindex>
   <div class="flex flex-col items-center justify-center gap-4 py-16">
     <h1 class="text-2xl font-bold">Page not found</h1>
     <p class="text-muted-foreground">
-      We have no results to show for this page.
+      There's no page at this address. It may have moved, or the link may be
+      mistyped.
     </p>
-    <a href="/" class="underline underline-offset-4 hover:text-primary">
-      Go back home
-    </a>
+    <nav aria-label="Suggested pages">
+      <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        {links.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              class="underline underline-offset-4 hover:text-primary"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 </BaseLayout>
