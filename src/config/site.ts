@@ -11,6 +11,8 @@ export const siteConfig = {
   url: baseUrl,
   ogImage: `${baseUrl}/og.jpg`,
   description: "Bumps charts, statistics, and more.",
+  /** Where readers send corrections to the results. */
+  correctionsEmail: "john@walley.org.uk",
   links: {
     website: "https://www.walley.org.uk",
     twitter: "https://twitter.com/johnmwalley",
