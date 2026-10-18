@@ -61,7 +61,7 @@
   ],
   "headDays": [
     { "club": "Somerville", "days": 33 },
-    { "club": "Pembroke", "days": 32 },
+    { "club": "Pembroke", "days": 31 },
     { "club": "Wadham", "days": 25 },
     { "club": "Osler House", "days": 21 },
     { "club": "S.E.H.", "days": 16 },
@@ -116,9 +116,9 @@
     { "club": "Keble", "count": 7 },
     { "club": "Mansfield", "count": 7 },
     { "club": "St Hilda's", "count": 6 },
-    { "club": "Exeter", "count": 6 },
     { "club": "Oriel", "count": 6 },
     { "club": "Corpus Christi", "count": 5 },
+    { "club": "Exeter", "count": 5 },
     { "club": "Trinity", "count": 5 },
     { "club": "Christ Church", "count": 5 },
     { "club": "St Antony's", "count": 5 },
@@ -127,7 +127,7 @@
     { "club": "Magdalen", "count": 4 },
     { "club": "Osler-Green", "count": 4 },
     { "club": "St Anne's", "count": 2 },
-    { "club": "Linacre", "count": 1 },
+    { "club": "Linacre", "count": 2 },
     { "club": "St Benet's Hall", "count": 1 },
     { "club": "Reuben", "count": 1 }
   ]
