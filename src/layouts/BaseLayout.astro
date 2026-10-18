@@ -62,6 +62,7 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
     <link rel="author" href="https://www.walley.org.uk" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
+    <slot name="head" />
 
     {/*
       Navigation swaps the page in place rather than loading a new document, so
