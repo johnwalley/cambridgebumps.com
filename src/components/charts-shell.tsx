@@ -99,7 +99,6 @@ export function ChartsShell({
         <YearPicker
           key={`${event}/${gender}`}
           items={yearItems}
-          skipLength={576}
           focusElement={focusElement}
           position="center"
         />
@@ -145,7 +144,6 @@ export function ChartsShell({
             <YearPicker
               key={`${event}/${gender}`}
               items={yearItems}
-              skipLength={256}
               focusElement={focusElement}
               position="center"
             />

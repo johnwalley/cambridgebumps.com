@@ -172,8 +172,57 @@ p a {
    chart page, so they collapse into one component class here. See
    `src/components/year-picker.tsx`. */
 @layer components {
+  /* The arrows get their own space either side of the strip; the grey bar is
+     on the <nav> so it stays solid while the strip's ends fade. */
+  .year-picker {
+    @apply flex items-center rounded-lg bg-muted text-muted-foreground;
+  }
+
+  /* The fade is a mask, so it fades whatever is under it — the bar, the
+     selected year's chip — in either theme. The script flags the <nav> at
+     either end, where there's nothing more to hint at. */
+  .year-picker-strip {
+    --fade-start: 1.5rem;
+    --fade-end: 1.5rem;
+    @apply min-w-0 flex-1;
+    /* So a year reached with the arrow keys scrolls clear of the fade. */
+    scroll-padding-inline: 1.5rem;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 var(--fade-start),
+      #000 calc(100% - var(--fade-end)),
+      transparent
+    );
+  }
+
+  .year-picker[data-at-start] .year-picker-strip {
+    --fade-start: 0px;
+  }
+
+  .year-picker[data-at-end] .year-picker-strip {
+    --fade-end: 0px;
+  }
+
+  /* `w-max` so a short list sits in the middle; the padding is room for the
+     focus ring, which the scroll box would otherwise clip. */
+  .year-picker-list {
+    @apply mx-auto flex w-max items-center p-1;
+  }
+
+  .year-picker-scroll {
+    @apply flex h-10 w-8 shrink-0 items-center justify-center rounded-md text-foreground transition-opacity hover:bg-background/60 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none;
+  }
+
+  /* Dimmed rather than hidden at the ends: hiding a focused button would drop
+     keyboard focus, and the space stays put so the strip doesn't resize. */
+  .year-picker[data-at-start] .year-picker-scroll-left,
+  .year-picker[data-at-end] .year-picker-scroll-right {
+    @apply pointer-events-none opacity-30;
+  }
+
   .year-tab {
-    @apply inline-flex h-[1.45rem] items-center justify-center rounded-sm px-2 py-1 text-sm font-medium whitespace-nowrap ring-offset-background transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none;
+    @apply inline-flex h-8 items-center justify-center rounded-sm px-2.5 text-sm font-medium whitespace-nowrap ring-offset-background transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none;
   }
 
   .year-tab[aria-current="page"] {
