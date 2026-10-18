@@ -8,7 +8,6 @@ export type YearPickerItem = {
 type YearPickerProps = {
   /** One entry per year, oldest first. */
   items: YearPickerItem[];
-  skipLength: number;
   focusElement?: number;
   /** Where in the strip the selected year comes to rest. */
   position?: "start" | "center" | "end";
@@ -25,12 +24,12 @@ type YearPickerProps = {
 // arrows move along it — for a fraction of the markup and hydration work.
 export function YearPicker({
   items,
-  skipLength,
   focusElement = 0,
   position = "start",
 }: YearPickerProps) {
+  const navRef = useRef<HTMLElement>(null!);
   const ref = useRef<HTMLDivElement>(null!);
-  const listRef = useRef<HTMLDivElement>(null!);
+  const listRef = useRef<HTMLUListElement>(null!);
   const selectedRef = useRef<HTMLAnchorElement>(null!);
 
   // A year with no results yet — the current year, pre-generated before its
@@ -39,9 +38,6 @@ export function YearPicker({
   // make that the Tab stop and scroll target, or the strip couldn't be reached
   // from the keyboard at all and would open at 1815.
   const tabStop = focusElement >= 0 ? focusElement : items.length - 1;
-
-  const leftRef = useRef<HTMLDivElement>(null!);
-  const rightRef = useRef<HTMLDivElement>(null!);
 
   // The chart pages persist their island across view transitions, so clicking a
   // year updates `focusElement` in place rather than tearing the strip down and
@@ -100,15 +96,23 @@ export function YearPicker({
   }, [tabStop, position]);
 
   useEffect(() => {
+    const nav = navRef.current;
     const e = ref.current;
+    const [left, right] = nav.querySelectorAll("button");
 
     const f = () => {
-      // The gradient fades and their scroll buttons are toggled by hiding the
-      // DOM rather than by re-rendering: this component owns ~200 children, and
-      // a state update on every scroll frame would reconcile all of them.
-      leftRef.current.hidden = Math.abs(e.scrollLeft) < 1;
-      rightRef.current.hidden =
+      // The edge fades and scroll buttons are switched off at either end by
+      // flagging the <nav> for CSS (see `.year-picker` in globals.css) rather
+      // than by re-rendering: this component owns ~200 children, and a state
+      // update on every scroll frame would reconcile all of them.
+      const atStart = Math.abs(e.scrollLeft) < 1;
+      const atEnd =
         Math.abs(e.scrollLeft - (e.scrollWidth - e.clientWidth)) < 1;
+
+      nav.toggleAttribute("data-at-start", atStart);
+      nav.toggleAttribute("data-at-end", atEnd);
+      left.ariaDisabled = String(atStart);
+      right.ariaDisabled = String(atEnd);
 
       lastScroll.current = e.scrollLeft;
     };
@@ -136,7 +140,7 @@ export function YearPicker({
   }, []);
 
   // Arrow/Home/End move focus along the strip, as the tablist used to.
-  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (event: KeyboardEvent<HTMLUListElement>) => {
     const { key } = event;
 
     if (
@@ -170,94 +174,83 @@ export function YearPicker({
     target.focus();
   };
 
+  // A click moves the strip on by most of its own width, so the next run of
+  // years is all new apart from the one or two that were under the fade.
+  const page = (direction: 1 | -1) => {
+    const e = ref.current;
+
+    e.scrollBy({ left: direction * e.clientWidth * 0.8 });
+  };
+
   return (
     // Named so a screen reader announces "Year, navigation" rather than an
     // unlabelled run of ~200 links.
-    <nav aria-label="Year" className="relative px-0">
-      <div className="m-0 border-0 p-0">
-        <div className="relative">
-          <div
-            ref={ref}
-            className="overflow-x-scroll scroll-smooth"
-            style={{ scrollbarWidth: "none" }}
-          >
-            <div
-              ref={listRef}
-              onKeyDown={handleKeyDown}
-              className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground"
-            >
-              {items.map((item, i) => (
-                <a
-                  key={item.href}
-                  ref={i === tabStop ? selectedRef : null}
-                  href={item.href}
-                  className="year-tab"
-                  tabIndex={i === tabStop ? 0 : -1}
-                  aria-current={i === focusElement ? "page" : undefined}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div ref={leftRef}>
-            <div className="pointer-events-none absolute top-0 right-auto left-0 h-full w-24 bg-gradient-to-r from-white dark:from-black"></div>
-            <button
-              type="button"
-              aria-label="Scroll left"
-              className="absolute right-auto bottom-1/2 left-0 h-full w-[24px] translate-y-1/2 rounded focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
-              onClick={() => {
-                const e = ref.current;
-
-                e.scrollLeft -= skipLength;
-              }}
-            >
-              <span>
-                <svg
-                  viewBox="0 0 32 32"
-                  width="1em"
-                  height="1em"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path
-                    className="fill-black dark:fill-white"
-                    d="M10.4 14.3 26.5 31h-6.4L5.5 16 20.1 1h6.4L10.4 17.7z"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-          </div>
-          <div ref={rightRef}>
-            <div className="pointer-events-none absolute top-0 right-0 left-auto h-full w-24 bg-gradient-to-l from-white dark:from-black"></div>
-            <button
-              type="button"
-              aria-label="Scroll right"
-              className="absolute right-0 bottom-1/2 left-auto h-full w-[24px] translate-y-1/2 rounded focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
-              onClick={() => {
-                const e = ref.current;
-
-                e.scrollLeft += skipLength;
-              }}
-            >
-              <span>
-                <svg
-                  viewBox="0 0 32 32"
-                  width="1em"
-                  height="1em"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path
-                    className="fill-black dark:fill-white"
-                    d="M21.6 14.3 5.5 31h6.4l14.6-15L11.9 1H5.5l16.1 16.7z"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
+    <nav ref={navRef} aria-label="Year" className="year-picker">
+      <ScrollButton direction="left" onClick={() => page(-1)} />
+      <div
+        ref={ref}
+        className="year-picker-strip overflow-x-scroll scroll-smooth"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {/* `role="list"` because Safari stops announcing a list once its
+            bullets are styled away. */}
+        <ul
+          ref={listRef}
+          role="list"
+          onKeyDown={handleKeyDown}
+          className="year-picker-list"
+        >
+          {items.map((item, i) => (
+            <li key={item.href}>
+              <a
+                ref={i === tabStop ? selectedRef : null}
+                href={item.href}
+                className="year-tab"
+                tabIndex={i === tabStop ? 0 : -1}
+                aria-current={i === focusElement ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
+      <ScrollButton direction="right" onClick={() => page(1)} />
     </nav>
+  );
+}
+
+const chevrons = {
+  left: "M10.4 14.3 26.5 31h-6.4L5.5 16 20.1 1h6.4L10.4 17.7z",
+  right: "M21.6 14.3 5.5 31h6.4l14.6-15L11.9 1H5.5l16.1 16.7z",
+};
+
+// The arrows sit beside the strip rather than over it, so they never cover a
+// year and get a target of their own.
+function ScrollButton({
+  direction,
+  onClick,
+}: {
+  direction: "left" | "right";
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={`Scroll ${direction}`}
+      className={`year-picker-scroll year-picker-scroll-${direction}`}
+      onClick={onClick}
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width="1em"
+        height="1em"
+        focusable="false"
+        aria-hidden="true"
+        className="fill-current"
+      >
+        <path d={chevrons[direction]} />
+      </svg>
+    </button>
   );
 }
