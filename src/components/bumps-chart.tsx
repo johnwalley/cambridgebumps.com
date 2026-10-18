@@ -1,5 +1,4 @@
-import { BumpsChart as Chart } from "react-bumps-chart";
-import type { Event } from "react-bumps-chart/dist/types";
+import { BumpsChart as Chart, type Event } from "react-bumps-chart";
 import { useMemo, useSyncExternalStore } from "react";
 
 import { ChartPlaceholder } from "@/components/chart-placeholder";

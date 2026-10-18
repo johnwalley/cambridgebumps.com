@@ -1,5 +1,4 @@
-import { BumpsChartMultiYear as Chart } from "react-bumps-chart";
-import type { Event } from "react-bumps-chart/dist/types";
+import { BumpsChartMultiYear as Chart, type Event } from "react-bumps-chart";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import classes from "./bumps-chart.module.css";

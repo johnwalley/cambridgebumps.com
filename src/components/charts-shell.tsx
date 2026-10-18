@@ -1,5 +1,5 @@
 import { navigate } from "astro:transitions/client";
-import type { Event } from "react-bumps-chart/dist/types";
+import type { Event } from "react-bumps-chart";
 
 import BumpsChart from "@/components/bumps-chart";
 import { EventSelect } from "@/components/event-select";
