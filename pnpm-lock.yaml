@@ -45,8 +45,8 @@ importers:
         specifier: 19.2.7
         version: 19.2.7
       react-bumps-chart:
-        specifier: ^1.12.3
-        version: 1.12.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^1.13.1
+        version: 1.13.1(@react-pdf/renderer@4.6.1(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-dom:
         specifier: 19.2.7
         version: 19.2.7(react@19.2.7)
@@ -3561,11 +3561,15 @@ packages:
   radix3@1.1.2:
     resolution: {integrity: sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==}
 
-  react-bumps-chart@1.12.3:
-    resolution: {integrity: sha512-2WYbFZIjUEF3f+fNgv3m1P9/DHso06eW1SDI+GJpWFHTQ/UhyNxfYzY6vNRk8gTeRnpzjlXyRJALMhDONP8L4w==}
+  react-bumps-chart@1.13.1:
+    resolution: {integrity: sha512-6GeAqRcxY2FsbHtc205rHPAQvkYntq6RMVlpgF6S8WyGyClQfJ4OaQqUklDLAJ6ubbSTRa9JIgGExQLlD48GBQ==}
     peerDependencies:
+      '@react-pdf/renderer': ^4.3.0
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@react-pdf/renderer':
+        optional: true
 
   react-dom@19.2.7:
     resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
@@ -4487,7 +4491,8 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.8
 
-  '@babel/runtime@7.29.7': {}
+  '@babel/runtime@7.29.7':
+    optional: true
 
   '@babel/types@7.29.8':
     dependencies:
@@ -5023,9 +5028,11 @@ snapshots:
       '@tybys/wasm-util': 0.10.3
     optional: true
 
-  '@noble/ciphers@1.3.0': {}
+  '@noble/ciphers@1.3.0':
+    optional: true
 
-  '@noble/hashes@1.8.0': {}
+  '@noble/hashes@1.8.0':
+    optional: true
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -5786,7 +5793,8 @@ snapshots:
 
   '@radix-ui/rect@1.1.3': {}
 
-  '@react-pdf/fns@3.1.3': {}
+  '@react-pdf/fns@3.1.3':
+    optional: true
 
   '@react-pdf/font@4.0.10':
     dependencies:
@@ -5794,12 +5802,14 @@ snapshots:
       '@react-pdf/types': 2.11.3
       fontkit: 2.0.4
       is-url: 1.2.4
+    optional: true
 
   '@react-pdf/image@3.1.1':
     dependencies:
       '@react-pdf/svg': 1.1.0
       jay-peg: 1.1.1
       png-js: 2.0.0
+    optional: true
 
   '@react-pdf/layout@4.7.1':
     dependencies:
@@ -5812,6 +5822,7 @@ snapshots:
       emoji-regex-xs: 1.0.0
       queue: 6.0.2
       yoga-layout: 3.2.1
+    optional: true
 
   '@react-pdf/pdfkit@6.0.1':
     dependencies:
@@ -5824,14 +5835,17 @@ snapshots:
       linebreak: 1.1.0
       png-js: 2.0.0
       vite-compatible-readable-stream: 3.6.1
+    optional: true
 
-  '@react-pdf/primitives@4.3.0': {}
+  '@react-pdf/primitives@4.3.0':
+    optional: true
 
   '@react-pdf/reconciler@2.0.0(react@19.2.7)':
     dependencies:
       object-assign: 4.1.1
       react: 19.2.7
       scheduler: 0.25.0-rc-603e6108-20241029
+    optional: true
 
   '@react-pdf/render@4.6.1':
     dependencies:
@@ -5845,6 +5859,7 @@ snapshots:
       normalize-svg-path: 1.1.0
       parse-svg-path: 0.1.2
       svg-arc-to-cubic-bezier: 3.2.0
+    optional: true
 
   '@react-pdf/renderer@4.6.1(react@19.2.7)':
     dependencies:
@@ -5862,6 +5877,7 @@ snapshots:
       prop-types: 15.8.1
       queue: 6.0.2
       react: 19.2.7
+    optional: true
 
   '@react-pdf/stylesheet@6.2.3':
     dependencies:
@@ -5871,10 +5887,12 @@ snapshots:
       hsl-to-hex: 1.0.0
       media-engine: 1.0.3
       postcss-value-parser: 4.2.0
+    optional: true
 
   '@react-pdf/svg@1.1.0':
     dependencies:
       '@react-pdf/primitives': 4.3.0
+    optional: true
 
   '@react-pdf/textkit@6.4.1':
     dependencies:
@@ -5882,12 +5900,14 @@ snapshots:
       bidi-js: 1.0.3
       hyphen: 1.14.1
       unicode-properties: 1.4.1
+    optional: true
 
   '@react-pdf/types@2.11.3':
     dependencies:
       '@react-pdf/font': 4.0.10
       '@react-pdf/primitives': 4.3.0
       '@react-pdf/stylesheet': 6.2.3
+    optional: true
 
   '@rolldown/binding-android-arm-eabi@1.2.14':
     optional: true
@@ -5985,6 +6005,7 @@ snapshots:
   '@swc/helpers@0.5.23':
     dependencies:
       tslib: 2.8.1
+    optional: true
 
   '@tailwindcss/node@4.3.3':
     dependencies:
@@ -6311,7 +6332,8 @@ snapshots:
 
   abbrev@3.0.1: {}
 
-  abs-svg-path@0.1.1: {}
+  abs-svg-path@0.1.1:
+    optional: true
 
   acorn-import-attributes@1.9.5(acorn@8.18.0):
     dependencies:
@@ -6479,13 +6501,16 @@ snapshots:
 
   balanced-match@4.0.4: {}
 
-  base64-js@0.0.8: {}
+  base64-js@0.0.8:
+    optional: true
 
-  base64-js@1.5.1: {}
+  base64-js@1.5.1:
+    optional: true
 
   bidi-js@1.0.3:
     dependencies:
       require-from-string: 2.0.2
+    optional: true
 
   bindings@1.5.0:
     dependencies:
@@ -6500,6 +6525,7 @@ snapshots:
   brotli@1.3.3:
     dependencies:
       base64-js: 1.5.1
+    optional: true
 
   bumps-results-tools@0.4.1:
     dependencies:
@@ -6547,7 +6573,8 @@ snapshots:
       strip-ansi: 7.2.0
       wrap-ansi: 9.0.2
 
-  clone@2.1.2: {}
+  clone@2.1.2:
+    optional: true
 
   clsx@2.1.1: {}
 
@@ -6563,11 +6590,13 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  color-name@2.1.1: {}
+  color-name@2.1.1:
+    optional: true
 
   color-string@2.1.4:
     dependencies:
       color-name: 2.1.1
+    optional: true
 
   comma-separated-tokens@2.0.3: {}
 
@@ -6850,7 +6879,8 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  dfa@1.2.0: {}
+  dfa@1.2.0:
+    optional: true
 
   diff@9.0.0: {}
 
@@ -6879,7 +6909,8 @@ snapshots:
       '@emmetio/abbreviation': 2.3.3
       '@emmetio/css-abbreviation': 2.1.8
 
-  emoji-regex-xs@1.0.0: {}
+  emoji-regex-xs@1.0.0:
+    optional: true
 
   emoji-regex@10.6.0: {}
 
@@ -7016,7 +7047,8 @@ snapshots:
 
   eventemitter3@5.0.4: {}
 
-  events@3.3.0: {}
+  events@3.3.0:
+    optional: true
 
   execa@5.1.1:
     dependencies:
@@ -7054,7 +7086,8 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.7
 
-  fflate@0.8.3: {}
+  fflate@0.8.3:
+    optional: true
 
   file-entry-cache@11.1.5:
     dependencies:
@@ -7094,6 +7127,7 @@ snapshots:
       tiny-inflate: 1.0.3
       unicode-properties: 1.4.1
       unicode-trie: 2.0.0
+    optional: true
 
   fontkitten@1.0.3:
     dependencies:
@@ -7173,8 +7207,10 @@ snapshots:
   hsl-to-hex@1.0.0:
     dependencies:
       hsl-to-rgb-for-reals: 1.1.1
+    optional: true
 
-  hsl-to-rgb-for-reals@1.1.1: {}
+  hsl-to-rgb-for-reals@1.1.1:
+    optional: true
 
   html-escaper@3.0.3: {}
 
@@ -7191,7 +7227,8 @@ snapshots:
 
   human-signals@2.1.0: {}
 
-  hyphen@1.14.1: {}
+  hyphen@1.14.1:
+    optional: true
 
   iconv-lite@0.4.24:
     dependencies:
@@ -7203,7 +7240,8 @@ snapshots:
 
   imurmurhash@0.1.4: {}
 
-  inherits@2.0.4: {}
+  inherits@2.0.4:
+    optional: true
 
   internmap@1.0.1: {}
 
@@ -7221,21 +7259,25 @@ snapshots:
 
   is-stream@2.0.1: {}
 
-  is-url@1.2.4: {}
+  is-url@1.2.4:
+    optional: true
 
   isexe@2.0.0: {}
 
   jay-peg@1.1.1:
     dependencies:
       restructure: 3.0.2
+    optional: true
 
   jiti@2.7.0: {}
 
   jose@5.10.0: {}
 
-  js-md5@0.8.3: {}
+  js-md5@0.8.3:
+    optional: true
 
-  js-tokens@4.0.0: {}
+  js-tokens@4.0.0:
+    optional: true
 
   json-schema-traverse@0.4.1: {}
 
@@ -7360,6 +7402,7 @@ snapshots:
     dependencies:
       base64-js: 0.0.8
       unicode-trie: 2.0.0
+    optional: true
 
   locate-path@6.0.0:
     dependencies:
@@ -7372,6 +7415,7 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+    optional: true
 
   lru-cache@11.5.2: {}
 
@@ -7405,7 +7449,8 @@ snapshots:
 
   mdn-data@2.27.1: {}
 
-  media-engine@1.0.3: {}
+  media-engine@1.0.3:
+    optional: true
 
   merge-stream@2.0.0: {}
 
@@ -7473,6 +7518,7 @@ snapshots:
   normalize-svg-path@1.1.0:
     dependencies:
       svg-arc-to-cubic-bezier: 3.2.0
+    optional: true
 
   npm-run-path@4.0.1:
     dependencies:
@@ -7482,7 +7528,8 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  object-assign@4.1.1: {}
+  object-assign@4.1.1:
+    optional: true
 
   obug@3.0.0: {}
 
@@ -7536,9 +7583,11 @@ snapshots:
 
   package-manager-detector@1.9.0: {}
 
-  pako@0.2.9: {}
+  pako@0.2.9:
+    optional: true
 
-  parse-svg-path@0.1.2: {}
+  parse-svg-path@0.1.2:
+    optional: true
 
   path-browserify@1.0.1: {}
 
@@ -7566,6 +7615,7 @@ snapshots:
   png-js@2.0.0:
     dependencies:
       fflate: 0.8.3
+    optional: true
 
   postcss-selector-parser@6.0.10:
     dependencies:
@@ -7577,7 +7627,8 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-value-parser@4.2.0: {}
+  postcss-value-parser@4.2.0:
+    optional: true
 
   postcss@8.5.30:
     dependencies:
@@ -7614,6 +7665,7 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+    optional: true
 
   property-information@7.2.0: {}
 
@@ -7626,6 +7678,7 @@ snapshots:
   queue@6.0.2:
     dependencies:
       inherits: 2.0.4
+    optional: true
 
   radix-ui@1.6.7(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
@@ -7692,9 +7745,8 @@ snapshots:
 
   radix3@1.1.2: {}
 
-  react-bumps-chart@1.12.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-bumps-chart@1.13.1(@react-pdf/renderer@4.6.1(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
-      '@react-pdf/renderer': 4.6.1(react@19.2.7)
       classnames: 2.5.1
       d3-array: 2.12.1
       d3-delaunay: 6.0.4
@@ -7704,13 +7756,16 @@ snapshots:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
       react-rowing-blades: 2.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+    optionalDependencies:
+      '@react-pdf/renderer': 4.6.1(react@19.2.7)
 
   react-dom@19.2.7(react@19.2.7):
     dependencies:
       react: 19.2.7
       scheduler: 0.27.0
 
-  react-is@16.13.1: {}
+  react-is@16.13.1:
+    optional: true
 
   react-remove-scroll-bar@2.3.8(@types/react@19.2.18)(react@19.2.7):
     dependencies:
@@ -7770,7 +7825,8 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  restructure@3.0.2: {}
+  restructure@3.0.2:
+    optional: true
 
   retext-smartypants@6.2.0:
     dependencies:
@@ -7805,7 +7861,8 @@ snapshots:
 
   s.color@0.0.15: {}
 
-  safe-buffer@5.2.1: {}
+  safe-buffer@5.2.1:
+    optional: true
 
   safer-buffer@2.1.2: {}
 
@@ -7832,7 +7889,8 @@ snapshots:
 
   sax@1.6.1: {}
 
-  scheduler@0.25.0-rc-603e6108-20241029: {}
+  scheduler@0.25.0-rc-603e6108-20241029:
+    optional: true
 
   scheduler@0.27.0: {}
 
@@ -7950,6 +8008,7 @@ snapshots:
   string_decoder@1.3.0:
     dependencies:
       safe-buffer: 5.2.1
+    optional: true
 
   stringify-entities@4.0.4:
     dependencies:
@@ -7966,7 +8025,8 @@ snapshots:
     dependencies:
       s.color: 0.0.15
 
-  svg-arc-to-cubic-bezier@3.2.0: {}
+  svg-arc-to-cubic-bezier@3.2.0:
+    optional: true
 
   svgo@4.1.0:
     dependencies:
@@ -8060,11 +8120,13 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       unicode-trie: 2.0.0
+    optional: true
 
   unicode-trie@2.0.0:
     dependencies:
       pako: 0.2.9
       tiny-inflate: 1.0.3
+    optional: true
 
   unified@11.0.5:
     dependencies:
@@ -8157,6 +8219,7 @@ snapshots:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+    optional: true
 
   vite@8.3.4(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1):
     dependencies:
@@ -8350,7 +8413,8 @@ snapshots:
 
   yocto-queue@1.2.2: {}
 
-  yoga-layout@3.2.1: {}
+  yoga-layout@3.2.1:
+    optional: true
 
   zod@4.1.11: {}
 

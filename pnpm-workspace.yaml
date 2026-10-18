@@ -3,3 +3,4 @@ allowBuilds:
   sharp: false
 minimumReleaseAgeExclude:
   - prettier-plugin-tailwindcss@0.8.1
+  - react-bumps-chart@1.13.1

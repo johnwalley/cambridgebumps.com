@@ -1,4 +1,4 @@
-import type { Event } from "react-bumps-chart/dist/types";
+import type { Event } from "react-bumps-chart";
 
 // Trim a race down to what the chart actually reads, before it is shipped to
 // the browser — inlined into a chart page's island props, or written to the

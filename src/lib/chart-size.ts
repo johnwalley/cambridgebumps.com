@@ -1,4 +1,4 @@
-import type { Event } from "react-bumps-chart/dist/types";
+import type { Event } from "react-bumps-chart";
 
 // Geometry mirrored from react-bumps-chart so a page can reserve the space a
 // chart is about to take up.
@@ -13,10 +13,10 @@ import type { Event } from "react-bumps-chart/dist/types";
 // it at `width: 100%` with `preserveAspectRatio: "none"`. The rendered height is
 // therefore the container's width times the viewBox's ratio, so reserving that
 // ratio reserves the right height at every breakpoint.
-const ROW_HEIGHT = 16; // `Ye`
-const PADDING = 3; // `Xe`
-const POSITION_COLUMN = ROW_HEIGHT * 2; // `u`
-const GUTTER = 32; // `z`
+const ROW_HEIGHT = 16; // `scale`
+const PADDING = 3; // `gap`
+const POSITION_COLUMN = ROW_HEIGHT * 2; // `left`
+const GUTTER = 32; // `bladesWidth`
 
 const FONT_SIZE = 12.8;
 
@@ -68,15 +68,15 @@ export type ChartViewBox = { width: number; height: number };
 export function estimateChartViewBox(data: Event): ChartViewBox | null {
   if (!data.crews || data.crews.length === 0) return null;
 
-  // `G` — the crew names, drawn down both sides of the chart.
+  // `widthCrews` — the crew names, drawn down both sides of the chart.
   const names =
     widest(data.crews.map((crew) => String(crew.start))) + 2 * PADDING;
-  // `J` — the position within a division, so the widest is the largest division.
+  // `widthStartNumbers` — the position within a division, so the widest is the largest division.
   const divisions = data.div_size?.[0] ?? [];
   const positions =
     textWidth(String(divisions.length === 0 ? 0 : Math.max(...divisions))) +
     PADDING;
-  // `ne` — the overall position, so the widest is the last crew's.
+  // `widthEndNumbers` — the overall position, so the widest is the last crew's.
   const numbers = textWidth(String(data.crews.length)) + PADDING;
 
   return {
