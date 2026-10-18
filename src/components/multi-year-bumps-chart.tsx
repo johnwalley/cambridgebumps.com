@@ -9,6 +9,15 @@ import "react-bumps-chart/dist/index.css";
 // every render while the results are still loading.
 const EMPTY: Event[] = [];
 
+// The nearest ancestor that scrolls sideways — the shell's chart pane.
+function horizontalScroller(element: HTMLElement) {
+  for (let e = element.parentElement; e; e = e.parentElement) {
+    if (/auto|scroll/.test(getComputedStyle(e).overflowX)) return e;
+  }
+
+  return null;
+}
+
 type MultiYearBumpsChartProps = {
   // A whole event's results run to megabytes and the chart only renders in the
   // browser, so the data is fetched from a static JSON file (built by
@@ -39,8 +48,15 @@ export default function MultiYearBumpsChart({
   // right-hand end once there's a chart to show. Only on load — highlighting a
   // club or toggling blades leaves the scroll position where the visitor put
   // it.
+  //
+  // This sets the scroll box's `scrollLeft` rather than calling
+  // `scrollIntoView`, which would scroll the page as well — and while a view
+  // transition is running the page can scroll sideways by a scrollbar's width
+  // (see `YearPicker`).
   useEffect(() => {
-    ref.current?.scrollIntoView({ inline: "end", block: "nearest" });
+    const scroller = ref.current && horizontalScroller(ref.current);
+
+    scroller?.scrollTo({ left: scroller.scrollWidth, behavior: "instant" });
   }, [data]);
 
   useEffect(() => {
