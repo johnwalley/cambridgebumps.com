@@ -165,6 +165,16 @@ p a {
   }
 }
 
+/* Radix's Select (via react-remove-scroll-bar) hides the page scrollbar while
+   it's open and adds a margin to <body> the width of the scrollbar it removed.
+   The gutter reserved above already keeps that space, so the margin would
+   push the page sideways. Out-specify the injected `body[data-scroll-locked]`
+   rule to drop it. */
+html body[data-scroll-locked] {
+  margin-right: 0 !important;
+  --removed-body-scroll-bar-size: 0px;
+}
+
 @media (max-width: 640px) {
   .container {
     padding-inline: 1rem;
