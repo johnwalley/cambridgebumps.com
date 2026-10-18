@@ -1,6 +1,8 @@
 import { BumpsChartMultiYear as Chart, type Event } from "react-bumps-chart";
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import { measureChartText } from "@/lib/measure-text";
+
 import classes from "./bumps-chart.module.css";
 import "react-bumps-chart/dist/index.css";
 
@@ -118,7 +120,12 @@ export default function MultiYearBumpsChart({
   // messages are centred, and centred in a 20,000px box they'd be off screen.
   return (
     <div ref={ref} className={`${classes.chart} px-10`} style={{ width }}>
-      <Chart data={highlightedData} blades={blades} spoons={spoons} />
+      <Chart
+        data={highlightedData}
+        blades={blades}
+        spoons={spoons}
+        measureText={measureChartText}
+      />
     </div>
   );
 }

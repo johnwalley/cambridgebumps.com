@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "dev:oxford": "SITE=oxford astro dev",
-    "prebuild": "node scripts/generate-chart-meta.mjs",
+    "prebuild": "node scripts/generate-chart-meta.mjs && node scripts/generate-chart-font-metrics.mjs",
     "build": "astro build",
     "build:oxford": "SITE=oxford astro build",
     "preview": "astro preview",
@@ -18,7 +18,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "astro check",
-    "gen:chart-meta": "node scripts/generate-chart-meta.mjs"
+    "gen:chart-meta": "node scripts/generate-chart-meta.mjs",
+    "gen:chart-font-metrics": "node scripts/generate-chart-font-metrics.mjs"
   },
   "type": "module",
   "dependencies": {
@@ -34,7 +35,7 @@
     "cmdk": "^1.1.1",
     "radix-ui": "^1.4.3",
     "react": "19.2.7",
-    "react-bumps-chart": "^1.13.1",
+    "react-bumps-chart": "^1.14.0",
     "react-dom": "19.2.7",
     "react-rowing-blades": "^2.5.0",
     "sharp": "^0.35.5",
@@ -51,6 +52,7 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^10.13.0",
     "eslint-plugin-astro": "^3.2.1",
+    "fontkit": "^2.0.4",
     "prettier": "^3.9.5",
     "prettier-plugin-astro": "^1.1.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
