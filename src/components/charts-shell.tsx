@@ -2,6 +2,7 @@ import { navigate } from "astro:transitions/client";
 import type { Event } from "react-bumps-chart/dist/types";
 
 import BumpsChart from "@/components/bumps-chart";
+import { CorrectionLink } from "@/components/correction-link";
 import { EventSelect } from "@/components/event-select";
 import { EventsNav, type YearFor } from "@/components/events-nav";
 import { GenderRadioGroup } from "@/components/gender-radio-group";
@@ -181,6 +182,14 @@ export function ChartsShell({
                 club={club}
                 blades={blades}
                 spoons={spoons}
+              />
+            </div>
+            <div className="mt-4">
+              <CorrectionLink
+                event={event}
+                gender={gender}
+                year={year}
+                club={club}
               />
             </div>
           </div>
