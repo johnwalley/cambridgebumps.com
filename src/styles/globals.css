@@ -154,6 +154,11 @@ p a {
   * {
     border-color: var(--color-border);
   }
+  /* Reserve the scrollbar's width even on pages that don't scroll, so moving
+     between a tall chart and a short one doesn't shift the layout sideways. */
+  html {
+    scrollbar-gutter: stable;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
