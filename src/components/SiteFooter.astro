@@ -1,0 +1,39 @@
+---
+import { siteConfig } from "@/config/site";
+---
+
+<footer class="border-t border-border/40 py-6">
+  <div class="container flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
+    <p class="text-center text-balance md:text-left">
+      Built by{" "}
+      <a
+        href={siteConfig.links.website}
+        class="font-medium underline underline-offset-4"
+      >
+        John Walley
+      </a>
+      . Results data is{" "}
+      <a
+        href={siteConfig.links.github}
+        class="font-medium underline underline-offset-4"
+      >
+        on GitHub
+      </a>
+      .
+    </p>
+    <nav aria-label="Footer">
+      <ul class="flex gap-4">
+        <li>
+          <a href="/about" class="hover:text-foreground">
+            Bumps explained
+          </a>
+        </li>
+        <li>
+          <a href="/vocabulary" class="hover:text-foreground">
+            Vocabulary
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>

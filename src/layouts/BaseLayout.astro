@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { ClientRouter } from "astro:transitions";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
 import { SiteHeader } from "@/components/site-header";
 import { googleAnalyticsTag, siteConfig } from "@/config/site";
 
@@ -16,6 +17,8 @@ interface Props {
   noindex?: boolean;
   ogTitle?: string;
   ogDescription?: string;
+  /** Off for pages sized to fill the viewport (the multi-year chart). */
+  footer?: boolean;
 }
 
 // During the build `Astro.url.pathname` follows `build.format` — a trailing
@@ -35,6 +38,7 @@ const {
   noindex = false,
   ogTitle,
   ogDescription,
+  footer = true,
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
@@ -113,7 +117,8 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
       })();
     </script>
   </head>
-  <body>
+  <body class="flex min-h-dvh flex-col">
+    {/* A column, so `main`'s flex-1 keeps the footer at the bottom of short pages. */}
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-4 focus:text-foreground"
@@ -128,6 +133,7 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
     <main id="main-content" class="flex-1">
       <slot />
     </main>
+    {footer && <SiteFooter />}
 
     {googleAnalyticsTag && <GoogleAnalytics id={googleAnalyticsTag} />}
   </body>
