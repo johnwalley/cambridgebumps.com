@@ -10,7 +10,8 @@ type YearPickerProps = {
   items: YearPickerItem[];
   skipLength: number;
   focusElement?: number;
-  position?: ScrollLogicalPosition;
+  /** Where in the strip the selected year comes to rest. */
+  position?: "start" | "center" | "end";
 };
 
 // The horizontal strip of years above (and beside) a bumps chart.
@@ -51,9 +52,10 @@ export function YearPicker({
   const lastScroll = useRef(0);
 
   useEffect(() => {
+    const strip = ref.current;
     const target = selectedRef.current;
 
-    if (!target?.scrollIntoView) return;
+    if (!target) return;
 
     const jump =
       firstScroll.current ||
@@ -61,8 +63,28 @@ export function YearPicker({
 
     firstScroll.current = false;
 
-    const scroll = (behavior: ScrollBehavior) =>
-      target.scrollIntoView({ inline: position, block: "nearest", behavior });
+    // Scroll the strip itself rather than calling `scrollIntoView`, which
+    // scrolls every scrollable ancestor too — the page included. Mid-transition
+    // that matters: the view transition's overlay covers the scrollbar's
+    // gutter, so for its duration the page is a scrollbar's width wider than
+    // the window, and `scrollIntoView` slid the whole page left by that much
+    // until the transition ended and it snapped back.
+    const scroll = (behavior: ScrollBehavior) => {
+      const offset =
+        target.getBoundingClientRect().left -
+        strip.getBoundingClientRect().left +
+        strip.scrollLeft;
+      const slack = strip.clientWidth - target.offsetWidth;
+
+      const left =
+        position === "center"
+          ? offset - slack / 2
+          : position === "end"
+            ? offset - slack
+            : offset;
+
+      strip.scrollTo({ left, behavior });
+    };
 
     if (jump) {
       scroll("instant");
