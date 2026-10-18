@@ -2,6 +2,7 @@ import { useId } from "react";
 import { Cross2Icon } from "@radix-ui/react-icons";
 
 import { ClubCombobox } from "@/components/club-combobox";
+import { ClubNativeSelect } from "@/components/club-native-select";
 import { HighlightToggle } from "@/components/highlight-toggle";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -20,11 +21,12 @@ type HighlightControlsProps = {
   compact?: boolean;
 };
 
-// The "Highlight club" select and "Highlight blades" toggle shared by both
+// The "Highlight club" picker and "Highlight blades" toggle shared by both
 // chart shells. Each shell renders it twice — in the sidebar and above the
 // chart on narrow screens, one of them hidden by CSS — so the ids come from
 // `useId` rather than being fixed, or the two copies' labels would point at
-// the same control.
+// the same control. The narrow-screen copy picks clubs with a native select;
+// see `ClubNativeSelect`.
 export function HighlightControls({
   clubs,
   club,
@@ -38,15 +40,26 @@ export function HighlightControls({
 
   const clubPicker = (
     <div className={cn("flex", compact && "min-w-0 flex-1")}>
-      <ClubCombobox
-        id={clubId}
-        clubs={clubs}
-        value={club}
-        onChange={(value) => setParam("club", value)}
-        placeholder={compact ? "Highlight a club" : "Select a club"}
-        aria-label={compact ? "Highlight club" : undefined}
-        className={compact ? "h-8 min-w-0 flex-1" : "w-[280px]"}
-      />
+      {compact ? (
+        <ClubNativeSelect
+          id={clubId}
+          clubs={clubs}
+          value={club}
+          onChange={(value) => setParam("club", value)}
+          placeholder="Highlight a club"
+          aria-label="Highlight club"
+          className="h-8 min-w-0 flex-1"
+        />
+      ) : (
+        <ClubCombobox
+          id={clubId}
+          clubs={clubs}
+          value={club}
+          onChange={(value) => setParam("club", value)}
+          placeholder="Select a club"
+          className="w-[280px]"
+        />
+      )}
       <Button
         variant="link"
         size="icon"
