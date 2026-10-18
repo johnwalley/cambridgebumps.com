@@ -1,21 +1,8 @@
-import {
-  cn,
-  events as eventKeys,
-  set,
-  type Gender,
-  type Set,
-} from "@/lib/utils";
+import { eventOrder } from "@/config/site";
+import { cn, eventShortNames, set, type Gender, type Set } from "@/lib/utils";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { withParams } from "@/hooks/use-chart-params";
-
-const labels: Record<Set, string> = {
-  eights: "Eights",
-  lents: "Lents",
-  mays: "Mays",
-  torpids: "Torpids",
-  town: "Town",
-};
 
 type MultiYearEventsNavProps = {
   event: Set;
@@ -35,7 +22,7 @@ export function MultiYearEventsNav({
       <ScrollArea className="lg:max-w-none">
         <Tabs value={event} className="relative grid w-full scroll-m-20 gap-4">
           <TabsList className="h-7 rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)] sm:flex">
-            {eventKeys.map((key) => (
+            {eventOrder.map((key) => (
               <TabsTrigger
                 key={key}
                 value={key}
@@ -55,7 +42,7 @@ export function MultiYearEventsNav({
                       : "text-muted-foreground",
                   )}
                 >
-                  {labels[key]}
+                  {eventShortNames[key]}
                 </a>
               </TabsTrigger>
             ))}

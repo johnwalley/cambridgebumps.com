@@ -4,6 +4,7 @@ title: Bumps explained
 description: "Bumps races are unique rowing races where crews aim to 'bump' the boat ahead due to the river's narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the 'Head of the River' title by leading the top division at week's end."
 ---
 
+import ForSite from "../components/ForSite.astro";
 import { siteConfig } from "../config/site";
 
 # Bumps explained
@@ -71,11 +72,19 @@ You can see which crews earned blades or spoons on any of the
 
 **This looks fun. Where can I go to watch?**
 
-In Cambridge, if you&rsquo;re new to Bumps, I would recommend
+<ForSite site="Cambridge">
+
+If you&rsquo;re new to Bumps, I would recommend
 [The Plough](https://www.theploughfenditton.co.uk/) in Fen Ditton.
 
-In Oxford, the towpath along the Isis and the area around the boathouses are
-popular spots to watch Torpids and Summer Eights.
+</ForSite>
+
+<ForSite site="Oxford">
+
+The towpath along the Isis and the area around the boathouses are popular spots
+to watch Torpids and Summer Eights.
+
+</ForSite>
 
 **Any other bumps websites you would recommend?**
 
@@ -89,5 +98,9 @@ go-to site.
 For live updates during the races, check out
 [Cam FM](https://bumps.camfm.co.uk/) and [Oxford Bumps](https://bumps.live/).
 
-For video coverage of the Cambridge races, check out William Connolley&rsquo;s
+<ForSite site="Cambridge">
+
+For video coverage of the races, check out William Connolley&rsquo;s
 [YouTube channel](https://www.youtube.com/@LaGrosseBelette/playlists).
+
+</ForSite>

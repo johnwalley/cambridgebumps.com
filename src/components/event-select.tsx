@@ -8,9 +8,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import type { Set } from "@/lib/utils";
+import { eventGroups } from "@/config/site";
+import { set, type Set } from "@/lib/utils";
 
-// The event picker shared by the chart and statistics pages.
+// The event picker shared by the chart and statistics pages. The site's own
+// city's events come first.
 export function EventSelect({
   value,
   onValueChange,
@@ -31,17 +33,16 @@ export function EventSelect({
           <SelectValue placeholder="Select an event" />
         </SelectTrigger>
         <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Cambridge</SelectLabel>
-            <SelectItem value="lents">Lent Bumps</SelectItem>
-            <SelectItem value="mays">May Bumps</SelectItem>
-            <SelectItem value="town">Town Bumps</SelectItem>
-          </SelectGroup>
-          <SelectGroup>
-            <SelectLabel>Oxford</SelectLabel>
-            <SelectItem value="torpids">Torpids</SelectItem>
-            <SelectItem value="eights">Summer Eights</SelectItem>
-          </SelectGroup>
+          {eventGroups.map(({ city, events }) => (
+            <SelectGroup key={city}>
+              <SelectLabel>{city}</SelectLabel>
+              {events.map((event) => (
+                <SelectItem key={event} value={event}>
+                  {set[event]}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          ))}
         </SelectContent>
       </Select>
     </div>

@@ -1,3 +1,5 @@
+import { eventOrder } from "@/config/site";
+import { eventShortNames } from "@/lib/utils";
 import type { MainNavItem, SidebarNavItem } from "../types/nav";
 
 interface DocsConfig {
@@ -34,33 +36,11 @@ export const docsConfig: DocsConfig = {
   sidebarNav: [
     {
       title: "Events",
-      items: [
-        {
-          title: "Eights",
-          href: "/charts/eights",
-          items: [],
-        },
-        {
-          title: "Lents",
-          href: "/charts/lents",
-          items: [],
-        },
-        {
-          title: "Mays",
-          href: "/charts/mays",
-          items: [],
-        },
-        {
-          title: "Torpids",
-          href: "/charts/torpids",
-          items: [],
-        },
-        {
-          title: "Town",
-          href: "/charts/town",
-          items: [],
-        },
-      ],
+      items: eventOrder.map((event) => ({
+        title: eventShortNames[event],
+        href: `/charts/${event}`,
+        items: [],
+      })),
     },
   ],
 };

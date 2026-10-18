@@ -5,7 +5,9 @@ import { ClientRouter } from "astro:transitions";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 import { SiteHeader } from "@/components/site-header";
-import { googleAnalyticsTag, siteConfig } from "@/config/site";
+import { googleAnalyticsTag, homeEvents, siteConfig } from "@/config/site";
+import { summary } from "@/data/results";
+import { set, yearOf } from "@/lib/utils";
 
 interface Props {
   /** Page title; the site name is appended. Omit on the home page. */
@@ -28,9 +30,26 @@ const pathname =
     .replace(/\/?(index)?\.html$/, "")
     .replace(/(.)\/$/, "$1") || "/";
 
+// The default description and the keywords name only the site's own events;
+// the first year is the earliest any of them has results for.
+const homeEventNames = homeEvents.map((event) => set[event]);
+const firstYear = Math.min(
+  ...homeEvents.flatMap((event) =>
+    [...summary[event].men, ...summary[event].women].map(yearOf),
+  ),
+);
+const defaultDescription = `Interactive charts and historical results for ${siteConfig.title} bumps rowing races. Explore ${new Intl.ListFormat("en-GB").format(homeEventNames)} from ${firstYear} to today.`;
+const keywords = [
+  "Bumps",
+  "rowing",
+  "charts",
+  siteConfig.title,
+  ...homeEventNames,
+].join(", ");
+
 const {
   title,
-  description = "Interactive charts and historical results for Cambridge and Oxford bumps rowing races. Explore May Bumps, Lent Bumps, Summer Eights, and Torpids from 1815 to today.",
+  description = defaultDescription,
   canonical = pathname,
   noindex = false,
   ogTitle,
@@ -54,10 +73,7 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
       content="telephone=no, date=no, address=no, email=no"
     />
     <meta name="chrome" content="nointentdetection" />
-    <meta
-      name="keywords"
-      content="Bumps, rowing, charts, Cambridge, Oxford, Eights, Lents, Mays, Torpids"
-    />
+    <meta name="keywords" content={keywords} />
     <meta name="author" content="John Walley" />
     <link rel="author" href="https://www.walley.org.uk" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}

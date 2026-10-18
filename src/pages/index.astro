@@ -3,24 +3,19 @@ import { Announcement } from "@/components/announcement";
 import { BumpsChartsCta } from "@/components/bumps-charts-cta";
 import Photos from "@/components/Photos.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
+import { homeEvents, siteConfig } from "@/config/site";
 import { summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { cn, set, yearOf, type Set } from "@/lib/utils";
-
-// The site's own events in the order they're raced through the year, so when
-// two share the latest season the later one is the most recent racing.
-const seasonOrder: Set[] =
-  siteConfig.title === "Oxford"
-    ? ["torpids", "eights"]
-    : ["lents", "mays", "town"];
 
 const latestYear = (event: Set) =>
   Math.max(...[...summary[event].men, ...summary[event].women].map(yearOf));
 
 // The announcement points at the most recent racing, derived from the
 // results, so it moves on by itself when a new event's results go in.
-const latestEvent = seasonOrder.reduce((latest, event) =>
+// `homeEvents` is in racing order, so when two share the latest season the
+// later one is the most recent racing.
+const latestEvent = homeEvents.reduce((latest, event) =>
   latestYear(event) >= latestYear(latest) ? event : latest,
 );
 const announcementYear = String(latestYear(latestEvent));
