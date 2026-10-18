@@ -1,6 +1,8 @@
 ---
 import type { GetStaticPaths } from "astro";
 
+import chartFontUrl from "@fontsource-variable/roboto-flex/files/roboto-flex-latin-grad-normal.woff2?url";
+
 import { ChartsShell } from "@/components/charts-shell";
 import type { YearFor } from "@/components/events-nav";
 import { clubsByYear } from "@/data/chart-meta";
@@ -79,6 +81,21 @@ const showCraNotice = event === "town" && year === years[years.length - 1];
   canonical={`/charts/${event}/${gender}/${year}`}
   noindex={data === null}
 >
+  {/*
+      The chart is in the HTML, so it paints before its font would otherwise
+      be requested. Until the font arrives the names draw in Arial, ~3% wider
+      than the Roboto Flex columns `measureChartText` sizes them for.
+    */}
+  {data && (
+    <link
+      slot="head"
+      rel="preload"
+      href={chartFontUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  )}
   <ChartsShell
     client:load
     transition:persist="charts-shell"
