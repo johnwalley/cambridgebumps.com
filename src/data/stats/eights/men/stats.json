@@ -50,10 +50,10 @@
     { "club": "St Anne's", "count": 100 },
     { "club": "Osler House", "count": 84 },
     { "club": "St Hugh's", "count": 77 },
-    { "club": "Somerville", "count": 56 },
+    { "club": "Somerville", "count": 55 },
     { "club": "St Antony's", "count": 54 },
     { "club": "Regent's Park", "count": 51 },
-    { "club": "St Hilda's", "count": 37 },
+    { "club": "St Hilda's", "count": 38 },
     { "club": "St Benet's Hall", "count": 36 },
     { "club": "Green Templeton", "count": 29 },
     { "club": "Magdalen Hall", "count": 16 },
@@ -84,7 +84,7 @@
     { "club": "Queen's", "days": 9 },
     { "club": "Merton", "days": 7 },
     { "club": "Hertford", "days": 4 },
-    { "club": "Wolfson", "days": 2 }
+    { "club": "Wolfson", "days": 1 }
   ],
   "headLong": [
     { "club": "Trinity", "days": 34, "span": "1861 - 1865" },
@@ -104,7 +104,7 @@
     { "club": "Queen's", "days": 5, "span": "1957 - 1958" },
     { "club": "Merton", "days": 4, "span": "1951 - 1952" },
     { "club": "Hertford", "days": 4, "span": "1881 - 1882" },
-    { "club": "Wolfson", "days": 2, "span": "2025 - 2026" }
+    { "club": "Wolfson", "days": 1, "span": "2025" }
   ],
   "bladesAwarded": [
     { "club": "Oriel", "count": 74 },

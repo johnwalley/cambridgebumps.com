@@ -1,6 +1,6 @@
 {
   "headships": [
-    { "club": "Jesus", "headships": 36, "lastYear": "1972" },
+    { "club": "Jesus", "headships": 35, "lastYear": "1972" },
     { "club": "LMBC", "headships": 31, "lastYear": "2025" },
     { "club": "1st Trinity", "headships": 27, "lastYear": "1928" },
     { "club": "Caius", "headships": 21, "lastYear": "2023" },
@@ -27,7 +27,7 @@
     { "club": "Caius", "count": 787 },
     { "club": "Emmanuel", "count": 764 },
     { "club": "Christ's", "count": 686 },
-    { "club": "Clare", "count": 672 },
+    { "club": "Clare", "count": 671 },
     { "club": "1st Trinity", "count": 668 },
     { "club": "Pembroke", "count": 665 },
     { "club": "Queens'", "count": 641 },
@@ -52,7 +52,7 @@
     { "club": "Homerton", "count": 65 },
     { "club": "Hughes Hall", "count": 62 },
     { "club": "Anglia Ruskin", "count": 59 },
-    { "club": "Clare Hall", "count": 29 },
+    { "club": "Clare Hall", "count": 30 },
     { "club": "Lady Somerset", "count": 28 },
     { "club": "Addenbrooke's", "count": 25 },
     { "club": "Cavendish", "count": 23 },
@@ -127,7 +127,7 @@
   ],
   "bladesAwarded": [
     { "club": "LMBC", "count": 109 },
-    { "club": "Jesus", "count": 87 },
+    { "club": "Jesus", "count": 86 },
     { "club": "Trinity Hall", "count": 73 },
     { "club": "Caius", "count": 71 },
     { "club": "Pembroke", "count": 70 },
