@@ -1,0 +1,14 @@
+---
+import { siteConfig } from "@/config/site";
+import type { City } from "@/lib/utils";
+
+// Renders its content only on the named city's site, for copy (in the MDX
+// pages, say) that only makes sense on one of them.
+interface Props {
+  site: City;
+}
+
+const { site } = Astro.props;
+---
+
+{site === siteConfig.title && <slot />}

@@ -14,6 +14,15 @@ export const set: Record<Set, string> = {
   town: "Town Bumps",
 };
 
+// Short labels for the event tabs and menus.
+export const eventShortNames: Record<Set, string> = {
+  eights: "Eights",
+  lents: "Lents",
+  mays: "Mays",
+  torpids: "Torpids",
+  town: "Town",
+};
+
 export const genderMap: Record<Gender, string> = {
   men: "Men",
   women: "Women",
@@ -36,6 +45,14 @@ export function getGenderLabel(
 
 export const events = ["eights", "lents", "mays", "torpids", "town"] as const;
 export type Set = (typeof events)[number];
+
+export type City = "Cambridge" | "Oxford";
+
+// The events each city races, in the order they're raced through the year.
+export const cityEvents: Record<City, Set[]> = {
+  Cambridge: ["lents", "mays", "town"],
+  Oxford: ["torpids", "eights"],
+};
 
 export const genders = ["men", "women"] as const;
 export type Gender = (typeof genders)[number];
