@@ -1,5 +1,8 @@
 # cambridgebumps.com
 
+> [!IMPORTANT]
+> The site is now built from [johnwalley/rowing](https://github.com/johnwalley/rowing/tree/main/apps/cambridgebumps.com), alongside the other rowing packages, and cambridgebumps.com and oxfordbumps.com deploy from there. This repository is archived: open issues and pull requests there.
+
 Bumps charts, statistics, and more for Cambridge and Oxford rowing races.
 
 ## Features
