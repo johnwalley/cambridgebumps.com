@@ -1,9 +1,9 @@
 import { cityUrls, homeCity } from "@/config/site";
 import type { City, Set } from "@/lib/utils";
 
-// The events a club page covers, in the order they're raced through the year.
-// Town Bumps clubs and the colleges' Town crews aren't covered yet.
-export const clubEvents: Record<City, Set[]> = {
+// The events a college's page covers, in the order they're raced through the
+// year. A college's crews in the Town Bumps are left off its page.
+const collegeEvents: Record<City, Set[]> = {
   Cambridge: ["lents", "mays"],
   Oxford: ["torpids", "eights"],
 };
@@ -22,6 +22,8 @@ export type Club = {
   /** The name the results use, as shown in charts and tables. */
   short: string;
   city: City;
+  /** The events the page covers: its city's college events unless given. */
+  events?: Set[];
   /**
    * Earlier names in the results whose crews are this club's history: a
    * rename (New Hall), a merger (1st Trinity) or a club absorbed into it.
@@ -337,6 +339,274 @@ export const clubs: Club[] = [
     city: "Cambridge",
   },
 
+  // Cambridge town clubs, in the Town Bumps. Their mergers follow
+  // `clubMapping` in bumps-results-tools; the rest are spellings of one name.
+  {
+    slug: "99",
+    name: "Cambridge '99 Rowing Club",
+    short: "99",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "barclays-bank",
+    name: "Barclays Bank",
+    short: "Barclays Bank",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "beehives",
+    name: "Beehives",
+    short: "Beehives",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "bridge",
+    name: "Bridge",
+    short: "Bridge",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "cambridge-consultants",
+    name: "Cambridge Consultants",
+    short: "Cam Consultants",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "cambridge-grammar-school",
+    name: "Cambridge Grammar School",
+    short: "Cam Grammar School",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "cambridge-veterans",
+    name: "Cambridge Veterans",
+    short: "Camb Veterans",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Cam Veterans", "Camb Vets"],
+  },
+  {
+    slug: "cambs-high-school",
+    name: "Cambridgeshire High School",
+    short: "Cambs High School",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "cantabs",
+    name: "Cantabrigian Rowing Club",
+    short: "Cantabs",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Old Cantabs", "Cantabs College", "Cantabs Rugby"],
+  },
+  {
+    slug: "cavendish-lab",
+    name: "Cavendish Laboratory",
+    short: "Cavendish Lab",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "central-old-boys",
+    name: "Central Old Boys",
+    short: "Central Old Boys",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "champs",
+    name: "Champs",
+    short: "Champs",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["ACUA", "New Museums", "Univ Sports", "Old Spring"],
+  },
+  {
+    slug: "chesterton",
+    name: "Chesterton Rowing Club",
+    short: "Chesterton",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Pye", "Simoco"],
+  },
+  {
+    slug: "city",
+    name: "City of Cambridge Rowing Club",
+    short: "City",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Cambridge Town Rowing Club"],
+    joint: ["Rob Roy/City", "City/CCAT", "City/Netherhall"],
+  },
+  {
+    slug: "coopers-and-lybrand",
+    name: "Coopers & Lybrand",
+    short: "Coopers & Lybrand",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "instrument-co",
+    name: "Cambridge Instrument Company",
+    short: "Instrument Co",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "isle-of-ely",
+    name: "Isle of Ely Rowing Club",
+    short: "Isle of Ely",
+    city: "Cambridge",
+    events: ["town"],
+    joint: ["St Ives/Ely"],
+  },
+  {
+    slug: "lady-somerset-town",
+    name: "Lady Somerset Boat Club",
+    short: "Lady Somerset",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "leckhampton",
+    name: "Leckhampton",
+    short: "Leckhampton",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "leys-lysander",
+    name: "Leys Lysander",
+    short: "Leys Lysander",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "leys-school",
+    name: "The Leys School",
+    short: "Leys School",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "marshall",
+    name: "Marshall",
+    short: "Marshalls",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Marshall"],
+  },
+  {
+    slug: "max-entropy",
+    name: "Max Entropy",
+    short: "Max Entropy",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Maximum Entropy"],
+  },
+  {
+    slug: "metallurgy",
+    name: "Metallurgy",
+    short: "Metallurgy",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "mott-macdonald",
+    name: "Mott MacDonald",
+    short: "Mott MacDonald",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["MacDonalds", "Macdonalds", "Mott Madcondald"],
+  },
+  {
+    slug: "old-ym",
+    name: "Old YM",
+    short: "Old YM",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "peregrines",
+    name: "Peregrines",
+    short: "Peregrines",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "police",
+    name: "Police",
+    short: "Police",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "red-lion-toft",
+    name: "Red Lion Toft",
+    short: "Red Lion Toft",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "rob-roy",
+    name: "Rob Roy Boat Club",
+    short: "Rob Roy",
+    city: "Cambridge",
+    events: ["town"],
+    joint: ["Rob Roy/City"],
+  },
+  {
+    slug: "scouts",
+    name: "Scouts",
+    short: "Scouts",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "st-ives",
+    name: "St Ives Rowing Club",
+    short: "St Ives",
+    city: "Cambridge",
+    events: ["town"],
+    joint: ["St Ives/Ely"],
+  },
+  {
+    slug: "st-neots",
+    name: "St Neots Rowing Club",
+    short: "St Neots",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "st-radegund",
+    name: "St Radegund Boat Club",
+    short: "St Radegund",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "telephones",
+    name: "Telephones",
+    short: "Telephones",
+    city: "Cambridge",
+    events: ["town"],
+  },
+  {
+    slug: "x-press",
+    name: "X-Press Boat Club",
+    short: "X-Press",
+    city: "Cambridge",
+    events: ["town"],
+    formerly: ["Free Press"],
+  },
+
   // Oxford colleges.
   {
     slug: "balliol",
@@ -581,6 +851,26 @@ export const clubs: Club[] = [
 ];
 
 /**
+ * Names that qualify for a page but deliberately have none: the colleges'
+ * crews in the Town Bumps, which their college pages leave out.
+ */
+export const unlisted: Partial<Record<Set, string[]>> = {
+  town: [
+    "Addenbrooke's",
+    "Churchill",
+    "Clare",
+    "Darwin",
+    "King's",
+    "Selwyn",
+    "Trinity Hall",
+    "Wolfson",
+  ],
+};
+
+export const eventsOf = (club: Club) =>
+  club.events ?? collegeEvents[club.city];
+
+/**
  * The page of the club a results name belongs to, as raced in `event`: a
  * path on this site, or a full URL on the other city's. Undefined for a name
  * with no page, or a joint crew, which belongs to more than one.
@@ -588,7 +878,7 @@ export const clubs: Club[] = [
 export function clubPageUrl(event: Set, name: string): string | undefined {
   const club = clubs.find(
     (club) =>
-      clubEvents[club.city].includes(event) &&
+      eventsOf(club).includes(event) &&
       (club.short === name || club.formerly?.includes(name)),
   );
   if (!club) return undefined;

@@ -4,7 +4,7 @@ import { Blade } from "react-rowing-blades";
 import { homeCity, siteConfig } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { clubsIn, getClubHistory, isCurrent } from "@/lib/club-history";
-import { getCode, yearOf } from "@/lib/utils";
+import { getCode, set, yearOf } from "@/lib/utils";
 
 const entries = clubsIn(homeCity)
   .map((club) => {
@@ -15,6 +15,9 @@ const entries = clubsIn(homeCity)
 
     return {
       club,
+      events: new Intl.ListFormat("en-GB").format([
+        ...new Set(history.sections.map(({ event }) => set[event])),
+      ]),
       code: getCode(club.short, history.sections[0].event),
       current: isCurrent(history),
       first: Math.min(...years),
@@ -23,16 +26,20 @@ const entries = clubsIn(homeCity)
   })
   .sort((a, b) => a.club.name.localeCompare(b.club.name, "en-GB"));
 
+// Current clubs grouped by the events they've raced (Lent and May Bumps, Town
+// Bumps); the rest together, each labelled with its events.
+const current = entries.filter((entry) => entry.current);
+
 const groups = [
-  {
-    title: "Clubs",
-    entries: entries.filter((entry) => entry.current),
-  },
+  ...[...new Set(current.map((entry) => entry.events))].map((events) => ({
+    title: events,
+    entries: current.filter((entry) => entry.events === events),
+  })),
   {
     title: "No longer racing",
     entries: entries.filter((entry) => !entry.current),
   },
-];
+].filter((group) => group.entries.length > 0);
 ---
 
 <BaseLayout
@@ -48,11 +55,9 @@ const groups = [
         </div>
         {groups.map(({ title, entries }) => (
           <section class="mt-8">
-            {title !== "Clubs" && (
-              <h2 class="mb-4 text-xl font-bold">{title}</h2>
-            )}
+            <h2 class="mb-4 text-xl font-bold">{title}</h2>
             <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-              {entries.map(({ club, code, current, first, last }) => (
+              {entries.map(({ club, code, current, events, first, last }) => (
                 <li>
                   <a
                     href={`/clubs/${club.slug}`}
@@ -64,7 +69,9 @@ const groups = [
                     <span>
                       <span class="block font-medium">{club.name}</span>
                       <span class="block text-sm text-muted-foreground">
-                        {current ? `Since ${first}` : `${first}–${last}`}
+                        {current
+                          ? `Since ${first}`
+                          : `${events} · ${first}–${last}`}
                       </span>
                     </span>
                   </a>
