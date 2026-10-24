@@ -1,0 +1,79 @@
+---
+import { Blade } from "react-rowing-blades";
+
+import { homeCity, siteConfig } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { clubsIn, getClubHistory, isCurrent } from "@/lib/club-history";
+import { getCode, yearOf } from "@/lib/utils";
+
+const entries = clubsIn(homeCity)
+  .map((club) => {
+    const history = getClubHistory(club);
+    const years = history.sections.flatMap((section) =>
+      section.races.map((race) => yearOf(race.year)),
+    );
+
+    return {
+      club,
+      code: getCode(club.short, history.sections[0].event),
+      current: isCurrent(history),
+      first: Math.min(...years),
+      last: Math.max(...years),
+    };
+  })
+  .sort((a, b) => a.club.name.localeCompare(b.club.name, "en-GB"));
+
+const groups = [
+  {
+    title: "Clubs",
+    entries: entries.filter((entry) => entry.current),
+  },
+  {
+    title: "No longer racing",
+    entries: entries.filter((entry) => !entry.current),
+  },
+];
+---
+
+<BaseLayout
+  title="Clubs"
+  description={`The bumps history of every ${siteConfig.title} club: headships, blades and year-by-year results for each crew.`}
+  canonical="/clubs"
+>
+  <div class="relative container">
+    <section>
+      <div class="mx-auto px-4 pb-12 sm:px-6 md:px-8 lg:px-12">
+        <div class="pt-4">
+          <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">Clubs</h1>
+        </div>
+        {groups.map(({ title, entries }) => (
+          <section class="mt-8">
+            {title !== "Clubs" && (
+              <h2 class="mb-4 text-xl font-bold">{title}</h2>
+            )}
+            <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {entries.map(({ club, code, current, first, last }) => (
+                <li>
+                  <a
+                    href={`/clubs/${club.slug}`}
+                    class="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-muted"
+                  >
+                    <span class="flex w-12 shrink-0 justify-center">
+                      {code && <Blade club={code} size={48} />}
+                    </span>
+                    <span>
+                      <span class="block font-medium">{club.name}</span>
+                      <span class="block text-sm text-muted-foreground">
+                        {current ? `Since ${first}` : `${first}–${last}`}
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

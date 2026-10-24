@@ -1,0 +1,332 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Blade } from "react-rowing-blades";
+
+import ClubPositionChart from "@/components/ClubPositionChart.astro";
+import { homeCity, siteConfig } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  clubsIn,
+  getClubHistory,
+  getSectionRecords,
+  latestYear,
+  type ClubSection,
+  type CrewResult,
+  type CrewYear,
+} from "@/lib/club-history";
+import { getCode, getGenderLabel, set, yearOf } from "@/lib/utils";
+
+export const getStaticPaths = (() =>
+  clubsIn(homeCity).map((club) => ({
+    params: { club: club.slug },
+    props: { club },
+  }))) satisfies GetStaticPaths;
+
+const { club } = Astro.props;
+const history = getClubHistory(club);
+
+const sections = history.sections.map((section) => ({
+  section,
+  records: getSectionRecords(section),
+  id: `${section.event}-${section.gender}`,
+  title: `${set[section.event]} · ${getGenderLabel(section.event, section.gender)}`,
+}));
+
+const ordinal = (n: number) => {
+  if (n === 1) return "Head";
+  const tens = n % 100;
+  const suffix =
+    tens >= 11 && tens <= 13
+      ? "th"
+      : (({ 1: "st", 2: "nd", 3: "rd" } as Record<number, string>)[n % 10] ??
+        "th");
+  return `${n}${suffix}`;
+};
+
+const formatGain = (gain: number | null) =>
+  gain === null
+    ? "Withdrew"
+    : gain > 0
+      ? `+${gain}`
+      : gain < 0
+        ? `−${-gain}`
+        : "0";
+
+const notes = (crew: CrewResult) =>
+  [
+    crew.head && "Head",
+    crew.blades && "Blades",
+    crew.spoons && "Spoons",
+  ].filter(Boolean) as string[];
+
+const chartHref = (section: ClubSection, year: string, crew: CrewResult) =>
+  `/charts/${section.event}/${section.gender}/${yearOf(year)}?club=${encodeURIComponent(crew.club)}`;
+
+// "1972, 1975 and 4 more"
+const listYears = (races: CrewYear[], most = 6) => {
+  const years = [...new Set(races.map(({ year }) => String(yearOf(year))))];
+  const shown = years.slice(0, most).join(", ");
+  return years.length > most
+    ? `${shown} and ${years.length - most} more`
+    : shown;
+};
+
+const code = getCode(club.short, history.sections[0].event);
+
+// Where the club raced, for the subtitle and description: "Lent Bumps since
+// 1887, May Bumps since 1827".
+const eventSpans = [...new Set(history.sections.map(({ event }) => event))].map(
+  (event) => {
+    const firsts = sections
+      .filter(({ section }) => section.event === event)
+      .map(({ records }) => yearOf(records.firstYear));
+    return `${set[event]} since ${Math.min(...firsts)}`;
+  },
+);
+
+const headshipSummary = sections
+  .filter(({ records }) => records.headships.length > 0)
+  .map(
+    ({ section, records }) =>
+      `${records.headships.length} ${set[section.event]} headship${records.headships.length === 1 ? "" : "s"} (${getGenderLabel(section.event, section.gender)})`,
+  );
+
+const title = club.name.includes(club.short)
+  ? `${club.name} - Bumps History`
+  : `${club.name} (${club.short}) - Bumps History`;
+
+const description = [
+  `${club.name}'s bumps history: ${new Intl.ListFormat("en-GB").format(eventSpans)}.`,
+  headshipSummary.length > 0 &&
+    `${new Intl.ListFormat("en-GB").format(headshipSummary)}.`,
+  "Year-by-year results, records and finishing positions for every crew.",
+]
+  .filter(Boolean)
+  .join(" ");
+
+const canonical = `/clubs/${club.slug}`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  name: club.name,
+  alternateName: club.short,
+  sport: "Rowing",
+  url: new URL(canonical, siteConfig.url).href,
+  location: { "@type": "City", name: club.city },
+};
+
+const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
+  <div class="relative container">
+    <section>
+      <div class="mx-auto px-4 pb-12 sm:px-6 md:px-8 lg:px-12">
+        <header class="flex items-center gap-4 pt-4">
+          {code && <Blade club={code} size={72} />}
+          <div>
+            <h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">
+              {club.name}
+            </h1>
+            <p class="mt-1 text-muted-foreground">{eventSpans.join(" · ")}</p>
+          </div>
+        </header>
+
+        {sections.length > 1 && (
+          <nav class="mt-6 flex flex-wrap gap-2 text-sm" aria-label="Sections">
+            {sections.map(({ id, title }) => (
+              <a
+                href={`#${id}`}
+                class="rounded-md border px-3 py-1 transition-colors hover:bg-muted"
+              >
+                {title}
+              </a>
+            ))}
+          </nav>
+        )}
+
+        {sections.map(({ section, records, id, title }) => {
+          const latest = latestYear(section);
+          const crewYears = section.races
+            .flatMap((race) =>
+              race.crews.map((crew) => ({ year: race.year, crew })),
+            )
+            .reverse();
+          const lowerBoats = crewYears.filter(({ crew }) => crew.number > 1);
+
+          return (
+            <section id={id} class="mt-10 scroll-mt-20">
+              <h2 class="text-2xl font-bold tracking-tight">{title}</h2>
+
+              <dl class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+                <div>
+                  <dt class="text-sm text-muted-foreground">Headships</dt>
+                  <dd class="text-2xl font-semibold">
+                    {records.headships.length}
+                  </dd>
+                  {records.headships.length > 0 && (
+                    <dd class="text-sm text-muted-foreground">
+                      {listYears(records.headships)}
+                    </dd>
+                  )}
+                </div>
+                <div>
+                  <dt class="text-sm text-muted-foreground">Highest finish</dt>
+                  <dd class="text-2xl font-semibold">
+                    {ordinal(records.highest.position)}
+                  </dd>
+                  {records.highest.position > 1 && (
+                    <dd class="text-sm text-muted-foreground">
+                      {listYears(records.highest.races, 3)}
+                    </dd>
+                  )}
+                </div>
+                <div>
+                  <dt class="text-sm text-muted-foreground">Blades</dt>
+                  <dd class="text-2xl font-semibold">{records.blades}</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-muted-foreground">Spoons</dt>
+                  <dd class="text-2xl font-semibold">{records.spoons}</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-muted-foreground">First raced</dt>
+                  <dd class="text-2xl font-semibold">
+                    {yearOf(records.firstYear)}
+                  </dd>
+                </div>
+              </dl>
+
+              <ClubPositionChart club={club} section={section} />
+
+              <div class="mt-6 grid gap-8 md:grid-cols-2">
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    {records.current.length > 0
+                      ? `${yearOf(latest)} crews`
+                      : "Last raced"}
+                  </h3>
+                  {records.current.length > 0 ? (
+                    <ul class="mt-2 space-y-1">
+                      {records.current.map((crew) => (
+                        <li>
+                          <a
+                            href={chartHref(section, latest, crew)}
+                            class="underline decoration-border underline-offset-4 hover:decoration-current"
+                          >
+                            {crew.name}
+                          </a>
+                          <span class="text-muted-foreground">
+                            {" "}
+                            {crew.finish === null
+                              ? `started ${ordinal(crew.start).toLowerCase()}, withdrew`
+                              : `${ordinal(crew.start)} → ${ordinal(crew.finish)} (${formatGain(crew.gain)})`}
+                            {notes(crew).length > 0 &&
+                              ` · ${notes(crew).join(", ")}`}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p class="mt-2 text-muted-foreground">
+                      {yearOf(records.lastYear)}
+                    </p>
+                  )}
+                </div>
+
+                {(records.rises.length > 0 || records.falls.length > 0) && (
+                  <div>
+                    <h3 class="text-lg font-semibold">Best and worst years</h3>
+                    <ul class="mt-2 space-y-1">
+                      {[...records.rises, ...records.falls].map(
+                        ({ year, crew }) => (
+                          <li>
+                            <span class="inline-block w-10 font-medium tabular-nums">
+                              {formatGain(crew.gain)}
+                            </span>
+                            <a
+                              href={chartHref(section, year, crew)}
+                              class="underline decoration-border underline-offset-4 hover:decoration-current"
+                            >
+                              {crew.name}, {yearOf(year)}
+                            </a>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <h3 class="mt-8 text-lg font-semibold">Year by year</h3>
+              {[
+                {
+                  rows: crewYears.filter(({ crew }) => crew.number === 1),
+                  lower: false,
+                },
+                { rows: lowerBoats, lower: true },
+              ].map(({ rows, lower }) => {
+                if (rows.length === 0) return null;
+
+                const table = (
+                  <div class="relative mt-2 w-full overflow-auto">
+                    {/* The cells are styled from the table, not one by one:
+                        LMBC has over two thousand rows. */}
+                    <table class="w-full text-sm [&_a]:underline [&_a]:decoration-border [&_a]:underline-offset-4 [&_a:hover]:decoration-current [&_tbody_tr]:border-b [&_tbody_tr:last-child]:border-0 [&_td]:p-2 [&_td]:align-middle [&_td:nth-child(n+3)]:text-right [&_td:nth-child(6)]:text-left [&_td:nth-child(6)]:text-muted-foreground">
+                      <thead class="border-b">
+                        <tr>
+                          <th class={th}>Year</th>
+                          <th class={th}>Crew</th>
+                          <th class={`${th} text-right`}>Start</th>
+                          <th class={`${th} text-right`}>Finish</th>
+                          <th class={`${th} text-right`}>Change</th>
+                          <th class={th}>
+                            <span class="sr-only">Notes</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="tabular-nums">
+                        {rows.map(({ year, crew }) => (
+                          <tr>
+                            <td>{year}</td>
+                            <td>
+                              <a href={chartHref(section, year, crew)}>
+                                {crew.name}
+                              </a>
+                            </td>
+                            <td>{crew.start}</td>
+                            <td>{crew.finish ?? "–"}</td>
+                            <td>{formatGain(crew.gain)}</td>
+                            <td>{notes(crew).join(", ")}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+
+                return lower ? (
+                  <details class="mt-4">
+                    <summary class="cursor-pointer text-sm font-medium">
+                      Lower boats ({rows.length} results)
+                    </summary>
+                    {table}
+                  </details>
+                ) : (
+                  table
+                );
+              })}
+            </section>
+          );
+        })}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
