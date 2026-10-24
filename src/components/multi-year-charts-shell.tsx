@@ -6,6 +6,7 @@ import { HighlightControls } from "@/components/highlight-controls";
 import MultiYearBumpsChart from "@/components/multi-year-bumps-chart";
 import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { YearRangeControls, yearRange } from "@/components/year-range-controls";
 import { useChartParams, withParams } from "@/hooks/use-chart-params";
 import { getGenderLabel, set, type Gender, type Set } from "@/lib/utils";
 
@@ -16,8 +17,8 @@ type MultiYearChartsShellProps = {
   clubs: string[];
   /** Static JSON holding this event/gender's results. */
   dataUrl: string;
-  /** How many years the chart spans; see `MultiYearBumpsChart`'s `width`. */
-  years: number;
+  /** Every year the event ran, oldest first. */
+  years: string[];
 };
 
 export function MultiYearChartsShell({
@@ -32,6 +33,10 @@ export function MultiYearChartsShell({
   const club = params.get("club");
   const blades = params.get("blades") === "true";
   const spoons = params.get("spoons") === "true";
+  const hasResults = years.length > 0;
+  const { from, to } = hasResults
+    ? yearRange(years, params)
+    : { from: "", to: "" };
 
   return (
     // Fills the viewport below the header (3.5rem plus its 1px bottom border),
@@ -63,14 +68,23 @@ export function MultiYearChartsShell({
             </TabsTrigger>
           </TabsList>
         </Tabs>
-        {years > 0 && (
-          <HighlightControls
-            clubs={clubs}
-            club={club}
-            blades={blades}
-            setParam={setParam}
-            compact
-          />
+        {hasResults && (
+          <>
+            <HighlightControls
+              clubs={clubs}
+              club={club}
+              blades={blades}
+              setParam={setParam}
+              compact
+            />
+            <YearRangeControls
+              years={years}
+              from={from}
+              to={to}
+              setParam={setParam}
+              compact
+            />
+          </>
         )}
       </div>
       <div className="order-2 hidden border-l py-4 lg:block">
@@ -92,6 +106,14 @@ export function MultiYearChartsShell({
               );
             }}
           />
+          {hasResults && (
+            <YearRangeControls
+              years={years}
+              from={from}
+              to={to}
+              setParam={setParam}
+            />
+          )}
           <HighlightControls
             clubs={clubs}
             club={club}
@@ -105,11 +127,12 @@ export function MultiYearChartsShell({
           {`${set[event]} - ${getGenderLabel(event, gender)}`}
         </h1>
         <div className="overflow-auto">
-          {years > 0 ? (
+          {hasResults ? (
             <div className="mb-4 w-full">
               <MultiYearBumpsChart
                 src={dataUrl}
-                width={years * 96}
+                from={from}
+                to={to}
                 club={club}
                 blades={blades}
                 spoons={spoons}
