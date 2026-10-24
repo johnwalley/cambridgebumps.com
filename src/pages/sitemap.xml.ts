@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 
-import { siteConfig } from "@/config/site";
+import { homeCity, siteConfig } from "@/config/site";
+import { clubs } from "@/data/clubs";
 import { summary } from "@/data/results";
 import { statisticMapping } from "@/data/stats";
 import { events, genders } from "@/lib/utils";
@@ -17,6 +18,17 @@ const entries: Entry[] = [
   { path: "", changefreq: "monthly", priority: 1 },
   { path: "/about", changefreq: "monthly", priority: 0.8 },
   { path: "/vocabulary", changefreq: "monthly", priority: 0.5 },
+
+  { path: "/clubs", changefreq: "monthly", priority: 0.7 },
+
+  // A page per club of this site's city.
+  ...clubs
+    .filter((club) => club.city === homeCity)
+    .map((club) => ({
+      path: `/clubs/${club.slug}`,
+      changefreq: "yearly" as const,
+      priority: 0.7,
+    })),
 
   // A chart page per event/gender/year.
   ...events.flatMap((event) =>

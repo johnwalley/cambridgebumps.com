@@ -29,6 +29,12 @@ export type SiteConfig = typeof siteConfig;
 export const homeCity: City = title === "Oxford" ? "Oxford" : "Cambridge";
 const awayCity: City = homeCity === "Oxford" ? "Cambridge" : "Oxford";
 
+/** Each city's site, for links from one to the other. */
+export const cityUrls: Record<City, string> = {
+  Cambridge: "https://www.cambridgebumps.com",
+  Oxford: "https://www.oxfordbumps.com",
+};
+
 /** The site's own events, in the order they're raced through the year. */
 export const homeEvents = cityEvents[homeCity];
 

@@ -1,6 +1,6 @@
 import type { Event } from "react-bumps-chart";
 
-import { clubs, type Club } from "@/data/clubs";
+import { clubEvents, clubs, type Club } from "@/data/clubs";
 import { results, summary } from "@/data/results";
 import {
   genders,
@@ -9,13 +9,6 @@ import {
   type Gender,
   type Set as EventKey,
 } from "@/lib/utils";
-
-// The events a club page covers, in the order they're raced through the year.
-// Town Bumps clubs and the colleges' Town crews aren't covered yet.
-export const clubEvents: Record<City, EventKey[]> = {
-  Cambridge: ["lents", "mays"],
-  Oxford: ["torpids", "eights"],
-};
 
 // A name in the results qualifies for a page once it has raced in this many
 // years, or in an event's latest year.

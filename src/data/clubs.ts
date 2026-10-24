@@ -1,4 +1,12 @@
-import type { City } from "@/lib/utils";
+import { cityUrls, homeCity } from "@/config/site";
+import type { City, Set } from "@/lib/utils";
+
+// The events a club page covers, in the order they're raced through the year.
+// Town Bumps clubs and the colleges' Town crews aren't covered yet.
+export const clubEvents: Record<City, Set[]> = {
+  Cambridge: ["lents", "mays"],
+  Oxford: ["torpids", "eights"],
+};
 
 /**
  * A club with its own page under /clubs. Pages are built only for the clubs
@@ -571,3 +579,20 @@ export const clubs: Club[] = [
     city: "Oxford",
   },
 ];
+
+/**
+ * The page of the club a results name belongs to, as raced in `event`: a
+ * path on this site, or a full URL on the other city's. Undefined for a name
+ * with no page, or a joint crew, which belongs to more than one.
+ */
+export function clubPageUrl(event: Set, name: string): string | undefined {
+  const club = clubs.find(
+    (club) =>
+      clubEvents[club.city].includes(event) &&
+      (club.short === name || club.formerly?.includes(name)),
+  );
+  if (!club) return undefined;
+
+  const path = `/clubs/${club.slug}`;
+  return club.city === homeCity ? path : `${cityUrls[club.city]}${path}`;
+}

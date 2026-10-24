@@ -29,6 +29,10 @@ export const docsConfig: DocsConfig = {
       requiresEventGender: true,
     },
     {
+      title: "Clubs",
+      href: "/clubs",
+    },
+    {
       title: "Vocabulary",
       href: "/vocabulary",
     },

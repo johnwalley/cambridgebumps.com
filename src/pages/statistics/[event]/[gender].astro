@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
 
+import ClubName from "@/components/ClubName.astro";
 import { statisticMapping, stats } from "@/data/stats";
 import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
 import {
@@ -125,7 +126,9 @@ const clubStatistics = Object.keys(statisticMapping);
                     >
                       <div>
                         <div class="text-sm font-bold">1</div>
-                        <div class="font-bold">{data[0][mapping.key]}</div>
+                        <div class="font-bold">
+                          <ClubName event={event} name={data[0][mapping.key]} />
+                        </div>
                         {mapping.additional && (
                           <div class="text-sm">
                             {data[0][mapping.additional]}
@@ -155,7 +158,7 @@ const clubStatistics = Object.keys(statisticMapping);
                         </div>
                         <div class="flex flex-col">
                           <div class="text-base font-bold">
-                            {d[mapping.key]}
+                            <ClubName event={event} name={d[mapping.key]} />
                           </div>
                           <div class="text-sm">
                             {mapping.additional ? d[mapping.additional] : " "}
