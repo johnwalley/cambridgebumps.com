@@ -1,8 +1,9 @@
 import type { Event } from "react-bumps-chart";
 
-import { clubEvents, clubs, type Club } from "@/data/clubs";
+import { clubs, eventsOf, unlisted, type Club } from "@/data/clubs";
 import { results, summary } from "@/data/results";
 import {
+  events,
   genders,
   yearOf,
   type City,
@@ -57,7 +58,7 @@ export type ClubSection = {
 
 export type ClubHistory = {
   club: Club;
-  /** Sections the club raced in, in `clubEvents` order, men before women. */
+  /** Sections the club raced in, in `eventsOf` order, men before women. */
   sections: ClubSection[];
 };
 
@@ -201,7 +202,7 @@ export function getClubHistory(club: Club): ClubHistory {
   let history = histories.get(club);
 
   if (!history) {
-    const events = clubEvents[club.city];
+    const events = eventsOf(club);
     const renames = renamesOf(club, events);
 
     history = {
@@ -266,13 +267,16 @@ export function getSectionRecords(section: ClubSection): SectionRecords {
   };
 }
 
-/** Whether a club raced in the latest year of any of its sections. */
+/**
+ * Whether a club still races: in any of the last three years one of its
+ * events ran, so missing a year or two doesn't retire it.
+ */
 export const isCurrent = (history: ClubHistory) =>
-  history.sections.some(
-    (section) =>
-      yearOf(section.races[section.races.length - 1].year) ===
-      yearOf(latestYear(section)),
-  );
+  history.sections.some((section) => {
+    const recent = [...new Set(section.years.map(yearOf))].slice(-3);
+    const last = yearOf(section.races[section.races.length - 1].year);
+    return last >= recent[0];
+  });
 
 export const clubsIn = (city: City) =>
   clubs.filter((club) => club.city === city);
@@ -282,66 +286,76 @@ export function getClub(city: City, slug: string): Club | undefined {
 }
 
 // Fails the build when the curated club list and the results disagree: a name
-// that qualifies for a page but isn't listed, or a listed name that never
-// raced (a typo). A name shown as two clubs' own is an error too; only joint
-// crews belong to more than one club.
+// that qualifies for a page but has no club (and isn't `unlisted`), or a
+// listed name that never raced (a typo). A name can be only one club's own in
+// an event; only joint crews belong to more than one.
 function checkClubs() {
   const problems: string[] = [];
+  const raced = new Map<EventKey, Map<string, Set<number>>>();
 
-  for (const [city, events] of Object.entries(clubEvents) as [
-    City,
-    EventKey[],
-  ][]) {
-    const listed = new Map<string, Club[]>();
-
-    for (const club of clubsIn(city)) {
-      for (const name of namesOf(club)) {
-        listed.set(name, [...(listed.get(name) ?? []), club]);
-      }
-    }
-
-    for (const [name, owners] of listed) {
-      const own = owners.filter((club) => !club.joint?.includes(name));
-      if (own.length > 1) {
-        problems.push(
-          `${city}: "${name}" belongs to ${own.map((club) => club.slug).join(" and ")}`,
-        );
-      }
-    }
-
+  for (const event of events) {
     const years = new Map<string, Set<number>>();
     const current = new Set<string>();
 
-    for (const event of events) {
-      for (const gender of genders) {
-        const latest = yearOf(summary[event][gender].at(-1)!);
+    for (const gender of genders) {
+      const latest = yearOf(summary[event][gender].at(-1)!);
 
-        for (const race of results[event][gender]) {
-          for (const name of raceCrewNames(race)) {
-            if (!name) continue;
-            const raced = years.get(name) ?? new Set<number>();
-            raced.add(yearOf(race.year));
-            years.set(name, raced);
-            if (yearOf(race.year) === latest) current.add(name);
-          }
+      for (const race of results[event][gender]) {
+        for (const name of raceCrewNames(race)) {
+          if (!name) continue;
+          const yearsRaced = years.get(name) ?? new Set<number>();
+          yearsRaced.add(yearOf(race.year));
+          years.set(name, yearsRaced);
+          if (yearOf(race.year) === latest) current.add(name);
         }
       }
     }
 
-    for (const [name, raced] of years) {
-      if (!listed.has(name) && (raced.size >= MIN_YEARS || current.has(name))) {
+    raced.set(event, years);
+
+    const owners = new Map<string, Club[]>();
+    for (const club of clubs.filter((club) => eventsOf(club).includes(event))) {
+      for (const name of namesOf(club)) {
+        owners.set(name, [...(owners.get(name) ?? []), club]);
+      }
+    }
+
+    for (const [name, clubsOwning] of owners) {
+      const own = clubsOwning.filter((club) => !club.joint?.includes(name));
+      if (own.length > 1) {
         problems.push(
-          `${city}: "${name}" raced in ${raced.size} years but has no club`,
+          `${event}: "${name}" belongs to ${own.map((club) => club.slug).join(" and ")}`,
         );
       }
     }
 
-    for (const name of listed.keys()) {
-      if (!years.has(name)) {
-        problems.push(`${city}: "${name}" never raced in ${events.join("/")}`);
+    for (const [name, yearsRaced] of years) {
+      const qualifies = yearsRaced.size >= MIN_YEARS || current.has(name);
+      if (qualifies && !owners.has(name) && !unlisted[event]?.includes(name)) {
+        problems.push(
+          `${event}: "${name}" raced in ${yearsRaced.size} years but has no club`,
+        );
       }
     }
 
+    for (const name of unlisted[event] ?? []) {
+      if (!years.has(name)) {
+        problems.push(`${event}: unlisted "${name}" never raced`);
+      }
+    }
+  }
+
+  for (const club of clubs) {
+    for (const name of namesOf(club)) {
+      if (!eventsOf(club).some((event) => raced.get(event)?.has(name))) {
+        problems.push(
+          `${club.slug}: "${name}" never raced in ${eventsOf(club).join("/")}`,
+        );
+      }
+    }
+  }
+
+  for (const city of ["Cambridge", "Oxford"] as City[]) {
     const slugs = clubsIn(city).map((club) => club.slug);
     for (const slug of new Set(slugs)) {
       if (slugs.indexOf(slug) !== slugs.lastIndexOf(slug)) {
