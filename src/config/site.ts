@@ -26,7 +26,7 @@ export type SiteConfig = typeof siteConfig;
 
 // Both sites carry every event, but each leads with its own city's: first in
 // the event tabs, pickers and menus, and the only ones its copy mentions.
-const homeCity: City = title === "Oxford" ? "Oxford" : "Cambridge";
+export const homeCity: City = title === "Oxford" ? "Oxford" : "Cambridge";
 const awayCity: City = homeCity === "Oxford" ? "Cambridge" : "Oxford";
 
 /** The site's own events, in the order they're raced through the year. */

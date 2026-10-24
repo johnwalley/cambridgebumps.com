@@ -1,0 +1,254 @@
+---
+import type { Club } from "@/data/clubs";
+import type { ClubRace, ClubSection } from "@/lib/club-history";
+import { yearOf } from "@/lib/utils";
+
+// Where a club's crews finished each year: one line per crew, coloured by
+// boat (1st, 2nd, 3rd, then lower boats in grey), over shading for the
+// divisions. The plot stretches to the page's width, so its lines keep their
+// width with `non-scaling-stroke` and the axis labels are HTML.
+
+interface Props {
+  club: Club;
+  section: ClubSection;
+}
+
+const { club, section } = Astro.props;
+
+// A year with two races (the early Mays) plots the later.
+const byYear = new Map<number, ClubRace>();
+for (const race of section.races) byYear.set(yearOf(race.year), race);
+
+const first = yearOf(section.races[0].year);
+const last = yearOf(section.races[section.races.length - 1].year);
+const span = last - first + 1;
+const depth = Math.max(
+  ...[...byYear.values()].map((race) =>
+    race.divisions.reduce((sum, size) => sum + size, 0),
+  ),
+);
+
+// The event's own years, so a line runs across the wars (no racing) but
+// breaks where the crew didn't race.
+const eventYears = [...new Set(section.years.map(yearOf))];
+const following = new Map(
+  eventYears.map((year, i) => [year, eventYears[i + 1]]),
+);
+
+const x = (year: number) => year - first + 0.5;
+const y = (position: number) => position - 0.5;
+
+type Line = {
+  number: number;
+  names: string[];
+  points: { year: number; position: number }[];
+};
+
+const lines = new Map<string, Line>();
+for (const [year, race] of byYear) {
+  for (const crew of race.crews) {
+    const line = lines.get(crew.line) ?? {
+      number: crew.number,
+      names: [],
+      points: [],
+    };
+    if (!line.names.includes(crew.name)) line.names.push(crew.name);
+    line.points.push({ year, position: crew.finish ?? crew.start });
+    lines.set(crew.line, line);
+  }
+}
+
+const pathOf = (points: Line["points"]) =>
+  points
+    .map(
+      ({ year, position }, i) =>
+        `${i > 0 && following.get(points[i - 1].year) === year ? "L" : "M"}${x(year)} ${y(position)}`,
+    )
+    .join("");
+
+// Lower boats first, so the 1st boats draw on top.
+const drawn = [...lines.values()].sort((a, b) => b.number - a.number);
+
+const series = (number: number) =>
+  number <= 3 ? `var(--club-series-${number})` : "var(--club-series-other)";
+
+const legend = [
+  { number: 1, label: "1st boat" },
+  { number: 2, label: "2nd boat" },
+  { number: 3, label: "3rd boat" },
+  { number: 4, label: "Lower boats" },
+].filter(({ number }) =>
+  drawn.some((line) =>
+    number < 4 ? line.number === number : line.number >= 4,
+  ),
+);
+
+// Alternate divisions are shaded, year by year, as their sizes changed.
+const bands = [...byYear].flatMap(([year, race]) => {
+  let top = 0;
+  return race.divisions.flatMap((size, division) => {
+    const band = { year, top, size, shaded: division % 2 === 1 };
+    top += size;
+    return band.shaded ? [band] : [];
+  });
+});
+
+// Where the club's 1st boat changed its name (New Hall to Murray Edwards).
+const renames: { year: number; to: string }[] = [];
+let previous: string | undefined;
+for (const [year, race] of byYear) {
+  const crew = race.crews.find((crew) => crew.line === `${club.short} 1`);
+  if (!crew) continue;
+  if (previous !== undefined && crew.club !== previous) {
+    renames.push({ year, to: crew.club });
+  }
+  previous = crew.club;
+}
+
+const niceStep = (range: number, steps: number[], most: number) =>
+  steps.find((step) => range / step <= most) ?? steps[steps.length - 1];
+
+const yStep = niceStep(depth, [5, 10, 20, 25, 50], 5);
+const yTicks = [1];
+for (let tick = yStep; tick <= depth; tick += yStep) yTicks.push(tick);
+
+const xStep = niceStep(span, [1, 2, 5, 10, 20, 25, 50], 5);
+const xTicks: number[] = [];
+for (let tick = Math.ceil(first / xStep) * xStep; tick <= last; tick += xStep) {
+  xTicks.push(tick);
+}
+if (xTicks.length === 0) xTicks.push(first);
+
+const left = (year: number) => `${(x(year) / span) * 100}%`;
+const top = (position: number) => `${(y(position) / depth) * 100}%`;
+---
+
+<figure class="club-chart my-4">
+  <ul class="mb-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+    {legend.map(({ number, label }) => (
+      <li class="flex items-center gap-1.5">
+        <span
+          class="inline-block h-0.5 w-4 rounded-full"
+          style={{ background: series(number) }}
+        />
+        {label}
+      </li>
+    ))}
+  </ul>
+  <div class="grid grid-cols-[2rem_1fr] grid-rows-[1fr_1.5rem]">
+    <div class="relative text-right text-xs text-muted-foreground tabular-nums">
+      {yTicks.map((tick) => (
+        <span
+          class="absolute right-2 -translate-y-1/2"
+          style={{ top: top(tick) }}
+        >
+          {tick}
+        </span>
+      ))}
+    </div>
+    <div class="relative h-56 sm:h-72">
+      <svg
+        class="absolute inset-0 h-full w-full overflow-visible"
+        viewBox={`0 0 ${span} ${depth}`}
+        preserveAspectRatio="none"
+        role="img"
+        aria-label={`Finishing positions of ${club.short}'s crews, ${first} to ${last}. The table below lists every result.`}
+      >
+        {bands.map((band) => (
+          <rect
+            x={band.year - first}
+            y={band.top}
+            width="1"
+            height={band.size}
+            class="fill-muted dark:fill-muted/50"
+            shape-rendering="crispEdges"
+          />
+        ))}
+        {yTicks.map((tick) => (
+          <line
+            x1="0"
+            x2={span}
+            y1={y(tick)}
+            y2={y(tick)}
+            class="stroke-border"
+            stroke-width="1"
+            vector-effect="non-scaling-stroke"
+          />
+        ))}
+        {renames.map(({ year }) => (
+          <line
+            x1={year - first}
+            x2={year - first}
+            y1="0"
+            y2={depth}
+            class="stroke-muted-foreground"
+            stroke-width="1"
+            vector-effect="non-scaling-stroke"
+          />
+        ))}
+        {drawn.map((line) => (
+          <g>
+            <title>{line.names.join(" / ")}</title>
+            <path
+              d={pathOf(line.points)}
+              fill="none"
+              style={{ stroke: series(line.number) }}
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              vector-effect="non-scaling-stroke"
+            />
+            {/* A wider, invisible stroke, so the line's name is easy to hover. */}
+            <path
+              d={pathOf(line.points)}
+              fill="none"
+              stroke="transparent"
+              stroke-width="10"
+              vector-effect="non-scaling-stroke"
+            />
+          </g>
+        ))}
+      </svg>
+      {renames.map(({ year, to }) => (
+        <span
+          class="absolute top-0 ml-1 rounded-sm bg-background/80 px-1 text-xs text-muted-foreground"
+          style={{ left: `${((year - first) / span) * 100}%` }}
+        >
+          {to}
+        </span>
+      ))}
+    </div>
+    <div></div>
+    <div class="relative text-xs text-muted-foreground tabular-nums">
+      {xTicks.map((tick) => (
+        <span
+          class="absolute top-1 -translate-x-1/2"
+          style={{ left: left(tick) }}
+        >
+          {tick}
+        </span>
+      ))}
+    </div>
+  </div>
+  <figcaption class="mt-1 text-xs text-muted-foreground">
+    Finishing position each year; shading marks the divisions.
+  </figcaption>
+</figure>
+
+<style is:global>
+  /* Validated as a categorical set against the site's light and dark
+     backgrounds; lower boats recede in grey. */
+  .club-chart {
+    --club-series-1: #2a78d6;
+    --club-series-2: #eb6834;
+    --club-series-3: #1baf7a;
+    --club-series-other: hsl(215 16% 78%);
+  }
+
+  .dark .club-chart {
+    --club-series-1: #3987e5;
+    --club-series-2: #d95926;
+    --club-series-3: #199e70;
+    --club-series-other: hsl(215 16% 32%);
+  }
+</style>
