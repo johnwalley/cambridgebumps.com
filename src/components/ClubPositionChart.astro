@@ -15,12 +15,27 @@ interface Props {
 
 const { club, section } = Astro.props;
 
+// A few early races cut off from the rest by a long gap (City's predecessor in
+// the 1868 Town Bumps, eighty years before the next) would leave most of the
+// chart empty, so it starts after the gap; the table still lists them.
+const LONG_GAP = 25;
+const raceYears = section.races.map((race) => yearOf(race.year));
+let start = 0;
+raceYears.forEach((year, i) => {
+  const fewerBefore = i < raceYears.length - i;
+  if (i > 0 && year - raceYears[i - 1] >= LONG_GAP && fewerBefore) start = i;
+});
+const leftOff =
+  start > 0 ? { from: raceYears[0], to: raceYears[start - 1] } : undefined;
+
 // A year with two races (the early Mays) plots the later.
 const byYear = new Map<number, ClubRace>();
-for (const race of section.races) byYear.set(yearOf(race.year), race);
+for (const race of section.races.slice(start)) {
+  byYear.set(yearOf(race.year), race);
+}
 
-const first = yearOf(section.races[0].year);
-const last = yearOf(section.races[section.races.length - 1].year);
+const first = raceYears[start];
+const last = raceYears[raceYears.length - 1];
 const span = last - first + 1;
 const depth = Math.max(
   ...[...byYear.values()].map((race) =>
@@ -232,6 +247,8 @@ const top = (position: number) => `${(y(position) / depth) * 100}%`;
   </div>
   <figcaption class="mt-1 text-xs text-muted-foreground">
     Finishing position each year; shading marks the divisions.
+    {leftOff &&
+      ` The ${leftOff.from === leftOff.to ? leftOff.from : `${leftOff.from}–${leftOff.to}`} results are in the table below.`}
   </figcaption>
 </figure>
 
