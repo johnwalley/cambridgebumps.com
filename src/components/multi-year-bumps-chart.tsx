@@ -1,7 +1,8 @@
 import { BumpsChartMultiYear as Chart, type Event } from "react-bumps-chart";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import { measureChartText } from "@/lib/measure-text";
+import { yearOf } from "@/lib/utils";
 
 import classes from "./bumps-chart.module.css";
 import "react-bumps-chart/dist/index.css";
@@ -25,8 +26,9 @@ type MultiYearBumpsChartProps = {
   // `src/pages/data/results/[event]/[gender].json.ts`) rather than inlined into
   // the page.
   src: string;
-  /** The chart's width in pixels — 96 per year. */
-  width: number;
+  /** The first and last years to chart, inclusive. */
+  from: string;
+  to: string;
   club?: string | null;
   blades?: boolean;
   spoons?: boolean;
@@ -34,7 +36,8 @@ type MultiYearBumpsChartProps = {
 
 export default function MultiYearBumpsChart({
   src,
-  width,
+  from,
+  to,
   club,
   blades = false,
   spoons = false,
@@ -44,11 +47,25 @@ export default function MultiYearBumpsChart({
 
   const ref = useRef<HTMLDivElement>(null);
 
+  // `yearOf`, not `+year`: the early mays/men seasons have two races a year,
+  // with compound years such as "1827 February March", and both belong in the
+  // range.
+  const rangedData = useMemo(() => {
+    if (!data) return null;
+
+    const first = yearOf(from);
+    const last = yearOf(to);
+
+    return data.filter(
+      (event) => yearOf(event.year) >= first && yearOf(event.year) <= last,
+    );
+  }, [data, from, to]);
+
   // The chart runs oldest to newest, left to right, and is tens of thousands
   // of pixels wide; most visitors want the latest seasons, so open on the
-  // right-hand end once there's a chart to show. Only on load — highlighting a
-  // club or toggling blades leaves the scroll position where the visitor put
-  // it.
+  // right-hand end once there's a chart to show. Only on load or a change of
+  // years — highlighting a club or toggling blades leaves the scroll position
+  // where the visitor put it.
   //
   // This sets the scroll box's `scrollLeft` rather than calling
   // `scrollIntoView`, which would scroll the page as well — and while a view
@@ -58,7 +75,7 @@ export default function MultiYearBumpsChart({
     const scroller = ref.current && horizontalScroller(ref.current);
 
     scroller?.scrollTo({ left: scroller.scrollWidth, behavior: "instant" });
-  }, [data]);
+  }, [rangedData]);
 
   useEffect(() => {
     let cancelled = false;
@@ -92,17 +109,32 @@ export default function MultiYearBumpsChart({
   // with no club selected — the default, and every blades/spoons toggle — the
   // fetched data can be handed straight to the chart.
   const highlightedData = useMemo(() => {
-    if (!data) return EMPTY;
-    if (!club) return data;
+    if (!rangedData) return EMPTY;
+    if (!club) return rangedData;
 
-    return data.map((event) => ({
+    return rangedData.map((event) => ({
       ...event,
       crews: event.crews.map((crew) => ({
         ...crew,
         highlight: crew.club === club,
       })),
     }));
-  }, [data, club]);
+  }, [rangedData, club]);
+
+  // The chart's SVG is `width: 100%` and scales its viewBox to fit, so the box
+  // around it sets its size. Give it one pixel per chart unit, which keeps the
+  // text the same size however many years are shown. A width per race doesn't:
+  // the crew-name columns either side are a fixed width, so a short range would
+  // squeeze them, and every race, into a sliver. The viewBox is read back
+  // before paint — and, being a layout effect, before the scroll to the
+  // right-hand end above, so that sees the chart's real width.
+  useLayoutEffect(() => {
+    const svg = ref.current?.querySelector("svg");
+
+    if (ref.current && svg) {
+      ref.current.style.width = `${svg.viewBox.baseVal.width}px`;
+    }
+  }, [highlightedData, blades]);
 
   if (failed) {
     return (
@@ -112,20 +144,24 @@ export default function MultiYearBumpsChart({
     );
   }
 
-  if (!data) {
+  if (!rangedData) {
     return <div className="py-8 text-center">Loading chart&hellip;</div>;
   }
 
   // The width applies only once the chart is here: the loading and error
   // messages are centred, and centred in a 20,000px box they'd be off screen.
+  // A chart narrower than the pane is centred under the heading; a wider one
+  // overflows to the right, where `mx-auto` resolves to nothing.
   return (
-    <div ref={ref} className={`${classes.chart} px-10`} style={{ width }}>
-      <Chart
-        data={highlightedData}
-        blades={blades}
-        spoons={spoons}
-        measureText={measureChartText}
-      />
+    <div className={`${classes.chart} mx-auto w-max px-10`}>
+      <div ref={ref}>
+        <Chart
+          data={highlightedData}
+          blades={blades}
+          spoons={spoons}
+          measureText={measureChartText}
+        />
+      </div>
     </div>
   );
 }
