@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
 
+import ClubName from "@/components/ClubName.astro";
 import { statisticMapping, stats } from "@/data/stats";
 import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
 import {
@@ -79,7 +80,7 @@ const genderName = getGenderLabel(event, gender);
                         out of table layout and loses its column. */}
                     <div class="flex flex-row items-center gap-2">
                       {clubCode && <Blade club={clubCode} size={32} />}
-                      {row[mapping.key]}
+                      <ClubName event={event} name={row[mapping.key]} />
                     </div>
                   </td>
                   <td class="p-2 text-right align-middle">

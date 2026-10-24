@@ -6,9 +6,11 @@ import { ClubNativeSelect } from "@/components/club-native-select";
 import { HighlightToggle } from "@/components/highlight-toggle";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
+import { clubPageUrl } from "@/data/clubs";
+import { cn, type Set } from "@/lib/utils";
 
 type HighlightControlsProps = {
+  event: Set;
   /** Club names for the "Highlight club" dropdown. */
   clubs: string[];
   club: string | null;
@@ -28,6 +30,7 @@ type HighlightControlsProps = {
 // the same control. The narrow-screen copy picks clubs with a native select;
 // see `ClubNativeSelect`.
 export function HighlightControls({
+  event,
   clubs,
   club,
   blades,
@@ -37,6 +40,17 @@ export function HighlightControls({
   const id = useId();
   const clubId = `${id}-club`;
   const bladesId = `${id}-blades`;
+
+  // The highlighted club's own page, when it has one.
+  const clubHref = club === null ? undefined : clubPageUrl(event, club);
+  const clubLink = clubHref && (
+    <a
+      href={clubHref}
+      className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+    >
+      {club} history
+    </a>
+  );
 
   const clubPicker = (
     <div className={cn("flex", compact && "min-w-0 flex-1")}>
@@ -98,9 +112,12 @@ export function HighlightControls({
 
   if (compact) {
     return (
-      <div className="flex items-center gap-3">
-        {clubPicker}
-        {bladesToggle}
+      <div className="space-y-1">
+        <div className="flex items-center gap-3">
+          {clubPicker}
+          {bladesToggle}
+        </div>
+        {clubLink}
       </div>
     );
   }
@@ -113,6 +130,7 @@ export function HighlightControls({
           Highlight club
         </Label>
         {clubPicker}
+        {clubLink && <div className="mt-2">{clubLink}</div>}
       </div>
     </>
   );

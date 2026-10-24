@@ -105,6 +105,7 @@ export function ChartsShell({
         />
         {data && (
           <HighlightControls
+            event={event}
             clubs={clubs}
             club={club}
             blades={blades}
@@ -150,6 +151,7 @@ export function ChartsShell({
             />
           </div>
           <HighlightControls
+            event={event}
             clubs={clubs}
             club={club}
             blades={blades}

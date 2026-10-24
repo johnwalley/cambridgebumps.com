@@ -71,6 +71,7 @@ export function MultiYearChartsShell({
         {hasResults && (
           <>
             <HighlightControls
+              event={event}
               clubs={clubs}
               club={club}
               blades={blades}
@@ -115,6 +116,7 @@ export function MultiYearChartsShell({
             />
           )}
           <HighlightControls
+            event={event}
             clubs={clubs}
             club={club}
             blades={blades}

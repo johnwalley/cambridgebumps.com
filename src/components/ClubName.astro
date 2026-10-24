@@ -1,0 +1,22 @@
+---
+import { clubPageUrl } from "@/data/clubs";
+import type { Set } from "@/lib/utils";
+
+// A club's name as the results give it, linked to its club page when it has
+// one.
+interface Props {
+  event: Set;
+  name: string;
+}
+
+const { event, name } = Astro.props;
+const href = clubPageUrl(event, name);
+---
+
+{href ? (
+  <a href={href} class="underline-offset-4 hover:underline">
+    {name}
+  </a>
+) : (
+  name
+)}
